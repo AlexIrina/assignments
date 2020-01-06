@@ -1,6 +1,6 @@
 var shopper = {
   fullName: "Santa Clause",
-  age: 23,
+  age: 230,
   isMember: true,
   groceryCart: ["milk", "cookies", "vodka"]
 };
