@@ -331,7 +331,10 @@ h2 {
 }
 
 .belize-circle {
-  background-image: ;
+  background: url(https://cdn.imgbin.com/11/1/25/imgbin-flag-of-belize-coat-of-arms-of-belize-symbol-biographay-geography-history-9eD7Wth2gNUPCAgULE8LpSzYB.jpg)
+    no-repeat;
+  background-size: cover;
+  background-position: center;
   width: 50%;
   height: 80%;
   position: absolute;
