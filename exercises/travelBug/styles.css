@@ -23,9 +23,16 @@ header {
 
 header h1 {
   font-size: 60px;
-  font-weight: lighter;
+  font-weight: 500;
   text-transform: uppercase;
   margin-bottom: 10px;
+}
+
+.travel {
+  border: 2px solid red;
+  margin: 0px 780px;
+  padding: -10px 5px -10px 5px;
+  line-height: 40px;
 }
 
 h1:hover {
@@ -48,6 +55,8 @@ menu li {
   display: inline-block;
   padding: 20px;
   color: black;
+  border: 2px solid red;
+  line-height: 16px;
 }
 
 li:hover {
