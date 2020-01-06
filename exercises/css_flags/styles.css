@@ -22,7 +22,8 @@
   --niger-green: #0cb02b;
   --maldives-maroon: #d11134;
   --maldives-green: #007e3a;
-  --belize-maroon: ;
+  --belize-blue: #023f87;
+  --belize-red: #ce1226;
 }
 
 * {
@@ -319,3 +320,21 @@ h2 {
   border-radius: 50%;
 }
 /* Belize */
+#belize .fill-up {
+  background-color: var(--belize-red);
+}
+.belize-smaller-fill-up {
+  background-color: var(--belize-blue);
+  height: 80%;
+  width: 100%;
+  margin-top: 40px;
+}
+
+.belize-circle {
+  background-image: ;
+  width: 50%;
+  height: 80%;
+  position: absolute;
+  margin-left: 26%;
+  border-radius: 50%;
+}
