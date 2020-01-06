@@ -29,16 +29,16 @@ header h1 {
 }
 
 .travel {
-  border: 2px solid red;
   margin: 0px 780px;
   padding: -10px 5px -10px 5px;
   line-height: 40px;
+  margin-bottom: 10px;
+  margin: auto;
+  padding: auto;
 }
 .travel:hover {
-  -webkit-animation-name: header; /* Safari 4.0 - 8.0 */
-  -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
-  animation-name: header;
-  animation-duration: 4s;
+  animation-name: main-h1;
+  animation-duration: 30s;
 }
 
 h1:hover {
@@ -61,7 +61,7 @@ menu li {
   display: inline-block;
   padding: 20px;
   color: black;
-  border: 2px solid red;
+  /* border: 2px solid red; */
   line-height: 16px;
 }
 
@@ -120,11 +120,38 @@ p {
 }
 
 /* keyframes */
-@keyframes header {
-  from {
-    color: red;
+@keyframes main-h1 {
+  0% {
+    color: #119dd3;
   }
-  to {
-    color: yellow;
+  10% {
+    color: #5da886;
+  }
+  20% {
+    color: #cfafb9;
+  }
+  30% {
+    color: #2fa6d3;
+  }
+  40% {
+    color: #119dd3;
+  }
+  50% {
+    color: #b03c29;
+  }
+  60% {
+    color: #fbc000;
+  }
+  70% {
+    color: #969c4a;
+  }
+  80% {
+    color: #d0891e;
+  }
+  90% {
+    color: #f0b279;
+  }
+  100% {
+    color: #a0886c;
   }
 }
