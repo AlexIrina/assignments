@@ -1,0 +1,56 @@
+/* It's easiest to get the even white "spacing" by actually using a thick, white border around the shapes.
+In order to use percentage widths and not have them wrap, you'll need to add the following line to the top of your CSS:
+
+#F5C6D6
+#EE2E84
+#85CFD8
+#8DC63F
+#E76E34
+
+*/
+* {
+  box-sizing: border-box;
+  font-size: 0px;
+}
+
+#top {
+  display: block;
+  padding: 100px;
+  background-color: #f5c6d6;
+  margin: 20px 10px 10px 10px;
+}
+
+#mid1,
+#mid2,
+#mid3,
+#mid4 {
+  display: inline-block;
+  padding: 100px;
+  background-color: #ee2e84;
+  width: 23.79%;
+  margin: 10px;
+}
+
+#mid5,
+#mid6 {
+  display: inline-block;
+  padding: 100px;
+  background-color: #85cfd8;
+  margin: 10px;
+  width: 48.79%;
+}
+#bottom1,
+#bottom2 {
+  display: inline-block;
+  margin: 10px;
+}
+#bottom1 {
+  background-color: #8dc63f;
+  padding: 100px;
+  width: 75%;
+}
+#bottom2 {
+  background-color: #e76e34;
+  padding: 100px;
+  width: 22.58%;
+}

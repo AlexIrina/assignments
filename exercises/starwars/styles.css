@@ -1,0 +1,29 @@
+body {
+  background-color: #111111;
+}
+
+h1 {
+  color: #e2e80f;
+  text-align: center;
+  font-size: 7rem;
+}
+p {
+  color: #eeeeee;
+  font-size: 3rem;
+  line-height: 1.6;
+}
+
+p > span {
+  /* border: 2px solid red; */
+  text-decoration: underline #49daff;
+  color: yellow;
+  cursor: pointer;
+}
+#film-description {
+  font-size: 1rem;
+  font-style: italic;
+}
+/* 
+
+You could also optionally figure out how to make the cursor change to the little hand when the user is hovering over it to mimic even more closely a real link.
+Select the "film-description" ID, make the font a little smaller and change it to an italics style. */

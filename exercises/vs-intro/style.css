@@ -1,0 +1,46 @@
+/* .content {} */
+/* border: 2px solid red; */
+
+h1 {
+  color: darkgreen;
+}
+
+h2 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+h1,
+h2 {
+  text-align: center;
+}
+
+p {
+  line-height: 1.5625rem;
+  padding-right: 1rem;
+  margin: 1rem;
+}
+
+a {
+  text-decoration: none;
+  margin: 1rem;
+  padding-right: 1rem;
+}
+
+#uppercase {
+  text-transform: uppercase;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+img {
+  float: left;
+  padding-right: 1rem;
+}
+
+/* 
+
+=
+* Make the image 'float' to the left of the body content.
+
+*/
