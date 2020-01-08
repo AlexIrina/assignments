@@ -191,15 +191,15 @@
 // [1, 1, 1, 1, 3]   // "The light is on"
 // [9, 3, 4, 2]      // "The light is off"
 
-let myArr = [9, 3, 4, 2];
-// let sum = myArr.reduce((a, b) => a + b, 0);
+// let myArr = [9, 3, 4, 2];
+// // let sum = myArr.reduce((a, b) => a + b, 0);
 
-let sum = 0;
-for (let i = 0; i < myArr.length; i++) {
-  sum += myArr[i];
-}
+// let sum = 0;
+// for (let i = 0; i < myArr.length; i++) {
+//   sum += myArr[i];
+// }
 
-console.log(sum);
-// sum % 2 === 0
-//   ? console.log(`The light is off`)
-//   : console.log(`The light is on`);
+// console.log(sum);
+// // sum % 2 === 0
+// //   ? console.log(`The light is off`)
+// //   : console.log(`The light is on`);
