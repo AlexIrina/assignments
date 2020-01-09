@@ -185,7 +185,47 @@
 // var grid = [["x", ...],
 //             ["x", ...],
 // //            ["x",...], ...]
-// let pushHere = [];
+let nestedArr = [
+  [0, 1, 2],
+  [0, 1, 2],
+  [0, 1, 2]
+];
+
+// for (let i = 0; i < pushHere.length; i++) {
+//   for (let j = 0; j < pushHere[i].length; j++) {
+//     pushHere[i][j] = "x";
+//   }
+// }
+// console.log(pushHere);
+
+for (let i = 0; i < nestedArr.length; i++) {
+  for (let j = 0; j < nestedArr[i].length; j++) {
+    nestedArr[i][j] = "x";
+  }
+}
+
+console.log(nestedArr);
+
+// for (let i = 0; i < pushHere.length; i++) {
+
+//   for (let j = 0; j < pushHere[i].length; j++) {
+//     pushHere[i][j] = 'x'; // [1,2,3]
+
+//   }
+
+//   // change all to 'x'
+// }
+// console.log(pushHere);
+
+// let matrix = [];
+
+// for (let i = 0; i <= 3; i++) {
+//   matrix.push([]);
+//   for (let j = 0; j <= 3; j++) {
+//     matrix[i].push("hello");
+//   }
+// }
+// console.log(matrix);
 
 // let x = "x";
 
