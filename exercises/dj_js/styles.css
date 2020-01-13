@@ -1,6 +1,39 @@
 h1 {
-  display: inline-block;
+  display: block;
   height: 100px;
   width: 100px;
-  border: 2px solid black;
+  border: 1px solid pink;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 10px;
+}
+
+.blue {
+  background-color: blue;
+  transition: all 1s ease;
+}
+
+.red {
+  background-color: red;
+  transition: all 1s ease;
+}
+
+.yellow {
+  background-color: yellow;
+  transition: all 1s ease;
+}
+
+.green {
+  background-color: green;
+  transition: all 1s ease;
+}
+
+.orange {
+  background-color: orange;
+  transition: all 1s ease;
+}
+
+.white {
+  background-color: white;
+  transition: all 1s ease;
 }
