@@ -67,7 +67,7 @@
 // // let names = [];
 // for (let i = 0; i < peopleArray.length; i++) {
 //   console.log(peopleArray[i][`name`]);
-//   // names.push(peopleArray[i][`name`]);
+//   // names.push(peopleArray[i].name);
 // }
 // // console.log(names);
 
@@ -185,11 +185,11 @@
 // var grid = [["x", ...],
 //             ["x", ...],
 // //            ["x",...], ...]
-let nestedArr = [
-  [0, 1, 2],
-  [0, 1, 2],
-  [0, 1, 2]
-];
+// let nestedArr = [
+//   [0, 1, 2],
+//   [0, 1, 2],
+//   [0, 1, 2]
+// ];
 
 // for (let i = 0; i < pushHere.length; i++) {
 //   for (let j = 0; j < pushHere[i].length; j++) {
@@ -198,11 +198,11 @@ let nestedArr = [
 // }
 // console.log(pushHere);
 
-for (let i = 0; i < nestedArr.length; i++) {
-  for (let j = 0; j < nestedArr[i].length; j++) {
-    nestedArr[i][j] = "x";
-  }
-}
+// for (let i = 0; i < nestedArr.length; i++) {
+//   for (let j = 0; j < nestedArr[i].length; j++) {
+//     nestedArr[i][j] = "x";
+//   }
+// }
 
 console.log(nestedArr);
 

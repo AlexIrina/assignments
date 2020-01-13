@@ -88,10 +88,6 @@ main {
   border: 1px solid rgba(136, 136, 136 2);
 }
 
-.wrapper > div:hover {
-  padding: 1px;
-  opacity: 1;
-}
 /* photo */
 .photo {
   overflow: auto;
