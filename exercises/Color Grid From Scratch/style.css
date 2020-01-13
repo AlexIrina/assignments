@@ -17,18 +17,20 @@ In order to use percentage widths and not have them wrap, you'll need to add the
   display: block;
   padding: 100px;
   background-color: #f5c6d6;
-  margin: 20px 10px 10px 10px;
+  margin: 10px;
 }
-
 #mid1,
 #mid2,
 #mid3,
 #mid4 {
   display: inline-block;
+  width: 24.6%;
+  /* height: 300px; */
   padding: 100px;
+
   background-color: #ee2e84;
-  width: 23.79%;
-  margin: 10px;
+  border: 2px solid white;
+  margin: 2px;
 }
 
 #mid5,
@@ -36,7 +38,7 @@ In order to use percentage widths and not have them wrap, you'll need to add the
   display: inline-block;
   padding: 100px;
   background-color: #85cfd8;
-  margin: 10px;
+  margin: 5px 5px;
   width: 48.79%;
 }
 #bottom1,
@@ -52,5 +54,5 @@ In order to use percentage widths and not have them wrap, you'll need to add the
 #bottom2 {
   background-color: #e76e34;
   padding: 100px;
-  width: 22.58%;
+  width: 20.58%;
 }
