@@ -11,7 +11,7 @@ square.addEventListener("mouseup", e => changeColor(e, "yellow"));
 // Green when the mouse is double clicked in the square
 square.addEventListener("dblclick", e => changeColor(e, "green"));
 // Orange when the mouse scroll is used somewhere in the window (not just over the square).
-window.addEventListener("scroll", e => changeColor(e, "orange"));
+window.addEventListener("wheel", e => changeColor(e, "orange"));
 // white when leaves square
 square.addEventListener("mouseout", e => changeColor(e, "white"));
 
@@ -20,7 +20,7 @@ window.addEventListener("keydown", e => changeColor(e));
 // You should also be able to press the first letter of the colors (typing "r" on the keyboard for "red", for example) and have the box change to that color.
 
 function changeColor(event) {
-  console.log(event);
+  console.log(event.type);
   // blue
   if (event.type === "mouseover" || event.code === "KeyB") {
     square.classList.remove(
@@ -67,7 +67,7 @@ function changeColor(event) {
     );
     square.classList.add("green");
     //scroll
-  } else if (event.type === "scroll" || event.code === "KeyO") {
+  } else if (event.type === "wheel" || event.code === "KeyO") {
     square.classList.remove(
       "blue",
       "red",
