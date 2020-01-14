@@ -4,26 +4,31 @@
 }
 
 #flex-container {
-  display: flex;
   border: 1px solid black;
+  /* 4 main flexbox propertiess */
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  align-items: center;
+  /* align-items: flex-start; */
+  /* main 4s end*/
   height: 200px;
+  margin: 0 10px;
 }
 
 #flex-container > div:nth-child(1) {
   background-color: dodgerblue;
   height: 30px;
+  margin: 0 10px;
 }
 
 #flex-container > div:nth-child(2) {
   background-color: firebrick;
   height: 30px;
+  margin: 0 10px;
 }
 
 #flex-container > div:nth-child(3) {
   background-color: violet;
   height: 30px;
+  margin: 0 10px;
 }
