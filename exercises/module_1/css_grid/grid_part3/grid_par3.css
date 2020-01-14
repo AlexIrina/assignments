@@ -1,0 +1,47 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+#grid-container {
+  display: grid;
+  /* gives pap for each box */
+  grid-gap: 5px;
+  /* /* minmax() this will take away any white space from both side of the screen */
+  /* min-max(first argument,second argument) 
+  first argument checks if the min width of the is atleast 100px 
+  second argument checks if the maximum size is atlest 1fr
+  */
+  /* repeat(first argument, second argument) 
+  first argument --how many columns or howe many things you want to repeat
+  second argument ---what is the sizing of them
+  */
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+
+  /* auto-fit allows you to keep the elements 100% responsive */
+  /* auto-fit generates or removes columns if it needs to */
+  /* 100px is the width */
+  /* grid-template-columns: repeat(auto-fit, 100px); */
+  /* 4 rows are the max rows it will shrink down to if the screen is small and if the screen is large it will create extra number of free space */
+  grid-template-rows: repeat(4, 100px);
+}
+
+/* Styling for the 12 divs */
+#grid-container > div {
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 25px;
+}
+
+#grid-container > div:nth-child(even) {
+  background-color: dodgerblue;
+}
+
+#grid-container > div:nth-child(odd) {
+  background-color: firebrick;
+}
