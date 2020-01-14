@@ -4,9 +4,9 @@
 }
 .top > .top1 {
   height: 100px;
-  width: 99.5%;
+  width: 99.2%;
   background-color: blue;
-  margin-bottom: 2spx;
+  margin-bottom: 2px;
 }
 .midd4 > .mid {
   display: inline-block;
@@ -45,7 +45,7 @@
   margin-right: 1.03px;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
   .top > .top1 {
     height: 100px;
     width: 100%;
