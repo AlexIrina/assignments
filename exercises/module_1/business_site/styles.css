@@ -1,0 +1,11 @@
+/* import font style from google fonts */
+* {
+  margin: 0;
+  padding: 0;
+  background: grey;
+  height: auto;
+}
+
+.main-section {
+  margin: auto;
+}

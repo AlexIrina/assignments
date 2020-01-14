@@ -5,7 +5,7 @@
 
 #flex-container {
   border: 1px solid black;
-  /* 4 main flexbox propertiess */
+  /* 4 main flexbox properties */
   display: flex;
   flex-direction: column;
   justify-content: space-around;
