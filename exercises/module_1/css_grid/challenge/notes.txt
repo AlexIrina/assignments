@@ -1,0 +1,6 @@
+/* 
+  swap the 4 - 6
+  swap the 7 - 3
+  swap the 7 - 2
+  9 - 1
+*/
