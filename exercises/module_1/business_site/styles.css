@@ -1,17 +1,192 @@
-/* import font style from google fonts */
-* {
+body {
   margin: 0;
-  padding: 0;
-  background: grey;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #333;
+  color: #fff;
+  font-size: 1.1em;
+  line-height: 1.5;
+  text-align: center;
+}
+
+img {
+  display: block;
+  width: 100%;
   height: auto;
 }
 
-.main-section {
-  margin: auto;
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 1em 0;
 }
 
-/* mobile version */
+p {
+  margin: 0;
+  padding: 1em 0;
+}
 
-/* tablet version */
+.btn {
+  display: inline-block;
+  background: #333;
+  color: #fff;
+  text-decoration: none;
+  padding: 1em 2em;
+  border: 1px solid #666;
+  margin: 0.5em 0;
+}
 
-/* desktop version */
+.btn:hover {
+  background: #eaeaea;
+  color: #333;
+}
+
+#showcase {
+  min-height: 450px;
+  color: #fff;
+  text-align: center;
+}
+
+#showcase .background-image {
+  /* absolute because its going over or on top of the showcase div */
+  position: absolute;
+  background: #333 url(images/workspace.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* width is 100% of its container*/
+  width: 100%;
+  /* heigth needs to be the same as its parent....parent here is #showcase of 450px */
+  /* placing on top of the parent */
+  height: 450px;
+  /* the higher zindex the closer to you it is*/
+  z-index: -1;
+  /* this fades the background image a little so you can read the text thats over it */
+  opacity: 0.4;
+}
+
+#showcase h1 {
+  padding-top: 100px;
+  padding-bottom: 0;
+}
+
+#showcase .content-wrap {
+  padding: 0 1.5em;
+}
+
+/* section a */
+#section-a {
+  background: #eaeaea;
+  color: #333;
+  padding-bottom: 2em;
+}
+
+#section-a .content-wrap {
+  padding: 0 1.5em;
+}
+
+/* section b are images and list items */
+/* section-b */
+#section-b {
+  padding: 2em 1em 1em;
+}
+
+#section-b ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#section-b li {
+  margin-bottom: 1em;
+  background: white;
+  color: #333;
+}
+
+/* adds padding to the text boxes */
+/* dont add padding to section-b .card-content so i can reuse the cards if i need to */
+.card-content {
+  padding: 1.5em;
+}
+
+/* section c */
+/* first big box before the contact us */
+#section-c {
+  background: #fff;
+  color: #333;
+  padding: 2em;
+}
+
+/* section d /boxes*/
+
+#section-d .box {
+  padding: 2em;
+  color: #fff;
+}
+
+/* instead of creating a new class i can use a pseudo class by grabbing the first child of the element */
+#section-d .box:first-child {
+  background: #2690d4;
+}
+
+/* footer */
+#main-footer {
+  padding: 2em;
+  background: #000;
+  color: #fff;
+  text-align: center;
+}
+
+/* change the link color */
+#main-footer a {
+  color: #269094;
+  text-decoration: none;
+}
+
+/* media query for anything bigger than mobile phone */
+@media (min-width: 700px) {
+  /* add the grid class from html */
+  /* this will only change the elements with the class of grid */
+  .grid {
+    display: grid;
+    /* belows spans to 4 rows  dont use it*/
+    /* ///////grid-template-columns: repeat(4, 1fr); */
+    /* ///minmax(minimum, maximum) */
+    /* this changes the sizing of the middle 2 columns ...if 25em is smaller than auto than change 25 em*/
+
+    grid-template-columns: 1fr repeat(2, minmax(auto, 25em)) 1fr;
+  }
+  #section-a .content-text {
+    /* creates a second column */
+    columns: 2;
+    /* created larger gap */
+    column-gap: 2em;
+  }
+
+  #section-a .content-text p {
+    padding-top: 0;
+  }
+
+  /* span these across */
+  .content-wrap,
+  #section-b ul {
+    /*  make them span from top to bottom*/
+    grid-column: 2/4;
+  }
+  .box,
+  #main-footer div {
+    /* both divs and the footer are spanning 2 columns of the 4 columns  */
+    grid-column: span 2;
+  }
+
+  #section-b ul {
+    /* aligns the lis horizontally */
+    display: flex;
+    /* takes spaxe around the whole thing and puts it around each flex item */
+    justify-content: space-around;
+  }
+  /* set the width of lis */
+  #section-b li {
+    width: 31%;
+  }
+}
