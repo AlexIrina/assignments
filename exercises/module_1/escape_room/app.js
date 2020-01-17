@@ -1,14 +1,11 @@
 let readline = require('readline-sync');
 let name = readline.question(`What is your name? `);
 
+const message = `\n WELCOME ${name}!! \n \n Please choose one of the following:`;
 
+let options = [`Put your hand in the hole`, `Find the key`, `Open the door`];
+console.log(message);
 
-let options = [
-  `\n 1) Put your hand in the hole`,
-  `\n 2) Find the key`,
-  `\n 3) Open the door`
-];
+let index = readline.keyInSelect(options);
 
-let message = readline.question(
-  `\n WELCOME ${name}!! \n \n Choose one of the following: ${options}`
-);
+console.log(`Okay ${name}, you chose to:`, options[index]);
