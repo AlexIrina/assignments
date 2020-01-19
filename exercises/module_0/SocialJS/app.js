@@ -28,7 +28,7 @@ let ufcFighter = {
   strickingAccuracy: `49%`,
   record: {
     wins: {
-      KOs: 18,
+      KOs: 19,
       submissions: 1,
       decisions: 2
     },
@@ -73,7 +73,7 @@ let ufcFighter = {
   ],
   hisRivalries: [
     {
-      name: "Jose Aldo",
+      name: 'Jose Aldo',
       date: {
         year: 2015,
         month: `December`,
@@ -90,7 +90,7 @@ let ufcFighter = {
       ]
     },
     {
-      name: "Khabib Nurmagomedov",
+      name: 'Khabib Nurmagomedov',
       date: {
         year: 2018,
         month: `October`,
@@ -110,7 +110,7 @@ let ufcFighter = {
       ]
     },
     {
-      name: "Nate Diaz",
+      name: 'Nate Diaz',
       date: {
         year: 2016,
         month: `March`,
@@ -126,6 +126,26 @@ let ufcFighter = {
             seconds: 0
           },
           lossBy: `Submission`
+        }
+      ]
+    },
+    {
+      name: 'Donald Cerrone',
+      date: {
+        year: 2020,
+        month: `January`,
+        day: 18
+      },
+      isChampion: false,
+      age: 32,
+      win: [
+        {
+          round: 1,
+          time: {
+            minutes: 3,
+            seconds: 3
+          },
+          lossBy: `KO`
         }
       ]
     }
