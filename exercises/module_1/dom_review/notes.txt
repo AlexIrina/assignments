@@ -32,3 +32,4 @@ myImage.src = "newImage.jpg"
 ```
 
 Same goes for `href`, `id`, etc.
+
