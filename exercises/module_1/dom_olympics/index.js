@@ -67,7 +67,7 @@ span.appendChild(span2).style.color = 'black';
 
 // 1. grab the messages divs with the class of messages
 let messages = document.getElementsByClassName(`message`);
-console.log(`OUTPUT: messages `, messages);
+// console.log(`OUTPUT: messages `, messages);
 
 // create the CLEAN STATE of the messages
 
@@ -79,7 +79,7 @@ const cleanState = () => {
   messages[3].textContent = "you're great";
 };
 
-console.log(cleanState);
+// console.log(cleanState);
 
 //If the user clicks the clear button the text will change to clean state
 
@@ -89,9 +89,48 @@ let button = document
   .addEventListener('click', cleanState);
 
 // ///////////////// Silver
+// Themes!
 
-Themes!
+// Use the drop down to write some JavaScript that will notice when the drop down has changed and then changes the background colors of the messages accordingly.
 
-Use the drop down to write some JavaScript that will notice when the drop down has changed and then changes the background colors of the messages accordingly.
+// 1.select the theme button
+let themes = document.getElementById(`theme-drop-down`);
+// console.log(`OUTPUT: theme`, theme);
 
-Feel free to edit the HTML <select> tag to make it more usable or elaborate. Mo themes, mo fun.
+themes.addEventListener('change', function(e) {
+  console.log(e.target.value);
+  // write an if and else to change background color of the themes
+  if (e.target.value === 'theme-two') {
+    // change background-color pf the messages
+    let leftMsgs = document.getElementsByClassName(`left`);
+    for (let i = 0; i < leftMsgs.length; i++) {
+      leftMsgs[i].style.background = `red`;
+    }
+  }
+
+  if (e.target.value === 'theme-two') {
+    // change background-color pf the messages
+    let rightMsgs = document.getElementsByClassName(`right`);
+    for (let i = 0; i < rightMsgs.length; i++) {
+      rightMsgs[i].style.background = `black`;
+      rightMsgs[i].style.color = `white`;
+    }
+  }
+
+  if (e.target.value === 'theme-one') {
+    // change background-color pf the messages
+    let leftMsgs = document.getElementsByClassName(`left`);
+    for (let i = 0; i < leftMsgs.length; i++) {
+      leftMsgs[i].style.background = `brown`;
+      leftMsgs[i].style.color = `white`;
+    }
+  }
+
+  if (e.target.value === 'theme-one') {
+    // change background-color pf the messages
+    let rightMsgs = document.getElementsByClassName(`right`);
+    for (let i = 0; i < rightMsgs.length; i++) {
+      rightMsgs[i].style.background = `blue`;
+    }
+  }
+});
