@@ -5,6 +5,8 @@
 
 // Notice that your name needs to be a different color. Wrapping text in a span tag is a great way to do this.
 
+// //////////Preliminaries
+
 // 1.Need to create the header that ill be putting inside the header tag
 let h1 = document.createElement(`h1`);
 
@@ -55,4 +57,41 @@ h3.appendChild(span);
 // spans are inline elements so they will be on the same line
 span.appendChild(span2).style.color = 'black';
 
+// //////////////// Bronze
 
+// There's some sub par conversation going on in this messaging app. You have two tasks to help give it either a clean slate, or a positive start.
+
+// Write some custom JavaScript to automatically change the words of the conversation to something fun and good.
+
+// Write some JavaScript that will wait until the user clicks the "clear" button, and then clears out all conversation.
+
+// 1. grab the messages divs with the class of messages
+let messages = document.getElementsByClassName(`message`);
+console.log(`OUTPUT: messages `, messages);
+
+// create the CLEAN STATE of the messages
+
+// 1. select each message and change the text to something nice
+const cleanState = () => {
+  messages[0].textContent = "you're great";
+  messages[1].textContent = 'thanks!';
+  messages[2].textContent = "you're welcome";
+  messages[3].textContent = "you're great";
+};
+
+console.log(cleanState);
+
+//If the user clicks the clear button the text will change to clean state
+
+// 1 select the button and add the function to be activated on click event
+let button = document
+  .getElementById(`clear-button`)
+  .addEventListener('click', cleanState);
+
+// ///////////////// Silver
+
+Themes!
+
+Use the drop down to write some JavaScript that will notice when the drop down has changed and then changes the background colors of the messages accordingly.
+
+Feel free to edit the HTML <select> tag to make it more usable or elaborate. Mo themes, mo fun.
