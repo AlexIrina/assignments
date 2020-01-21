@@ -134,3 +134,32 @@ themes.addEventListener('change', function(e) {
     }
   }
 });
+
+// GOLD
+// Be able to add more messages using the form at the bottom.
+// For every new message submission, you'll need to create a div
+
+// selects form
+let form = document.message;
+console.log(`OUTPUT: form`, form);
+
+// add event listener to the form
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  // my div
+  let myDiv = document.createElement(`div`);
+
+  // get the value of the input box
+  let value = document.getElementById('input').value;
+
+  myDiv.textContent = value;
+
+  // add classList with message right
+
+  myDiv.classList.add(`message`, `right`);
+  console.log(myDiv);
+
+  let messages = document.getElementsByClassName('messages')[0];
+  messages.appendChild(myDiv);
+});
