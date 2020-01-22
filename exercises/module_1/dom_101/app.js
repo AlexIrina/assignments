@@ -22,7 +22,7 @@ function addItem(e) {
   // This gets the value of the input
   let newItem = document.getElementById('item').value;
 
-  // CRETE LI BEFORE THE DELETE BUTTON
+  // CREaTE LI BEFORE THE DELETE BUTTON
   // create a new LI element that will be added to the items list when submit is clicked
   let li = document.createElement('li');
   // create a class for that li. Same class as the other lis

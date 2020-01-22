@@ -41,7 +41,9 @@ function createSubItem(e) {
   //     subItem.textContent
   //   );
   const dropDown = createDropDown();
+  console.dir(dropDown);
   subItem.appendChild(dropDown);
+  dropDown.parentElement.style.backgroundColor = 'red';
   subItem.setAttribute('class', 'subItem');
   return subItem;
 }
