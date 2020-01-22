@@ -28,7 +28,7 @@ h1.className = `header`;
 // ////////step 2
 // Now i need to add the .name into the html under the h1 i just created
 
-// 1. create an h2 to be the subtitle that will be displayed below the h1 i just created
+// 1. create an h3 to be the subtitle that will be displayed below the h1 i just created
 
 let h3 = document.createElement(`h3`);
 
@@ -39,23 +39,24 @@ h3.className = 'header';
 header.appendChild(h3);
 
 //1 create the span that ill put inside the h3 tag
-let span = document.createElement(`span`);
+let span1 = document.createElement(`span`);
+// this span is for the second half of the text
 let span2 = document.createElement(`span`);
 
 // give span 2 text
 span2.innerText = ` wrote this with Javascript`;
 
 // 2 give the span a class
-span.className = `name`;
+span1.className = `name`;
 
 // add the text inside the span
-span.innerHTML = `Alex`;
+span1.innerHTML = `Alex`;
 
 // append the span to the 3
-h3.appendChild(span);
+h3.appendChild(span1);
 // append span 2 to the span
 // spans are inline elements so they will be on the same line
-span.appendChild(span2).style.color = 'black';
+span1.appendChild(span2).style.color = 'black';
 
 // //////////////// Bronze
 
@@ -73,10 +74,15 @@ let messages = document.getElementsByClassName(`message`);
 
 // 1. select each message and change the text to something nice
 const cleanState = () => {
-  messages[0].textContent = "you're great";
-  messages[1].textContent = 'thanks!';
-  messages[2].textContent = "you're welcome";
-  messages[3].textContent = "you're great";
+  let positiveMessages = [
+    "you're great",
+    'thanks!',
+    "you're welcome",
+    "you're great"
+  ];
+  for (let i = 0; i < messages.length; i++) {
+    messages[i].textContent = positiveMessages[i];
+  }
 };
 
 // console.log(cleanState);
@@ -84,9 +90,7 @@ const cleanState = () => {
 //If the user clicks the clear button the text will change to clean state
 
 // 1 select the button and add the function to be activated on click event
-let button = document
-  .getElementById(`clear-button`)
-  .addEventListener('click', cleanState);
+document.getElementById(`clear-button`).addEventListener('click', cleanState);
 
 // ///////////////// Silver
 // Themes!
@@ -94,46 +98,47 @@ let button = document
 // Use the drop down to write some JavaScript that will notice when the drop down has changed and then changes the background colors of the messages accordingly.
 
 // 1.select the theme button
-let themes = document.getElementById(`theme-drop-down`);
+// let themes = document.getElementById(`theme-drop-down`);
 // console.log(`OUTPUT: theme`, theme);
 
-themes.addEventListener('change', function(e) {
-  console.log(e.target.value);
-  // write an if and else to change background color of the themes
-  if (e.target.value === 'theme-two') {
-    // change background-color pf the messages
-    let leftMsgs = document.getElementsByClassName(`left`);
-    for (let i = 0; i < leftMsgs.length; i++) {
-      leftMsgs[i].style.background = `red`;
-    }
-  }
+document
+  .getElementById(`theme-drop-down`)
+  // i want to change this anonymous function to a named function
+  .addEventListener('change', function changeTheme(e) {
+    // console.log(e.target.value);
+    // write an if and else to change background color of the themes
 
-  if (e.target.value === 'theme-two') {
-    // change background-color pf the messages
-    let rightMsgs = document.getElementsByClassName(`right`);
-    for (let i = 0; i < rightMsgs.length; i++) {
-      rightMsgs[i].style.background = `black`;
-      rightMsgs[i].style.color = `white`;
+    if (e.target.value === 'theme-one') {
+      // change background-color of the messages
+      let leftMsgs = document.getElementsByClassName(`left`);
+      for (let i = 0; i < leftMsgs.length; i++) {
+        leftMsgs[i].style.background = `brown`;
+        leftMsgs[i].style.color = `white`;
+      }
+    } else if (e.target.value === 'theme-one') {
+      // change background-color of the messages
+      let rightMsgs = document.getElementsByClassName(`right`);
+      for (let i = 0; i < rightMsgs.length; i++) {
+        rightMsgs[i].style.background = `blue`;
+      }
     }
-  }
 
-  if (e.target.value === 'theme-one') {
-    // change background-color pf the messages
-    let leftMsgs = document.getElementsByClassName(`left`);
-    for (let i = 0; i < leftMsgs.length; i++) {
-      leftMsgs[i].style.background = `brown`;
-      leftMsgs[i].style.color = `white`;
+    // theme 2
+    if (e.target.value === 'theme-two') {
+      // change background-color of the messages
+      let leftMsgs = document.getElementsByClassName(`left`);
+      for (let i = 0; i < leftMsgs.length; i++) {
+        leftMsgs[i].style.background = `red`;
+      }
+    } else if (e.target.value === 'theme-two') {
+      // change background-color of the messages
+      let rightMsgs = document.getElementsByClassName(`right`);
+      for (let i = 0; i < rightMsgs.length; i++) {
+        rightMsgs[i].style.background = `black`;
+        rightMsgs[i].style.color = `white`;
+      }
     }
-  }
-
-  if (e.target.value === 'theme-one') {
-    // change background-color pf the messages
-    let rightMsgs = document.getElementsByClassName(`right`);
-    for (let i = 0; i < rightMsgs.length; i++) {
-      rightMsgs[i].style.background = `blue`;
-    }
-  }
-});
+  });
 
 // GOLD
 // Be able to add more messages using the form at the bottom.
@@ -158,7 +163,7 @@ form.addEventListener('submit', function(e) {
   // add classList with message right
 
   myDiv.classList.add(`message`, `right`);
-  console.log(myDiv);
+  // console.log(myDiv);
 
   let messages = document.getElementsByClassName('messages')[0];
   messages.appendChild(myDiv);

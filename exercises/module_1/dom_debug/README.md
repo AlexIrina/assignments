@@ -4,6 +4,6 @@ Each item can have it's background changed.
 
 It's super broken.
 
-Please clone it down and fix it. 
+Please clone it down and fix it.
 
-Sources tab and the console are your friend. 
+Sources tab and the console are your friend.
