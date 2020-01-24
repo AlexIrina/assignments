@@ -40,7 +40,7 @@
 // .splice(startingIndex, numberToRemove[, itemsToInsert])
 // Changes the contents of an array by removing existing elements and/or adding new elements.
 
-const myCars = ['toyota', 'honda', 'bentley', 'lamborghini'];
+// const myCars = ['toyota', 'honda', 'bentley', 'lamborghini'];
 
 // // remove 1 element from index 2
 // let removed = myCars.splice(2, 1);
@@ -123,3 +123,70 @@ const myCars = ['toyota', 'honda', 'bentley', 'lamborghini'];
 // let myNumbers = [1, 2, 3, 4, 5, 6];
 // let reversedNums = myNumbers.reverse();
 // console.log(reversedNums);
+
+const items = [
+  { name: 'bike', price: 100, currency: '$' },
+  { name: 'tv', price: 1000, currency: '$' },
+  { name: 'table', price: 50, currency: '$' },
+  { name: 'xbox', price: 300, currency: '$' },
+  { name: 'kitten', price: 40, currency: '$' },
+  { name: 'painting', price: 1000000, currency: '$' },
+  { name: 'skateboard', price: 250, currency: '$' },
+  { name: 'laptop', price: 1500, currency: '$' }
+];
+
+// // FILTER
+// // returns a filtered array
+// // have to create a new variable to store the new array
+// const filteredItems = items.filter(item => {
+//   return item.price > 10000;
+// });
+// console.log(`OUTPUT: filteredItems -> filteredItems`, filteredItems);
+
+// //FIND
+// // finds and returns a single item in the array
+// const findBike = items.find(item => {
+//   return item.name === 'bike';
+// });
+
+// // console.log(findBike);
+
+// // MAP
+// // returns a key or value from the array
+// const itemNames = items.map(item => {
+//   return item.name;
+// });
+// // console.log(`OUTPUT: itemNames`, itemNames);
+
+// // FOREACH
+// // method that is similar to a for loop. It loops over an array and returns the key or value
+// const showPrices = items.forEach(item => {
+//   // console.log(item.price);
+// });
+
+// //SOME
+// // returns true or false if anything in the array matches the checked condition
+// const isNotExpensive = items.some(item => {
+//   return item.price <= 50; //there are items less than 50
+// });
+
+// // EVERY
+// // return a boolean if all the items in the array match the condition
+// const checkPrice = items.every(item => {
+//   return item.currency === '$';
+// });
+// console.log(`OUTPUT: checkPrice`, checkPrice);
+
+// REDUCE
+
+// // create a variable that im going to store the total amount in
+// const total = items.reduce((currentTotal, items) => {
+//   return items.price + currentTotal;
+// }, 0);
+// console.log(total);
+
+// // INCLUDES
+// checks if the array includes that item
+// let nums = [1, 2, 3, 4, 5];
+// const inTheArray = nums.includes(2);
+// console.log(`OUTPUT: inTheArray`, inTheArray);
