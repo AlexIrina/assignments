@@ -124,16 +124,16 @@
 // let reversedNums = myNumbers.reverse();
 // console.log(reversedNums);
 
-const items = [
-  { name: 'bike', price: 100, currency: '$' },
-  { name: 'tv', price: 1000, currency: '$' },
-  { name: 'table', price: 50, currency: '$' },
-  { name: 'xbox', price: 300, currency: '$' },
-  { name: 'kitten', price: 40, currency: '$' },
-  { name: 'painting', price: 1000000, currency: '$' },
-  { name: 'skateboard', price: 250, currency: '$' },
-  { name: 'laptop', price: 1500, currency: '$' }
-];
+// const items = [
+//   { name: 'bike', price: 100, currency: '$' },
+//   { name: 'tv', price: 1000, currency: '$' },
+//   { name: 'table', price: 50, currency: '$' },
+//   { name: 'xbox', price: 300, currency: '$' },
+//   { name: 'kitten', price: 40, currency: '$' },
+//   { name: 'painting', price: 1000000, currency: '$' },
+//   { name: 'skateboard', price: 250, currency: '$' },
+//   { name: 'laptop', price: 1500, currency: '$' }
+// ];
 
 // // FILTER
 // // returns a filtered array
