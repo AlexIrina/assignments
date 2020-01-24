@@ -1,0 +1,15 @@
+
+this allows me to draw on the screen
+function draw() {
+  // // fill() fills the circle with rgb colors
+  // if (mouseIsPressed) {
+  //   // black
+  //   fill(0);
+  // } else {
+  //   // grey
+  //   fill(100);
+  // }
+  // // x, y, size
+  // // mouseX,mouseY --allows me to draw on the background
+  // circle(mouseX, mouseY, 80);
+}
