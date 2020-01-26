@@ -59,7 +59,7 @@ function addItem(e) {
 // DELETE
 // e is an event object
 function removeItem(e) {
-  console.log(e, 'delete is clicked');
+  // console.log(e, 'delete is clicked');
   if (confirm('Are you sure?')) {
     // getting the parent LI
     let li = e.target.parentElement;

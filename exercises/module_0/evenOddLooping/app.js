@@ -93,19 +93,19 @@
 
 // let count = 0;
 
-// let officeItems = [
-//   "stapler",
-//   "monitor",
-//   "computer",
-//   "desk",
-//   "lamp",
-//   "computer",
-//   "lamp",
-//   "stapler",
-//   "computer",
-//   "computer",
-//   "computer"
-// ];
+let officeItems = [
+  'stapler',
+  'monitor',
+  'computer',
+  'desk',
+  'lamp',
+  'computer',
+  'lamp',
+  'stapler',
+  'computer',
+  'computer',
+  'computer'
+];
 
 // for (let i = 0; i < officeItems.length; i++) {
 //   if (officeItems[i] === "computer") {
@@ -113,7 +113,12 @@
 //   }
 // }
 // console.log(`there are ${count} computers in the officeItems array`);
+// let copy = [];
+// officeItems.forEach(item => {
+//   if (item === 'computer') copy.push(item);
+// });
 
+// console.log(copy);
 // #2
 // Loop through the following array and log to the console "old enough" if they are 18 or older, and "not old enough" if thy aren't 18.
 
