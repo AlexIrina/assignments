@@ -51,7 +51,7 @@ class Particle {
     // no border
     noStroke();
     // fill in the circle
-    fill('rgba(56, 101, 144,0.9)');
+    fill('rgba(141, 191, 225,.9)');
     circle(this.pos.x, this.pos.y, this.size);
   }
   // detect edges
@@ -70,7 +70,7 @@ class Particle {
       const d = dist(this.pos.x, this.pos.y, particle.pos.x, particle.pos.y);
 
       if (d < 120) {
-        stroke('rgba(255,255,255,0.1)');
+        stroke('rgb(24, 19, 89)');
         line(this.pos.x, this.pos.y, particle.pos.x, particle.pos.y);
       }
     });
