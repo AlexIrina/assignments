@@ -1,33 +1,131 @@
-.container {
-  display: grid;
-}
-
-.container > div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2em;
-  color: #ffeead;
-}
-
 html,
 body {
-  background-color: #ffeead;
+  background-color: black;
+}
+
+.main-container {
+  display: grid;
+  /* how many columns && how many rows */
+  grid-template: repeat(3, 1fr) / repeat(6, 1fr);
+  background-color: grey;
+  grid-gap: 5px;
   margin: 10px;
 }
 
-.container > div:nth-child(1n) {
-  background-color: #96ceb4;
+.main-container > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1fr;
+  padding: 10px;
+  color: white;
 }
 
-.container > div:nth-child(3n) {
-  background-color: #88d8b0;
+.main-container > div:nth-child(1) {
+  background-color: aqua;
+  color: black;
 }
 
-.container > div:nth-child(2n) {
-  background-color: #ff6f69;
+.main-container > div:nth-child(2) {
+  background-color: red;
+}
+.main-container > div:nth-child(3) {
+  background-color: green;
+}
+.main-container > div:nth-child(4) {
+  background-color: purple;
+}
+.main-container > div:nth-child(5) {
+  background-color: white;
+  color: black;
+}
+.main-container > div:nth-child(6) {
+  background-color: orange;
 }
 
-.container > div:nth-child(4n) {
-  background-color: #ffcc5c;
+/* second section */
+
+.second-container {
+  height: 100%;
+  display: grid;
+  grid-gap: 3px;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  margin: 10px;
+  grid-template-areas:
+    'h h h h h h h h h h h h'
+    'm m c c c c c c c c c c'
+    'm m c c c c c c c c c c'
+    'm m c c c c c c c c c c'
+    'f f f f f f f f f f f f';
+  /* You can also use a . to make a column blank. */
+  /* You cannot put a . in between letters though. */
+}
+
+.second-container > .header,
+.menu,
+.content,
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1fr;
+  padding: 10px;
+  color: white;
+}
+
+.header {
+  background-color: red;
+  grid-area: h;
+}
+
+.menu {
+  background-color: orange;
+  grid-area: m;
+}
+
+.content {
+  background-color: blue;
+  grid-area: c;
+}
+
+.footer {
+  background-color: black;
+  color: white;
+  /* border-bottom: 1px dashed white; */
+  grid-area: f;
+  border: 1px dashed deeppink;
+}
+
+/* Third Container */
+.third-container {
+  display: grid;
+  grid-gap: 5px;
+  /* grid-template-columns: repeat(6, 1fr); */
+  /* What if you wanted all the containers to be 100px wide and responsive? */
+  /* minmax(100px,1fr) will get rid of the ugly white empty space on the right side */
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  /* grid-template-rows: repeat(3, 100px); */
+  /* grid-auto-rows: 100px this will make all boxes scare when the screen gets smaller */
+  grid-auto-rows: 100px;
+  background-color: orange;
+}
+
+.third-container > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  padding: 10px;
+  color: white;
+  margin: 1px;
+}
+
+.third-container > div:nth-child(odd) {
+  background-color: white;
+  color: black;
+}
+.third-container > div:nth-child(even) {
+  background-color: black;
+  color: white;
 }
