@@ -1,160 +1,184 @@
 const readline = require('readline-sync');
-const userName = readline.question(
-  `Welcome to the DBZ World Tournament. Brave hero, what is your name? `
-);
-console.log(
-  `Greetings ${userName}!! You have chosen to test your skills against the most powerful opponents from the Dragon Ball Z Universe!`
-);
 
-// players info
+/////////////////Global variables////////////////////
+// let gameOver = false
+
 let player = {
-  name: userName,
-  health: 100,
-  weapons: [`KAMEHAMEHA`, `GALICK GUN`, `SPIRIT BOMB`, `DEATH BEAM`],
-  acquiredItems: []
+  name: '',
+  health: 100
 };
 
-let enemies = [
-  {
-    health: 100,
-    name: `FRIEZA`,
-    specialItem: `Imprisonment Ball`
-  },
-  {
-    health: 100,
-    name: `CELL`,
-    specialItem: `Absorption`
-  },
-  {
-    health: 100,
-    name: `MAJIN BUU`,
-    specialItem: `Ki Blast`
-  },
-  {
-    health: 100,
-    name: `RADITZ`,
-    specialItem: `Chou Makouhou`
+let inventoryItems = [`KAMEHAMEHA`, `SPIRIT BOMB`, `DEATH BEAM `];
+
+//////////////////Games functions /////////////////////
+
+function characterCreation() {
+  const character = Math.floor(Math.random() * 2);
+  if (character === 0) {
+    return `Sayan`;
+  } else {
+    return `Super Sayan`;
   }
-];
-
-function pauseGame(milliseconds) {
-  let currentTime = new Date().getTime();
-  while (currentTime + milliseconds >= new Date().getTime()) {}
 }
 
-// gets random number
-function getRandomIntMinMax(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+function Enemy(name, health) {
+  this.name = name;
+  this.health = health;
 }
 
-// game starts below
-
-// while the player is alive run this while loop
-while (player.health > 0) {
-  // 3 main options for hero to decide on
-  // Choose to walk or check stats
-  // if walk, 50% of contact with enemy (Start fight sequence)
-  //Start a fight loop, continues until you or the enemy dies
-  //Player chooses to fight, or run
-  //If fight, then chance of hit, damages enemy
-  //Immediately, enemy has chance to hit, damages you
-  // if enemy dies, then restart the while loop
-
-  let playerOptions = ['walk', `check inventory`];
-  const index = readline.keyInSelect(
-    playerOptions,
-    'You must choose one of the following? '
-  );
-  console.log(`You have chosen to ${playerOptions[index]} `);
-
-  // switch
-  switch (playerOptions[index]) {
-    case 'walk':
-      walk();
-      break;
-    case 'fight':
-      enemyAttack(enemies);
-      break;
-    case 'fly away':
-      runAway();
-      break;
-    default:
-      process.exit(0);
+function enemyCreation() {
+  let randomNum = Math.floor(Math.random() * 3);
+  if (randomNum === 0) {
+    return new Enemy('Frieza', 100);
+  } else if (randomNum === 1) {
+    return new Enemy('Cell', 100);
+  } else {
+    return new Enemy('Vageta', 100);
   }
 }
 
 function walk() {
-  let attackOrNot = Math.random() * 10;
-  if (Math.ceil(attackOrNot) * 10 <= (1 / 4) * 100) {
-    enemyAttack();
+  const userChoice = readline.keyInSelect(
+    ['walk', 'inventory'],
+    `What would you like to do? `
+  );
+  if (userChoice === 0) {
+    const randomNum = Math.floor(Math.random() * 3);
+    if (randomNum === 0) {
+      fight();
+    } else {
+      //tell user they didn't run into an opponent
+      //****THIS PART IS IMPORTANT. DO NOT CALL WALK()****
+      console.log(
+        `Continue walking ${player.name}. The enemies must be close by.`
+      );
+    }
+  } else if (userChoice === 1) {
+    //tell user what's in their inventory, and their health, and then tell them to push w to walk
+    inventory();
+    console.log(`
+        Here are some special moves you can use against your enemies: ${inventoryItems}.
+        Your health is: ${player.health}/100.
+        Press walk to continue saving the planet`);
   } else {
     console.log(
-      `You must be very lucky. The enemy is not interested in fighting you yet.`
+      `${currentEnemy} is causing havoc on Earth. You musk keep fighting him!`
     );
   }
 }
 
-function enemyAttack() {
-  let enemy = enemies[parseInt(getRandomIntMinMax(1, 4))];
-
-  console.log(`${enemy['name']} is attacking you.`);
-  pauseGame(3000);
-  console.log(`${userName} Do you want to run away or fight back?`);
-
-  // major changes
-
-  let fightOrFlight = ['fight', `fly away`, `check inventory`];
-  const index = readline.keyInSelect(
-    fightOrFlight,
-    'You must choose one of the following? '
-  );
-  console.log(`You have chosen to ${fightOrFlight[index]} `);
-
-  while (enemy.health > 0) {
-    console.log('while');
-    let damageDealt = getRandomIntMinMax(1, 25);
-    player.health -= damageDealt;
-    console.log(`Your health is ${player.health}`);
-
-    if (player.health > 1) {
-      console.log(`you have survived!`);
-      playerAttacks(enemy);
-    }
-    if (player.health < 1) {
-      console.log('You died. GAME OVER!!');
-      process.exit(0);
-    }
-  }
-}
-
-function playerAttacks(enemy) {
-  console.log(`Now its your turn to attack back!!`);
-  let weapon = player.weapons[getRandomIntMinMax(1, 4)];
-  console.log('your weapon is...', weapon);
-
-  let damage = getRandomIntMinMax(1, 100);
-  enemy['health'] -= damage;
-
-  console.log(`Enemies health is ${enemy['health']}`);
-}
-
-function runAway() {
-  console.log(`You have chosen to fly away, will you escape??`);
-  let escapeOrNot = Math.random() * 10;
-  if (Math.ceil(escapeOrNot) * 10 <= (0 / 4) * 100) {
-    console.log('you have escaped');
-    player.health += parseInt(getRandomIntMinMax(20, 40));
-    console.log('your health is ', player.health);
+function run() {
+  const escapeChance = Math.floor(Math.random() * 2);
+  if (escapeChance === 0) {
+    //tell user that they successfully got away and can continue walking
+    //****THIS PART IS IMPORTANT. DO NOT CALL WALK()****
+    console.log(`Great!! You've successfully escaped. Continue walking.`);
   } else {
-    console.log(`You have not escaped. You must battle the enemy opponent.`);
-    enemyAttack();
+    //tell user they were not able to run
+    //****THIS PART IS IMPORTANT. DO NOT CALL fight() You could, however, call one of the attack functions****
+    console.log(`The opponent didn't let you escape. You must fight back!`);
+    enemyAttack(player);
   }
 }
 
-// create a choice for the player to choose another option if he survives the attack
-// my hero needs to damage the enemy until the enemy dies
-// special item needs to be added to the inventory when the enemy dies
-// add a chance that the user will escape when he chooses to escape
-// When user clicks 0 to cancel it should add a message that tells the user that you cannot escape this Tournament. And gives the user the options again
+function fight() {
+  let currentEnemy = enemyCreation();
+  // console.log(currentEnemy) // shows enemy object here
+  console.log(`${currentEnemy.name} is challenging you to a fight!!!!`);
+  const defenseChoice = readline.keyInSelect(
+    ['fight the enemy', 'run from the fight'],
+    `Are you up for the challenge or do you choose to run away?`
+  );
+  if (defenseChoice === 1) {
+    run();
+  } else {
+    encounterLoop(currentEnemy);
+  }
+}
+
+function encounterLoop(currentEnemy) {
+  while (currentEnemy.health > 0 && player.health > 0) {
+    enemyAttack(player);
+    let continueFightChoice = readline.keyInSelect(
+      ['keep fighting', 'run away'],
+      `What would you like to do??`
+    );
+    if (continueFightChoice === 0) {
+      console.log(
+        `Great!! You decided to keep fighting. The people of Earth are cheering your name. Good luck ${player.name} !!
+
+        People on Earth: ${player.name}, ${player.name}, ${player.name}!!
+        `
+      );
+      attackEnemy(currentEnemy);
+    } else {
+      console.log(`Run for your life ${player.name}`);
+      run();
+    }
+  }
+}
+// delete current enemy
+function enemyAttack(player) {
+  function randomDeduction(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (20 - 10 + 1)) + 10; //The maximum is inclusive and the minimum is inclusive
+  }
+  player.health = player.health - randomDeduction();
+  console.log(`The enemy is attacking you, `, player);
+  if (player.health <= 0) {
+    console.log(
+      `You fought well. But you didn't have what it takes to save the planet!`
+    );
+    die();
+  }
+}
+
+function attackEnemy(currentEnemy) {
+  function randomDeduction(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (100 - 98 + 1)) + 98; //The maximum is inclusive and the minimum is inclusive
+  }
+  currentEnemy.health = currentEnemy.health - randomDeduction();
+  console.log(
+    `${player.name}, You are doing great! ${currentEnemy.name} is taking damage.`,
+    currentEnemy
+  );
+  if (currentEnemy.health <= 0) {
+    enemyDie();
+  }
+}
+
+function die() {
+  console.log('Frieza, Cell, and Vageta took over the planet. GAME OVER!!!!!');
+  player.health = 0;
+}
+
+function enemyDie() {
+  inventoryItems.push(`Super Sayan 2`);
+  player.health = player.health + 10;
+  console.log(`
+    The enemy is dead and you are victorious. You've earned a new special ability. You can see it in your inventory. 
+    Here is your inventory list: ${inventoryItems}
+    You received a senzu bean from Gohan. Your health is restored 10 points.`);
+}
+
+function inventory() {
+  return `${inventoryItems}`;
+}
+
+console.log(
+  'Welcome to Earth! Earth is currently under attack by enemies from different parts of the universe. You must protect the people!'
+);
+
+player.name = readline.question(`What name should we call you by? `);
+
+console.log(
+  `Welcome ${
+    player.name
+  }! You are a ${characterCreation()}. Select walk to keep saving Earth. `
+);
+while (player.health > 0) {
+  walk();
+}
