@@ -42,6 +42,15 @@ function pauseGame(milliseconds) {
   while (currentTime + milliseconds >= new Date().getTime()) {}
 }
 
+// gets random number
+function getRandomIntMinMax(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+}
+
+// game starts below
+
 // while the player is alive run this while loop
 while (player.health > 0) {
   // 3 main options for hero to decide on
@@ -75,23 +84,6 @@ while (player.health > 0) {
       process.exit(0);
   }
 }
-// random number
-function getRandomIntMinMax(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
-}
-
-function explore() {
-  console.log(`Enjoy your exploration! But don't eat the forbidden mushrooms.`);
-
-  // if(player eats the magic mushrooms ){
-  //   player dies
-  // }
-  // added pause
-  pauseGame(1000);
-  gameProgress += 0;
-}
 
 function walk() {
   let attackOrNot = Math.random() * 10;
@@ -99,9 +91,8 @@ function walk() {
     enemyAttack();
   } else {
     console.log(
-      `You must be very lucky. The enemy is not interested in fighting you`
+      `You must be very lucky. The enemy is not interested in fighting you yet.`
     );
-    gameProgress += 10;
   }
 }
 
@@ -109,8 +100,17 @@ function enemyAttack() {
   let enemy = enemies[parseInt(getRandomIntMinMax(1, 4))];
 
   console.log(`${enemy['name']} is attacking you.`);
-  pauseGame(4000);
-  console.log(`${userName} Do you want to run away?`);
+  pauseGame(3000);
+  console.log(`${userName} Do you want to run away or fight back?`);
+
+  // major changes
+
+  let fightOrFlight = ['fight', `fly away`, `check inventory`];
+  const index = readline.keyInSelect(
+    fightOrFlight,
+    'You must choose one of the following? '
+  );
+  console.log(`You have chosen to ${fightOrFlight[index]} `);
 
   while (enemy.health > 0) {
     console.log('while');
@@ -131,7 +131,7 @@ function enemyAttack() {
 
 function playerAttacks(enemy) {
   console.log(`Now its your turn to attack back!!`);
-  let weapon = playerWeapons[getRandomIntMinMax(1, 4)];
+  let weapon = player.weapons[getRandomIntMinMax(1, 4)];
   console.log('your weapon is...', weapon);
 
   let damage = getRandomIntMinMax(1, 100);
