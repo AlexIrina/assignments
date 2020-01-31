@@ -120,13 +120,6 @@ Loops allow programmers run the same sets of code many time until the condition 
  * for (let i = 15; i <= 50; i++) {
   console.log(i);
 }
- * 
- * 4. Write a loop that logs the numbers 0 to 10 (inclusive) to the console, but if the number is 7, also log "It's your lucky day!"
- */
-
-// for (...) {
-//   ...
-// }
 
 // // 4. Write a loop that logs the numbers 0 to 10 (inclusive) to the console, but if the number is 7, also log "It's your lucky day!"
 // // */

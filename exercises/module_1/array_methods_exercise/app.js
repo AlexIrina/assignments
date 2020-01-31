@@ -1,4 +1,4 @@
-let fruit = ['banana', 'apple', 'orange', 'watermelon'];
+let fruits = ['banana', 'apple', 'orange', 'watermelon'];
 let vegetables = ['carrot', 'tomato', 'pepper', 'lettuce'];
 
 // // Remove the last item from the vegetable array.

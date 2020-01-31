@@ -87,7 +87,7 @@ function fight() {
   console.log(`${currentEnemy.name} is challenging you to a fight!!!!`);
   const defenseChoice = readline.keyInSelect(
     ['fight the enemy', 'run from the fight'],
-    `Are you up for the challenge or do you choose to run away?`
+    `Do you want to keep fighting or do you choose to run away?`
   );
   if (defenseChoice === 1) {
     run();
@@ -112,7 +112,7 @@ function encounterLoop(currentEnemy) {
       );
       attackEnemy(currentEnemy);
     } else {
-      console.log(`Run for your life ${player.name}`);
+      console.log(`Run for your life ${player.name}!!!`);
       run();
     }
   }

@@ -1,7 +1,7 @@
-// // .push(item[s])
-// // Adds one or more elements to the end of an array and returns the new length of the array.
+// .push(item[s])
+// Adds one or more elements to the end of an array and returns the new length of the array.
 
-// // Every line builds on the previous lines of code.
+// Every line builds on the previous lines of code.
 
 // var myArray = [];
 
@@ -18,8 +18,8 @@
 // // .pop()
 // // Removes the last element from an array and returns that element. This method changes the length of the array.
 
-// var myArray = ['Mario', 'Luigi', 'Peach', 'Toad'];
-// var poppedItem = myArray.pop();
+// let myArray = ['Mario', 'Luigi', 'Peach', 'Toad'];
+// let poppedItem = myArray.pop();
 // console.log(poppedItem); // "Toad"
 // console.log(myArray); // ["Mario", "Luigi", "Peach"]
 
@@ -37,29 +37,35 @@
 // let addedVeggie = veggies.unshift('tomatoes', 'kale', 'lettuce');
 // console.log(veggies); // [ 'tomatoes', 'kale', 'lettuce', 'pickles' ]
 
-// .splice(startingIndex, numberToRemove[, itemsToInsert])
-// Changes the contents of an array by removing existing elements and/or adding new elements.
+// // // .splice(startingIndex, numberToRemove[, itemsToInsert])
+// // // Changes the contents of an array by removing existing elements and/or adding new elements.
 
-// const myCars = ['toyota', 'honda', 'bentley', 'lamborghini'];
+const myCars = ['toyota', 'honda', 'bentley', 'lamborghini'];
+// let splicedArr = myCars.splice(1);
+
+// console.log(myCars);
 
 // // remove 1 element from index 2
 // let removed = myCars.splice(2, 1);
+// // let removed = myCars.splice(2); //this will remove everything after index 2
 // // myCars is ['toyota', 'honda', 'bentley', 'lamborghini']
 // // removed is 'bentley'
-// // console.log(removed);
+// console.log(removed);
 
 // // remove 0 elements from index 2, and insert 'jaguar'
-// let removed2 = myCars.splice(2, 0, 'jaguar');
-// // myCars is ['toyota', 'honda', 'bentley', 'lamborghini']
+// let removed2 = myCars.splice(2, 0, 'jaquar');
+// //myCars is ['toyota', 'honda', 'bentley', 'lamborghini']
 // console.log(removed2); //[]
-
+// console.log(myCars);
 // // remove 1 element from index 2, and insert 'jaguar'
 // let removed3 = myCars.splice(2, 1, 'jaguar');
 // // myCars is ['toyota', 'honda', 'bentley', 'lamborghini']
 // // removed3 is ['bentley']
 // console.log(removed3);
+// console.log(myCars);
 
 // // removes 2 elements starting from index 0, and inserts 'nascar', 'sedan' and 'van'.
+
 // let removed4 = myCars.splice(0, 2, 'nascar', 'sedan', 'van');
 // // myCars is ['toyota', 'honda', 'bentley', 'lamborghini']
 // // removed is [ 'toyota', 'honda']
@@ -72,7 +78,8 @@
 // // The second parameter is optional. If omitted, endIndex defaults through the end of the array. If provided, it specifies the non-inclusive ending point of the slice. (The item at the index of endIndex will NOT be included in the new array).
 
 // const fruits = ['Banana', 'Orange', 'Lemon', 'Apple', 'Mango'];
-// // remove from index 1 and stop at index 3
+// // // remove from index 1 and stop at index 3
+
 // const citrus = fruits.slice(1, 3); // ["Orange", "Lemon"]
 // console.log(citrus);
 // const citrusToEnd = fruits.slice(1); // ["Orange", "Lemon", "Apple", "Mango"]
@@ -98,6 +105,7 @@
 // // Joins all elements of an array into a string and returns that string, separated by separator (or commas if separator is omitted).
 
 // const elements = ['Earth', 'Fire', 'Wind', 'Water'];
+
 // (test = () => {
 //   console.log(elements.join(' ')); //'Earth', 'Fire', 'Wind', 'Water'
 //   console.log(elements.join('-')); // 'Earth-Fire-Wind-Water'
@@ -106,7 +114,6 @@
 
 // .concat(array[s])
 // Used to merge two or more arrays. This method does not change the existing arrays, but instead returns a new array.
-
 // const names = ['alex', 'billy', 'tommy'];
 // const moreNames = ['tom', 'bob', 'sandra'];
 // let allNames = names.concat(moreNames);
@@ -135,6 +142,12 @@
 //   { name: 'laptop', price: 1500, currency: '$' }
 // ];
 
+// const filteredItems = items.filter(item => {
+//   return item.price < 100;
+// });
+
+// console.log(filteredItems);
+
 // // FILTER
 // // returns a filtered array
 // // have to create a new variable to store the new array
@@ -150,6 +163,17 @@
 // });
 
 // // console.log(findBike);
+
+// const items = [
+//   { name: 'bike', price: 100, currency: '$' },
+//   { name: 'tv', price: 1000, currency: '$' },
+//   { name: 'table', price: 50, currency: '$' },
+//   { name: 'xbox', price: 300, currency: '$' },
+//   { name: 'kitten', price: 40, currency: '$' },
+//   { name: 'painting', price: 1000000, currency: '$' },
+//   { name: 'skateboard', price: 250, currency: '$' },
+//   { name: 'laptop', price: 1500, currency: '$' }
+// ];
 
 // // MAP
 // // returns a key or value from the array

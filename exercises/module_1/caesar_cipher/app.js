@@ -1,19 +1,28 @@
-const readline = require('readline-sync');
-
-const input = readline
-  .question('What phrase would you like to encrypt? ')
+const readLine = require('readline-sync');
+const input = readLine
+  .question(`What phrase do you want to encrypt? `)
   .toLowerCase();
-
 const shift = parseInt(
-  readline.question('How many letters would you like to shift? ')
+  readLine.question(`How many letters would you like to shift? `)
 );
 
-// For this exercise, you will be implementing a Caesar Cipher using Javascript. Your program will receive two inputs:
+function cypher(phrase, offset) {
+  let encryption = '';
+  const alphabet = 'abcdefghijklmnopqrstuvwxyz';
 
-// The text to be encoded
+  for (let i = 0; i < phrase.length; i++) {
+    const index = alphabet.indexOf(phrase[i]);
 
-// The number positions to shift each letter (to the right)
+    if (index !== -1) {
+      // console.log(offset);
+      let newIndex = index + offset;
 
-// You only have to shift letters that are part of the 26-letter alphabet. Any other characters (such as spaces) should be printed as they were received. The shift value will always be on the interval [0, 26].
+      const newCharacter = alphabet[newIndex];
+      // console.log(newCharacter);
+      encryption += newCharacter;
+    }
+  }
+  return encryption;
+}
 
-// keyIn()
+console.log(cypher(input, shift));
