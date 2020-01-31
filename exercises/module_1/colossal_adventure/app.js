@@ -1,61 +1,80 @@
 const readline = require('readline-sync');
+const userName = readline.question(
+  `Welcome to the DBZ World Tournament. Brave hero, what is your name? `
+);
+console.log(
+  `Greetings ${userName}!! You have chosen to test your skills against the most powerful opponents from the Dragon Ball Z Universe!`
+);
 
-console.log(`Hello fellow traveler! Welcome to the Colossal Adventure!`);
-const userName = readline.question(`What is your name? `);
-console.log(`Nice to meet you ${userName}.`);
-
-// player
+// players info
 let player = {
   name: userName,
-  health: 100
+  health: 100,
+  weapons: [`KAMEHAMEHA`, `GALICK GUN`, `SPIRIT BOMB`, `DEATH BEAM`],
+  acquiredItems: []
 };
 
-function pause(milliseconds) {
-  var currentTime = new Date().getTime();
-
-  while (currentTime + milliseconds >= new Date().getTime()) {}
-}
-
-// enemies
 let enemies = [
   {
     health: 100,
-    name: `FRIEZA`
+    name: `FRIEZA`,
+    specialItem: `Imprisonment Ball`
   },
   {
     health: 100,
-    name: `CELL`
+    name: `CELL`,
+    specialItem: `Absorption`
   },
   {
     health: 100,
-    name: `MAJIN BUU`
+    name: `MAJIN BUU`,
+    specialItem: `Ki Blast`
   },
   {
     health: 100,
-    name: `RADITZ`
+    name: `RADITZ`,
+    specialItem: `Chou Makouhou`
   }
 ];
-// weapons
-let weapons = [`KAMEHAMEHA`, `GALICK GUN`, `SPIRIT BOMB`, `DEATH BEAM`];
-let progress = 0;
 
-let playerOptions = ['walk', 'fight', 'run away'],
-  index = readline.keyInSelect(playerOptions, 'Which option do you choose');
-
-console.log(`Ok, you chose to ${playerOptions[index]} `);
-
-switch (playerOptions[index]) {
-  case 'walk':
-    walk();
-  case 'fight':
-    console.log('you have chosen to fight');
-    enemyAttack(enemies);
-  case 'run away':
-    runAway();
-  default:
-    process.exit(0);
+function pauseGame(milliseconds) {
+  let currentTime = new Date().getTime();
+  while (currentTime + milliseconds >= new Date().getTime()) {}
 }
 
+// while the player is alive run this while loop
+while (player.health > 0) {
+  // 3 main options for hero to decide on
+  // Choose to walk or check stats
+  // if walk, 50% of contact with enemy (Start fight sequence)
+  //Start a fight loop, continues until you or the enemy dies
+  //Player chooses to fight, or run
+  //If fight, then chance of hit, damages enemy
+  //Immediately, enemy has chance to hit, damages you
+  // if enemy dies, then restart the while loop
+
+  let playerOptions = ['walk', `check inventory`];
+  const index = readline.keyInSelect(
+    playerOptions,
+    'You must choose one of the following? '
+  );
+  console.log(`You have chosen to ${playerOptions[index]} `);
+
+  // switch
+  switch (playerOptions[index]) {
+    case 'walk':
+      walk();
+      break;
+    case 'fight':
+      enemyAttack(enemies);
+      break;
+    case 'fly away':
+      runAway();
+      break;
+    default:
+      process.exit(0);
+  }
+}
 // random number
 function getRandomIntMinMax(min, max) {
   min = Math.ceil(min);
@@ -63,68 +82,79 @@ function getRandomIntMinMax(min, max) {
   return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
 }
 
+function explore() {
+  console.log(`Enjoy your exploration! But don't eat the forbidden mushrooms.`);
+
+  // if(player eats the magic mushrooms ){
+  //   player dies
+  // }
+  // added pause
+  pauseGame(1000);
+  gameProgress += 0;
+}
+
 function walk() {
   let attackOrNot = Math.random() * 10;
   if (Math.ceil(attackOrNot) * 10 <= (1 / 4) * 100) {
     enemyAttack();
   } else {
-    console.log('you have not been attacked, for now');
-    progress += 20;
+    console.log(
+      `You must be very lucky. The enemy is not interested in fighting you`
+    );
+    gameProgress += 10;
   }
 }
 
 function enemyAttack() {
   let enemy = enemies[parseInt(getRandomIntMinMax(1, 4))];
 
-  console.log(`The ${enemy['name']} is attacking you.`);
+  console.log(`${enemy['name']} is attacking you.`);
+  pauseGame(4000);
+  console.log(`${userName} Do you want to run away?`);
 
-  pause(4000);
+  while (enemy.health > 0) {
+    console.log('while');
+    let damageDealt = getRandomIntMinMax(1, 25);
+    player.health -= damageDealt;
+    console.log(`Your health is ${player.health}`);
 
-  let damageDealt = getRandomIntMinMax(1, 100);
-  player.health -= damageDealt;
-  console.log('Player health is ', player.health);
-
-  if (player.health > 1) {
-    console.log('you have survived');
-
-    return playerAttacks(enemy);
-  }
-  if (player.health < 1) {
-    console.log('you have died');
-    process.exit(0);
+    if (player.health > 1) {
+      console.log(`you have survived!`);
+      playerAttacks(enemy);
+    }
+    if (player.health < 1) {
+      console.log('You died. GAME OVER!!');
+      process.exit(0);
+    }
   }
 }
 
 function playerAttacks(enemy) {
-  console.log('now its your turn to attack back');
-  let weapon = weapons[parseInt(getRandomIntMinMax(1, 4))];
-  console.log('your weapon is', weapon);
+  console.log(`Now its your turn to attack back!!`);
+  let weapon = playerWeapons[getRandomIntMinMax(1, 4)];
+  console.log('your weapon is...', weapon);
 
   let damage = getRandomIntMinMax(1, 100);
   enemy['health'] -= damage;
 
-  console.log('health', enemy['health']);
+  console.log(`Enemies health is ${enemy['health']}`);
 }
 
 function runAway() {
-  console.log('you have chosen to run away, will you escape');
+  console.log(`You have chosen to fly away, will you escape??`);
   let escapeOrNot = Math.random() * 10;
   if (Math.ceil(escapeOrNot) * 10 <= (0 / 4) * 100) {
     console.log('you have escaped');
     player.health += parseInt(getRandomIntMinMax(20, 40));
     console.log('your health is ', player.health);
   } else {
-    console.log('you have not escaped, now you must fight the wild animal');
+    console.log(`You have not escaped. You must battle the enemy opponent.`);
     enemyAttack();
   }
 }
 
-// // can be changed if enemy appears
-// let wildEnemy = false;
-
-// // walking function
-// function walk() {
-//   // Every time the player walks, a random algorithm will be run that determines if a wild enemy has appeared (A 1/3 or 1/4 chance of being attacked)
-//   // need to write if statements here
-// }
-// // get random number from 0 to 3
+// create a choice for the player to choose another option if he survives the attack
+// my hero needs to damage the enemy until the enemy dies
+// special item needs to be added to the inventory when the enemy dies
+// add a chance that the user will escape when he chooses to escape
+// When user clicks 0 to cancel it should add a message that tells the user that you cannot escape this Tournament. And gives the user the options again
