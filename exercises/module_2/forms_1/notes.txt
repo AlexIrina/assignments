@@ -1,0 +1,1 @@
+forms are used for submitting user information or signing up for a newsletter

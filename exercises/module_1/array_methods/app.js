@@ -40,7 +40,7 @@
 // // // .splice(startingIndex, numberToRemove[, itemsToInsert])
 // // // Changes the contents of an array by removing existing elements and/or adding new elements.
 
-const myCars = ['toyota', 'honda', 'bentley', 'lamborghini'];
+// const myCars = ['toyota', 'honda', 'bentley', 'lamborghini'];
 // let splicedArr = myCars.splice(1);
 
 // console.log(myCars);
