@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-weight: normal;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background: linear-gradient(to right, #00aaff, #00ff6c);
+}
+
+.calculator {
+  display: grid;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  min-height: 100vh;
+  grid-template-rows: minmax(120px, auto) repeat(3, 100px);
+}
+
+.calculator > button {
+  cursor: pointer;
+  font-size: 2rem;
+  border: 1px solid red;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.calculator #add {
+  background-color: rgb(189, 23, 180);
+  color: white;
+}
+
+.calculator #subtract {
+  background-color: rgb(10, 224, 46);
+  color: white;
+}
+
+.calculator #multiply {
+  background-color: rgb(68, 43, 161);
+  color: white;
+}
