@@ -2,5 +2,3 @@ Please enter the operation to perform: add, sub, mul, div (then store the operat
 Based on the operation entered by the user, you will call one of your 4 functions to perform the correct operation
 You will then print to the console: The result is: [the result]
 
-// Based on the operation entered by the user, you will call one of your 4 functions to perform the correct operation
-// You will then print to the console: The result is: [the result]

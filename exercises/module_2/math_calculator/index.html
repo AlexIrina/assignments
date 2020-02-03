@@ -8,32 +8,58 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="calculator">
-      <div id="add">
-        <h1>Add</h1>
-        <form action="">
-          <input type="text" name="" id="" />
-          <input type="text" name="" id="" />
-          <button>Submit</button>
-        </form>
+    <form name="calculator" class="calculator">
+      <div class="add">
+        <h1 id="addResult">Add</h1>
+        <input
+          type="number"
+          placeholder="first number"
+          name="firstNumber"
+          id="firstNumberPlus"
+        />
+        <input
+          type="number"
+          placeholder="second number"
+          name="secondNumber"
+          id="secondNumberPlus"
+        />
+        <input type="button" onClick="add()" value="AddMe" />
       </div>
-      <div id="subtract">
-        <h1>Subtract</h1>
-        <form action="">
-          <input type="text" name="" id="" />
-          <input type="text" name="" id="" />
-          <button>Submit</button>
-        </form>
+
+      <div class="subtract">
+        <h1 id="subResult">Subtract</h1>
+        <input
+          type="number"
+          placeholder="first number"
+          name="firstNumber"
+          id="firstNumberSub"
+        />
+        <input
+          type="number"
+          placeholder="second number"
+          name="secondNumber"
+          id="secondNumberSub"
+        />
+        <input type="button" onClick="subtract()" value="Subtracts" />
       </div>
-      <div id="multiply">
-        <h1>Multiply</h1>
-        <form action="">
-          <input type="text" name="" id="" />
-          <input type="text" name="" id="" />
-          <button>Submit</button>
-        </form>
+
+      <div class="multiply">
+        <h1 id="multiResult">Multiply</h1>
+        <input
+          type="number"
+          placeholder="first number"
+          name="firstNumber"
+          id="firstNumberMulti"
+        />
+        <input
+          type="number"
+          placeholder="second number"
+          name="secondNumber"
+          id="secondNumberMulti"
+        />
+        <input type="button" onClick="multiply()" value="Multiply" />
       </div>
-    </div>
+    </form>
     <script src="app.js"></script>
   </body>
 </html>

@@ -16,7 +16,6 @@ body {
   justify-content: center;
   align-content: center;
   min-height: 100vh;
-  grid-template-rows: minmax(120px, auto) repeat(3, 100px);
 }
 
 .calculator > button {
@@ -27,17 +26,20 @@ body {
   background-color: rgba(255, 255, 255, 0.75);
 }
 
-.calculator #add {
+.add {
+  margin: 20px;
   background-color: rgb(189, 23, 180);
   color: white;
 }
 
-.calculator #subtract {
+.subtract {
+  margin: 20px;
   background-color: rgb(10, 224, 46);
   color: white;
 }
 
-.calculator #multiply {
+.multiply {
+  margin: 20px;
   background-color: rgb(68, 43, 161);
   color: white;
 }
