@@ -21,29 +21,6 @@ const divide = (num1, num2) => {
   console.log(`The answer is: ${num1 / num2}`);
 };
 
-// Your script must have:
-// On the console the prompt will print to the user:
-// Please enter your first number (store that number)
-
-// const isNumber = (num1, num2) => {
-//   if (isNaN(num1)) {
-//     console.log(`${num1} is not a number, Please enter a number `);
-//     return false;
-//   } else {
-//     console.log(`${num1}`);
-//   }
-
-//   if (isNaN(num2)) {
-//     console.log(`${num2} is not a number, Please enter a number `);
-//     return false;
-//   } else {
-//     console.log(`${num2}`);
-//   }
-//   return true;
-// };
-
-// let areValidNumb;
-
 // while (!areValidNumb) {
 let num1 = Number(readlineSync.question(`Please enter your first number\n`));
 
@@ -60,7 +37,6 @@ const operation = String(
 
 // Please enter the operation to perform: add, sub, mul, div (then store the operation)
 const operationToPerform = () => {
-  // if user wants to multiply ?
   if (operation === `add`) {
     return `The result is:  ${add(num1, num2)}`;
   } else if (operation === `subtract`) {
@@ -76,13 +52,3 @@ const operationToPerform = () => {
   }
 };
 operationToPerform();
-
-function add(num1, num2) {
-  return num1 + num2;
-}
-
-const add = num1 => num1 + num2;
-
-
-console.log(add(2, 2));
-;
