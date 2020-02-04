@@ -27,9 +27,6 @@ let num1 = Number(readlineSync.question(`Please enter your first number\n`));
 // Please enter your second number (store that number)
 let num2 = Number(readlineSync.question(`Please enter your second number\n`));
 
-// areValidNumb = isNumber(num1, num2);
-// }
-
 //message that asks the users choice of operation to perform
 const operation = String(
   readlineSync.question(`Please enter your operation!\n`)
