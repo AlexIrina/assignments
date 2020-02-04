@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Travel Form</title>
+    <link rel="stylesheet" href="travel.css" />
+  </head>
+  <body>
+    <form name="myForm">
+      <h1 style="text-align: center; color: red; background-color: black;">
+        Welcome to Skyline Airlines
+      </h1>
+      <h2>Travel Registration Form</h2>
+      <div class="usersName">
+        <h4 style="color: red;">
+          Please provide us with your contact information below and we will
+          arrange to reserve your ticket.
+        </h4>
+        First Name:
+        <input
+          type="text"
+          placeholder="Enter your first name"
+          name="firstName"
+          required
+        />
+
+        <br />
+
+        Last Name:
+        <input
+          type="text"
+          value="Enter your first name"
+          name="lastName"
+          required
+        />
+        <!-- only nums -->
+      </div>
+
+      <div class="usersAge">
+        Age: <input type="number" name="age" placeholder="Enter your age" />
+      </div>
+      <div class="usersSex">
+        <!-- radio Male -->
+        Male :<input type="radio" name="gender" value="male" />
+        <br />
+        <!-- radio Female -->
+        Female :<input type="radio" name="gender" value="female" />
+      </div>
+
+      <div class="destination">
+        <h4 style="color: red;">Which Russian city are you traveling?</h4>
+        <select name="city" value="">
+          <option value="Kostroma" name="Kostroma">Kostroma</option>
+          <option value="Moscow" name="Moscow">Moscow</option>
+          <option value="Peter" name="Peter">Saint Petersburg</option>
+        </select>
+      </div>
+
+      <div class="foodRestrictions">
+        <h4 style="color: red;">Do you have any allergies?</h4>
+        Peanuts:
+        <input type="checkbox" value="peanuts" name="restrictions" />
+        Tree nuts:
+        <input type="checkbox" value="treeNuts" name="restrictions" />
+        Cow's milk:
+        <input type="checkbox" value="milk" name="restrictions" />
+        Eggs:
+        <input type="checkbox" value="eggs" name="restrictions" />
+        <br />
+        Fish:
+        <input type="checkbox" value="fish" name="restrictions" />
+        Shellfish:
+        <input type="checkbox" value="shellfish" name="restrictions" />
+        Soy:
+        <input type="checkbox" value="soy" name="restrictions" />
+        Wheat:
+        <input type="checkbox" value="wheat" name="restrictions" />
+      </div>
+      <br />
+      <div class="button">
+        <button style="background-color: black; color: red; padding: 8px;">
+          Submit
+        </button>
+      </div>
+    </form>
+    <script src="travel.js"></script>
+  </body>
+</html>
