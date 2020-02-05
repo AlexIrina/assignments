@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+body {
+  background-color: bisque;
+}
+
+#main-container {
+  position: relative;
+  background-image: url(images/mario2.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: auto;
+  width: 100vw;
+  height: 100vh;
+}
+
+header {
+  position: absolute;
+  /* middle */
+  width: 40%;
+  /* position: fixed; */
+  top: 57%;
+  left: 60.5%;
+  /* centers it */
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.character {
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100px;
+  height: 100px;
+  transition: all 0.1s ease;
+  cursor: pointer;
+  /* border: 2px solid red; */
+}
+
+#goombas {
+  background-image: url(images/goombas.png);
+  top: 50px;
+  left: 50px;
+}
+
+#bobombs {
+  background-size: cover;
+  background-image: url(images/bomb.png);
+  top: 400px;
+  left: 50px;
+}
+
+#cheepcheeps {
+  background-size: cover;
+  background-image: url(images/cheep.png);
+  top: 200px;
+  right: 50px;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Mario's Pest Control</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="main-container">
+      <header>
+        <h1>Mario's Pest Control</h1>
+      </header>
+      <main>
+        <form name="myForm">
+          <!-- coins  -->
+          <!-- Goombas: 5 Coins Bob-ombs: 7 Coins Cheep-cheeps: 11 Coins -->
+          <div id="goombas-coins" class="goombas-coins"></div>
+          <div id="bobombs-coins" class="bobombs-coins"></div>
+          <div id="cheepcheeps-coins" class="cheepcheeps-coins"></div>
+          <!-- characters -->
+          <div id="goombas" class="character" onclick="addOne('goombas')"></div>
+          <div id="bobombs" class="character" onclick="addOne('bobombs')"></div>
+          <div
+            id="cheepcheeps"
+            class="character"
+            onclick="addOne('cheepcheeps')"
+          ></div>
+          <!-- input field -->
+          <!-- <input
+            name="goombasInput"
+            class="goombas-input"
+            type="number"
+            placeholder="0"
+          />
+          <input
+            name="bobombsInput"
+            class="bobombs-input"
+            type="number"
+            placeholder="0"
+          />
+          <input
+            name="cheepcheepsInput"
+            class="cheepcheeps-input"
+            type="number"
+            placeholder="0"
+          /> -->
+          <!-- <button id="submit">Total</button> -->
+        </form>
+      </main>
+      <!-- mario's contact info -->
+      <footer>
+        <!-- <p>Marion's contact information goes here</p> -->
+      </footer>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
