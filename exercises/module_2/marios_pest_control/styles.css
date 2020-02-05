@@ -46,39 +46,38 @@ h1 {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  width: 100px;
+  /* width: 100px; */
+  width: 250px;
   height: 100px;
-  transition: all 0.1s ease;
+  /* transition: all 1s ease; */
   cursor: pointer;
-  /* border: 2px solid red; */
+  /* border: 1px solid red; */
 }
 .character:hover {
   transition: all 0.1s ease;
-  width: 150px;
-}
-
-#cheepcheeps:hover {
-  transition: all 0.1s ease;
+  padding-left: 30px;
 }
 
 #goombas {
   background-image: url(images/goombas.png);
   top: 50px;
-  left: 50px;
+  left: -20px;
+  /* border: 1px solid blue; */
 }
 
 #bobombs {
-  background-size: cover;
+  /* background-size: cover; */
   background-image: url(images/bomb.png);
   top: 400px;
-  left: 50px;
+  left: -30px;
 }
+/* working here */
 
 #cheepcheeps {
-  background-size: cover;
+  /* background-size: cover; */
   background-image: url(images/cheep.png);
   top: 50px;
-  right: 50px;
+  right: -30px;
 }
 
 main {
@@ -106,17 +105,26 @@ input {
 }
 
 .goombas-input {
+  font-family: 'supermario';
+  font-size: px;
+  color: grey;
   left: 65px;
   border: 1px solid brown;
 }
 
 .bobombs-input {
+  font-family: 'supermario';
+  font-size: x-larger;
+  color: grey;
   top: 500px;
   left: 65px;
   border: 1px solid black;
 }
 
 .cheepcheeps-input {
+  font-family: 'supermario';
+  font-size: x-larger;
+  color: grey;
   left: 980px;
   top: 150px;
   border: 1px solid red;
@@ -147,7 +155,7 @@ input {
   top: 30px;
   left: 50px;
   font-family: 'supermario';
-  color: blue;
+  color: #4177e0;
   font-size: x-large;
 }
 
@@ -156,7 +164,7 @@ input {
   bottom: 140px;
   left: 50px;
   font-family: 'supermario';
-  color: blue;
+  color: #4177e0;
   font-size: x-large;
 }
 
@@ -165,7 +173,7 @@ input {
   right: 38px;
   top: 30px;
   font-family: 'supermario';
-  color: blue;
+  color: #4177e0;
   font-size: x-large;
 }
 
@@ -199,6 +207,8 @@ button:hover {
 
 #result {
   background-size: cover;
+  font-family: 'supermario';
+  color: red;
   top: 435px;
   width: 60px;
   padding: 15px;
@@ -218,8 +228,9 @@ footer p {
   font-weight: lighter;
   letter-spacing: 1px;
   font-family: 'supermario';
-  color: blue;
+  color: #4177e0;
 }
 footer a {
+  text-decoration: none;
   color: red;
 }
