@@ -82,14 +82,13 @@ h1 {
 }
 
 main {
-  width: 1024px;
-  height: 874px;
+  width: 1117px;
+  height: 584px;
 }
 
 form {
-  width: 1024px;
-  height: 874px;
-  /* border: 2px solid red; */
+  width: 1116px;
+  height: 581px;
 }
 
 input {
@@ -108,19 +107,19 @@ input {
 
 .goombas-input {
   left: 65px;
-  border: 1px solid red;
+  border: 1px solid brown;
 }
 
 .bobombs-input {
   top: 500px;
   left: 65px;
-  border: 1px solid blue;
+  border: 1px solid black;
 }
 
 .cheepcheeps-input {
   left: 980px;
   top: 150px;
-  border: 1px solid brown;
+  border: 1px solid red;
 }
 
 .coin {
@@ -147,18 +146,33 @@ input {
   background-image: url(images/coin.png);
   top: 30px;
   left: 50px;
+  font-family: 'supermario';
+  color: blue;
+  font-size: x-large;
 }
 
 #bobombs-coins {
   background-image: url(images/coin.png);
   bottom: 140px;
   left: 50px;
+  font-family: 'supermario';
+  color: blue;
+  font-size: x-large;
 }
 
 #cheepcheeps-coins {
   background-image: url(images/coin.png);
   right: 38px;
   top: 30px;
+  font-family: 'supermario';
+  color: blue;
+  font-size: x-large;
+}
+
+.cheepcheeps-price {
+  /* border: 1px solid red; */
+  font-size: 21px;
+  float: right;
 }
 
 button {
