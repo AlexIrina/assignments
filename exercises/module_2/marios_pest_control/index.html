@@ -16,9 +16,10 @@
         <form name="myForm">
           <!-- coins  -->
           <!-- Goombas: 5 Coins Bob-ombs: 7 Coins Cheep-cheeps: 11 Coins -->
-          <div id="goombas-coins" class="goombas-coins"></div>
-          <div id="bobombs-coins" class="bobombs-coins"></div>
-          <div id="cheepcheeps-coins" class="cheepcheeps-coins"></div>
+          <div id="goombas-coins" class="coin"></div>
+          <div id="bobombs-coins" class="coin"></div>
+          <div id="cheepcheeps-coins" class="coin"></div>
+          <div id="pile-of-cash" class="pile"></div>
           <!-- characters -->
           <div id="goombas" class="character" onclick="addOne('goombas')"></div>
           <div id="bobombs" class="character" onclick="addOne('bobombs')"></div>
@@ -28,7 +29,7 @@
             onclick="addOne('cheepcheeps')"
           ></div>
           <!-- input field -->
-          <!-- <input
+          <input
             name="goombasInput"
             class="goombas-input"
             type="number"
@@ -45,13 +46,23 @@
             class="cheepcheeps-input"
             type="number"
             placeholder="0"
-          /> -->
-          <!-- <button id="submit">Total</button> -->
+          />
+          <button id="submit"></button>
+          <input
+            name="result"
+            id="result"
+            placeholder="0"
+            type="number"
+            readonly
+          />
         </form>
       </main>
       <!-- mario's contact info -->
       <footer>
-        <!-- <p>Marion's contact information goes here</p> -->
+        <p>
+          2020 &copy Mario &amp; Nintendo Land//
+          <a href="@nintendo.com">mario@nintendo.com</a>
+        </p>
       </footer>
     </div>
     <script src="app.js"></script>
