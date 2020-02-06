@@ -1,0 +1,16 @@
+Web Storage
+
+Local Storage 
+  - created data stays in the browser
+  - Persists when page refreshes and closes 
+  
+  localStorage  <- will allow you to save to local storage.
+
+  .setItem() <- this method allows you to save things to local storage
+
+  .setItem(  key   , value   ) --- .setItem('name', 'steve)
+
+Session Storage
+  - Does not persist on refresh or closing of the browser
+    
+Both Session and Local storage are saved as JSON in the browser

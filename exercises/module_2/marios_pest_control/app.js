@@ -50,7 +50,7 @@ function addItAllUp(event) {
   goombasInput.value = '';
   cheepcheepsInput.value = '';
 
-  // document.body.style.backgroundImage = "url('images/bgimage.jpg')";
+  document.body.style.backgroundImage = "url('images/bgimage.jpg')";
 
   // // resets background image
   // document.body.style.backgroundColor = 'bisque';
