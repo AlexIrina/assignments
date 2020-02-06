@@ -1,78 +1,66 @@
-// // global variable
-// const particles = [];
+//Grabs the form
+const form = document.myForm;
 
-// function setup() {
-//   // takes up the whole window
-//   createCanvas(window.innerWidth, window.innerHeight);
+// Grab all the inputs
+const bobombsInput = form.bobombsInput;
+const goombasInput = form.goombasInput;
+const cheepcheepsInput = form.cheepcheepsInput;
 
-//   const particlesLength = Math.floor(window.innerWidth / 10);
+// grabs the result output
+const outputResult = form.result;
 
-//   for (let i = 0; i < particlesLength; i++) {
-//     particles.push(new Particle());
-//   }
-// }
+// grab each character's div so that it can be clicked
+const bobomb = document['bob-omb'];
+const goomba = document['goomba'];
+const cheepcheep = document['cheep-cheep'];
 
-// function draw() {
-//   background(0, 0, 0);
-//   particles.forEach((p, index) => {
-//     p.update();
-//     p.draw();
-//     p.checkParticles(particles.slice(index));
-//   });
-// }
+// Create a submit event listener for the whole form
+form.addEventListener('submit', addItAllUp);
 
-// //
-// // for each particle is created i need to instantiate a new particle object from this class
-// class Particle {
-//   // constrictor is a method that runs automatically
-//   constructor() {
-//     // POSITION
-//     // createVector(x, y) where on the x and y axis do i want the particle to be placed
-//     // random() gives me a random number. i can pass in width and height into the parameter
-//     this.pos = createVector(random(width), random(height));
-//     // create Velocity...how much it moves within a time frame
-//     // -2 ---goes left 2 goes right
-//     this.vel = createVector(random(-2, 2), random(-2, 2));
-//     // SIZE
-//     // size of the circle
-//     this.size = 10;
-//   }
+// Add all the values and return the result
+function addItAllUp(event) {
+  // prevent the page auto-refreshing on submit
+  event.preventDefault();
 
-//   // creates movement
-//   // updates movement by adding velocity
-//   update() {
-//     this.pos.add(this.vel);
-//     this.edges();
-//   }
+  // first initialize all fields that haven't been touched
+  // rather than requiring them (ease of use)
+  if (bobombsInput.value === '') {
+    bobombsInput.value = 0;
+  }
+  if (goombasInput.value === '') {
+    goombasInput.value = 0;
+  }
+  if (cheepcheepsInput.value === '') {
+    cheepcheepsInput.value = 0;
+  }
 
-//   // this method creates each circle
-//   // draw singe particle
-//   draw() {
-//     // no border
-//     noStroke();
-//     // fill in the circle
-//     fill('rgba(141, 191, 225,.9)');
-//     circle(this.pos.x, this.pos.y, this.size);
-//   }
-//   // detect edges
-//   edges() {
-//     if (this.pos.x < 0 || this.pos.x > width) {
-//       this.vel.x *= -1;
-//     }
-//     if (this.pos.y < 0 || this.pos.y > height) {
-//       this.vel.y *= -1;
-//     }
-//   }
+  // Return the grand total:
+  // Bob-ombs are worth 7 coins each
+  // Goombas are worth 5 coins each
+  // Cheep-cheeps are worth 11 coins each
+  const result =
+    Number(bobombsInput.value) * 7 +
+    Number(goombasInput.value) * 5 +
+    Number(cheepcheepsInput.value) * 11;
 
-//   // connect particles
-//   checkParticles(particles) {
-//     particles.forEach(particle => {
-//       const d = dist(this.pos.x, this.pos.y, particle.pos.x, particle.pos.y);
+  // update the output to display the total
+  outputResult.value = result;
 
-//       if (d < 120) {
-//         stroke('rgb(24, 19, 89)');
-//         line(this.pos.x, this.pos.y, particle.pos.x, particle.pos.y);
-//       }
-//     });
-//   }
-// }
+  // reset all the fields
+  bobombsInput.value = '';
+  goombasInput.value = '';
+  cheepcheepsInput.value = '';
+}
+
+// When a character is clicked, add 1 to its field
+// str holds value for "bobomb", "goomba" or "cheepcheep"
+// to keep track
+function addOne(str) {
+  if (str === 'bobombs') {
+    bobombsInput.value = Number(bobombsInput.value) + 1;
+  } else if (str === 'goombas') {
+    goombasInput.value = Number(goombasInput.value) + 1;
+  } else if (str === 'cheepcheeps') {
+    cheepcheepsInput.value = Number(cheepcheepsInput.value) + 1;
+  }
+}
