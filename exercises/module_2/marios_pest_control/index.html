@@ -25,11 +25,22 @@
           </div>
           <div id="pile-of-cash" class="pile"></div>
           <!-- characters -->
-          <div id="goombas" class="character" onclick="addOne('goombas')"></div>
-          <div id="bobombs" class="character" onclick="addOne('bobombs')"></div>
+          <div
+            id="goombas"
+            class="character"
+            name="goomba"
+            onclick="addOne('goombas')"
+          ></div>
+          <div
+            id="bobombs"
+            class="character"
+            name="bobomb"
+            onclick="addOne('bobombs')"
+          ></div>
           <div
             id="cheepcheeps"
             class="character"
+            name="cheepcheep"
             onclick="addOne('cheepcheeps')"
           ></div>
           <!-- input field -->
@@ -38,18 +49,21 @@
             class="goombas-input"
             type="number"
             placeholder="0"
+            readonly
           />
           <input
             name="bobombsInput"
             class="bobombs-input"
             type="number"
             placeholder="0"
+            readonly
           />
           <input
             name="cheepcheepsInput"
             class="cheepcheeps-input"
             type="number"
             placeholder="0"
+            readonly
           />
           <button id="submit" name="submitBtn"></button>
           <input

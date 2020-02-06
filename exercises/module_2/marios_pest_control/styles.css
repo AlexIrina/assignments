@@ -27,15 +27,14 @@ body {
 
 header {
   position: absolute;
-  /* middle */
   width: 40%;
-  /* position: fixed; */
   top: 57%;
   left: 60%;
   /* centers it */
   transform: translate(-50%, -50%);
   color: white;
 }
+
 h1 {
   font-family: 'supermario';
   color: white;
@@ -46,12 +45,9 @@ h1 {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  /* width: 100px; */
   width: 250px;
   height: 100px;
-  /* transition: all 1s ease; */
   cursor: pointer;
-  /* border: 1px solid red; */
 }
 .character:hover {
   transition: all 0.1s ease;
@@ -62,19 +58,15 @@ h1 {
   background-image: url(images/goombas.png);
   top: 50px;
   left: -20px;
-  /* border: 1px solid blue; */
 }
 
 #bobombs {
-  /* background-size: cover; */
   background-image: url(images/bomb.png);
   top: 400px;
   left: -30px;
 }
-/* working here */
 
 #cheepcheeps {
-  /* background-size: cover; */
   background-image: url(images/cheep.png);
   top: 50px;
   right: -30px;
@@ -179,7 +171,6 @@ input {
 }
 
 .cheepcheeps-price {
-  /* border: 1px solid red; */
   font-size: 21px;
   float: right;
 }
