@@ -4,6 +4,7 @@
   /* add a font family here */
   background-color: black;
   color: white;
+  outline: none;
 }
 
 body {
