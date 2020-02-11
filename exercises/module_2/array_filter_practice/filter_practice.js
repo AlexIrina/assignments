@@ -38,19 +38,19 @@
 // //   { name: 'Paris Hilton', member: true },
 // //   { name: 'Bob Ziroll', member: true }
 // // ];
-// // 5) Make a filtered list of all the people who are old enough to see The Matrix (younger than 18)
-// const oldEnough = arr => arr.filter(person => person.age > 18);
+// 5) Make a filtered list of all the people who are old enough to see The Matrix (younger than 18)
+const oldEnough = arr => arr.filter(person => person.age > 18);
 
-// // test
-// console.log(
-//   oldEnough([
-//     { name: 'Angelina Jolie', age: 80 },
-//     { name: 'Eric Jones', age: 2 },
-//     { name: 'Paris Hilton', age: 5 },
-//     { name: 'Kayne West', age: 16 },
-//     { name: 'Bob Ziroll', age: 100 }
-//   ])
-// );
-// // =>
-// //[ { name: 'Angelina Jolie', age: 80 },
-// //  { name: 'Bob Ziroll', age: 100 } ]
+// test
+console.log(
+  oldEnough([
+    { name: 'Angelina Jolie', age: 80 },
+    { name: 'Eric Jones', age: 2 },
+    { name: 'Paris Hilton', age: 5 },
+    { name: 'Kayne West', age: 16 },
+    { name: 'Bob Ziroll', age: 100 }
+  ])
+);
+// =>
+//[ { name: 'Angelina Jolie', age: 80 },
+//  { name: 'Bob Ziroll', age: 100 } ]
