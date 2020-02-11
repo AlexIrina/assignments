@@ -1,0 +1,23 @@
+# JS Timing Functions
+    
+    # setInterval()
+        Purpose: Call a function on a repeated basis. (ex: every 1 second)
+        use it when you need something repeated
+        it will give you the ID of the interval so you can clear it later
+        need to pass 2 arguments in it
+        1st arg: The function or what you want repeated
+        2nd arg: Amount of time in milliseconds id like it to fire on.
+        
+
+    # setTimeout()
+        Purpose: Call a function after a certain amount of time.
+        
+    
+    * When used, both setInterval and setTimeout return and ID.  That ID can be given to clearInterval or clearTimeout to stop the timers.
+
+
+    # clearInterval 
+        Purpose: Clears the setInterval()
+    
+    # clearTimeout
+        Purpose: Clears the setTimeout()
