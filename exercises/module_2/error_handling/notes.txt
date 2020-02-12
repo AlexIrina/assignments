@@ -1,0 +1,25 @@
+
+
+Need to have both 'try' and 'catch' together for it to work
+
+
+try {
+    // try out some code
+    // if an error occurs (if an error is thrown)
+}
+catch(err){
+    // handle the err
+}
+
+//Example
+try {
+  
+    if(2 === 2){
+      //if true then throw this error
+        throw "Hey I am an error!"
+    }
+    
+}
+catch(err){
+    console.log(err)
+}
