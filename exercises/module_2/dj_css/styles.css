@@ -1,0 +1,117 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  background-color: burlywood;
+}
+
+.box {
+  position: relative;
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+  /* border: 5px solid black; */
+  margin: 40px;
+  background-color: black;
+}
+
+pallet {
+  /* Which property/style of the #box to change */
+  transition-property: background-color;
+  /* How quickly to change the background color  */
+  transition-duration: 1s;
+  /* timeline of transition start and transition ens */
+  transition-timing-function: ease-out;
+  /* do you want the effect to happen right away or wait */
+  transition-delay: 1s;
+}
+
+.box-1 {
+  /* 1. which properties 2.duration 3. timing-function 4. delay */
+  transition: background-color 1s linear 1s, border-radius 1s ease-out 1s,
+    transform linear 500ms;
+}
+
+/* change 2 or 3 different properties of the box that was hovered. */
+/* Background color
+Border (width, color, style)
+Border radius (can target each corner individually if you want)
+Box shadow
+Height/width
+Margin/padding (put some text inside to better see what's happening)
+Position
+Opacity
+ALSO, you must make each box smoothly transition from one style to another. (This is a CSS transitions practice, after all). */
+
+.box-1:hover {
+  transform: translate(0, 100px);
+  background-color: yellow;
+  border-radius: 50%;
+}
+
+.box-2 {
+  transition: border-right 500ms ease-out 500ms,
+    border-left 500ms ease-out 500ms, border-bottom 1s linear 1s;
+}
+
+.box-2:hover {
+  border-left: 50px solid burlywood;
+  border-right: 50px solid burlywood;
+  border-bottom: 100px solid red;
+}
+
+.box-3 {
+  transition: border-radius 1s ease-in 500ms, transform 5000ms linear,
+    width 500ms ease-out 500ms, height 500ms ease-out 500ms,
+    background-color 1s ease-in 1s;
+}
+
+.box-3:hover {
+  transform: translate(0, 400px);
+  width: 90px;
+  height: 90px;
+  background-color: red;
+  border-radius: 50%;
+  border: 3px dotted red;
+}
+
+.box-4 {
+  transition: box-shadow 1s ease-in 1s, border-left 500ms linear 500ms,
+    border-top 1s linear 1s, border-right 500ms linear 500ms;
+}
+
+.box-4:hover {
+  background-color: royalblue;
+  position: relative;
+  box-shadow: 5px 10px 8px black;
+  border-left: 50px solid burlywood;
+  border-right: 50px solid burlywood;
+  border-top: 100px solid red;
+}
+
+.box-5 {
+  transition: 1s ease-in, opacity 1s ease-out 1s, border-radius 500ms linear 1s;
+}
+
+.box-5:hover {
+  background-color: red;
+  width: 100px;
+  height: 200px;
+  opacity: 0.5;
+  border-radius: 50px 20px;
+}
+
+.box-6 {
+  transition: all linear 500ms;
+}
+
+.box-6:hover {
+  position: relative;
+  top: 100px;
+  background-color: orange;
+  box-shadow: 10px 10px 16px green;
+  border: 5px dashed red;
+}
