@@ -2,12 +2,12 @@
 
 // const test = undefined;
 
-const collectAnimals = (/*test = 'test',*/ ...animals) => {
-  return [/*test , */ ...animals];
+const collectAnimals = (test = 'test', ...animals) => {
+  return [test, ...animals];
 };
 
 console.log(
-  collectAnimals(/*test ,*/ 'dog', 'cat', 'mouse', 'jackolope', 'platypus')
+  collectAnimals(test, 'dog', 'cat', 'mouse', 'jackolope', 'platypus')
 );
 // ["dog", "cat", "mouse", "jackolope", "platypus"]
 
@@ -62,12 +62,12 @@ console.log(parseSentence(vacation, person));
 
 // // my code
 // // PULLS ONLY ONE ITEM
-// const returnFromArr = items => {
-//   const [pullFirst] = items;
-//   return pullFirst;
-// };
+const returnFromArr = items => {
+  const [pullFirst] = items;
+  return pullFirst;
+};
 
-// console.log(returnFromArr([1, 2, 3, 4, 5]));
+console.log(returnFromArr([1, 2, 3, 4, 5]));
 
 // Use destructuring to make this code ES6:
 
