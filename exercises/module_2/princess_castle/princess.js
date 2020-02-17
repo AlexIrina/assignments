@@ -3,12 +3,13 @@ let intervalsID;
 let message = '';
 
 class Player {
-  constructor(name, totalCoins, status, hasStar, gameActive) {
+  constructor(name, totalCoins, totalStars, status, hasStar, gameActive) {
     this.name = name; // String: 'Mario' or 'Luigi'
     this.totalCoins = totalCoins; // number
     this.status = status; // Options are 'Powered Up', 'Big', 'Small' or 'Dead'
     this.hasStar = hasStar; // Boolean (Is a star active?)
     this.gameActive = gameActive; // boolean: 'true' by default, 'false' when 'dead'
+    this.totalStars = totalStars;
   }
 
   // sets name to Mario or Luigi
@@ -29,12 +30,11 @@ class Player {
         this.status = `Small`;
       } else if (this.status === 'Small') {
         this.status = 'Dead';
+        message = `You died`;
         this.gameActive = false;
       }
     }
   }
-
-  // gotPowerup of type function - called when a powerup is received and sets the status accordingly. (Statuses go from "Small" to "Big" to "Powered Up". If you are Powered Up and it hits this function, you get a star)
 
   gotPowerup() {
     message = `You got a Power Up!`;
@@ -52,10 +52,11 @@ class Player {
     message = `You found a coin!`;
     this.totalCoins += 1;
   }
-  //   print of type function - prints to the console the name, totalCoins, status, and star properties. Make sure you make this look nice such as:
 
-  // Name: Luigi,
-  // Status: Small, etc, etc
+  addStar() {
+    message = 'test';
+    this.totalStars += 1;
+  }
 
   print(str = '') {
     if (str !== '') {
@@ -67,6 +68,7 @@ class Player {
     // has star?
     if (this.hasStar) {
       console.log(`You have a star!`);
+      console.log(this.totalStars);
     }
     console.log(`\n`);
   }
@@ -86,28 +88,23 @@ const startGame = () => {
 
 const gameLoop = () => {
   // sets a 2 second delay
-  intervalsID = setInterval(randomRange, 2000);
+  intervalsID = setInterval(gameStart, 2000);
 };
 
-// Create a random range function that returns either 0, 1, or 2.
-// If the value is 0 call the gotHit() function on the object.
-// If the value is 1 call the gotPowerup() function on the object
-// If the value is 2 call the addCoin() function
-// Then call the print method on the object.
-// Now put the random range function inside a setInterval() function that ends after gameActive === false
-
-const randomRange = () => {
+const gameStart = () => {
   if (myPlayer.gameActive) {
     myPlayer.print(message);
 
-    const result = Math.floor(Math.random() * 3);
+    let result = Math.floor(Math.random() * 4);
 
     if (result === 0) {
       myPlayer.gotHit();
     } else if (result === 1) {
       myPlayer.gotPowerup();
-    } else {
+    } else if (result === 2) {
       myPlayer.addCoin();
+    } else if (result === 3) {
+      myPlayer.addStar();
     }
   } else {
     // else the player is dead ..clears local storage
@@ -117,6 +114,6 @@ const randomRange = () => {
 };
 
 // My player defaults to Mario
-const myPlayer = new Player('mario', 0, 'Big', false, true);
+const myPlayer = new Player('Mario', 0, 0, 'Big', false, true);
 
 startGame();
