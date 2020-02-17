@@ -1,0 +1,66 @@
+{
+  "appetizers": [
+    {
+      "name": "Vegetable Pakoras",
+      "ingredients": [
+        "1 cup chickpea flour",
+        "1 teaspoon salt",
+        "1/2 teaspoon ground turmeric"
+      ],
+      "description": "Pakoras are a favorite in India. Your favorite vegetables are dipped in a spicy batter and deep fried to make fabulous fritters."
+    },
+    {
+      "name": "Samosa",
+      "ingredients": [],
+      "description": ""
+    }
+  ],
+  "cold sandwiches": [
+    {
+      "name": "",
+      "ingredients": [],
+      "description": ""
+    },
+    {
+      "name": "",
+      "ingredients": [],
+      "description": ""
+    }
+  ],
+  "hot sandwiches": [
+    {
+      "name": "",
+      "ingredients": [],
+      "description": ""
+    },
+    {
+      "name": "",
+      "ingredients": [],
+      "description": ""
+    }
+  ],
+  "desserts": [
+    {
+      "name": "",
+      "ingredients": [],
+      "description": ""
+    },
+    {
+      "name": "",
+      "ingredients": [],
+      "description": ""
+    }
+  ],
+  "drinks": [
+    {
+      "name": "",
+      "ingredients": [],
+      "description": ""
+    },
+    {
+      "name": "",
+      "ingredients": [],
+      "description": ""
+    }
+  ]
+}
