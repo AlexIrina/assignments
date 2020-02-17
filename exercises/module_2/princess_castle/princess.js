@@ -45,6 +45,7 @@ class Player {
     } else if (this.status === 'Powered Up') {
       message = `Congrats! You got a star!`;
       this.hasStar = true;
+      this.totalStars += 1;
     }
   }
   // addCoin of function - adds a coin to totalCoins
@@ -53,10 +54,9 @@ class Player {
     this.totalCoins += 1;
   }
 
-  addStar() {
-    message = 'test';
-    this.totalStars += 1;
-  }
+  // addStar() {
+  //   this.totalStars += 1;
+  // }
 
   print(str = '') {
     if (str !== '') {
@@ -65,10 +65,10 @@ class Player {
     console.log(`Name: ` + this.name);
     console.log(`Status: ` + this.status);
     console.log(`Total Coins ` + this.totalCoins);
+    console.log('Total Stars: ', this.totalStars);
     // has star?
     if (this.hasStar) {
       console.log(`You have a star!`);
-      console.log(this.totalStars);
     }
     console.log(`\n`);
   }
@@ -88,14 +88,14 @@ const startGame = () => {
 
 const gameLoop = () => {
   // sets a 2 second delay
-  intervalsID = setInterval(gameStart, 2000);
+  intervalsID = setInterval(gameStart, 2500);
 };
 
 const gameStart = () => {
   if (myPlayer.gameActive) {
     myPlayer.print(message);
 
-    let result = Math.floor(Math.random() * 4);
+    let result = Math.floor(Math.random() * 3);
 
     if (result === 0) {
       myPlayer.gotHit();
@@ -103,8 +103,6 @@ const gameStart = () => {
       myPlayer.gotPowerup();
     } else if (result === 2) {
       myPlayer.addCoin();
-    } else if (result === 3) {
-      myPlayer.addStar();
     }
   } else {
     // else the player is dead ..clears local storage
