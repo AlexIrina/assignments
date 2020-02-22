@@ -21,7 +21,7 @@ const runForLoop = ([...pets]) => {
 runForLoop(['cat', 'dog']);
 
 // // ES6 Arrow Functions
-// // Task 1
+// // Task 
 // // Re-write this .map() using an arrow function:
 
 // // Be aware that if JavaScript sees a { directly after the => it will think it's starting a function, and not starting an object, so the : will be an unexpected symbol.

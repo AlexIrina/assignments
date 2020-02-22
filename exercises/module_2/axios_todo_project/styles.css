@@ -1,0 +1,28 @@
+body {
+  background-color: green;
+}
+
+.success,
+.error {
+  color: white;
+  padding: 5px;
+  margin: 5px 0 15px 0;
+}
+
+.success {
+  background: green;
+}
+
+.error {
+  background: red;
+}
+
+.main-heading {
+  color: white;
+  text-align: center;
+}
+
+#submit {
+  background-color: blue;
+  color: white;
+}

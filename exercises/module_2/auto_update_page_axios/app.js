@@ -2,7 +2,6 @@
 
 // GET DATA
 // GET's THE TODO's FROM THE DATABASE
-// GET's THE TODO's FROM THE DATABASE
 function getData() {
   axios
     .get('https://api.vschool.io/alex1/todo')
@@ -51,3 +50,5 @@ todoForm.addEventListener('submit', function(e) {
     .then(res => getData(res))
     .catch(err => console.log(err));
 });
+
+// there are frameworks that will do all this for me

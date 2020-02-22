@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="styles.css" />
+    <!--Link to Skeleton Css-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"
+    />
+    <title>To do List Project</title>
+    <!-- add description of the project after completion-->
+  </head>
+  <body>
+    <!-- created a div.h1.div.div.div-->
+    <div class="container">
+      <h1 class="main-heading">GetS#itDone</h1>
+      <form id="todo-form">
+        <div>
+          <label for="title">Title</label>
+          <input type="text" id="title" class="u-full-width" />
+          <!--block level input that goes all the way across -->
+        </div>
+        <div>
+          <label for="notes">Notes</label>
+          <input type="text" id="notes" class="u-full-width" />
+        </div>
+        <div>
+          <label for="price">Price</label>
+          <input type="text" id="price" class="u-full-width" />
+        </div>
+        <div>
+          <label for="imageUrl">Image URL</label>
+          <input type="text" id="imageUrl" class="u-full-width" />
+        </div>
+        <div>
+          <input
+            type="submit"
+            value="ADD ME TO THE LIST"
+            class="u-full-width"
+            id="submit"
+          />
+        </div>
+      </form>
+      <table class="u-full-width">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Notes</th>
+            <th>Price</th>
+            <th>Image Url</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="todo-list"></tbody>
+      </table>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
