@@ -1,5 +1,4 @@
 //convert(1, 3) ➞ 3780
-
 //convert(2, 0) ➞ 7200
 
 //convert(0, 0) ➞ 0
@@ -6144,3 +6143,55 @@
 // function kToK(n, k) {
 
 // }
+
+const arr = [1, 2, 3, 4, 5, 6, 7, 8];
+
+// map and filter returns a new array
+const mappedArr = arr.map(num => {
+  return num + 10;
+});
+
+console.log(mappedArr); //[ 11, 12, 13, 14, 15, 16, 17, 18 ]
+
+const filteredArr = arr.filter(num => {
+  if (num % 2 === 0) {
+    return num;
+  }
+});
+console.log(filteredArr); //[ 2, 4, 6, 8 ]
+
+const mixedArr = [2, 3, 4, 35, 3, 54, 234];
+const sortedArr = mixedArr.sort((a, b) => a - b);
+console.log(sortedArr); //[ 2, 3, 3, 4, 35, 54, 234 ]
+
+const gayOrStraight = [
+  {
+    name: 'Alex',
+    isPresident: false
+  },
+  {
+    name: 'Trump',
+    isPresident: true
+  },
+  {
+    name: 'Irina',
+    isPresident: false
+  }
+];
+
+const result = gayOrStraight.reduce(
+  (final, person) => {
+    if (person.isPresident === true) {
+      final.presidents++;
+    } else {
+      final.not++;
+    }
+    return final;
+  },
+  {
+    presidents: 0,
+    not: 0
+  }
+);
+
+console.log(result);
