@@ -19,7 +19,6 @@ function listData(data) {
   clearList();
 
   for (let i = 0; i < data.length; i++) {
-    console.log(data[i]);
     const list = document.getElementById('todo-list');
     const row = document.createElement('tr');
     const title = document.createElement('td');
@@ -33,7 +32,7 @@ function listData(data) {
     title.textContent = data[i].title;
     description.textContent = data[i].description;
     price.textContent = data[i].price;
-    imageUrl.textContent = data[i].imageUrl;
+    imageUrl.textContent = data[i].imgUrl;
     checkBox.textContent = data[i].checkBox;
     deleted.textContent = data[i].deleted;
     update.textContent = data[i].update;
@@ -44,9 +43,10 @@ function listData(data) {
 
     const checkBtn = document.createElement('p');
     checkBtn.textContent = '√';
-    checkBtn.style.color = 'blue';
+    checkBtn.style.color = 'green';
     checkBtn.addEventListener('click', () => {
       isCompleted(data[i]);
+      showAlert('todo Completed!', 'success');
     });
 
     // creating delete button when clicked should delete the item
@@ -55,6 +55,7 @@ function listData(data) {
     deleteBtn.style.color = 'red';
     deleteBtn.addEventListener('click', () => {
       deleteItem(data[i]);
+      showAlert('todo Deleted!', 'error');
     });
 
     row.append(title);
@@ -83,8 +84,7 @@ function isCompleted(todo) {
       completed: !todo.completed
     })
 
-    .then(res => console.log(res.data))
-    .then(res => getData())
+    .then(() => getData())
     .catch(err => console.log(err));
 }
 
@@ -116,25 +116,24 @@ todoForm.addEventListener('submit', function(e) {
     title: todoForm.title.value,
     description: todoForm.notes.value,
     price: todoForm.price.value,
-    imageUrl: todoForm.imageUrl.value
+    imgUrl: todoForm.imageUrl.value
   };
   // to do form disappears
   clearFields();
+  // showAlert('Please fill in all the fields', 'error');
 
   axios
     .post('https://api.vschool.io/alex2/todo', newTodo)
-    .then(response => getData())
+    .then(() => getData())
     .catch(err => console.log(err));
 });
 
 // DELETE requests
 // DELETE an existing todo: https://api.vschool.io/<yourname>/todo/<todoId>
-
 function deleteItem(todo) {
   // const deleteButton = document.getElementById('delete-button');
   axios
     .delete(`https://api.vschool.io/alex2/todo/${todo._id}`)
-    .then(response => console.log(response.data))
     .then(getData)
     .catch(error => console.log(error));
 }
@@ -145,4 +144,27 @@ function clearFields() {
   document.getElementById('notes').value = '';
   document.getElementById('price').value = '';
   document.getElementById('imageUrl').value = '';
+}
+
+function showAlert(message, className) {
+  //creates a div
+  const div = document.createElement('div');
+  //Adds Classes to the div element
+  div.className = `alert ${className}`; //alert with the classname thats in the parameter above
+  //Add text...need to add a text Node
+  div.appendChild(document.createTextNode(message)); //message thats comming in from the alert messagefunction
+  //NOW I NEED TO INSERT THE MESSAGE TO THE DOM
+  //Get parent
+  const container = document.querySelector('.container');
+
+  //Next two lines of code allow the message to be shown above the form.
+  const form = document.querySelector('#todo-form');
+
+  //Insert alert
+  container.insertBefore(div, form); //what i want to insert (DIV)and what i want to insert it before (FORM)
+
+  //Message Dissaper after 3 seconds
+  setTimeout(function() {
+    document.querySelector('.alert').remove();
+  }, 3000);
 }

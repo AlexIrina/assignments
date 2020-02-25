@@ -1,5 +1,7 @@
 body {
-  background-color: green;
+  background-color: brown;
+  /* background-image: url(images/download.png);
+  background: no-repeat; */
 }
 
 .success,
@@ -29,4 +31,10 @@ body {
 
 .completed {
   text-decoration: line-through;
+  color: red;
+}
+
+bold {
+  color: red;
+  opacity: 0.2;
 }
