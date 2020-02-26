@@ -6144,54 +6144,62 @@
 
 // }
 
-const arr = [1, 2, 3, 4, 5, 6, 7, 8];
+// const arr = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 
-// map and filter returns a new array
-const mappedArr = arr.map(num => {
-  return num + 10;
-});
+// // map and filter returns a new array
+// const mappedArr = arr.map(num => {
+//   return num + 10;
+// });
 
-console.log(mappedArr); //[ 11, 12, 13, 14, 15, 16, 17, 18 ]
+// const filteredArr = arr.filter(num => {
+//   console.log(num % 2 === 0);
+//   return num % 2 === 0;
+// });
+// console.log(filteredArr);
 
-const filteredArr = arr.filter(num => {
-  if (num % 2 === 0) {
-    return num;
-  }
-});
-console.log(filteredArr); //[ 2, 4, 6, 8 ]
+// console.log(mappedArr); //[ 11, 12, 13, 14, 15, 16, 17, 18 ]
 
-const mixedArr = [2, 3, 4, 35, 3, 54, 234];
-const sortedArr = mixedArr.sort((a, b) => a - b);
-console.log(sortedArr); //[ 2, 3, 3, 4, 35, 54, 234 ]
+// const filteredArr = arr.filter(num => {
+//   if (num % 2 === 0) {
+//     return num;
+//   }
+// });
+// console.log(filteredArr); //[ 2, 4, 6, 8 ]
 
-const gayOrStraight = [
-  {
-    name: 'Alex',
-    isPresident: false
-  },
-  {
-    name: 'Trump',
-    isPresident: true
-  },
-  {
-    name: 'Irina',
-    isPresident: false
-  }
-];
+// const mixedArr = [2, 3, 4, 35, 3, 54, 234];
+// const sortedArr = mixedArr.sort((a, b) => a - b);
+// console.log(sortedArr); //[ 2, 3, 3, 4, 35, 54, 234 ]
 
-const result = gayOrStraight.reduce(
-  (final, person) => {
-    if (person.isPresident === true) {
-      final.presidents++;
-    } else {
-      final.not++;
-    }
-    return final;
-  },
-  {
-    presidents: 0,
-    not: 0
-  }
-);
+// const gayOrStraight = [
+//   {
+//     name: 'Alex',
+//     isPresident: false
+//   },
+//   {
+//     name: 'Trump',
+//     isPresident: true
+//   },
+//   {
+//     name: 'Irina',
+//     isPresident: false
+//   }
+// ];
 
-console.log(result);
+// const result = gayOrStraight.reduce(
+//   (final, person) => {
+//     if (person.isPresident === true) {
+//       final.presidents++;
+//     } else {
+//       final.not++;
+//     }
+//     return final;
+//   },
+//   {
+//     presidents: 0,
+//     not: 0
+//   }
+// );
+
+// console.log(result);
+
+
