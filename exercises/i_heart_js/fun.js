@@ -6202,4 +6202,46 @@
 
 // console.log(result);
 
+// this and the arrow function
+// class Person {
+//   constructor(fName, lName, age, sex) {
+//     this.fName = fName;
+//     this.lName = lName;
+//     this.age = age;
+//     this.sex - sex;
+//   }
 
+//   printFullName() {
+//     console.log(`${this.fName} ${this.lName}`);
+//   }
+// }
+
+// // creating a new 'person' object
+// const person = new Person('Alex', 'Jones', 32, 'male');
+// console.log(typeof person);
+
+// console.log(person.printFullName(person));
+
+// function outerFunction() {
+//   let message = `I am the outer functions variable`;
+
+//   return function innerFunction() {
+//     console.log(`I can see the outer function but it cant see me: ${message}`);
+//   };
+// }
+// outerFunction()();
+
+// // side effects examples
+// function makeCake(flavor) {
+//   setTimeout(() => console.log(`Made a ${flavor} cake!`), 1000);
+// }
+
+// // makeCake('bananna');
+// function prepareCake(flavor) {
+//   return function() {
+//     setTimeout(() => console.log(`made a ${flavor} cake!`), 500);
+//   };
+// }
+
+// const madeTheCakeLater = prepareCake(`banana`);
+// madeTheCakeLater();
