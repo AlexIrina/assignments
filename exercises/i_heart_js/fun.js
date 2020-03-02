@@ -6245,3 +6245,12 @@
 
 // const madeTheCakeLater = prepareCake(`banana`);
 // madeTheCakeLater();
+
+function prepareCake(flavor) {
+  // Adding debugger
+  return function() {
+    setTimeout(_ => console.log(`Made a ${flavor} cake!`), 1000);
+  };
+}
+
+const makeCakeLater = prepareCake('banana');
