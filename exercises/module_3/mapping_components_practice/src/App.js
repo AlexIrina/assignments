@@ -10,11 +10,11 @@ don't forget to pass a `key` prop to it to avoid the warning.
 import React from 'react';
 import './App.css';
 import Product from './components/Product';
-import productsData from './vschoolProducts';
+import productData from './vschoolProducts';
 
 function App() {
   // create a product component from the vsProducts
-  const productComponent = productsData.map(item => {
+  const productComponent = productData.map(item => {
     return (
       <div>
         <Product key={item.id} product={item} />

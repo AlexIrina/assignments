@@ -1,0 +1,23 @@
+.App {
+  text-align: center;
+  margin-left: 35%;
+  position: absolute;
+}
+.card {
+  background-color: green;
+  height: 25vh;
+  width: 30vw;
+  color: white;
+}
+
+.price {
+  font-size: large;
+}
+
+.price-text {
+  font-size: 18px;
+}
+
+.time {
+  font-size: large;
+}
