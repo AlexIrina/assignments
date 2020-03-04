@@ -1,28 +1,25 @@
 import React from 'react';
 
 function Card(props) {
+  
   return (
-    <div className='card'>
+    <div className='main-container'>
+
       <div className='place'>
-        <h3>Place: </h3>
-        <p>{props.card.place}</p>
-        <hr />
+        <h3>Place</h3>
+        <p className='location'>{props.card.place}</p>
       </div>
+
       <div className='price'>
-        <p className='price-text'>
-          Price:
-          <br />
-          {props.card.price.toLocaleString('en-US', {
-            style: 'currency',
-            currency: 'USD'
-          })}{' '}
-        </p>
-        <hr />
+        <h3>Price</h3>
+        <p className='money'>${props.card.price}</p>
       </div>
-      <div>
-        <h3>Time to go:</h3>
-        <p>{props.card.timeToGo}</p>
+
+      <div className='time'>
+        <h3>Time to go</h3>
+        <p className='season'>{props.card.timeToGo}</p>
       </div>
+
     </div>
   );
 }
