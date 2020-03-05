@@ -22,7 +22,7 @@ export default [
     age: 30,
     pets: [
       {
-        name: 'Asya',
+        name: 'Tsera',
         breed: 'british shorthair'
       },
       {
