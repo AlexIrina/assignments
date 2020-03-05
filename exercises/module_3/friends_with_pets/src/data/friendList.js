@@ -30,7 +30,7 @@ export default [
         breed: 'mix lab'
       },
       {
-        name: 'sam',
+        name: 'Sam',
         breed: 'stray cat'
       }
     ]
@@ -54,19 +54,19 @@ export default [
     age: 30,
     pets: [
       {
-        name: 'fluffy',
+        name: 'Fluffy',
         breed: 'sphynx cat'
       },
       {
-        name: 'wolfy',
+        name: 'Wolfy',
         breed: 'sphynx cat'
       },
       {
-        name: 'simba',
+        name: 'Simba',
         breed: 'sphynx cat'
       },
       {
-        name: 'oscar',
+        name: 'Oscar',
         breed: 'sphynx cat'
       }
     ]
