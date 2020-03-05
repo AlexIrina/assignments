@@ -191,6 +191,7 @@ button {
   box-shadow: 0px 6px 10px 1px rgba(0, 0, 0, 0.5);
   transition: all 0.1s ease;
   cursor: pointer;
+  outline: none;
 }
 button:hover {
   transition: all 0.1s ease;

@@ -4,9 +4,13 @@ import friendList from './data/friendList';
 import Friend from './components/Friend';
 
 function FriendList() {
+
+  
   const friends = friendList.map((friend, i) => {
     const usersName = `${friend.name} `;
     const usersAge = `${friend.age}`;
+
+
     return (
       <div className='card'>
         <div className='container' key={i}>
