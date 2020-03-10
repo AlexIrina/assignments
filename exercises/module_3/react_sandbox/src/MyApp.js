@@ -1,7 +1,9 @@
 import React from 'react';
-import Nav from './components/Nav';
 import Header from './components/Header';
+import Nav from './components/Nav';
 import Article from './components/Article';
+import Footer from './components/Footer';
+
 import './App.css';
 
 function MyApp() {
@@ -10,7 +12,7 @@ function MyApp() {
       <Header />
       <Nav />
       <Article />
-      <footer></footer>
+      <Footer />
     </div>
   );
 }
