@@ -48,6 +48,8 @@ p {
 
 .info-header {
   padding: 1vh;
+  font-size: 4vh;
+  color: black;
 }
 
 .pets-header {
