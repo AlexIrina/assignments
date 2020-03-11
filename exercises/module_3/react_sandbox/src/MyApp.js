@@ -10,7 +10,15 @@ function MyApp() {
   return (
     <div className='App'>
       <Header />
-      <Nav />
+      <Nav
+        heros={{
+          header: 'My heros are',
+          hero1: 'Elon Musk',
+          hero2: 'Joe Rogan',
+          hero3: 'Irina Suslova',
+          hero4: 'Nadezhda Lebedeva'
+        }}
+      />
       <Main
         dreamJob={{
           header: 'Top 3 dream Companies',

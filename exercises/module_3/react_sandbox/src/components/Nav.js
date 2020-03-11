@@ -1,14 +1,14 @@
 import React from 'react';
 
-function Nav() {
+function Nav(props) {
   return (
     <div className='nav-container'>
-      <h2 className='heading'>My heros are:</h2>
+      <h2 className='heading'>{props.heros.header}</h2>
       <ul className='list'>
-        <li className='list-item'> Elon Musk</li>
-        <li className='list-item'>Joe Rogan</li>
-        <li className='list-item'>Irina Suslova</li>
-        <li className='list-item'>Nadezhda Lebedeva</li>
+        <li className='list-item'>{props.heros.hero1}</li>
+        <li className='list-item'>{props.heros.hero2}</li>
+        <li className='list-item'>{props.heros.hero3}</li>
+        <li className='list-item'>{props.heros.hero4}</li>
       </ul>
     </div>
   );
