@@ -111,8 +111,9 @@ li {
   justify-content: center;
   font-size: calc(10px + 2vmin);
 }
-#cat {
+.footer-container > #cat {
   position: absolute;
+  top: 9vh;
   height: 6vh;
   width: 24vw;
 }

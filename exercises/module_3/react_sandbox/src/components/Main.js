@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Main() {
+function Main(props) {
   return (
     <main className='main-container'>
       <div className='about-me'>
@@ -12,21 +12,22 @@ function Main() {
           underprivileged kids all over Russia to code.
         </p>
       </div>
+
       <div className='dream-jobs'>
-        <p>Top 3 dream Companies</p>
+        <p>{props.dreamJob.header}</p>
         <ul>
-          <li>Onnit</li>
-          <li>23AndMe</li>
-          <li>AirBnb</li>
+          <li>{props.dreamJob.company1}</li>
+          <li>{props.dreamJob.company2}</li>
+          <li>{props.dreamJob.company3}</li>
         </ul>
       </div>
 
       <div className='passion'>
-        <p>Top 3 Cities</p>
+        <p>{props.myPassion.header}</p>
         <ul>
-          <li>Neya</li>
-          <li>Moscow</li>
-          <li>Vladivostok</li>
+          <li>{props.myPassion.city1}</li>
+          <li>{props.myPassion.city2}</li>
+          <li>{props.myPassion.city3}</li>
         </ul>
       </div>
     </main>

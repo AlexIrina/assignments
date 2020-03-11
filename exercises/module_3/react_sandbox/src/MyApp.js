@@ -11,11 +11,24 @@ function MyApp() {
     <div className='App'>
       <Header />
       <Nav />
-      <Main />
+      <Main
+        dreamJob={{
+          header: 'Top 3 dream Companies',
+          company1: 'Onnit',
+          company2: '23AndMe',
+          company3: 'AirBnb'
+        }}
+        myPassion={{
+          header: 'Top 3 Cities',
+          city1: 'Neya',
+          city2: 'Moscow',
+          city3: 'Vladivostok'
+        }}
+      />
       <Footer
         // props
         contact={{
-          imgUrl: 'http://placekitten.com/300/200',
+          imgUrl: 'http://placekitten.com/300/300',
           name: 'Asya',
           phone: '(435) 850-9343',
           email: 'meow@gmail.com'
