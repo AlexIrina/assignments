@@ -19,7 +19,7 @@ li {
 /* headings */
 .App-header {
   background-color: #282c34;
-  min-height: 20vh;
+  min-height: 30vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -46,11 +46,12 @@ li {
   padding: 1vh 0;
 }
 
-.article-container {
+.main-container {
   position: absolute;
-  background-color: antiquewhite;
+  background-color: black;
   min-height: 60vh;
   min-width: 100vw;
+  color: white;
 }
 
 .about-me {
@@ -100,14 +101,20 @@ li {
   background-color: black;
   color: white;
   position: absolute;
-  height: 20vh;
+  height: 10vh;
   width: 100vw;
   bottom: 0vh;
   display: flex;
+  text-align: center;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+}
+#cat {
+  position: absolute;
+  height: 6vh;
+  width: 24vw;
 }
 
 @media (prefers-reduced-motion: no-preference) {
