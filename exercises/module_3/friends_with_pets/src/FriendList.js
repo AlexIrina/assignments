@@ -4,13 +4,13 @@ import friendList from './data/friendList';
 import Friend from './components/Friend';
 
 function FriendList() {
-  const friends = friendList.map((friend, i) => {
+  const friends = friendList.map(friend => {
     const usersName = `${friend.name} `;
     const usersAge = `${friend.age}`;
 
     return (
       <div className='card'>
-        <div className='container' key={i}>
+        <div className='container' key={friend.id}>
           <div className='owner'>
             <h1 className='info-header'>Owner Info</h1>
             <h3>Name: {usersName}</h3>

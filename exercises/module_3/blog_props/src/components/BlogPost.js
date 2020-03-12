@@ -1,7 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-const BlogPost = (props, key) => {
+const BlogPost = props => {
   return (
     <div>
       <div className='post-preview'>
@@ -18,13 +17,6 @@ const BlogPost = (props, key) => {
       <hr />
     </div>
   );
-};
-
-BlogPost.propTypes = {
-  title: PropTypes.string,
-  subtitle: PropTypes.string,
-  author: PropTypes.string,
-  date: PropTypes.string
 };
 
 export default BlogPost;

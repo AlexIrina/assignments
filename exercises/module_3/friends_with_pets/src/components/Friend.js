@@ -2,8 +2,8 @@ import React from 'react';
 import Pets from './Pets';
 
 function Friend(props) {
-  const pets = props.friendsInfo.pets.map((pet, i) => {
-    return <Pets name={pet.name} key={i} />;
+  const pets = props.friendsInfo.pets.map(pet => {
+    return <Pets name={pet.name} key={pet.id} />;
   });
   return <div className='pet-list'>{pets}</div>;
 }

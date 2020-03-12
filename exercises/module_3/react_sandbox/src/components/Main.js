@@ -4,13 +4,8 @@ function Main(props) {
   return (
     <main className='main-container'>
       <div className='about-me'>
-        <h3 className='main-header'>About me</h3>
-        <p className='main-paragraph'>
-          Hello! My name is Alex George. I am going to VSchool to learn the
-          skills to become an awesome programmer so i can work for as a software
-          engineer and so i can pursue my passion. My passion is to teach
-          underprivileged kids all over Russia to code.
-        </p>
+        <h3 className='main-header'>{props.about.header}</h3>
+        <p className='main-paragraph'>{props.about.content}</p>
       </div>
 
       <div className='dream-jobs'>
