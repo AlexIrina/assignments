@@ -7,9 +7,9 @@ function Header() {
   return (
     <header className='App-header'>
       <img src={logo} className='App-logo' alt='Hello' />
-      <p>You're going to an awesome engineer, {userName}! </p>
+      <p>You're going to be an awesome engineer, {userName}! </p>
     </header>
   );
-} 
+}
 
 export default Header;
