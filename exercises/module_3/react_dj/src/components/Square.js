@@ -1,9 +1,11 @@
 import React from 'react';
 
-function Square() {
+function Square(props) {
   return (
     <div className='main-container'>
-      <div className='box'></div>
+      <div className='box' color={props.color}>
+        box 1
+      </div>
     </div>
   );
 }
