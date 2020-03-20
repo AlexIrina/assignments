@@ -10,13 +10,17 @@ class App extends React.Component {
     };
     this.smallTimeDj = this.smallTimeDj.bind(this);
     this.partyDj = this.partyDj.bind(this);
+    this.proDjLeft = this.proDjLeft.bind(this);
+    this.proDjRight = this.proDjRight.bind(this);
   }
 
+  // Small time DJ:
+  // You will have one button that will change all four squares either black or white.
   smallTimeDj() {
     this.setState(prevState => {
       return {
         colors: prevState.colors.map(color => {
-          if (color === 'white' || color === 'purple') {
+          if (color === 'white' || color === 'purple' || color === 'blue') {
             return 'black';
           } else if (color === 'black' || color === 'purple') {
             return 'white';
@@ -39,7 +43,32 @@ class App extends React.Component {
   }
 
   //  Professional DJ:
-  // Add two more buttons, for a total of four. These next two will change the colors of the bottom squares blue, but individually. One will be linked to the bottom left, and the other to the bottom right.
+  // will change the colors of the bottom left square to blue,
+  proDjLeft() {
+    this.setState(prevState => {
+      return {
+        colors: [
+          prevState.colors[0],
+          prevState.colors[1],
+          'blue',
+          prevState.colors[3]
+        ]
+      };
+    });
+  }
+  // will change the colors of the bottom right square to blue,
+  proDjRight() {
+    this.setState(prevState => {
+      return {
+        colors: [
+          prevState.colors[0],
+          prevState.colors[1],
+          prevState.colors[2],
+          'blue'
+        ]
+      };
+    });
+  }
 
   render() {
     const mappedSquares = this.state.colors.map((color, i) => (

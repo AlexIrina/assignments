@@ -12,16 +12,21 @@
   display: grid;
   grid-template-columns: repeat(2, 100px);
   grid-template-rows: repeat(2, 100px);
-  grid-column-gap: 2vw;
-  grid-row-gap: 2vh;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
   justify-content: center;
 }
 
 .box {
-  margin-top: 10vh;
   height: 100px;
   width: 100px;
-  border: 2px solid blue;
+  margin-top: 50px;
+  border: 2px solid black;
+}
+
+/* working here */
+.btn-container {
+  border: 10px solid red;
 }
 
 .small-time {
