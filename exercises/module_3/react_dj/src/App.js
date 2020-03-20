@@ -1,33 +1,59 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Square from './components/Square';
 import './App.css';
 
-class App extends Component {
+class App extends React.Component {
   constructor() {
     super();
     this.state = {
       colors: ['white', 'white', 'white', 'white']
     };
     this.smallTimeDj = this.smallTimeDj.bind(this);
+    this.partyDj = this.partyDj.bind(this);
   }
 
-  // Small time DJ:
-  // You will have one button that will change all four squares either black or white. White if the first one is not white. Black if the first square is white.
   smallTimeDj() {
+    console.log('small time dj');
     this.setState(prevState => {
       return {
-        colors: prevState.colors.map(color => {})
+        colors: prevState.colors.map(color => {
+          if (color === 'white') {
+            return 'black';
+          } else if (color === 'black') {
+            return 'white';
+          } else {
+            return color;
+          }
+        })
       };
     });
   }
 
+  // Party DJ:
+  // Add a second button. The second will turn the top half (both squares) of the grid purple.
+  partyDj() {
+    console.log(`party dj test`);
+  }
+
   render() {
+    const mappedSquares = this.state.colors.map(color => (
+      <Square color={color} />
+    ));
+
     return (
-      <div>
-        <Square color={this.state.colors[0]} />
-        <Square color={this.state.colors[1]} />
-        <Square color={this.state.colors[2]} />
-        <Square color={this.state.colors[3]} />
+      <div id='container'>
+        <h1>DJ React </h1>
+
+        <div className='box-container'>{mappedSquares}</div>
+
+        <div id='btn-container'>
+          <button className='small-time' onClick={this.smallTimeDj}>
+            Small Time Dj
+          </button>
+          <button className='party-dj' onClick={this.partyDj}>
+            Party Dj
+          </button>
+        </div>
       </div>
     );
   }

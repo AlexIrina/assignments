@@ -5,21 +5,35 @@
 }
 
 .box-container {
-  background-color: grey;
+  background-color: orange;
   position: relative;
   width: 100vw;
-  border: 1px solid red;
-
+  height: 50vh;
   display: grid;
   grid-template-columns: repeat(2, 100px);
   grid-template-rows: repeat(2, 100px);
   grid-column-gap: 10px;
   grid-row-gap: 15px;
+  justify-content: center;
 }
 
 .box {
-  position: absolute;
+  margin-top: 15vh;
   height: 100px;
   width: 100px;
-  border: 1px solid white;
+  border: 2px solid blue;
+}
+
+.small-time {
+  background-color: red;
+  padding: 2vh;
+  font-size: 2vh;
+  color: white;
+}
+
+.party-dj {
+  background-color: blue;
+  padding: 2vh;
+  font-size: 2vh;
+  color: white;
 }
