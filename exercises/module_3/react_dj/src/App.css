@@ -4,10 +4,11 @@
   padding: 0;
 }
 
-.main-container {
-  background-color: black;
+.box-container {
+  background-color: grey;
   position: relative;
   width: 100vw;
+  border: 1px solid red;
 
   display: grid;
   grid-template-columns: repeat(2, 100px);
@@ -20,5 +21,5 @@
   position: absolute;
   height: 100px;
   width: 100px;
-  background-color: red;
+  border: 1px solid white;
 }

@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Square from './components/Square';
 import './App.css';
 
-class App extends React.Component {
+class App extends Component {
   constructor() {
     super();
     this.state = {
@@ -11,47 +11,23 @@ class App extends React.Component {
     this.smallTimeDj = this.smallTimeDj.bind(this);
   }
 
+  // Small time DJ:
+  // You will have one button that will change all four squares either black or white. White if the first one is not white. Black if the first square is white.
   smallTimeDj() {
-    console.log('small time dj');
     this.setState(prevState => {
       return {
-        colors: prevState.colors.map(color => {
-          if (color === 'white') {
-            return 'black';
-          } else if (color === 'black') {
-            return 'white';
-          } else {
-            return color;
-          }
-        })
+        colors: prevState.colors.map(color => {})
       };
     });
   }
 
   render() {
     return (
-      <div id='container'>
-        <h1>DJ React </h1>
-
-        <div>
-          <Square color={this.state.colors[0]} />
-        </div>
-
-        <div>
-          <Square color={this.state.colors[1]} />
-        </div>
-
-        <div>
-          <Square color={this.state.colors[2]} />
-        </div>
-
-        <div>
-          <Square color={this.state.colors[3]} />
-        </div>
-
-        <div id='btn-container'>
-          <button onClick={this.smallTimeDj}>Click me</button>
-        </div>
+      <div>
+        <Square color={this.state.colors[0]} />
+        <Square color={this.state.colors[1]} />
+        <Square color={this.state.colors[2]} />
+        <Square color={this.state.colors[3]} />
       </div>
     );
   }
