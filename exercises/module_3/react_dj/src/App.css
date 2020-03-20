@@ -12,13 +12,13 @@
   display: grid;
   grid-template-columns: repeat(2, 100px);
   grid-template-rows: repeat(2, 100px);
-  grid-column-gap: 10px;
-  grid-row-gap: 15px;
+  grid-column-gap: 2vw;
+  grid-row-gap: 2vh;
   justify-content: center;
 }
 
 .box {
-  margin-top: 15vh;
+  margin-top: 10vh;
   height: 100px;
   width: 100px;
   border: 2px solid blue;
@@ -33,6 +33,25 @@
 
 .party-dj {
   background-color: blue;
+  padding: 2vh;
+  font-size: 2vh;
+  color: white;
+}
+.main-heading {
+  padding: 1vh;
+  text-align: center;
+  font-size: 50px;
+}
+
+.pro-dj-left-btn {
+  background-color: green;
+  padding: 2vh;
+  font-size: 2vh;
+  color: white;
+}
+
+.pro-dj-right-btn {
+  background-color: black;
   padding: 2vh;
   font-size: 2vh;
   color: white;
