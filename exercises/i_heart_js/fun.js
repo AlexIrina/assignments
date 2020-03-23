@@ -6291,21 +6291,39 @@
 
 // Object destructuring with Kyle
 
-const objVals = () => {
-  return {
-    a: 12,
-    b: 23,
-    c: [25, 2323, 424]
-  };
-};
+// const objVals = () => {
+//   return {
+//     a: 12,
+//     b: 23,
+//     c: [25, 2323, 424]
+//   };
+// };
 
-const { a, b, c } = objVals() || {};
-(_ => {
-  console.log(a);
-  console.log(b);
-  console.log(c);
-})();
-// 12
-// 23
-// [ 25, 2323, 424 ]
+// const { a, b, c } = objVals() || {};
+// (_ => {
+//   console.log(a);
+//   console.log(b);
+//   console.log(c);
+// })();
+// // 12
+// // 23
+// // [ 25, 2323, 424 ]
 
+// // function parameters destructuring
+// function arrayParamDestruct([a, b = 3, c] = []) {
+//   let x = a + c;
+
+//   x <= 6 ? (b = 7) : 'nada';
+//   console.log(b);
+//   return x;
+// }
+
+// console.log(arrayParamDestruct([2, , 4]));
+
+// Object parameter destructuring
+// function objParamDestruct({ a, b, c }) {
+//   console.log(a, b, c);
+  
+// }
+
+// objParamDestruct({ a: 1, b: 2, c: 3, d: 4, e: 5 });
