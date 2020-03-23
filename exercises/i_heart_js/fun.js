@@ -6270,14 +6270,42 @@
 // })();
 // console.log(x); //[ 1, 2, 3, [ 4, 5, 6, 7, 8, 9 ] ]
 
-function returnArr() {
-  return [1, 2, 3, [4, 5, 6, 7, 8, 9]];
-}
+// // array destructuring
+// function returnArr() {
+//   return [1, 2, 3, [4, 5, 6, 7, 8, 9]];
+// }
 
-[a, b, c, ...args] = returnArr() || [];
+// [a, b, c, ...args] = returnArr() || [];
+// (_ => {
+//   console.log(a);
+//   console.log(b);
+//   console.log(c);
+//   console.log(...args);
+// })();
+
+// function arrVals() {
+//   return [1, 2, 3, 4, 5, 6];
+// }
+
+// const [a, b, c, ...vals] = arrVals() || [];
+
+// Object destructuring with Kyle
+
+const objVals = () => {
+  return {
+    a: 12,
+    b: 23,
+    c: [25, 2323, 424]
+  };
+};
+
+const { a, b, c } = objVals() || {};
 (_ => {
   console.log(a);
   console.log(b);
   console.log(c);
-  console.log(...args);
 })();
+// 12
+// 23
+// [ 25, 2323, 424 ]
+
