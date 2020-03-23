@@ -6246,11 +6246,38 @@
 // const madeTheCakeLater = prepareCake(`banana`);
 // madeTheCakeLater();
 
-function prepareCake(flavor) {
-  // Adding debugger
-  return function() {
-    setTimeout(_ => console.log(`Made a ${flavor} cake!`), 1000);
-  };
+// function prepareCake(flavor) {
+//   // Adding debugger
+//   return function() {
+//     setTimeout(_ => console.log(`Made a ${flavor} cake!`), 1000);
+//   };
+// }
+
+// const makeCakeLater = prepareCake('banana');
+
+// // destructuring practice with Kyle Simpson
+// // console.log('test')
+// function returnArr() {
+//   return [1, 2, 3, [4, 5, 6, 7, 8, 9]];
+// }
+
+// let x = ([a, b, c, ...args] = returnArr() || []);
+// (_ => {
+//   console.log(a);
+//   console.log(b);
+//   console.log(c);
+//   console.log(...args);
+// })();
+// console.log(x); //[ 1, 2, 3, [ 4, 5, 6, 7, 8, 9 ] ]
+
+function returnArr() {
+  return [1, 2, 3, [4, 5, 6, 7, 8, 9]];
 }
 
-const makeCakeLater = prepareCake('banana');
+[a, b, c, ...args] = returnArr() || [];
+(_ => {
+  console.log(a);
+  console.log(b);
+  console.log(c);
+  console.log(...args);
+})();
