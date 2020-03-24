@@ -4,27 +4,39 @@
   box-sizing: border-box;
 }
 
-.App-container {
-  text-align: center;
-}
-
 .App-main {
   background-color: #202329;
-  min-height: 100vh;
+  min-height: 50vh;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  text-align: center;
 }
 
 .button {
-  font-size: calc(10px + 2vmin);
-  border: 1px solid white;
+  font-size: calc(10px + 3vmin);
+  border: 2px solid black;
+  padding: 10px;
 }
 .button-container {
   position: absolute;
-  display: block;
-  bottom: 150px;
+  bottom: 50vh;
+}
+
+#dice {
+  border: 2px solid #be252c;
+  background-color: aliceblue;
+  padding: 50px;
+  border-radius: 8%;
+  color: black;
+  margin-left: 10px;
+}
+
+h1 {
+  text-align: center;
+  font-size: calc(10px + 5vmin);
+  color: #be252c;
 }

@@ -1,7 +1,11 @@
 import React from 'react';
 
-function Die() {
-  return <div>test /</div>;
+function Die(props) {
+  return (
+    <div id='dice'>
+      <span>{props.num}</span>
+    </div>
+  );
 }
 
 export default Die;
