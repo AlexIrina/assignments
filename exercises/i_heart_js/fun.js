@@ -6323,7 +6323,13 @@
 // Object parameter destructuring
 // function objParamDestruct({ a, b, c }) {
 //   console.log(a, b, c);
-  
+
 // }
 
-// objParamDestruct({ a: 1, b: 2, c: 3, d: 4, e: 5 });
+// // objParamDestruct({ a: 1, b: 2, c: 3, d: 4, e: 5 });
+// const alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g'];
+// const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+// // const [a, b, ...rest] = alphabet;
+
+// // console.log(rest);

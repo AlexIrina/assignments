@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App-container {
+  text-align: center;
+}
+
+.App-main {
+  background-color: #202329;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.button {
+  font-size: calc(10px + 2vmin);
+  border: 1px solid white;
+}
+.button-container {
+  position: absolute;
+  display: block;
+  bottom: 150px;
+}

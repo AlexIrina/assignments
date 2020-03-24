@@ -5,9 +5,12 @@
 }
 
 .box-container {
-  background-color: orange;
+  background-image: url(images/download.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
   position: relative;
-  width: 100vw;
+  width: 1100px;
   height: 50vh;
   display: grid;
   grid-template-columns: repeat(2, 100px);
@@ -24,39 +27,40 @@
   border: 2px solid black;
 }
 
-/* working here */
+.main-heading {
+  padding: 1vh;
+  text-align: left;
+  padding-left: 20px;
+  font-size: 50px;
+}
+
 .btn-container {
   border: 10px solid red;
 }
 
 .small-time {
-  background-color: red;
+  background-color: black;
   padding: 2vh;
   font-size: 2vh;
   color: white;
 }
 
 .party-dj {
-  background-color: blue;
+  background-color: purple;
   padding: 2vh;
   font-size: 2vh;
   color: white;
-}
-.main-heading {
-  padding: 1vh;
-  text-align: center;
-  font-size: 50px;
 }
 
 .pro-dj-left-btn {
-  background-color: green;
+  background-color: white;
   padding: 2vh;
   font-size: 2vh;
-  color: white;
+  color: blue;
 }
 
 .pro-dj-right-btn {
-  background-color: black;
+  background-color: blue;
   padding: 2vh;
   font-size: 2vh;
   color: white;
