@@ -5,10 +5,9 @@
 }
 
 .box-container {
-  background-image: url(images/download.jpeg);
+  /* background-image: url(images/download.jpeg); */
   background-repeat: no-repeat;
   background-size: cover;
-
   position: relative;
   width: 1100px;
   height: 50vh;

@@ -5,11 +5,7 @@ class DiceBox extends Component {
   constructor() {
     super();
     this.state = {
-      cube1: this.randomNumber(),
-      cube2: this.randomNumber(),
-      cube3: this.randomNumber(),
-      cube4: this.randomNumber(),
-      cube5: this.randomNumber()
+      dice: [{ cube: 0 }, { cube: 0 }, { cube: 0 }, { cube: 0 }, { cube: 0 }]
     };
     this.randomNumber = this.randomNumber.bind(this);
     this.rollDice = this.rollDice.bind(this);
@@ -21,23 +17,17 @@ class DiceBox extends Component {
   };
 
   rollDice = () => {
-    this.setState({
-      cube1: this.randomNumber(),
-      cube2: this.randomNumber(),
-      cube3: this.randomNumber(),
-      cube4: this.randomNumber(),
-      cube5: this.randomNumber()
-    });
+    this.forceUpdate();
   };
 
   render() {
+    const dice = this.state.dice.map((die, i) => {
+      return <Die key={i} num={this.randomNumber()} />;
+    });
+
     return (
       <main className='App-main'>
-        <Die num={this.state.cube1} />
-        <Die num={this.state.cube2} />
-        <Die num={this.state.cube3} />
-        <Die num={this.state.cube4} />
-        <Die num={this.state.cube5} />
+        {dice}
         <div className='button-container'>
           <button className='button' onClick={this.rollDice}>
             Roll Dice

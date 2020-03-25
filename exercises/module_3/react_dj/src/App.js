@@ -31,9 +31,8 @@ class App extends React.Component {
       };
     });
   }
-
-  // Party DJ:
-  // Add a second button. The second will turn the top half (both squares) of the grid purple.
+  
+  // Party DJ:// Add a second button. The second will turn the top half (both squares) of the grid purple.
   partyDj() {
     this.setState(prevState => {
       return {
@@ -101,3 +100,14 @@ class App extends React.Component {
 }
 
 export default App;
+// Small time DJ:
+// You will have one button that will change all four squares either black or white. White if the first one is not white. Black if the first square is white.
+
+// Party DJ:
+// Add a second button. The second will turn the top half (both squares) of the grid purple.
+
+// Professional DJ:
+// Add two more buttons, for a total of four. These next two will change the colors of the bottom squares blue, but individually. One will be linked to the bottom left, and the other to the bottom right.
+
+// Big Time DJ:
+// Your next four buttons will each be linked to one of the squares. These buttons can have any affect on those squares that you wish.
