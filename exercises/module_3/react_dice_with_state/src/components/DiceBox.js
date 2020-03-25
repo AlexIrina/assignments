@@ -16,8 +16,14 @@ class DiceBox extends Component {
     return Math.floor(Math.random() * 6 + 1);
   };
 
+  // rollDice = () => {
+  //   this.forceUpdate();
+  // };
+
   rollDice = () => {
-    this.forceUpdate();
+    this.setState({
+      dice: [{ cube: 0 }, { cube: 0 }, { cube: 0 }, { cube: 0 }, { cube: 0 }]
+    });
   };
 
   render() {
