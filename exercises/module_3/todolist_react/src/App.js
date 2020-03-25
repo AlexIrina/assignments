@@ -16,9 +16,11 @@ class App extends React.Component {
     this.setState(prevState => {
       const updatedTodos = prevState.todos.map(todo => {
         if (todo.id === id) {
-          // flip the property of the completed object
+          // returned a new object that will replace the todo in the new array
           return {
+            // gives me all the propertied of the todo
             ...todo,
+            // manually change the completed property
             completed: !todo.completed
           };
         }
