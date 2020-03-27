@@ -83,7 +83,7 @@ class App extends Component {
           />{' '}
           Female
         </label>
-        {/* Formik */}
+        {/* Formik. Form generator library*/}
         <br />
 
         <label>Favorite Color:</label>

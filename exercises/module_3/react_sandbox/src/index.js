@@ -1,9 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import MyApp from './MyApp';
-import * as serviceWorker from './serviceWorker';
+import './styles.css';
+import MyForm from './MyForm';
 
-ReactDOM.render(<MyApp />, document.getElementById('root'));
-
-serviceWorker.unregister();
+ReactDOM.render(<MyForm />, document.getElementById('root'));
