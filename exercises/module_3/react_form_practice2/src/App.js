@@ -19,12 +19,21 @@ class App extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange = event => {
+  handleChange(event) {
     const { name, value, type, checked } = event.target;
     type === 'checkbox'
-      ? this.setState({ [name]: checked })
-      : this.setState({ [name]: value });
-  };
+      ? this.setState(prevState => {
+          return {
+            dietaryRestrictions: {
+              ...prevState.dietaryRestrictions,
+              [name]: checked
+            }
+          };
+        })
+      : this.setState({
+          [name]: value
+        });
+  }
 
   render() {
     return (
@@ -142,7 +151,13 @@ class App extends Component {
             <h2>Your Age: {this.state.age}</h2>
             <h2>Your Gender: {this.state.gender}</h2>
             <h2>Your Destination: {this.state.destination}</h2>
-            <p>Your food restrictions are: {this.state.dietaryRestrictions}</p>
+            <p>
+              Your food restrictions are: Vegan:{' '}
+              {this.state.dietaryRestrictions.isVegan ? 'Yes' : 'NO'}
+              Kosher: {this.state.dietaryRestrictions.isKosher ? 'Yes' : 'NO'}
+              Lactose Free:{' '}
+              {this.state.dietaryRestrictions.isLactoseFree ? 'Yes' : 'NO'}
+            </p>
           </div>
         </form>
       </main>
