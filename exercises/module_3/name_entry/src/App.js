@@ -6,7 +6,8 @@ class App extends Component {
     super();
     this.state = {
       firstName: '',
-      lastName: ''
+      lastName: '',
+      enteredNames: []
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -21,14 +22,27 @@ class App extends Component {
 
   // working here
   // When the user clicks the button, the value of the input box should be added to a running list of names that have been previous entered. (Hint: you'll need to set state and map over an array to do this).
-  handleSubmit = event => {
-    const { type, value } = event.target;
-    this.setState({
-      [type]: value
+  handleSubmit = e => {
+    e.preventDefault();
+    const { firstName, lastName } = this.state;
+
+    this.setState(prevState => {
+      return {
+        firstName: '',
+        lastName: '',
+        enteredNames: [...prevState.enteredNames, { firstName, lastName }]
+      };
     });
   };
 
   render() {
+    const names = this.state.enteredNames.map((name, i) => {
+      return (
+        <li key={i}>
+          {name.firstName} {name.lastName}
+        </li>
+      );
+    });
     return (
       <main className='App'>
         <form onSubmit={this.handleSubmit}>
@@ -54,7 +68,7 @@ class App extends Component {
           />
           <br />
           <h2>Entered Information:</h2>
-          <ol className='usersNames'></ol>
+          <ol className='usersNames'>{names}</ol>
           <button className='submitBtn'>Submit</button>
         </form>
       </main>
