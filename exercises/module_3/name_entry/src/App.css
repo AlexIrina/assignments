@@ -1,28 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
   font-size: calc(10px + 2vmin);
+  background-color: lightblue;
+  height: 100vh;
 }
 
 .usersNames {
-  margin-left: 25%;
   background-color: #282c34;
   min-height: 25vh;
-  width: 50vw;
+  width: 50%;
   display: flex;
   flex-direction: column;
-  align-items: left;
+  align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  border: 20px solid red;
+  margin: 1vh 25%;
 }
 
 input {
+  margin-top: 10px;
   font-size: calc(10px + 2vmin);
-  color: black;
+  color: blue;
+}
+
+li {
+  font-size: calc(10px + 2vmin);
+  color: blue;
 }
 
 button {
   font-size: calc(10px + 2vmin);
-  background-color: lightblue;
-  color: black;
+  background-color: white;
+  padding: 10px 20px;
+  color: blue;
+  border: 2px solid black;
+}
+h1 {
+  font-size: 50px;
+  color: red;
 }
