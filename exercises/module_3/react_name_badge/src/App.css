@@ -21,11 +21,13 @@
 form {
   border: 5px solid black;
   border-radius: 4%;
-  margin: 2% 15%;
+  margin: 2% 10%;
   background-color: green;
 }
 
 input {
+  height: 60px;
+  width: 32vw;
   margin: 20px;
   border: 2px solid black;
   font-size: calc(10px + 2vmin);
@@ -33,6 +35,8 @@ input {
 }
 
 textarea {
+  max-width: 90%;
+  max-height: 25vh;
   font-size: calc(10px + 2vmin);
   margin-bottom: 10px;
   background-color: lightgray;

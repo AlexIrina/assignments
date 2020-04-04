@@ -13,21 +13,30 @@ class App extends Component {
       phone: '',
     };
     this.handleChange = this.handleChange.bind(this);
+    this.submitForm = this.submitForm.bind(this);
   }
 
-  handleChange(event) {
-    console.log(event);
+  handleChange(e) {
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
+  }
+
+  // Submit button
+  submitForm(e) {
+    e.preventDefault();
+    console.log(e, 'form submitted');
   }
 
   render() {
     return (
-      <form>
+      <form onSubmit={this.submitForm}>
         <div className='container'>
           <input
             className='name'
             type='text'
             name='firstName'
             placeholder='First Name'
+            minLength='3'
             value={this.state.firstName}
             onChange={this.handleChange}
           />
@@ -36,6 +45,7 @@ class App extends Component {
             type='text'
             name='lastName'
             placeholder='Last Name'
+            minLength='3'
             value={this.state.lastName}
             onChange={this.handleChange}
           />
@@ -45,6 +55,7 @@ class App extends Component {
             type='text'
             name='email'
             placeholder='Email'
+            minLength='3'
             value={this.state.email}
             onChange={this.handleChange}
           />
@@ -53,6 +64,7 @@ class App extends Component {
             type='text'
             name='placeOfBirth'
             placeholder='Place of Birth'
+            minLength='3'
             value={this.state.placeOfBirth}
             onChange={this.handleChange}
           />
@@ -62,6 +74,7 @@ class App extends Component {
             type='number'
             name='phone'
             placeholder='Phone'
+            minLength='10'
             value={this.state.phone}
             onChange={this.handleChange}
           />
@@ -70,6 +83,7 @@ class App extends Component {
             type='text'
             name='favoriteFood'
             placeholder='Favorite Food'
+            minLength='3'
             value={this.state.value}
             onChange={this.handleChange}
           />
@@ -77,7 +91,8 @@ class App extends Component {
           <br />
 
           <textarea
-            value={'Tell me about yourself'}
+            placeholder='Tell us about yourself'
+            minLength='3'
             onChange={this.handleChange}
           />
 
