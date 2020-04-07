@@ -24,7 +24,7 @@ class App extends Component {
   // Submit button
   submitForm(e) {
     e.preventDefault();
-    console.log(e, 'form submitted');
+    console.log(e.target, 'form submitted');
   }
 
   render() {
@@ -87,15 +87,12 @@ class App extends Component {
             value={this.state.value}
             onChange={this.handleChange}
           />
-
           <br />
-
           <textarea
             placeholder='Tell us about yourself'
             minLength='3'
             onChange={this.handleChange}
           />
-
           <br />
           <button>Submit</button>
         </div>

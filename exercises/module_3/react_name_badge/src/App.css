@@ -21,22 +21,22 @@
 form {
   border: 5px solid black;
   border-radius: 4%;
-  margin: 2% 10%;
+  margin: 2% 18%;
   background-color: green;
 }
 
 input {
-  height: 60px;
-  width: 32vw;
+  padding: 1%;
+  height: 4vh;
+  width: 24vw;
   margin: 20px;
-  border: 2px solid black;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(10px + 1vmin);
   border: 5px solid black;
 }
 
 textarea {
-  max-width: 90%;
-  max-height: 25vh;
+  max-width: 84%;
+  max-height: 15vh;
   font-size: calc(10px + 2vmin);
   margin-bottom: 10px;
   background-color: lightgray;
