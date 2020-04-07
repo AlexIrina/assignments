@@ -4,6 +4,7 @@ function Header() {
   const date = new Date();
   const hours = date.getHours();
   let timeOfDay;
+  const name = 'Alex';
 
   const styles = {
     color: 'red',
@@ -12,7 +13,7 @@ function Header() {
   if (hours < 12) {
     timeOfDay = 'Morning';
     styles.color = 'green';
-  } else if (hours >= 12 && hours < 17) {
+  } else if (hours >= 12 && hours < 19) {
     timeOfDay = 'Afternoon';
     styles.color = 'pink';
   } else {
@@ -21,7 +22,7 @@ function Header() {
   }
   return (
     <div className='header'>
-      <h1>Good {`${timeOfDay}`}</h1>
+      <h1>Good {`${timeOfDay}, ${name}!`}</h1>
     </div>
   );
 }

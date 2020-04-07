@@ -6,14 +6,13 @@
 
 .App {
   background-color: black;
-  position: relative;
   height: 100vh;
 }
 .header {
-  height: 10vh;
+  height: 8vh;
   background-color: red;
   color: whitesmoke;
-  margin-bottom: 15px;
+
   text-align: center;
   font-size: calc(10px + 2vmin);
   display: flex;
@@ -86,15 +85,20 @@ input[type='checkbox']:focus {
 /* Contact card and contact css START */
 .contacts {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   text-align: center;
   justify-content: center;
   background-color: whitesmoke;
+  border: 2px solid blue;
+  margin: 4px;
+  margin-bottom: 50px;
 }
 
 .contact-card {
-  flex-basis: 250px;
-  margin: 20px;
+  flex-basis: 100px;
+  margin: 6px 10px;
+  border: 2px solid black;
 }
 
 .contact-card > img {
@@ -105,8 +109,24 @@ input[type='checkbox']:focus {
 .contact-card > h3 {
   text-align: center;
 }
+.contact-card > h1 {
+  font-size: 30px;
+}
 
 .contact-card > p {
-  font-size: 12px;
+  font-size: 16px;
+  padding: 10px;
 }
 /* Contact card and contact css END */
+
+/* test area */
+.test-area {
+  background-color: red;
+  color: white;
+  display: inline-block;
+  position: absolute;
+  margin-top: 50px;
+  padding: 20px;
+  height: auto;
+  width: auto;
+}

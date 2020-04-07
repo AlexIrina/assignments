@@ -1,15 +1,18 @@
 import React from 'react';
-
-function ContactCard() {
+// PROPS 101
+function ContactCard(props) {
+  console.log(props);
   return (
     <div className='contact-card'>
-      <h1>Users Information</h1>
-      <img src='http://placekitten.com/300/200' alt='cat' />
-      <h3>Name: </h3>
-      <p>Age:</p>
-      <p>Sex:</p>
-      <p>Occupation:</p>
-      <p>Email:</p>
+      <h1>{props.title}</h1>
+      <img src={props.imgUrl} alt='cat' />
+      <h3> {props.name}</h3>
+      <p>Age:{props.age}</p>
+      <p style={{ color: props.sex === 'male' ? 'blue' : 'red' }}>
+        Sex:{props.sex}
+      </p>
+      <p>Occupation: {props.occupation}</p>
+      <p>Email:{props.email}</p>
     </div>
   );
 }
