@@ -10,20 +10,24 @@ import './App.css';
 class App extends Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      products: productsData,
+      todos: todosData,
+      users: usersData,
+    };
   }
 
   render() {
     // functional components go below
-    const productComponent = productsData.map((item) => {
+    const productComponent = this.state.products.map((item) => {
       return <Product key={item.id} product={item} />;
     });
 
-    const userComponent = usersData.map((user) => {
+    const userComponent = this.state.users.map((user) => {
       return <ContactCard key={user.id} person={user} />;
     });
 
-    const todoComponent = todosData.map((todo) => {
+    const todoComponent = this.state.todos.map((todo) => {
       return <TodoItem key={todo.id} item={todo} />;
     });
 
