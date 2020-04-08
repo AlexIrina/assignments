@@ -8,6 +8,11 @@ import TodoItem from './components/TodoItem';
 import todosData from './data/todosData';
 import './App.css';
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {};
+  }
+
   render() {
     // functional components go below
     const productComponent = productsData.map((item) => {
@@ -18,8 +23,8 @@ class App extends Component {
       return <ContactCard key={user.id} person={user} />;
     });
 
-    const todoComponent = todosData.map((item) => {
-      return <TodoItem key={item.id} item={item} />;
+    const todoComponent = todosData.map((todo) => {
+      return <TodoItem key={todo.id} item={todo} />;
     });
 
     return (

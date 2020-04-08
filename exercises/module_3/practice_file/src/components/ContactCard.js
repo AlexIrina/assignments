@@ -8,8 +8,8 @@ function ContactCard(props) {
       <img src={props.person.imgUrl} alt='cat' />
       <h3> {props.person.name}</h3>
       <p>Age:{props.person.age}</p>
-      <p style={{ color: props.sex === 'male' ? 'blue' : 'red' }}>
-        Sex:{props.sex}
+      <p style={{ color: props.person.sex === 'male' ? 'blue' : 'red' }}>
+        Sex:{props.person.sex}
       </p>
       <p>Occupation: {props.person.occupation}</p>
       <p>Email:{props.person.email}</p>

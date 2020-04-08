@@ -1,17 +1,12 @@
 import React from 'react';
 import './App.css';
-import vacationData from './vacationSpots';
+import vacationData from './data/vacationSpots';
 import Card from './components/Card';
 
 function App() {
-
-  const vacationCard = vacationData.map(item => {
-    return (
-      <div>
-        <Card key={item.id} card={item} />
-      </div>
-    );
-  });
+  const vacationCard = vacationData.map((item) => (
+    <Card key={item.id} card={item} />
+  ));
   return <div className='App'>{vacationCard}</div>;
 }
 
