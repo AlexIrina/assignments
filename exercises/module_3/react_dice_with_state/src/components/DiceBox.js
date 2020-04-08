@@ -5,7 +5,7 @@ class DiceBox extends Component {
   constructor() {
     super();
     this.state = {
-      dice: [{ cube: 0 }, { cube: 0 }, { cube: 0 }, { cube: 0 }, { cube: 0 }]
+      dice: [{ cube: 0 }, { cube: 0 }, { cube: 0 }, { cube: 0 }, { cube: 0 }],
     };
     this.randomNumber = this.randomNumber.bind(this);
     this.rollDice = this.rollDice.bind(this);
@@ -18,7 +18,7 @@ class DiceBox extends Component {
 
   rollDice = () => {
     this.setState({
-      dice: [{ cube: 0 }, { cube: 0 }, { cube: 0 }, { cube: 0 }, { cube: 0 }]
+      dice: [{ cube: 0 }, { cube: 0 }, { cube: 0 }, { cube: 0 }, { cube: 0 }],
     });
   };
 

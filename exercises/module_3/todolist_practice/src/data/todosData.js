@@ -15,7 +15,7 @@ export default [
     completed: false,
   },
   {
-    id: 1,
+    id: 4,
     text: 'Buy Food',
     completed: false,
   },
