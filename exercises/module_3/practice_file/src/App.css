@@ -121,12 +121,10 @@ input[type='checkbox']:focus {
 
 /* test area */
 .test-area {
+  margin-top: 20px;
   background-color: red;
   color: white;
   display: inline-block;
   position: absolute;
-  margin-top: 50px;
   padding: 20px;
-  height: auto;
-  width: auto;
 }

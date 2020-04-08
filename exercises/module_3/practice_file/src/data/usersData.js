@@ -1,4 +1,4 @@
-const usersData = [
+export default [
   {
     id: 1,
     title: 'Users Info (props 101)',
@@ -44,5 +44,3 @@ const usersData = [
     email: 'thecat@hotmail.com',
   },
 ];
-
-export default usersData;

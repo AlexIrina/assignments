@@ -4,15 +4,15 @@ function ContactCard(props) {
   console.log(props);
   return (
     <div className='contact-card'>
-      <h1>{props.title}</h1>
-      <img src={props.imgUrl} alt='cat' />
-      <h3> {props.name}</h3>
-      <p>Age:{props.age}</p>
+      <h1>{props.person.title}</h1>
+      <img src={props.person.imgUrl} alt='cat' />
+      <h3> {props.person.name}</h3>
+      <p>Age:{props.person.age}</p>
       <p style={{ color: props.sex === 'male' ? 'blue' : 'red' }}>
         Sex:{props.sex}
       </p>
-      <p>Occupation: {props.occupation}</p>
-      <p>Email:{props.email}</p>
+      <p>Occupation: {props.person.occupation}</p>
+      <p>Email:{props.person.email}</p>
     </div>
   );
 }

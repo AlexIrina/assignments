@@ -1,4 +1,4 @@
-const products = [
+export default [
   {
     id: '1',
     name: 'Pencil',
@@ -31,24 +31,4 @@ const products = [
     price: 0,
     description: 'Free snacks!',
   },
-  {
-    id: '6',
-    name: 'Rubber Duckies',
-    price: 3.5,
-    description: 'To help you solve your hardest coding problems.',
-  },
-  {
-    id: '7',
-    name: 'Fidget Spinner',
-    price: 21.99,
-    description: "Because we like to pretend we're in high school.",
-  },
-  {
-    id: '8',
-    name: 'Sticker Set',
-    price: 14.99,
-    description: 'To prove to other devs you know a lot.',
-  },
 ];
-
-export default products;

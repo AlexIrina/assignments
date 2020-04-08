@@ -5,6 +5,7 @@ import usersData from './data/usersData';
 import Product from './components/Product';
 import productsData from './data/productsData';
 import TodoItem from './components/TodoItem';
+import todosData from './data/todosData';
 import './App.css';
 class App extends Component {
   render() {
@@ -14,33 +15,24 @@ class App extends Component {
     });
 
     const userComponent = usersData.map((user) => {
-      return (
-        <ContactCard
-          key={user.id}
-          title={user.title}
-          imgUrl={user.imgUrl}
-          name={user.name}
-          age={user.age}
-          sex={user.sex}
-          occupation={user.occupation}
-          phone={user.phone}
-          email={user.email}
-        />
-      );
+      return <ContactCard key={user.id} person={user} />;
     });
+
+    const todoComponent = todosData.map((item) => {
+      return <TodoItem key={item.id} item={item} />;
+    });
+
     return (
       <div className='App'>
         <div className='header'>
           <Header />
         </div>
+        {/* users */}
         <div className='contacts'>{userComponent}</div>
         {/* todo-list */}
         <div className='todo-list'>
           <h1>My Todo List</h1>
-          <TodoItem />
-          <TodoItem />
-          <TodoItem />
-          <TodoItem />
+          {todoComponent}
         </div>
         {/*  todo-list end*/}
 
