@@ -11,15 +11,23 @@ class App extends Component {
       age: 0,
       gender: '',
       destination: '',
-      restrictions: [],
+      isVegan: false,
+      isKosher: false,
+      isLactoseFree: false,
     };
     this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit() {}
-
-  handleChange() {}
+  handleChange(event) {
+    const { name, value, type, checked } = event.target;
+    type === 'checkbox'
+      ? this.setState({
+          [name]: checked,
+        })
+      : this.setState({
+          [name]: value,
+        });
+  }
 
   render() {
     return (
@@ -55,22 +63,71 @@ class App extends Component {
           <br />
           <label>Please select your gender</label>
           <br />
+          <label>Select your gender:</label>
+          <br />
           <input
             type='radio'
             name='gender'
             value='male'
             checked={this.state.gender === 'male'}
-            onChange={this.state.handleChange}
+            onChange={this.handleChange}
           />{' '}
           Male
           <br />
           <input
-           type='radio' 
-           name='gender' 
-           value = 'female' 
-           checked = {this.state.gender === 'female'} 
-           onChange = {this.handleChange} 
-           /> Female
+            type='radio'
+            name='gender'
+            value='female'
+            checked={this.state.gender === 'female'}
+            onChange={this.handleChange}
+          />{' '}
+          Female
+          <br />
+          {/* destination */}
+          <label> Flying to:</label>
+          <br />
+          <select
+            name='destination'
+            value={this.state.destination}
+            onChange={this.handleChange}
+          >
+            <option value='Moscow'>Moscow</option>
+            <option value='New York'>New York</option>
+            <option value='California'>California</option>
+          </select>
+          <br />
+          {/* food restrictions */}
+          <label>Are you allergic to anything?</label>
+          <br />
+          <label>
+            <input
+              type='checkbox'
+              name='isVegan'
+              checked={this.state.isVegan}
+              onChange={this.handleChange}
+            />
+          </label>{' '}
+          Vegan?
+          <br />
+          <label>
+            <input
+              type='checkbox'
+              name='isKosher'
+              checked={this.state.isKosher}
+              onChange={this.handleChange}
+            />
+          </label>{' '}
+          Kosher?
+          <br />
+          <label>
+            <input
+              type='checkbox'
+              name='isLactoseFree'
+              checked={this.state.isLactoseFree}
+              onChange={this.handleChange}
+            />
+          </label>{' '}
+          Lactose?
           <br />
           <button onClick={this.handleChange}>Submit</button>
         </form>
@@ -82,6 +139,9 @@ class App extends Component {
           <p>Your gender is {this.state.gender}</p>
           <p>You are flying to {this.state.destination}</p>
           <p>You have food allergies to</p>
+          <p>vegan:{this.state.isVegan ? 'yes' : 'no'}</p>
+          <p> kosher: {this.state.isKosher ? 'yes' : 'no'}</p>
+          <p>LactoseFree: {this.state.isLactoseFree ? 'yes' : 'no'}</p>
         </div>
       </div>
     );
