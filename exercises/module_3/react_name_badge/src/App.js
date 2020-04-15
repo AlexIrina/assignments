@@ -11,23 +11,65 @@ class App extends Component {
       favoriteFood: [],
       email: '',
       phone: '',
+      notes: '',
+      // badges stored here
+      badges: [],
     };
     this.handleChange = this.handleChange.bind(this);
     this.submitForm = this.submitForm.bind(this);
   }
 
-  handleChange(e) {
-    const { name, value } = e.target;
+  handleChange(event) {
+    const { name, value } = event.target;
     this.setState({ [name]: value });
   }
-
   // Submit button
-  submitForm(e) {
-    e.preventDefault();
-    console.log(e.target, 'form submitted');
+  submitForm(event) {
+    event.preventDefault();
+    const newBadge = {
+      firstName: this.state.firstName,
+      lastName: this.state.lastName,
+      placeOfBirth: this.state.placeOfBirth,
+      favoriteFood: this.state.favoriteFood,
+      email: this.state.email,
+      phone: this.state.phone,
+      notes: this.state.notes,
+    };
+    this.setState((prevState) => {
+      return {
+        badges: [...prevState.badges, newBadge],
+      };
+    });
   }
 
   render() {
+    const mappedBadges = this.state.badges.map((badge, i) => {
+      return (
+        <div className='output' key={i}>
+          <div className='badge'>
+            <h3>Badge: </h3>
+          </div>
+          <div className='usersInfo'>
+            <div className='left-items'>
+              <p>
+                Name:{badge.firstName} {badge.lastName}
+              </p>
+              <p>Place of Birth: {badge.placeOfBirth}</p>
+              <p>Email: {badge.email}</p>
+            </div>
+            <div className='right-items'>
+              <p>Phone: {badge.phone}</p>
+              <p>Favorite Food: {badge.favoriteFood}</p>
+            </div>
+            <br />
+
+            <div className='text-area'>
+              <p>About Me:{badge.notes}</p>
+            </div>
+          </div>
+        </div>
+      );
+    });
     return (
       <div>
         <form onSubmit={this.submitForm}>
@@ -89,43 +131,20 @@ class App extends Component {
               onChange={this.handleChange}
             />
             <br />
+
             <textarea
+              value={this.state.notes}
+              name='notes'
               placeholder='Tell us about yourself'
               minLength='3'
               onChange={this.handleChange}
             />
+
             <br />
             <button>Submit</button>
-            <hr />
           </div>
         </form>
-        {/* working here */}
-        <div className='output'>
-          <div className='badge'>
-            <h3>Badge:</h3>
-          </div>
-          <div className='usersInfo'>
-            <div className='left-items'>
-              <p>
-                Name:{this.state.firstName} {this.state.lastName}
-              </p>
-              <p>Place of Birth: {this.state.placeOfBirth}</p>
-              <p>Email: {this.state.email}</p>
-            </div>
-            <div className='right-items'>
-              <p>Phone: {this.state.phone}</p>
-              <p>Favorite Food: {this.state.favoriteFood}</p>
-            </div>
-            <br />
-            <div className='text-area'>
-              <textarea
-                minLength='3'
-                maxLength='20'
-                value={'some text'}
-              ></textarea>
-            </div>
-          </div>
-        </div>
+        {mappedBadges}
       </div>
     );
   }
