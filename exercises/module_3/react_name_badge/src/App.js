@@ -62,7 +62,6 @@ class App extends Component {
               <p>Favorite Food: {badge.favoriteFood}</p>
             </div>
             <br />
-
             <div className='text-area'>
               <p>About Me:{badge.notes}</p>
             </div>
@@ -131,7 +130,6 @@ class App extends Component {
               onChange={this.handleChange}
             />
             <br />
-
             <textarea
               value={this.state.notes}
               name='notes'
@@ -139,7 +137,6 @@ class App extends Component {
               minLength='3'
               onChange={this.handleChange}
             />
-
             <br />
             <button>Submit</button>
           </div>
