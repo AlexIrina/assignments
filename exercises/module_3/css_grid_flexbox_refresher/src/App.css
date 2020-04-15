@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  display: flex;
+  flex-direction: column-reverse;
+  flex-wrap: wrap;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+.box {
+  display: inline-block;
+  height: 300pt;
+  width: 200pt;
+  background: #333;
+  margin: 5pt;
+}
+
+.first {
+  background: red;
+}
+.last {
+  background: blue;
+}
