@@ -3,54 +3,75 @@
   padding: 0;
   box-sizing: border-box;
 }
-
-/* .usersNames {
-  background-color: #282c34;
-  min-height: 25vh;
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-  border: 20px solid red;
-  margin: 1vh 25%;
-} */
-
 form {
-  border: 5px solid black;
-  border-radius: 4%;
-  margin: 2% 18%;
-  background-color: green;
+  background-color: grey;
+  border-radius: 5%;
+}
+
+.container {
+  padding: 10px;
+  text-align: center;
+  display: inline-block;
+  height: 20vh;
+  width: 100vw;
 }
 
 input {
-  padding: 1%;
-  height: 4vh;
-  width: 24vw;
-  margin: 20px;
-  font-size: calc(10px + 1vmin);
-  border: 5px solid black;
+  border: 2px solid black;
+  padding: 8px;
+  margin: 4px 4px;
 }
-
-textarea {
-  max-width: 84%;
-  max-height: 15vh;
-  font-size: calc(10px + 2vmin);
-  margin-bottom: 10px;
-  background-color: lightgray;
-  border: 5px solid black;
-}
-
 button {
-  font-size: calc(10px + 2vmin);
   padding: 10px;
-  background-color: grey;
-  color: white;
-  border: 6px solid grey;
+  border: 1px solid black;
+  margin-bottom: 10px;
 }
-.container {
-  margin: 30px;
-  text-align: center;
+/* output */
+.output {
+  border: 2px solid red;
+  border-radius: 5%;
+  height: 25vh;
+  width: 50vw;
+  margin: 5px 0;
+}
+
+.badge {
+  background-color: red;
+  color: white;
+  border-radius: 8%;
+  font-size: 12px;
+}
+
+.left-items {
+  font-size: 8px;
+  margin: 1px;
+  display: inline-block;
+  height: auto;
+  width: 45%;
+}
+
+.left-items > p {
+  padding-bottom: 3px;
+}
+
+.right-items {
+  font-size: 8px;
+  display: inline-block;
+  height: auto;
+  width: 45%;
+  position: absolute;
+}
+.right-items > p {
+  padding-bottom: 2px;
+}
+
+.output textarea {
+  font-size: 8px;
+  border: 1px solid black;
+}
+
+.text-area {
+  font-size: 8px;
+  padding-left: 65px;
+  position: absolute;
 }
