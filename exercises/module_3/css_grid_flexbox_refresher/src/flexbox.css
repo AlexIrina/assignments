@@ -4,9 +4,10 @@
   box-sizing: border-box;
 }
 
-.App {
+.parent {
   display: flex;
-  flex-direction: column-reverse;
+  /* row, column  column-reverse*/
+  flex-direction: column;
   flex-wrap: wrap;
   height: 100vh;
   align-items: center;
@@ -14,8 +15,8 @@
 }
 .box {
   display: inline-block;
-  height: 300pt;
-  width: 200pt;
+  height: 100pt;
+  width: 100pt;
   background: #333;
   margin: 5pt;
 }
