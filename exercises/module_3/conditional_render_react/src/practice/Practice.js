@@ -1,13 +1,5 @@
 import React, { Component } from 'react';
 
-/*
-Challenge:
-
-3. Add a button that logs the user in/out
-    a. extra challenge - make the button display "log in" if they're not logged in and "log out" if they are
-4. Display text that says "Logged in" if the user is logged in, or "Logged out" if they're not.
-*/
-
 class Practice extends Component {
   constructor() {
     super();
@@ -17,19 +9,29 @@ class Practice extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
+  // button click
   handleClick() {
-    console.log('Clicked');
+    // change the state to true or false when button is clicked
+    this.setState((prevState) => {
+      return {
+        // give me the opposite of what STATE use to be
+        isLoggedIn: !prevState.isLoggedIn,
+      };
+    });
   }
 
   render() {
+    let buttonText = this.state.isLoggedIn ? 'Log Out' : 'Log In';
+    let displayText = this.state.isLoggedIn ? 'Logged In' : 'Logged Out';
+
     return (
       <div className='card'>
-        <h1>You are currently logged {this.state.isLoggedIn}</h1>
-        <button style={{ backgroundColor: 'green' }} onClick={this.handleClick}>
-          Log In
-        </button>
-        <button style={{ backgroundColor: 'red' }} onClick={this.handleClick}>
-          Log out
+        <h1>You are currently {displayText}</h1>
+        <button
+          style={{ color: this.state.isLoggedIn ? 'red' : 'green' }}
+          onClick={this.handleClick}
+        >
+          {buttonText}
         </button>
       </div>
     );
