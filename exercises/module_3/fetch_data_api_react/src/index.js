@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Pokemon from './Pokemon';
 
-import App from './App';
+// import RickMorty from './RickMorty';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<Pokemon />, document.getElementById('root'));
