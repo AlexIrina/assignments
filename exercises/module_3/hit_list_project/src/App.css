@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.parent {
+  display: grid;
+  grid-template-columns: repeat(1fr);
+  column-gap: 10px;
+  row-gap: 15px;
+}
+
+.child > img {
+  height: 200px;
+}
+
+.child {
+  height: 300px;
+  position: relative;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+}
+
+.child > p {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+@media only screen and (min-width: 800px) {
+  .parent {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
