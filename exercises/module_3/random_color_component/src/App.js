@@ -42,7 +42,7 @@ class App extends Component {
         <div className='child'>
           <img src={HeaderImage} alt='pic' />
           <p style={matchColor}>{this.state.color}</p>
-          <button onClick={this.refreshPage}>Refresh the page</button>
+          <button onClick={this.refreshPage}>Change Color</button>
         </div>
       </div>
     );
