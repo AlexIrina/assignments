@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.parent {
+  display: grid;
+  grid-template-columns: repeat(1fr);
+  column-gap: 10px;
+  row-gap: 15px;
+}
+
+.child > img {
+  height: 200px;
+  width: 100vw;
+}
+
+.child {
+  height: 300px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
+.child > h1 {
+  position: absolute;
+  bottom: 40px;
+  text-align: center;
+  text-shadow: 0 20px 50px #5e07e9, 0 0 10px #de1818;
+  color: white;
+}
+
+.child > p {
+  position: absolute;
+  text-align: center;
+  top: 0;
+  color: red;
+  font-size: 10vw;
+  text-shadow: 0 0 3px #ff0000, 0 0 5px #0000ff;
+}
+
+@media only screen and (min-width: 800px) {
+  .parent {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
