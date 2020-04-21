@@ -7,6 +7,7 @@ class App extends Component {
     this.state = {
       color: '',
     };
+    this.refreshPage = this.refreshPage.bind(this);
   }
 
   componentDidMount() {
@@ -20,14 +21,28 @@ class App extends Component {
       });
   }
 
+  refreshPage() {
+    fetch('http://www.colr.org/json/color/random')
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data.colors[0]);
+        this.setState({
+          color: `#${data.colors[0].hex}`,
+        });
+      });
+  }
+
   render() {
     const newColor = this.state.color;
+    const matchColor = {
+      color: this.state.color,
+    };
     return (
       <div className='parent' style={{ backgroundColor: newColor }}>
         <div className='child'>
           <img src={HeaderImage} alt='pic' />
-          <h1>Refresh page</h1>
-          <p style={{ color: this.state.color }}>{this.state.color}</p>
+          <p style={matchColor}>{this.state.color}</p>
+          <button onClick={this.refreshPage}>Refresh the page</button>
         </div>
       </div>
     );

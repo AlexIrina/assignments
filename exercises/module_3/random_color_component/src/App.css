@@ -24,11 +24,12 @@
   margin: auto;
 }
 
-.child > h1 {
+.child > button {
   position: absolute;
+  font-size: 20px;
   bottom: 40px;
   text-align: center;
-  text-shadow: 0 20px 50px #5e07e9, 0 0 10px #de1818;
+  text-shadow: 0 0px 10px #5e07e9, 0 0 10px #de1818;
   color: white;
 }
 
