@@ -3,14 +3,14 @@ import React from 'react';
 function Navbar() {
   return (
     <nav className='navbar' id='mainNav'>
-      <div className='container'>
+      <div className='navbar-container'>
         <a className='navbar-brand' href='index.html'>
           Start Bootstrap
         </a>
         <button className='navbar-btn' type='button'>
           Menu
         </button>
-        <div className='navbar-items-container' id='navbarResponsive'>
+        <div className='navbar-items-container' id='responsiveNavbar'>
           <ul className='nav-list'>
             <li className='nav-item'>
               <a className='nav-link' href='index.html'>

@@ -4,8 +4,8 @@ const Footer = () => {
   return (
     <div>
       <footer>
-        <div className='container'>
-          <ul className='list'>
+        <div className='footer-container'>
+          <ul className='list-items'>
             <li className='list-item'>
               <a href='.'>
                 <span></span>

@@ -13,7 +13,7 @@ const BlogList = (props) => {
   ));
 
   return (
-    <div className='container'>
+    <div className='blog-list-container'>
       {mappedArticle}
       <a href='.'>Older Posts →</a>
       <hr />

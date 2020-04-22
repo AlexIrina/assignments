@@ -1,4 +1,56 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* header */
+.header-img {
+}
+.header-container {
+}
+.site-heading {
+}
+.subheading {
+}
+/* navbar */
+.navbar {
+}
+#mainNav {
+}
+.navbar-container {
+}
+.navbar-brand {
+}
+.navbar-btn {
+}
+.navbar-items-container {
+}
+#responsiveNavbar {
+}
+.nav-list {
+}
+.nav-item {
+}
+.nav-link {
 }
 
+/* footer */
+.footer-container {
+}
+.list-items {
+}
+.list-item {
+}
+
+/* blog post */
+.post-container {
+}
+.post-title {
+}
+.post-subtitle {
+}
+.post-author {
+}
+/* blog list */
+.blog-list-container {
+}
