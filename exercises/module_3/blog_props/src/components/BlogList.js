@@ -1,7 +1,7 @@
 import React from 'react';
 import BlogPost from './BlogPost.js';
 
-const BlogList = props => {
+const BlogList = (props) => {
   const mappedArticle = props.data.map((item, key) => (
     <BlogPost
       title={item.title}
@@ -14,16 +14,8 @@ const BlogList = props => {
 
   return (
     <div className='container'>
-      <div className='row'>
-        <div className='col-lg-8 col-md-10 mx-auto'>
-          {mappedArticle}
-          <div className='clearfix'>
-            <a className='btn btn-primary float-right' href='.'>
-              Older Posts →
-            </a>
-          </div>
-        </div>
-      </div>
+      {mappedArticle}
+      <a href='.'>Older Posts →</a>
       <hr />
     </div>
   );

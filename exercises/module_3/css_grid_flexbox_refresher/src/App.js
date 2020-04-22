@@ -1,28 +1,45 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-// import './App.css';
-import './grid.css';
-function App() {
-  return (
-    <div className='parent'>
-      <div className='box first'>
-        <h1 className='text'>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis,
-          dicta?
-        </h1>
-      </div>
-      {/* uncomment bellow to text multiple boxes on the page */}
-      {/* <div className='box'></div>
-      <div className='box'></div>
-      <div className='box'></div>
-      <div className='box'></div>
-      <div className='box'></div>
-      <div className='box'></div>
-      <div className='box'></div>
-      <div className='box'></div>
-      <div className='box last'></div> */}
-    </div>
-  );
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      characters: [],
+    };
+  }
+
+  componentDidMount() {
+    fetch(
+      'https://raw.githubusercontent.com/VSchool/vschool-api/master/static/hitlist.json'
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        this.setState({
+          characters: data,
+        });
+      });
+  }
+
+  render() {
+    const characters = this.state.characters.map((character, i) => {
+      return (
+        <div className='child' key={i}>
+          <img src={character.image} alt='character' />
+          <div className='image'></div>
+          <p style={{ color: 'white', background: 'blue' }}>
+            Name: {character.name}
+          </p>
+        </div>
+      );
+    });
+
+    return (
+      <>
+        <h1 style={{ textAlign: 'center' }}>Don Corleone's Hit List</h1>
+        <div className='parent'>{characters}</div>
+      </>
+    );
+  }
 }
 
 export default App;
