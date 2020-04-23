@@ -36,7 +36,7 @@ class App extends Component {
     return (
       <>
         <h1 style={{ textAlign: 'center' }}>Don Corleone's Hit List</h1>
-        <div className='parent'>{characters}</div>
+        <div className='grid-container'>{characters}</div>
       </>
     );
   }

@@ -4,11 +4,11 @@
   box-sizing: border-box;
 }
 
-.parent {
+.grid-container {
   display: grid;
   grid-template-columns: repeat(1fr);
-  column-gap: 10px;
-  row-gap: 15px;
+  row-gap: 10px;
+  height: 100vh;
 }
 
 .child > img {
@@ -27,10 +27,14 @@
   position: absolute;
   bottom: 0;
   width: 100%;
+  justify-content: center;
 }
 
-@media only screen and (min-width: 800px) {
-  .parent {
+@media only screen and (min-width: 500px) {
+  .grid-container {
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 300px);
+    justify-content: center;
+    column-gap: 10px;
   }
 }
