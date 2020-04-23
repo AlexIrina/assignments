@@ -99,14 +99,38 @@ a {
   grid-column: 2/3;
 }
 
+.older-posts {
+  display: flex;
+}
+.older-posts button {
+  margin-left: auto;
+  padding: 20px;
+  font-size: 16px;
+  background-color: blue;
+  color: white;
+}
+
 /* footer */
 .footer-container {
-  border: 2px solid red;
   display: grid;
-  grid-column: 1/4;
-  grid-template-rows: repeat(3, 1fr);
+  grid-column: 1/-1;
+  min-height: 200px;
+  align-items: center;
+}
+.footer-container a {
+  list-style-type: none;
+  text-decoration: none;
+}
+.footer-container li {
+  list-style-type: none;
 }
 .list-items {
+  display: flex;
+  justify-content: space-around;
 }
 .list-item {
+}
+
+.copyright {
+  text-align: center;
 }

@@ -15,7 +15,9 @@ const BlogList = (props) => {
   return (
     <div className='blog-list-container'>
       {mappedArticle}
-      <a href='.'>Older Posts →</a>
+      <div className='older-posts'>
+        <button href='.'>Older Posts →</button>
+      </div>
       <hr />
     </div>
   );
