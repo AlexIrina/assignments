@@ -8,14 +8,19 @@ class App extends Component {
     };
   }
 
+  // https://rickandmortyapi.com/api/character/
+  // image /center
+  // results.name   /center below the image
+  // results.species   /bottom left 50%
+  // results.origin   /bottom right 50%
+
   componentDidMount() {
-    fetch(
-      'https://raw.githubusercontent.com/VSchool/vschool-api/master/static/hitlist.json'
-    )
+    fetch('https://rickandmortyapi.com/api/character/')
       .then((response) => response.json())
       .then((data) => {
+        console.log(data);
         this.setState({
-          characters: data,
+          characters: data.results,
         });
       });
   }
@@ -25,10 +30,19 @@ class App extends Component {
       return (
         <div className='child' key={i}>
           <img src={character.image} alt='character' />
-          <div className='image'></div>
-          <p style={{ color: 'white', background: 'blue' }}>
-            Name: {character.name}
-          </p>
+
+          <div>
+            {' '}
+            <p style={{ color: 'white', background: 'blue' }}>
+              Name: {character.name}
+            </p>
+            <div className='character-info'>
+              <p>Specie: {character.species}</p>
+              <p>Origin: {character.origin.name}</p>
+            </div>
+          </div>
+
+          <p></p>
         </div>
       );
     });

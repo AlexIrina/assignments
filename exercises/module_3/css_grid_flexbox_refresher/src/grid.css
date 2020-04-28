@@ -24,7 +24,8 @@
   position: relative;
   border: 1px solid black;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   max-width: 350%;
 }
 
@@ -34,10 +35,24 @@
   width: 100%;
   justify-content: center;
 }
+
+.character-info {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  border: 2px solid red;
+}
+
+.character-info > p:nth-child(1) {
+  margin-right: 16px;
+}
 @media only screen and (min-width: 750px) {
   .grid-container {
     grid-template-columns: repeat(2, 1fr);
     padding: 32px;
+  }
+  .character-info {
+    flex-direction: row;
   }
 }
 

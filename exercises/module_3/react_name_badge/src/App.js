@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './App.css';
 
 class App extends Component {
   constructor() {
@@ -23,6 +22,7 @@ class App extends Component {
     const { name, value } = event.target;
     this.setState({ [name]: value });
   }
+
   // Submit button
   submitForm(event) {
     event.preventDefault();
