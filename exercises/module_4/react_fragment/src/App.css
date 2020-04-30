@@ -1,0 +1,12 @@
+.app {
+  text-align: center;
+}
+
+.child-container {
+  background: grey;
+  color: blue;
+}
+
+.grandchild-container {
+  color: red;
+}
