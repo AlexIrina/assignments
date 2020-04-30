@@ -1,0 +1,30 @@
+.grid-container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid red;
+  align-content: center;
+  height: 100vh;
+}
+
+.grid-container > h1 {
+}
+
+.counter {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  border: 2px solid black;
+  height: 200px;
+  width: 300px;
+}
+.counter > button {
+  display: flex;
+  padding: 10px;
+  background: green;
+  color: white;
+  font-size: 20px;
+  border: 2px solid green;
+}
