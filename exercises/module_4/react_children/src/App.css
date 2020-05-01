@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main > h1 {
+  text-align: center;
+}
+
+.callout {
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: 20px;
+  background-color: #c0fffe;
+}
