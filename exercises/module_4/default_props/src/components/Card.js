@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function Card(props) {
   const style = {
@@ -18,6 +19,11 @@ Card.defaultProps = {
   cardColor: 'yellow',
   height: 100,
   width: 100,
+};
+
+// gives the dev warning messages if the props types are not matching below
+Card.propTypes = {
+  cardColor: PropTypes.string.isRequired,
 };
 
 export default Card;
