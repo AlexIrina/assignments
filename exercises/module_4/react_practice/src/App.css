@@ -1,0 +1,10 @@
+body {
+  background: grey;
+}
+
+.app-container {
+  border: 5px solid red;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
