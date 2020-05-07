@@ -8,7 +8,9 @@ export default class App extends Component {
     return (
       <div>
         <Header />
-        <main>You have no notifications! {userName}</main>
+        <main>
+          <p className='main'>You have no notifications! {userName}</p>
+        </main>
       </div>
     );
   }
