@@ -11,7 +11,8 @@ ReactDOM.render(
 );
 
 /**
- * Challenge: Set up context to save the user's username and pass it to anywhere that is currently hardcoding "Username".
+ * Challenge:
  *
- * Use the static class property `contextType` on any components that need to consume context.
+ * 1. Convert App and Header back into functional components
+ * 2. Use UserContext.Consumer to consume the username context in both places
  */

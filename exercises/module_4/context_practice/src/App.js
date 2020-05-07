@@ -1,17 +1,21 @@
-import React, { Component } from 'react';
-import UserContext from './userContext';
+import React from 'react';
+
 import Header from './Header';
-export default class App extends Component {
-  static contextType = UserContext;
-  render() {
-    const userName = this.context;
-    return (
-      <div>
-        <Header />
-        <main>
-          <p className='main'>You have no notifications! {userName}</p>
-        </main>
-      </div>
-    );
-  }
+import UserContext from './userContext';
+
+function App() {
+  return (
+    <div>
+      <Header />
+      <main>
+        <UserContext.Consumer>
+          {(username) => (
+            <p className='main'>No new notifications, {username}! 🎉</p>
+          )}
+        </UserContext.Consumer>
+      </main>
+    </div>
+  );
 }
+
+export default App;
