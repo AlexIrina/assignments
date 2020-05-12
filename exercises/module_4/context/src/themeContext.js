@@ -1,4 +1,28 @@
-import React from 'react';
-const ThemeContext = React.createContext();
-// // will get back a ThemeContext.Provider (to wrap around App) and ThemeContext.Consumer (lets me pass props to any component thats needs them)
-export default ThemeContext;
+import React, { Component } from 'react';
+const { Provider, Consumer } = React.createContext();
+
+class ThemeContextProvider extends Component {
+  state = {
+    theme: 'dark',
+  };
+
+  toggleTheme = () => {
+    this.setState((prevState) => {
+      return {
+        theme: prevState.theme === 'light' ? 'dark' : 'light',
+      };
+    });
+  };
+
+  render() {
+    return (
+      <Provider
+        value={{ theme: this.state.theme, toggleTheme: this.toggleTheme }}
+      >
+        {this.props.children}
+      </Provider>
+    );
+  }
+}
+
+export { ThemeContextProvider, Consumer as ThemeContextConsumer };

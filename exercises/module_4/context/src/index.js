@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './App.css';
+
 import App from './App';
-import ThemeContext from './themeContext';
+import './App.css';
+import { ThemeContextProvider } from './themeContext';
 
 ReactDOM.render(
-  <ThemeContext.Provider value={'dark'}>
+  <ThemeContextProvider>
     <App />
-  </ThemeContext.Provider>,
+  </ThemeContextProvider>,
   document.getElementById('root')
 );
