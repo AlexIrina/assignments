@@ -9,7 +9,6 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 10vh;
 }
 
 main,
@@ -18,24 +17,30 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
-  height: 10vh;
+  align-items: flex-start;
+}
+
+main {
+  height: 30vh;
 }
 
 button {
-  padding: 10px;
-  border: none;
-  margin: 10px;
   position: absolute;
-  margin-top: 80px;
   font-size: large;
+  display: flex;
+  top: 20vh;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
 }
 
 .light-theme {
-  background-color: mediumaquamarine;
+  background-color: #d8d6d8;
   color: #333333;
 }
+
 .dark-theme {
   background-color: #333333;
-  color: orangered;
+  color: #ed623b;
+  background-color: rgb(44, 38, 38);
 }

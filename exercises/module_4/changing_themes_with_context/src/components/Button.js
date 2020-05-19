@@ -1,16 +1,28 @@
 import React from 'react';
 import { ThemeContextConsumer } from './themeContext';
-function Button() {
+function Button(props) {
+  const darkStyles = {
+    padding: '20px',
+    backgroundColor: 'white',
+    marginTop: '80px',
+    color: 'black',
+  };
+
+  const lightStyles = {
+    padding: '20px',
+    backgroundColor: 'black',
+    marginTop: '80px',
+    color: 'white',
+  };
   return (
     <ThemeContextConsumer>
-      {(theme) => (
+      {({ theme, toggleTheme }) => (
         <button
-          style={{
-            color: theme === 'light' ? 'black' : 'white',
-          }}
-          className={`${theme}-theme`}
+          onClick={toggleTheme}
+          className={`${theme}-theme `}
+          style={theme === 'dark' ? darkStyles : lightStyles}
         >
-          Switch Theme
+          Toggle Theme
         </button>
       )}
     </ThemeContextConsumer>
