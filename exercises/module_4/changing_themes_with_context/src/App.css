@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 10vh;
+}
+
+main,
+footer {
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  margin: 10px;
+  position: absolute;
+  margin-top: 80px;
+  font-size: large;
+}
+
+.light-theme {
+  background-color: mediumaquamarine;
+  color: #333333;
+}
+.dark-theme {
+  background-color: #333333;
+  color: orangered;
+}

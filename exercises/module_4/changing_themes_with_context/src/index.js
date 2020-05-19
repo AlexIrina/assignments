@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import { UserContextProvider } from './userContext';
+import './App.css';
+import { ThemeContextProvider } from './components/themeContext';
 
 ReactDOM.render(
-  <UserContextProvider>
+  <ThemeContextProvider>
     <App />
-  </UserContextProvider>,
+  </ThemeContextProvider>,
   document.getElementById('root')
 );
