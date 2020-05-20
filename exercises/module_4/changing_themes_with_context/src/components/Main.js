@@ -1,6 +1,6 @@
 import React from 'react';
 import { ThemeContextConsumer } from './themeContext';
-import Button from './Button';
+// import Button from './Button';
 
 const Main = () => {
   return (
@@ -12,7 +12,7 @@ const Main = () => {
               Click the button to toggle the{' '}
               {theme === 'dark' ? 'Light' : 'Dark'} theme!
             </h1>
-            <Button />
+            {/* <Button /> */}
           </main>
         </div>
       )}

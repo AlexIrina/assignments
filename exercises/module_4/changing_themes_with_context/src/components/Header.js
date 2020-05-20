@@ -1,27 +1,24 @@
 import React from 'react';
 import { ThemeContextConsumer } from './themeContext';
-
+import { darkStyles, lightStyles } from './themeStyles';
 function Header() {
-  const darkStyles = {
-    backgroundColor: 'black',
-    color: '#89cff0',
-  };
-
-  const lightStyles = {
-    backgroundColor: '#89cff0 ',
-    color: 'black',
-  };
-
   return (
     <ThemeContextConsumer>
-      {({ theme }) => (
+      {({ theme, isToggled, toggleMenu, toggleTheme }) => (
         <header
           className={`${theme}-theme`}
           style={theme === 'dark' ? darkStyles : lightStyles}
         >
-          <h1>Home</h1>
-          <h1>About</h1>
-          <h1>Contact</h1>
+          <p>Home</p>
+          <p>About</p>
+          <p>Contact</p>
+          <p onClick={toggleMenu}>
+            Theme
+            <div style={{ display: isToggled ? 'inline-block' : 'none' }}>
+              <p onClick={(e) => toggleTheme('dark')}>Dark theme</p>
+              <p onClick={(e) => toggleTheme('light')}>Light Theme</p>
+            </div>
+          </p>
         </header>
       )}
     </ThemeContextConsumer>

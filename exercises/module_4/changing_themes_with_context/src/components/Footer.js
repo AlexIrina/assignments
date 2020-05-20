@@ -18,7 +18,7 @@ const Footer = () => {
           className={`${theme}-theme`}
           style={theme === 'dark' ? darkStyles : lightStyles}
         >
-          <h1>The amazing Footer</h1>
+          <h3>The amazing Footer</h3>
         </footer>
       )}
     </ThemeContextConsumer>
