@@ -17,14 +17,14 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
 }
 
 main {
   height: 30vh;
 }
 
-button {
+/* button {
   position: absolute;
   font-size: large;
   display: flex;
@@ -32,7 +32,7 @@ button {
   text-decoration: none;
   cursor: pointer;
   outline: none;
-}
+} */
 
 .light-theme {
   background-color: #d8d6d8;

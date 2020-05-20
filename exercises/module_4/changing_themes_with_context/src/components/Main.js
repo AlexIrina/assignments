@@ -9,7 +9,7 @@ const Main = () => {
         <div>
           <main className={`${theme}-theme`}>
             <h1>
-              Click the button to toggle the{' '}
+              Switch to{' '}
               {theme === 'dark' ? 'Light' : 'Dark'} theme!
             </h1>
             {/* <Button /> */}

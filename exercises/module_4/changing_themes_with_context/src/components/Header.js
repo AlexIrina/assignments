@@ -9,16 +9,27 @@ function Header() {
           className={`${theme}-theme`}
           style={theme === 'dark' ? darkStyles : lightStyles}
         >
-          <p>Home</p>
-          <p>About</p>
-          <p>Contact</p>
-          <p onClick={toggleMenu}>
-            Theme
+          <h2>Home</h2>
+          <h2>About</h2>
+          <h2>Contact</h2>
+          <h3 style={{ color: 'white' }} onClick={toggleMenu}>
+            Switch Theme
+            <br />
             <div style={{ display: isToggled ? 'inline-block' : 'none' }}>
-              <p onClick={(e) => toggleTheme('dark')}>Dark theme</p>
-              <p onClick={(e) => toggleTheme('light')}>Light Theme</p>
+              <p
+                style={{ color: '#ed623b' }}
+                onClick={(e) => toggleTheme('dark')}
+              >
+                Dark theme
+              </p>
+              <p
+                style={{ color: 'yellow' }}
+                onClick={(e) => toggleTheme('light')}
+              >
+                Light Theme
+              </p>
             </div>
-          </p>
+          </h3>
         </header>
       )}
     </ThemeContextConsumer>
