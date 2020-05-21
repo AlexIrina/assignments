@@ -1,21 +1,36 @@
 import React from 'react';
-
+import { ThemeContextConsumer } from '../themeContext';
 const Form = () => {
   return (
-    <div>
-      <form className='form'>
-        <input type='text' name placeholder='Title' />
-        <input type='text' name placeholder='Description' />
-        <input type='text' name placeholder='Img URL' />
-        <button>Submit</button>
-      </form>
-    </div>
+    <ThemeContextConsumer>
+      {(props) => (
+        <form onSubmit={props.handleSubmit} className='form'>
+          <input
+            name='title'
+            value={props.title}
+            type='text'
+            placeholder='Title'
+            onChange={props.handleChange}
+          />
+          <input
+            name='description'
+            value={props.description}
+            type='text'
+            placeholder='Description'
+            onChange={props.handleChange}
+          />
+          <input
+            name='imageURL'
+            value={props.imageURL}
+            type='text'
+            placeholder='Img URL'
+            onChange={props.handleChange}
+          />
+          <button>Submit</button>
+        </form>
+      )}
+    </ThemeContextConsumer>
   );
 };
 
 export default Form;
-
-// Must have 3 input fields:
-// Img url field (A url to an image of an ugly thing)
-// Title field (The title of the image that the user wants to give)
-// Description field (why the user thinks it is ugly)
