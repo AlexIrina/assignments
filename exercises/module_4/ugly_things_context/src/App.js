@@ -8,13 +8,14 @@ const App = () => {
       <Form />
       <ThemeContextConsumer>
         {(theme) => {
-          console.log(theme);
           return theme.uglyThings.map((item) => (
-            <>
-              <h2>Title: {item.title}</h2>
-              <h2>Description: {item.description}</h2>
-              <img src={item.imageURL} alt='ugly' />
-            </>
+            <div className='ugly'>
+              <h3 className='title'>{item.title}</h3>
+              <h5 className='desc'>{item.description}</h5>
+              <div className='img-container'>
+                <img src={item.imageURL} alt='ugly-thing' />
+              </div>
+            </div>
           ));
         }}
       </ThemeContextConsumer>

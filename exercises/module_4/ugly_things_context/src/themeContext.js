@@ -48,5 +48,3 @@ class ThemeContextProvider extends Component {
 
 export { ThemeContextProvider, Consumer as ThemeContextConsumer };
 
-// Must display a list of posted images with their associated titles and descriptions
-// Must store the array of ugly thing objects in the Context store
