@@ -7,13 +7,13 @@ const Footer = () => {
   return (
     <footer>
       <div className='social-links'>
-        <a href='#' className='social-link' area-label=''>
+        <a href='/' className='social-link' area-label=''>
           <img src={snapchat} alt='' className='social-image' />
         </a>
-        <a href='#' className='social-link' area-label=''>
+        <a href='/' className='social-link' area-label=''>
           <img src={instagram} alt='' className='social-image' />
         </a>
-        <a href='#' className='social-link' area-label=''>
+        <a href='/' className='social-link' area-label=''>
           <img src={airbnb} alt='' className='social-image' />
         </a>
       </div>

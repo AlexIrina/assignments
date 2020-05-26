@@ -23,7 +23,7 @@ const Main = () => {
         activities in Whitefish and Columbia Falls (within a 5 min drive).
         Glacier Park International Airport is 10 miles away.
       </p>
-      <button className='btn'>Book it</button>
+      <button className='btn'>Book now</button>
     </main>
   );
 };

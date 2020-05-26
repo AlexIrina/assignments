@@ -6,16 +6,16 @@ const Header = () => {
     <header>
       <img className='logo' src={logo} alt='Companies Logo' />
       <nav className='nav'>
-        <a href='#' className='nav__link'>
+        <a href='/' className='nav__link'>
           Contact
         </a>
-        <a href='#' className='nav__link'>
+        <a href='/' className='nav__link'>
           About
         </a>
-        <a href='#' className='nav__link'>
+        <a href='/' className='nav__link'>
           Add guests
         </a>
-        <a href='#' className='nav__link'>
+        <a href='/' className='nav__link'>
           Add dates
         </a>
       </nav>
