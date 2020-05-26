@@ -10,7 +10,7 @@ const App = () => {
         {(theme) => {
           return theme.uglyThings.map((item) => (
             <div className='ugly'>
-              <h3 className='title'>{item.title}</h3>
+              <h2 className='title'>{item.title}</h2>
               <h5 className='desc'>{item.description}</h5>
               <div className='img-container'>
                 <img src={item.imageURL} alt='ugly-thing' />

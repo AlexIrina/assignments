@@ -1,0 +1,73 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* colors */
+:root {
+  /* social media */
+  --clr-icons: #929292;
+  /* text */
+  --clr-text: #fff;
+  /* background color */
+  --clr-bg-dark: #242424;
+  /* image box */
+  --clr-bg-light: #3b3b3b;
+  /* accent color */
+  --clr-accent: #ff7600;
+}
+
+body {
+  /* space for mobile */
+  margin: 1em;
+  background-color: var(--clr-bg-dark);
+  color: var(--clr-text);
+  line-height: 1.5;
+  font-family: sans-serif;
+}
+
+/* so images stay on the page */
+img {
+  max-width: 100%;
+}
+
+.title {
+  color: var(--clr-accent);
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1;
+  /* clamp(small size, as the window expands, maximum size) */
+  font-size: clamp(3rem, 10vw, 7rem);
+}
+
+.location {
+  color: var(--clr-icons);
+  font-size: 1.5 rem;
+  margin-bottom: 1.5em;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  margin: 2em 0;
+}
+
+.nav {
+  /* outline: 2px solid red; */
+  /* enables the links to go to the end of the screen */
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-around;
+}
+
+.nav__link {
+  color: var(--clr-text);
+  text-transform: capitalize;
+  text-decoration: none;
+}
+
+.secondary-images {
+  display: flex;
+  gap: 0.5em;
+}
