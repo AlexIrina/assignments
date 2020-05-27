@@ -89,28 +89,29 @@ img {
   margin-bottom: 1.5em;
 }
 
-header {
+/* Uncomment this for it to work */
+/* header {
   display: flex;
   align-items: center;
   margin: 2em 0;
-}
+} */
 
-.nav {
-  /* outline: 2px solid red; */
-  /* enables the links to go to the end of the screen */
-  flex-grow: 1;
+/* .nav { */
+/* outline: 2px solid red; */
+/* enables the links to go to the end of the screen */
+/* flex-grow: 1;
   display: flex;
-  justify-content: space-around;
-}
+  justify-content: space-around; */
+/* } */
 
-.nav__link {
+.navLink {
   color: var(--clr-text);
   text-transform: capitalize;
   text-decoration: none;
 }
 
-.nav__link:hover,
-.nav__link:focus {
+.navLink:hover,
+.navLink:focus {
   color: var(--clr-accent);
 }
 
@@ -150,15 +151,15 @@ footer {
     gap: 2em;
     position: relative;
   }
-  header {
+  /* header {
     grid-column: 2/5;
     display: grid;
     grid-template-columns: subgrid;
-  }
+  } */
 
-  nav {
+  /* nav {
     grid-column: 2/5;
-  }
+  } */
 
   main {
     grid-column: 2/-1;
@@ -234,7 +235,8 @@ footer {
     /* shrink down */
     grid-column: 3/4;
   }
-  .nav,
+  /* nav is done */
+  /* .nav, */
   .secondary-images {
     grid-column: 2/3;
   }
