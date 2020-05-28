@@ -1,26 +1,26 @@
 import React from 'react';
-import cabin from '../img/cabin.jpg';
-import inside1 from '../img/inside.jpg';
-import bed from '../img/bed.jpg';
+import hotel from '../img/hotel.jpg';
+import room from '../img/room.jpg';
+import view from '../img/view.jpg';
 import styled from 'styled-components';
 
 const Main = () => {
   return (
     <Container>
-      <Title>The Escape</Title>
-      <Location>Richmond,Montana</Location>
-      <MainImage src={cabin} alt='' />
+      <Title>The Beach</Title>
+      <Location>Laguna Beach, California</Location>
+      <MainImage src={hotel} alt='' />
       <SecondaryImages>
-        <Image src={inside1} alt='inside the cabin' />
-        <Image src={bed} alt='bed' />
+        <Image src={room} alt='inside the cabin' />
+        <Image src={view} alt='bed' />
       </SecondaryImages>
       <Description>
-        Nestled on 5 wooded acres, this artistically designed two story
-        treehouse has all the luxury amenities. Within 30 minutes to Glacier
-        National Park, minutes from Whitefish Mtn Ski Resort. Best of both
-        worlds if you want to experience Montana nature as well have access to
-        activities in Whitefish and Columbia Falls (within a 5 min drive).
-        Glacier Park International Airport is 10 miles away.
+        Step out onto the semiprivate balcony with amazing ocean views Situated
+        on prime oceanfront property, you'll experience peace and ultimate
+        relaxation with breathtaking ocean views and miles of sandy beaches in a
+        furnished 1929 vintage small studio and bath. Enjoy listening to the
+        ocean waves as you sleep on a full bed perfect for the solo traveler or
+        the couple that wants to be cozy.
       </Description>
       <Btn>Book now</Btn>
     </Container>
