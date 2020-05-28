@@ -6,25 +6,44 @@ import styled from 'styled-components';
 
 const Footer = () => {
   return (
-    <footer>
-      <div className='social-links'>
-        <a href='/' className='social-link' area-label=''>
-          <Image src={snapchat} alt='' className='social-image' />
-        </a>
-        <a href='/' className='social-link' area-label=''>
-          <Image src={instagram} alt='' className='social-image' />
-        </a>
-        <a href='/' className='social-link' area-label=''>
-          <Image src={airbnb} alt='' className='social-image' />
-        </a>
-      </div>
-    </footer>
+    <Container>
+      <SocialMediaLinks>
+        <SocialLink href='/' area-label=''>
+          <SocialImage src={snapchat} alt='' />
+        </SocialLink>
+        <SocialLink href='/' area-label=''>
+          <SocialImage src={instagram} alt='' />
+        </SocialLink>
+        <SocialLink href='/' area-label=''>
+          <SocialImage src={airbnb} alt='' />
+        </SocialLink>
+      </SocialMediaLinks>
+    </Container>
   );
 };
 
 export default Footer;
 
-const Image = styled.img`
+const SocialImage = styled.img`
   /* so images stay on the page */
   max-width: 100%;
+`;
+
+const SocialMediaLinks = styled.div`
+  display: flex;
+  gap: 2em;
+`;
+const SocialLink = styled.a`
+  :hover,
+  :focus {
+    opacity: 0.5;
+  }
+`;
+
+const Container = styled.footer`
+  margin-top: 2em;
+
+  @media (min-width: 800px) {
+    grid-column: 2/3;
+  }
 `;
