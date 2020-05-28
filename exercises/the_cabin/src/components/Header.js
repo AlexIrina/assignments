@@ -5,24 +5,17 @@ import styled from 'styled-components';
 const Header = (props) => {
   return (
     <Container>
-      <img className='logo' src={logo} alt='Companies Logo' />
-      <Nav className='nav'>
-        <a href='/' className='navLink'>
-          Contact
-        </a>
-        <a href='/' className='navLink'>
-          About
-        </a>
-        <a href='/' className='navLink'>
-          Add guests
-        </a>
-        <a href='/' className='navLink'>
-          Add dates
-        </a>
+      <Image src={logo} alt='Companies Logo' />
+      <Nav>
+        <NavLink href='/'>Contact</NavLink>
+        <NavLink href='/'>About</NavLink>
+        <NavLink href='/'>Add guests</NavLink>
+        <NavLink href='/'>Add dates</NavLink>
       </Nav>
     </Container>
   );
 };
+
 const Container = styled.header`
   display: flex;
   align-items: center;
@@ -47,6 +40,19 @@ const Nav = styled.nav`
   }
 `;
 
-// const NavLink = styled.navLink``;
+const NavLink = styled.a`
+  color: var(--clr-text);
+  text-transform: capitalize;
+  text-decoration: none;
+  :hover,
+  :focus {
+    color: var(--clr-accent);
+  }
+`;
+
+const Image = styled.img`
+  /* so images stay on the page */
+  max-width: 100%;
+`;
 
 export default Header;
