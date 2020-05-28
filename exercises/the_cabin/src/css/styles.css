@@ -133,6 +133,8 @@ body {
 .social-link:focus {
   opacity: 0.5;
 } */
+
+
 /* tablet screens */
 @media (min-width: 800px) {
   body {
@@ -151,6 +153,8 @@ body {
     gap: 2em;
     position: relative;
   }
+
+
   /* header {
     grid-column: 2/5;
     display: grid;

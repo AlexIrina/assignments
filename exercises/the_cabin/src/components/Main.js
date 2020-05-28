@@ -7,7 +7,7 @@ import styled from 'styled-components';
 const Main = () => {
   return (
     <Container>
-      <Title>The Cabin</Title>
+      <Title>The Escape</Title>
       <Location>Richmond,Montana</Location>
       <MainImage src={cabin} alt='' />
       <SecondaryImages>

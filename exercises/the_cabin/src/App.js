@@ -2,17 +2,32 @@ import React from 'react';
 import Header from './components/Header';
 import Main from './components/Main';
 import Footer from './components/Footer';
+import styled from 'styled-components';
 
 function App() {
   return (
-    <div className='main-grid'>
+    <MainGridContainer>
       <Header />
       <Main />
       <Footer />
-    </div>
+    </MainGridContainer>
   );
 }
 
-// sub-grid(whatever is inside header, main, footer) is only supported in firefox NOT CHROME
-
 export default App;
+
+const MainGridContainer = styled.div`
+  @media (min-width: 800px) {
+    display: grid;
+    grid-template-columns:
+      minmax(1em, 1fr)
+      repeat(2, minmax(15rem, 35rem))
+      minmax(5rem, 10rem)
+      minmax(1em, 1fr);
+    gap: 2em;
+    position: relative;
+  }
+`;
+
+// sub-grid is whatever is inside header, main, footer
+// only supported in firefox
