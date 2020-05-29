@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Form from './components/Form';
+import Toggle from './components/Toggle';
 const App = () => {
   // 1
   const [answer] = useState('Yesssss');
@@ -18,6 +19,9 @@ const App = () => {
     setCount((prevCount) => prevCount * 2);
   }
 
+  // 4
+  const [name, setName] = useState('');
+
   return (
     <div>
       {/* 1 */}
@@ -31,12 +35,36 @@ const App = () => {
 
       <>
         <Form />
+        {/* 4 */}
+        <Toggle />
+        <hr />
+        <p>Submit form</p>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            formSubmit(name, setName);
+          }}
+        >
+          <input
+            type='text'
+            onChange={(e) => setName(e.target.value)}
+            value={name}
+          />
+          <button>Submit</button>
+        </form>
       </>
     </div>
   );
 };
 
+// sends email and clears form
+const formSubmit = (value, setValue) => {
+  console.log(`email sent to ${value} !`);
+  setValue('');
+};
+
 export default App;
+
 //       {/* 1 */}
 //       {/* make the answer show up */}
 //       <p>Is state important to know ? {answer}</p>

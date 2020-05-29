@@ -4,7 +4,7 @@ function Form() {
   const [inputData, setInputData] = useState({ firstName: '', lastName: '' });
   const [contactsData, setContactsData] = useState([]);
 
-  function handleChange(event) {
+  function handleChange(event) {  
     const { name, value } = event.target;
     setInputData((prevInputData) => ({ ...prevInputData, [name]: value }));
   }
