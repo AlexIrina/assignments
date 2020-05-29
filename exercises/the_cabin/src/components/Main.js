@@ -3,10 +3,11 @@ import hotel from '../img/hotel.jpg';
 import room from '../img/room.jpg';
 import view from '../img/view.jpg';
 import styled from 'styled-components';
-
-const Main = () => {
+import logo from '../img/wave2.svg';
+const Main = (props) => {
   return (
     <Container>
+      <Wave src={logo} />
       <Title>The Beach</Title>
       <Location>Laguna Beach, California</Location>
       <MainImage src={hotel} alt='' />
@@ -14,7 +15,7 @@ const Main = () => {
         <Image src={room} alt='inside the cabin' />
         <Image src={view} alt='bed' />
       </SecondaryImages>
-      <Description>
+      <Description imgUrl={'wave2.svg'}>
         Step out onto the semiprivate balcony with amazing ocean views Situated
         on prime oceanfront property, you'll experience peace and ultimate
         relaxation with breathtaking ocean views and miles of sandy beaches in a
@@ -110,12 +111,17 @@ const Image = styled.img`
 `;
 
 const Description = styled.p`
+  /* background-image: url('${(props) => props.imgUrl || 'wave2.svg'}');
+  background-repeat: no-repeat ;
+  background-size: cover;
+  background-position: center; */
+
   @media (min-width: 800px) {
     grid-column: 1/2;
   }
   ::after {
-    content: '01';
-    font-size: 50vw;
+    /* content: '01'; */
+    /* font-size: 50vw; */
     position: absolute;
     opacity: 0.03;
     z-index: -100;
@@ -175,4 +181,17 @@ const Btn = styled.button`
     /* moves up and left and right */
     transform: scale(1.35, 1.85);
   }
+`;
+
+const Wave = styled.img`
+  height: 50vw;
+  width: 40vw;
+  position: absolute;
+  z-index: -100;
+  line-height: 1;
+  /*     grid-column: 1 / 3; */
+  left: -0.15em;
+  top: 0;
+  opacity: 0.3;
+  /* margin-bottom:; */
 `;
