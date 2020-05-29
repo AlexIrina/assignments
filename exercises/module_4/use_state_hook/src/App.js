@@ -1,30 +1,47 @@
 import React, { useState } from 'react';
-
-import './App.css';
-
-function App() {
+import Form from './components/Form';
+const App = () => {
   // 1
-  const [answer] = useState('Yes');
+  const [answer] = useState('Yesssss');
   // 2
   const [count, setCount] = useState(0);
+  // '+'
+  function incrementCount() {
+    setCount((prevCount) => prevCount + 1);
+  }
+  //'-'
+  function decrementCount() {
+    setCount((prevCount) => prevCount - 1);
+  }
+  // 'X2'
+  function doubleCount() {
+    setCount((prevCount) => prevCount * 2);
+  }
 
   return (
-    <div className='App'>
+    <div>
       {/* 1 */}
-      {/* make the answer show up */}
-      <p>Is state important to know ? {answer}</p>
-
+      <p>Is state important to know? {answer}</p>
       {/* 2 */}
-      {/* // Convert the class below to a functional component that uses the
-      useState hook to initalize a count vartiable to 0 and display the count on
-      the screen. // Don't worry about the part where the button changes the
-      count quite yet, that's what you're here to learn about! */}
+      <br />
+      {count}
+      <button onClick={incrementCount}> + </button>
+      <button onClick={decrementCount}> - </button>
+      <button onClick={doubleCount}> x2 </button>
 
-      <h1>Count: {count}</h1>
-
-      <button onClick={() => setCount(count + 1)}>Increment Count</button>
+      <>
+        <Form />
+      </>
     </div>
   );
-}
+};
 
 export default App;
+//       {/* 1 */}
+//       {/* make the answer show up */}
+//       <p>Is state important to know ? {answer}</p>
+
+//       {/* 2 */}
+//       {/* // Convert the class below to a functional component that uses the
+//       useState hook to initalize a count vartiable to 0 and display the count on
+//       the screen. Increment,decrement,double count on click
