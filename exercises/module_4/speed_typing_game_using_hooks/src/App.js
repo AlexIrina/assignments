@@ -3,7 +3,6 @@ import React, { useRef, useEffect, useState } from 'react';
 function App() {
   // setState
   const [text, setText] = useState('');
-  const [count, setCount] = useState(0);
 
   // // useEffect
   // useEffect(() => {
@@ -21,18 +20,22 @@ function App() {
     setText(value);
   };
 
-  const handleClick = () => {};
+  const calcWordCount = (txt) => {
+    const wordsArr = txt.trim().split(' ');
+    return wordsArr.filter((words) => words !== '').length;
+  };
 
-  console.log(text);
+  // console.log(text);
+
   return (
     <div>
       <h1>How Fast Do You Type?</h1>
       <form action=''>
         <textarea value={text} onChange={handleChange} />
       </form>
-      <h4>Time Remaining: {}</h4>
-      <button onClick={handleClick}>Start</button>
-      <h1>Word Count: {count}</h1>
+      <h4>Time Remaining: ???</h4>
+      <button onClick={() => console.log(calcWordCount(text))}>Start</button>
+      <h1>Word Count: ???</h1>
     </div>
   );
 }
