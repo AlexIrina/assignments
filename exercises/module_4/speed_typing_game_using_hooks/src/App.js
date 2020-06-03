@@ -3,14 +3,8 @@ import React, { useRef, useEffect, useState } from 'react';
 function App() {
   // setState
   const [text, setText] = useState('');
-
-  // // useEffect
-  // useEffect(() => {
-  //   effect;
-  //   return () => {
-  //     cleanup;
-  //   };
-  // }, [input]);
+  const [timeRemaining, setTimeRemaining] = useState(5);
+  const [isTimeRunning, setIsTimeRunning] = useState(false);
 
   // // useRef
   // const ref = useRef(initialValue);
@@ -25,6 +19,20 @@ function App() {
     return wordsArr.filter((words) => words !== '').length;
   };
 
+  // useEffect
+  useEffect(() => {
+    // timer stops at 0
+    // checks is time is running
+    if (isTimeRunning && timeRemaining > 0) {
+      setTimeout(() => {
+        // change the time remaining by one second
+        setTimeRemaining((time) => time - 1);
+      }, 1000);
+    } else if (isTimeRunning === 0) {
+      isTimeRunning(false);
+    }
+  }, [timeRemaining, isTimeRunning]);
+
   // console.log(text);
 
   return (
@@ -33,8 +41,8 @@ function App() {
       <form action=''>
         <textarea value={text} onChange={handleChange} />
       </form>
-      <h4>Time Remaining: ???</h4>
-      <button onClick={() => console.log(calcWordCount(text))}>Start</button>
+      <h4>Time Remaining: {timeRemaining}</h4>
+      <button onClick={() => setIsTimeRunning(true)}>Start</button>
       <h1>Word Count: ???</h1>
     </div>
   );
@@ -53,16 +61,30 @@ export default App;
  * 3. <h4> ti display the amount of time remaining
  * 4. <button> to start the game
  * 5. Another <h1> to display the word count
- */
-
-/**
- * Challenge: Using hooks, track the state of the text in the textarea on every keystroke
+ 
+ * Challenge: 
+ * Using hooks, track the state of the text in the textarea on every keystroke
  * To verify it's working, you could just console.log the state on every change
- */
-
-/**
+ 
  * Challenge:
- *
  * Create a function to calculate the number of separate words in the `text` state
  * For now, just console.log the word count when the button gets clicked to test it out.
- */
+ * 
+ * Challenge:
+ * 1. Create state to hold the current value of the countdown timer.
+ *    Display this time in the "Time Remaining" header
+ * * 2. Set up an effect that runs every time the `timeRemaining` changes
+ *    The effect should wait 1 second, then decrement the `timeRemaining` by 1
+ * 
+ *    Hint: use `setTimeout` instead of `setInterval`. This will help you avoid
+ *    a lot of extra work.
+ * 
+ *    Warning: there will be a bug in this, but we'll tackle that next
+ * 3. Make it so the effect won't run if the time is already at 0
+
+ * Challenge:
+ * 
+ * Make it so clicking the Start button starts the timer instead of it starting on refresh
+ * (Hint: use a new state variable to indicate if the game should be running or not)
+
+**/
