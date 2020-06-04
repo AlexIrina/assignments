@@ -52,10 +52,6 @@ function App() {
       <h1>How Fast Do You Type?</h1>
       <form action=''>
         <textarea
-          style={{
-            backgroundColor: !isTimeRunning ? 'grey' : 'green',
-            color: !isTimeRunning ? 'green' : 'white',
-          }}
           value={text}
           onChange={handleChange}
           disabled={!isTimeRunning}
