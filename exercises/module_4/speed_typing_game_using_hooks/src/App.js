@@ -1,13 +1,11 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 function App() {
   // setState
   const [text, setText] = useState('');
   const [timeRemaining, setTimeRemaining] = useState(5);
   const [isTimeRunning, setIsTimeRunning] = useState(false);
-
-  // // useRef
-  // const ref = useRef(initialValue);
+  const [wordCount, setWordCount] = useState(0);
 
   const handleChange = (e) => {
     const { value } = e.target;
@@ -28,8 +26,10 @@ function App() {
         // change the time remaining by one second
         setTimeRemaining((time) => time - 1);
       }, 1000);
-    } else if (isTimeRunning === 0) {
-      isTimeRunning(false);
+    } else if (timeRemaining === 0) {
+      setIsTimeRunning(false);
+      const numWords = calcWordCount(text);
+      setWordCount(numWords);
     }
   }, [timeRemaining, isTimeRunning]);
 
@@ -43,7 +43,7 @@ function App() {
       </form>
       <h4>Time Remaining: {timeRemaining}</h4>
       <button onClick={() => setIsTimeRunning(true)}>Start</button>
-      <h1>Word Count: ???</h1>
+      <h1>Word Count: {wordCount}</h1>
     </div>
   );
 }
@@ -86,5 +86,13 @@ export default App;
  * 
  * Make it so clicking the Start button starts the timer instead of it starting on refresh
  * (Hint: use a new state variable to indicate if the game should be running or not)
+ * 
 
+ * Challenge:
+ * 
+ * When the timer reaches 0, count the number of words the user typed in 
+ * and display it in the "Word count" section
+
+ * After the game ends, make it so the user can click the Start button again
+ * to play a second time
 **/
