@@ -17,6 +17,12 @@ function App() {
     return wordsArr.filter((words) => words !== '').length;
   };
 
+  const startClock = () => {
+    setIsTimeRunning(true);
+    setTimeRemaining(5);
+    setText('');
+  };
+
   // useEffect
   useEffect(() => {
     // timer stops at 0
@@ -42,7 +48,7 @@ function App() {
         <textarea value={text} onChange={handleChange} />
       </form>
       <h4>Time Remaining: {timeRemaining}</h4>
-      <button onClick={() => setIsTimeRunning(true)}>Start</button>
+      <button onClick={() => startClock()}>Start</button>
       <h1>Word Count: {wordCount}</h1>
     </div>
   );
