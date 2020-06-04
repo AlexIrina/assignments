@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react';
-
+import insertCommas from './utilities/insertCommas';
 export default function App() {
   // const [input, setInput] = useState("");
   // const [searchResults, setSearchResults] = useState([]);
@@ -74,7 +74,7 @@ export default function App() {
           />
           <div className='output'>
             <p>Region: {selectedCountry.region}</p>
-            <p>Population: {selectedCountry.population} </p>
+            <p>Population: {insertCommas(selectedCountry.population)} </p>
           </div>
         </div>
       )}
