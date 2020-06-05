@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-
+import styled from 'styled-components';
 function App() {
   const STARTING_TIME = 5;
 
@@ -51,10 +51,10 @@ function App() {
   // console.log(text);
 
   return (
-    <div>
-      <h1>How Fast Can You Type?</h1>
+    <>
+      <Title>How Fast Can You Type?</Title>
       <form action=''>
-        <textarea
+        <TextArea
           ref={textBoxRef}
           value={text}
           onChange={handleChange}
@@ -62,15 +62,54 @@ function App() {
         />
       </form>
       <h4>Time Remaining: {timeRemaining}</h4>
-      <button onClick={startGame} disabled={isTimeRunning}>
+      <Button onClick={startGame} disabled={isTimeRunning}>
         Start
-      </button>
-      <h1>Word Count: {wordCount}</h1>
-    </div>
+      </Button>
+      <h2>Word Count: {wordCount}</h2>
+    </>
   );
 }
 
 export default App;
+
+const Button = styled.button`
+  font-family: 'Press Start 2P', cursive;
+  display: block;
+  margin: 0 auto;
+  border: none;
+  background: #a80020;
+  background: #00b800;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  :disabled {
+    cursor: not-allowed;
+  }
+`;
+
+const Title = styled.h1`
+  font-size: 20px;
+  text-align: center;
+`;
+
+const TextArea = styled.textarea`
+  font-family: 'Press Start 2P';
+  font-size: x-large;
+  border: 3px solid black;
+  width: 90%;
+  margin: 0 auto;
+  outline: none;
+  height: 200px;
+  background: #00b800;
+  padding: 10px;
+  font-size: x-large;
+
+  :disabled {
+    background-color: #a5a2a2;
+    text-align: center;
+    font-size: xx-large;
+    cursor: not-allowed;
+  }
+`;
 
 /**
  * Challenge: build the basic structure of our game
