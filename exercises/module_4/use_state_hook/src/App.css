@@ -23,3 +23,10 @@ button:hover {
 button:focus {
   outline: 0;
 }
+
+hr {
+  color: 'red';
+  background-color: 'gold';
+  height: 10;
+  width: '100vw';
+}
