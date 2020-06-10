@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
 
 const Form2 = () => {
-  const [inputData, setInputData] = useState({
-    firstName: '',
-    lastName: '',
-  });
+  const [inputData, setInputData] = useState({ firstName: '', lastName: '' });
   const [contactsData, setContactsData] = useState([]);
 
   const handleChange = (e) => {
@@ -17,9 +14,8 @@ const Form2 = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // add the inputData to the contactsData array
-    setContactsData((prevContacts) => [...prevContacts, inputData]);
+    setContactsData((prevContactsData) => [...prevContactsData, inputData]);
   };
-  console.log(contactsData);
 
   // map over
   const contacts = contactsData.map((contact, key) => (
@@ -27,6 +23,7 @@ const Form2 = () => {
       {contact.firstName} {contact.lastName}
     </h1>
   ));
+
   return (
     <>
       <form onSubmit={handleSubmit}>

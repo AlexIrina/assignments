@@ -1,25 +1,40 @@
 import React, { useState } from 'react';
 
 function Form() {
-  const [inputData, setInputData] = useState({ firstName: '', lastName: '' });
+  // const [inputData, setInputData] = useState({ firstName: '', lastName: '' });
+  // const [contactsData, setContactsData] = useState([]);
+
+  // function handleChange(event) {
+  //   const { name, value } = event.target;
+  //   setInputData((prevInputData) => ({ ...prevInputData, [name]: value }));
+  // }
+
+  // function handleSubmit(event) {
+  //   event.preventDefault();
+  //   setContactsData((prevContacts) => [...prevContacts, inputData]);
+  // }
+
+  // // shows added contacts
+  // const contacts = contactsData.map((contact, key) => (
+  //   <h2 key={key}>
+  //     {contact.firstName} {contact.lastName}
+  //   </h2>
+  // ));
+
+  const [inputData, setInputData] = useState('');
   const [contactsData, setContactsData] = useState([]);
 
-  function handleChange(event) {  
-    const { name, value } = event.target;
-    setInputData((prevInputData) => ({ ...prevInputData, [name]: value }));
-  }
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setInputData((prevInputsData) => ({ ...prevInputsData, [name]: value }));
+  };
 
-  function handleSubmit(event) {
-    event.preventDefault();
-    setContactsData((prevContacts) => [...prevContacts, inputData]);
-  }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setContactsData();
+  };
 
-  // shows added contacts
-  const contacts = contactsData.map((contact, key) => (
-    <h2 key={key}>
-      {contact.firstName} {contact.lastName}
-    </h2>
-  ));
+  const contacts = [];
 
   return (
     <>

@@ -1,5 +1,5 @@
 import React from 'react';
-import Form from './Form2';
+import Form2 from './Form2';
 import Counter from './Counter';
 
 // Convert the class below to a functional component that uses the useState hook to initialize a count variable to 0 and display the count on the screen.
@@ -17,7 +17,7 @@ function Practice() {
         }}
       />
       <h1>My form</h1>
-      <Form />
+      <Form2 />
     </div>
   );
 }

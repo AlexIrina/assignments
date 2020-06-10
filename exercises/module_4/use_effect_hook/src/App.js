@@ -1,24 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import randomcolor from 'random-color';
-
-function App() {
-  const [count, setCount] = useState(0);
+// import randomColor from 'randomcolor';
+const App = () => {
   const [color, setColor] = useState('');
+  const [count, setCount] = useState(0);
 
-  // useEffect
   useEffect(() => {
-    // how to end un interval
-    const intervalId = setInterval(() => {
-      // setCount((prevCount) => prevCount + 1);
+    // setColor(randomColor());
+    setInterval(() => {
+      setCount((prevCount) => prevCount + 1);
     }, 1000);
-    //clean up function
-    return () => {
-      clearInterval(intervalId);
-    };
   }, []);
 
   useEffect(() => {
-    setColor(randomcolor());
+    // setColor(randomcolor());
   }, [count]);
 
   return (
@@ -26,9 +20,10 @@ function App() {
       <h1 style={{ color: color }}>{count}</h1>
     </div>
   );
-}
+};
 
 export default App;
+
 // useEffect hook replaces the following life cycle methods
 
 // componentDidMount
