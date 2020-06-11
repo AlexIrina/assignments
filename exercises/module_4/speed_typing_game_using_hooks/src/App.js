@@ -156,21 +156,24 @@
 
  * After the game ends, make it so the user can click the Start button again
  * to play a second time
+ * 
 
  * Challenge:
  * 
  * Make the input box focus (DOM elements have a method called .focus()) 
  * immediately when the game starts
 
-**/
 
-import React, { useState } from 'react';
-function App() {
+**/
+import React, { useState, useEffect, useRef } from 'react';
+
+const App = () => {
   const STARTING_TIME = 5;
   const [text, setText] = useState('');
   const [timeRemaining, setTimeRemaining] = useState(STARTING_TIME);
-
-
+  const [isTimerRunning, setIsTimeRunning] = useState(false);
+  const [wordCount, setWordCount] = useState(0);
+  const textAreaRef = useRef(null);
 
   const handleChange = (e) => {
     const { value } = e.target;
@@ -182,24 +185,50 @@ function App() {
     return wordsArr.filter((word) => word !== '').length;
   };
 
+  const startGame = () => {
+    setIsTimeRunning(true);
+    setTimeRemaining(STARTING_TIME);
+    setText('');
+    textAreaRef.current.disabled = false;
+    textAreaRef.current.focus();
+  };
+
+  const endGame = () => {
+    setIsTimeRunning(false);
+    setWordCount(calculateNumOfWords(text));
+  };
+
+  useEffect(() => {
+    if (timeRemaining > 0 && isTimerRunning) {
+      setTimeout(() => {
+        setTimeRemaining((time) => time - 1);
+      }, 1000);
+    } else if (timeRemaining === 0) {
+      endGame();
+    }
+  }, [timeRemaining, isTimerRunning]);
+
   return (
     <div>
       <h1>How Fast Can You Type?</h1>
-      <textarea value={text} onChange={handleChange} />
-      <h4>Time Remaining: {timeRemaining} </h4>
-      <button onClick={() => console.log(calculateNumOfWords(text))}>
+      <textarea
+        ref={textAreaRef}
+        value={text}
+        onChange={handleChange}
+        disabled={!isTimerRunning}
+      />
+      <h4>Time Remaining: {timeRemaining}</h4>
+      <button onClick={startGame} disabled={isTimerRunning}>
         Start Game
       </button>
-      <h1>Word Count: ???</h1>
+      <h1>Word Count: {wordCount}</h1>
     </div>
   );
-}
+};
 
 export default App;
-// * 2. Set up an effect that runs every time the `timeRemaining` changes
-// *    The effect should wait 1 second, then decrement the `timeRemaining` by 1
-// * 
-// *    Hint: use `setTimeout` instead of `setInterval`. This will help you avoid
-// *    a lot of extra work.
-// * 
-// *    Warning: there will be a bug in this, but we'll tackle that next
+/**
+
+ * Make the input box focus (DOM elements have a method called .focus()) 
+ * immediately when the game starts
+ */
