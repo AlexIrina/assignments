@@ -1,38 +1,20 @@
 import React, { useState, useEffect, useRef } from 'react';
-function App() {
-  const STARTING_TIME = 5;
 
+const App = () => {
+  const STARTING_TIME = 5;
   const [text, setText] = useState('');
   const [timeRemaining, setTimeRemaining] = useState(STARTING_TIME);
   const [isTimeRunning, setIsTimeRunning] = useState(false);
   const [wordCount, setWordCount] = useState(0);
   const textAreaRef = useRef(null);
 
-  function handleChange(e) {
+  const handleChange = (e) => {
     const { value } = e.target;
     setText(value);
-  }
-
-  function calculateWordCount(text) {
-    const wordsArr = text.trim().split(' ');
-    return wordsArr.filter((word) => word !== '').length;
-  }
-
-  function startGame() {
-    setIsTimeRunning(true);
-    setTimeRemaining(STARTING_TIME);
-    setText('');
-    textAreaRef.current.disabled = false;
-    textAreaRef.current.focus();
-  }
-
-  function endGame() {
-    setIsTimeRunning(false);
-    setWordCount(calculateWordCount(text));
-  }
+  };
 
   useEffect(() => {
-    if (isTimeRunning && timeRemaining > 0) {
+    if (timeRemaining > 0 && isTimeRunning) {
       setTimeout(() => {
         setTimeRemaining((time) => time - 1);
       }, 1000);
@@ -41,23 +23,42 @@ function App() {
     }
   }, [timeRemaining, isTimeRunning]);
 
+  const calculateNumOfWords = (text) => {
+    const wordsArr = text.trim().split(' ');
+    return wordsArr.filter((word) => word !== '').length;
+  };
+
+  const startGame = () => {
+    setIsTimeRunning(true);
+    setTimeRemaining(STARTING_TIME);
+    setText('');
+    textAreaRef.current.disabled = false;
+    textAreaRef.current.focus();
+
+  };
+
+  const endGame = () => {
+    setIsTimeRunning(false);
+    setWordCount(calculateNumOfWords(text));
+  };
+
   return (
     <div>
-      <h1>How fast do you type?</h1>
+      <h1>How Fast Can You Type?</h1>
       <textarea
         ref={textAreaRef}
-        onChange={handleChange}
         value={text}
+        onChange={handleChange}
         disabled={!isTimeRunning}
       />
-      <h4>Time remaining: {timeRemaining}</h4>
+      <h4>Time Remaining: {timeRemaining}</h4>
       <button onClick={startGame} disabled={isTimeRunning}>
-        Start
+        Start Game
       </button>
-      <h1>Word count: {wordCount}</h1>
+      <h1>Word Count: {wordCount}</h1>
     </div>
   );
-}
+};
 
 export default App;
 
