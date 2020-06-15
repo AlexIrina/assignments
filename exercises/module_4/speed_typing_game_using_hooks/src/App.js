@@ -34,7 +34,6 @@ const App = () => {
     setText('');
     textAreaRef.current.disabled = false;
     textAreaRef.current.focus();
-
   };
 
   const endGame = () => {
@@ -43,17 +42,26 @@ const App = () => {
   };
 
   return (
-    <div>
-      <h1>How Fast Can You Type?</h1>
-      <textarea
-        ref={textAreaRef}
-        value={text}
-        onChange={handleChange}
-        disabled={!isTimeRunning}
-      />
+    <div className='main-container'>
+      <div className='logo'></div>
+      <div className='title'>How Fast Can You Type?</div>
+      <div
+        style={{ display: !isTimeRunning ? 'block' : 'none' }}
+        className='sub-title'
+      >
+        Play Again?
+      </div>
+      <div className='field'>
+        <textarea
+          ref={textAreaRef}
+          value={text}
+          onChange={handleChange}
+          disabled={!isTimeRunning}
+        />
+      </div>
       <h4>Time Remaining: {timeRemaining}</h4>
       <button onClick={startGame} disabled={isTimeRunning}>
-        Start Game
+        Start Typing
       </button>
       <h1>Word Count: {wordCount}</h1>
     </div>
