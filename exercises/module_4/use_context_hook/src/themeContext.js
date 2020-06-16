@@ -9,9 +9,11 @@ function ThemeContextProvider(props) {
   };
 
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      {props.children}
-    </ThemeContext.Provider>
+    <div>
+      <ThemeContext.Provider value={{ theme, toggleTheme }}>
+        {props.children}
+      </ThemeContext.Provider>
+    </div>
   );
 }
 
