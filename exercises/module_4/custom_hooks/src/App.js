@@ -1,27 +1,17 @@
-import React, { Component } from 'react';
-/**
- * Pop Quiz!
- *
- * Refactor the class component below to use hooks instead
- */
+import React, { useState } from 'react';
 
-class App extends Component {
-  state = {
-    count: 0,
+const App = () => {
+  const [count, setCount] = useState(0);
+  const increment = () => {
+    setCount((prevCount) => prevCount + 1);
   };
-
-  increment = () => {
-    this.setState((prevState) => ({ count: prevState.count + 1 }));
-  };
-
-  render() {
-    return (
-      <div>
-        <h1>The count is {this.state.count}</h1>
-        <button onClick={this.increment}>Add 1</button>
-      </div>
-    );
-  }
-}
+  return (
+    <div className='container'>
+      <h1>Click the button to increment count.</h1>
+      <h1>Count: {count}</h1>
+      <button onClick={increment}>Add 1</button>
+    </div>
+  );
+};
 
 export default App;
