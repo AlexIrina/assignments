@@ -1,6 +1,6 @@
 import React from 'react';
-import Menu from './Menu';
-import Favorite from './Favorite';
+import Menu from './components/Menu';
+import Favorite from './components/Favorite';
 
 function App() {
   return (
