@@ -1,11 +1,11 @@
 import React from 'react';
 import useToggler from '../hooks/useToggler';
 const Menu = (props) => {
-  const [on, toggle] = useToggler();
+  const [show, toggle] = useToggler(true);
   return (
     <div>
-      <button onClick={toggle}>{on ? 'Hide' : 'Show'} Menu </button>
-      <nav style={{ display: on ? 'block' : 'none' }}>
+      <button onClick={toggle}>{show ? 'Hide' : 'Show'} Menu </button>
+      <nav style={{ display: show ? 'block' : 'none' }}>
         <h6>Signed in as Coder123</h6>
         <p>
           <a href='/'>Your Profile</a>
@@ -25,4 +25,4 @@ const Menu = (props) => {
 };
 
 export default Menu;
-// refactor component to use my custom toggler hook
+// refactor Menu component to use my custom toggler hook

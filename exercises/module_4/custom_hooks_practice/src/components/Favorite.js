@@ -2,7 +2,7 @@ import React from 'react';
 import useToggler from '../hooks/useToggler';
 
 const Favorite = (props) => {
-  const [isFavoriteOn, toggle] = useToggler();
+  const [isFavoriteOn, toggle] = useToggler(false);
 
   return (
     <div>

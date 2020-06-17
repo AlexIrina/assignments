@@ -1,6 +1,6 @@
 import { useState } from 'react';
-const useToggler = () => {
-  const [isToggledOn, setIsToggledOn] = useState(false);
+const useToggler = (defaultOnValue) => {
+  const [isToggledOn, setIsToggledOn] = useState(defaultOnValue);
 
   const toggle = () => {
     setIsToggledOn((prevVal) => !prevVal);
