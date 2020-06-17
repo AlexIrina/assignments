@@ -1,45 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react';
-
+import useGameLogic from './hooks/useGameLogic';
 const App = () => {
-  const STARTING_TIME = 5;
-  const [text, setText] = useState('');
-  const [timeRemaining, setTimeRemaining] = useState(STARTING_TIME);
-  const [isTimeRunning, setIsTimeRunning] = useState(false);
-  const [wordCount, setWordCount] = useState(0);
-  const textAreaRef = useRef(null);
-
-  const handleChange = (e) => {
-    const { value } = e.target;
-    setText(value);
-  };
-
-  useEffect(() => {
-    if (timeRemaining > 0 && isTimeRunning) {
-      setTimeout(() => {
-        setTimeRemaining((time) => time - 1);
-      }, 1000);
-    } else if (timeRemaining === 0) {
-      endGame();
-    }
-  }, [timeRemaining, isTimeRunning]);
-
-  const calculateNumOfWords = (text) => {
-    const wordsArr = text.trim().split(' ');
-    return wordsArr.filter((word) => word !== '').length;
-  };
-
-  const startGame = () => {
-    setIsTimeRunning(true);
-    setTimeRemaining(STARTING_TIME);
-    setText('');
-    textAreaRef.current.disabled = false;
-    textAreaRef.current.focus();
-  };
-
-  const endGame = () => {
-    setIsTimeRunning(false);
-    setWordCount(calculateNumOfWords(text));
-  };
+  const {
+    textAreaRef,
+    text,
+    handleChange,
+    isTimeRunning,
+    timeRemaining,
+    startGame,
+    wordCount,
+  } = useGameLogic(10);
 
   return (
     <div className='main-container'>
