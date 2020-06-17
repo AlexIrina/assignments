@@ -30,3 +30,4 @@ function Menu(props) {
 }
 
 export default Menu;
+// refactor component to use my custom toggler hook

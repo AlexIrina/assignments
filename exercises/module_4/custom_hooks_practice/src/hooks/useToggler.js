@@ -5,7 +5,7 @@ const useToggler = () => {
   const toggle = () => {
     setIsToggledOn((prevVal) => !prevVal);
   };
-  return { isToggledOn, toggle };
+  return [isToggledOn, toggle];
 };
 
 export default useToggler;

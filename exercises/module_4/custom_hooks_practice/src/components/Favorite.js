@@ -2,13 +2,13 @@ import React from 'react';
 import useToggler from '../hooks/useToggler';
 
 const Favorite = (props) => {
-  const { isToggledOn, toggle } = useToggler();
+  const [isFavoriteOn, toggle] = useToggler();
 
   return (
     <div>
       <h3>Click heart to favorite</h3>
       <h1>
-        <span onClick={toggle}>{isToggledOn ? '❤️' : '♡'}</span>
+        <span onClick={toggle}>{isFavoriteOn ? '❤️' : '♡'}</span>
       </h1>
     </div>
   );
