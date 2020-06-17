@@ -122,3 +122,13 @@ export default App;
 //  *
 //  * Make the input box focus (DOM elements have a method called .focus())
 //  * immediately when the game starts
+
+/**
+ * Challenge:
+ *
+ * Move the "business logic" into a custom hook, which will provide
+ * any parts of state and any functions to this component to use.
+ *
+ * You can easily tell which parts the component needs by looking at
+ * the variables being used inside the `return`ed markup below.
+ */
