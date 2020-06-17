@@ -1,29 +1,27 @@
-import React from 'react';
-import useToggler from '../hooks/useToggler';
-const Toggler = (props) => {
-  const { isToggledOn, toggle } = useToggler();
-  // state = {
-  //   on: this.props.defaultOnValue,
-  // };
+import React, { Component } from 'react';
+class Toggler extends Component {
+  state = {
+    on: this.props.defaultOnValue,
+  };
 
-  // static defaultProps = {
-  //   defaultOnValue: false,
-  // };
+  static defaultProps = {
+    defaultOnValue: false,
+  };
 
-  // toggle = () => {
-  //   this.setState((prevState) => ({ on: !prevState.on }));
-  // };
+  toggle = () => {
+    this.setState((prevState) => ({ on: !prevState.on }));
+  };
 
-  return (
-    <div>
-      {/* {this.props.render({
-        on: this.state.on,
-        toggle: this.toggle,
-      })} */}
-      {props.isToggledOn}
-      {props.toggle}
-    </div>
-  );
-};
+  render() {
+    return (
+      <div>
+        {this.props.render({
+          on: this.state.on,
+          toggle: this.toggle,
+        })}
+      </div>
+    );
+  }
+}
 
 export default Toggler;
