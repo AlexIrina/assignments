@@ -10,13 +10,13 @@ function App() {
     <div className='container'>
       <Header />
       <Switch>
-        <Route exact to='/'>
+        <Route exact path='/'>
           <Home />
         </Route>
-        <Route to='/Services'>
+        <Route path='/services'>
           <Services />
         </Route>
-        <Route to='/Contact'>
+        <Route path='/contact'>
           <Contact />
         </Route>
       </Switch>
