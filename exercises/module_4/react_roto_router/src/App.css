@@ -23,17 +23,20 @@ h2 {
   height: 133px;
   padding: 67px 133px;
 }
-
+/* design */
 .top-header:after {
   position: absolute;
+  padding-bottom: 0.5px;
+  transform: rotate(180deg);
+  padding-top: 5px;
   top: 133px;
   width: 100%;
   height: 15px;
-  /* design */
   background: url('./images/toolbox.png');
-  content: '';
+  content: '|||||_|||||_|||||_|||||_|||||_|||||_|||||_|||||_|||||__|||||__|||||__|||||__|||||__|||||__|||||__|||||__|||||__|||||__|||||__|||||__|||||__|||||__|||||__|||||__|||||__|||||__|||||__|||||__|||||__|||||__|||||__|||||__|||||__|||||__|||||__|||||__|||||__|||||__|||||__|||||__|||||_';
   z-index: 1;
   margin-left: -133px;
+  border: 2px solid;
 }
 header {
   position: relative;
@@ -42,14 +45,16 @@ header {
   z-index: 2;
   padding: 33px;
 }
-header h1 {
+.logo {
   position: relative;
   /* logo */
-  background-image: url('./images/logo.png');
-  background-repeat: none;
   background-size: cover;
-  height: 43px;
-  width: 197px;
+  width: 62px;
+  height: 50px;
+  bottom: 20px;
+  right: 10px;
+  border: 0;
+  outline: none;
 }
 
 nav ul,
