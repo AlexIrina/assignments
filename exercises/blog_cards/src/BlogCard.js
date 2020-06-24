@@ -1,21 +1,21 @@
 import React from 'react';
 
-const BlogCard = () => {
+const BlogCard = (props) => {
   return (
     <>
       <div className='card-header'>
-        <img src alt='react' />
+        <img src={props.logoImg} alt='react' />
       </div>
       <div className='card-body'>
-        <button className='tag tag-teal'>React</button>
-        <h4>What is React?</h4>
-        <p>React is a JavaScript library for building user interfaces</p>
+        <button className='tag tag-teal'>{props.btnTxt}</button>
+        <h4>{props.title}</h4>
+        <p>{props.description}</p>
       </div>
       <div className='user'>
-        <img src alt='person' />
+        <img src={props.author} alt='person' />
         <div className='user-info'>
-          <h5>Alex George</h5>
-          <small>2hrs ago</small>
+          <h5>{props.name}</h5>
+          <small>{props.time}</small>
         </div>
       </div>
     </>
