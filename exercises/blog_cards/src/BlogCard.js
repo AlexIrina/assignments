@@ -7,7 +7,7 @@ const BlogCard = (props) => {
         <img src={props.logoImg} alt='react' />
       </div>
       <div className='card-body'>
-        <button className='tag tag-teal'>{props.btnTxt}</button>
+        <button style={props.btnColor}>{props.btnTxt}</button>
         <h4>{props.title}</h4>
         <p>{props.description}</p>
       </div>

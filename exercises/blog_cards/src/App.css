@@ -37,6 +37,7 @@ body {
   width: 100%;
   height: 200px;
   object-fit: cover;
+  padding: 15px;
 }
 
 .card-body {
@@ -66,23 +67,10 @@ button {
 }
 button:hover {
   background: #fff;
-  color: #61dafb;
+  color: black;
 }
 button:active {
   background: #1da88a;
-}
-
-/* react */
-.tag-teal {
-  background-color: #61dafb;
-}
-/* javascript */
-.tag-yellow {
-  background-color: yellow;
-}
-/* css */
-.tag-pink {
-  background-color: pink;
 }
 
 .card-body h4 {
