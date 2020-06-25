@@ -1,12 +1,12 @@
-import React from "react"
+import React from 'react';
 
 function Info() {
-    return (
-        <section>
-            <h1>Profile Info</h1>
-            <p>Hello, user! Tons of useful info here...</p>
-        </section>
-    )
+  return (
+    <section>
+      <h1>Profile Info</h1>
+      <p>Hello, user! Tons of useful info here...</p>
+    </section>
+  );
 }
 
-export default Info
+export default Info;

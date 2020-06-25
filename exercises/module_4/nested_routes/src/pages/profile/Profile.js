@@ -1,8 +1,5 @@
 import React from 'react';
-import { Link, Switch, Route } from 'react-router-dom';
-
-import Settings from './Settings';
-import Info from './Info';
+import { Link } from 'react-router-dom';
 
 function Profile() {
   return (
@@ -16,14 +13,6 @@ function Profile() {
           <Link to='/profile/settings'>Profile Settings</Link>
         </li>
       </ul>
-      <Switch>
-        <Route path='/profile/info'>
-          <Info />
-        </Route>
-        <Route path='/profile/settings'>
-          <Settings />
-        </Route>
-      </Switch>
     </div>
   );
 }
