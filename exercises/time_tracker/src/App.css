@@ -88,15 +88,30 @@ button:active {
   background: #1da88a;
 }
 
-.user {
+.list {
+  list-style-type: none;
   display: flex;
-  margin-top: auto;
-  padding: 20px;
+  flex-direction: row;
+  justify-content: center;
+  flex-flow: row wrap;
+  padding: 0;
+  height: 25vh;
+}
+.list li {
+  padding: 8px;
 }
 
-.user-history > button {
-  background-color: grey;
-  margin: 2px;
+a {
+  text-decoration: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 100;
+  color: blue;
+  box-shadow: 3px 3px 8px #b1b1b1, -3px -3px 8px #ffffff;
+  transition: 0.3s;
 }
 
 /* screen less than 940px */
