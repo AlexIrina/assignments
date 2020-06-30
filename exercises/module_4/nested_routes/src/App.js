@@ -7,12 +7,10 @@ import Info from './pages/profile/Info';
 import Settings from './pages/profile/Settings';
 
 import { Switch, Route } from 'react-router-dom';
-
 function App() {
   return (
     <div>
       <Header />
-
       <Switch>
         <Route exact path='/'>
           <Home />
@@ -20,14 +18,13 @@ function App() {
         <Route exact path='/profile'>
           <Profile />
         </Route>
-        <Route path='/profile/Info'>
+        <Route path='/profile/info'>
           <Info />
         </Route>
-        <Route path='/profile/Settings'>
+        <Route path='/profile/settings'>
           <Settings />
         </Route>
       </Switch>
-
       <Footer />
     </div>
   );

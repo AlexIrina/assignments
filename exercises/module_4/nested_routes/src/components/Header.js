@@ -5,12 +5,12 @@ function Header() {
   return (
     <header>
       <ul>
-        <li>
-          <Link to='/'>Home</Link>
-        </li>
-        <li>
-          <Link to='/profile'>Profile</Link>
-        </li>
+        <Link to='/'>
+          <li>Home</li>
+        </Link>
+        <Link to='/profile'>
+          <li>Profile</li>
+        </Link>
       </ul>
     </header>
   );
