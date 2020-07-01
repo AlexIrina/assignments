@@ -1,0 +1,62 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: whitesmoke;
+}
+
+header ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 0;
+  padding-left: 10px;
+}
+
+header ul li {
+  list-style: none;
+}
+
+header ul li a {
+  text-decoration: none;
+  font-size: 50px;
+}
+header li a:visited {
+  color: black;
+}
+
+.home,
+.profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  height: 50vh;
+  position: relative;
+  background-color: #333333;
+  color: white;
+}
+.profile-list li {
+  background-color: red;
+  text-decoration: none;
+  list-style: none;
+  padding: 5px 10px;
+}
+.profile-list li a {
+  text-decoration: none;
+  color: black;
+}
+
+footer p {
+  position: absolute;
+  text-align: end;
+  bottom: 0;
+  background-color: #333333;
+  margin: 0;
+  padding: 10px 0;
+  width: 100%;
+  color: whitesmoke;
+  font-size: 50px;
+}
