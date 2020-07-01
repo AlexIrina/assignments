@@ -8,6 +8,7 @@ body {
   background-color: #ecf0f3;
   font-family: 'Open Sans', sans-serif;
   /* centers everything on the page */
+
   display: flex;
   align-items: center;
   /* puts everything on the middle horizontally and vertically*/

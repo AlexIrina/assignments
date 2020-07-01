@@ -2,11 +2,18 @@ import React from 'react';
 import Card from './components/Body';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import { Switch, Route } from 'react-router-dom';
 
 function App() {
   return (
     <div className='container'>
       <div className='card'>
+        {/* need to route paths */}
+        <Route>
+          <Switch> </Switch>
+          <Switch> </Switch>
+        </Route>
+
         <Header />
         <Card
           date='7/01/20'
