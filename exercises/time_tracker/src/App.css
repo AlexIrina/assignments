@@ -114,6 +114,61 @@ a {
   box-shadow: 3px 3px 8px #b1b1b1, -3px -3px 8px #ffffff;
   transition: 0.3s;
 }
+/* buttons */
+.work-time {
+  background-color: #72aa62;
+  position: relative;
+}
+.personal-time {
+  background-color: #61dafb;
+  position: relative;
+}
+.break-time {
+  background-color: #b5651d;
+  position: relative;
+}
+
+button > span.work {
+  background: url('./images/work.svg') no-repeat;
+  background-size: contain;
+  cursor: pointer;
+  display: inline-block;
+  height: 52px;
+  width: 40px;
+  position: absolute;
+  left: 50px;
+  top: 28px;
+}
+
+button > span.personal {
+  background: url('./images/personal.svg') no-repeat;
+  background-size: contain;
+  display: inline-block;
+  height: 52px;
+  width: 40px;
+  padding: 0;
+  position: absolute;
+  left: 26px;
+  top: 28px;
+}
+button > span.break {
+  background: url('./images/break.svg') no-repeat;
+  background-size: contain;
+  cursor: pointer;
+  display: inline-block;
+  height: 52px;
+  width: 40px;
+  position: absolute;
+  left: 50px;
+  top: 28px;
+}
+
+ion-icon {
+  font-size: 44px;
+  position: absolute;
+  margin-left: 290px;
+  color: green;
+}
 
 /* screen less than 940px */
 
