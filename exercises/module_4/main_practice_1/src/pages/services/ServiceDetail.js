@@ -15,11 +15,11 @@ const ServiceDetail = () => {
   );
 
   // useHistory hook practice to go back to all services page after 2 seconds
-  const handleClick = () => {
+  const goBack = () => {
     console.log('Submitting... ');
     setTimeout(() => {
       history.push('/services');
-    }, 2000);
+    }, 1000);
 
     // this will let me go back one place
     // history.goBack();
@@ -37,7 +37,7 @@ const ServiceDetail = () => {
         {foundService.name} - ${foundService.price}
       </h3>
       <p>{foundService.description}</p>
-      <button onClick={handleClick}>Go back to all services</button>
+      <button onClick={goBack}>Go back to all services</button>
       <button onClick={goHome}>Go Home</button>
     </div>
   );
