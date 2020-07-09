@@ -31,3 +31,47 @@
   color: white;
   padding: 20px;
 }
+
+.products-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  height: 80vh;
+  width: 100vw;
+  background-color: olivedrab;
+}
+
+.products-container h1 {
+  background-color: whitesmoke;
+  padding: 50px;
+  font-size: 50px;
+  color: black;
+}
+
+.products-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: white;
+  height: 100px;
+  margin: 0px 20px;
+  padding: 20px;
+}
+
+.products-card h2 {
+  background-color: orange;
+  padding: 10px;
+  color: white;
+}
+.products-card a {
+  padding: 10px;
+  font: 20px;
+  text-decoration: none;
+  color: black;
+}
+
+.products-card h5 {
+  background-color: white;
+  font-size: 20px;
+}
