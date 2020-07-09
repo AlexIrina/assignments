@@ -20,6 +20,3 @@ const ServicesList = () => {
 
 export default ServicesList;
 
-// when user clicks on services they will see this page
-// import Services data,map over it and add a link to each service
-// need to add a link to each service id
