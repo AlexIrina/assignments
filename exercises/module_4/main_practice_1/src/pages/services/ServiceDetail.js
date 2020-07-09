@@ -1,12 +1,14 @@
 import React from 'react';
-import { useParams, useHistory } from 'react-router-dom';
+import { useParams, useHistory, useLocation } from 'react-router-dom';
 import servicesData from './servicesData';
 
 const ServiceDetail = () => {
   const { serviceId } = useParams();
   // useHistory hook
   const history = useHistory();
-  console.log(history);
+  // useLocation hook lets me know where i am on the site. Use pathname and search.
+  const location = useLocation();
+  console.log(location);
 
   const foundService = servicesData.find(
     (service) => service._id === serviceId
@@ -42,4 +44,3 @@ const ServiceDetail = () => {
 };
 
 export default ServiceDetail;
-

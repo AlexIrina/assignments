@@ -1,7 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import servicesData from './servicesData';
 const ServicesList = () => {
+  const { pathname } = useLocation();
+  console.log(pathname);
+
   const services = servicesData.map((service, key) => (
     <h2 key={key}>
       <Link to={`/services/${service._id}`}>{service.name}</Link> - $
@@ -19,4 +22,3 @@ const ServicesList = () => {
 };
 
 export default ServicesList;
-
