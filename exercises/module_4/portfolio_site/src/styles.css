@@ -4,32 +4,31 @@
 }
 body {
   margin: 0;
-  background-color: blue;
 }
 /* header */
 .nav-header {
   background: #191919;
   height: 120px;
   width: 100%;
-  max-width: 1500px;
+  max-width: 1700px;
 }
 .nav-header ul {
   display: flex;
   list-style-type: none;
   justify-content: flex-end;
+  padding: 0 50px;
 }
 
 .nav-header .list {
-  margin: 50px 40px;
+  margin: 60px 45px;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 25px;
+  font-size: 16px;
 }
 
 .nav-header #title {
   margin-right: auto;
   margin-top: 35px;
-  font-size: 55px;
-  justify-content: center;
+  font-size: 50px;
 }
 
 .nav-header a {
@@ -39,58 +38,50 @@ body {
 
 /* main section */
 .main-container {
-  /* position: relative; */
+  position: relative;
   background: #262729;
   color: white;
   height: 90vh;
-  max-width: 1500px;
+  max-width: 1700px;
 }
 .intro {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-
-  height: 50vh;
+  display: grid;
+  grid-template-columns: minmax(700px, auto) minmax(700px, auto);
+  height: 600px;
   width: 100%;
+  padding: 0px 60px;
+  /* background-color: red; */
 }
 .intro h1 {
   font-size: 40px;
   margin-top: 200px;
-  margin-left: 50px;
   line-height: 60px;
   font-weight: 500;
 }
 
 .intro p {
-  /* background-color: teal; */
-  font-size: 18px;
+  font-size: 14px;
   width: 50%;
-  position: absolute;
-  bottom: 170px;
-  left: 50px;
   color: rgb(215, 210, 210);
+  word-spacing: 10px;
+  font-weight: 100;
+  padding: 10px;
 }
 
 .intro button {
-  position: absolute;
   width: 150px;
   padding: 10px;
-  left: 50px;
-  bottom: 10px;
   font-size: 18px;
-  margin: 20px 0px;
+  margin: 100px 0px;
   font-family: Georgia;
   background-color: grey;
   color: white;
   outline: 2px solid #ed5666;
+  font-weight: 700;
 }
 
 .intro img {
   height: 400px;
   width: 400px;
-  display: flex;
-  align-self: flex-end;
-  margin: 150px 80px;
-  position: relative;
-  top: -350px;
+  margin: auto;
 }

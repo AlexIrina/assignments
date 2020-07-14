@@ -8,13 +8,13 @@ const Header = () => {
           <Link>Alex</Link>
         </li>
         <li className='list'>
-          <Link>About me</Link>
+          <Link>ABOUT ME</Link>
         </li>
         <li className='list'>
-          <Link>Skills</Link>
+          <Link>SKILLS</Link>
         </li>
         <li className='list'>
-          <Link>Work</Link>
+          <Link>MY WORK</Link>
         </li>
       </ul>
     </nav>
