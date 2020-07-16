@@ -85,3 +85,38 @@ body {
   width: 400px;
   margin: auto;
 }
+
+.about-section {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 100px);
+  background: #262729;
+}
+.about-section h1 {
+  grid-row: 2/5;
+  grid-column: 2/8;
+  font-size: 140px;
+  color: white;
+}
+.about-paras {
+  font-size: 24px;
+  grid-row: 3/6;
+  grid-column: 3/11;
+  font-size: 24px;
+  padding: 40px;
+  line-height: 50px;
+  z-index: 1;
+  color: white;
+  outline: none;
+  background-color: #262729;
+  box-shadow: 1px 1px 10px 2px #030812;
+  /* background-color: rgb(215, 209, 209); */
+}
+.about-section img {
+  height: 300px;
+  width: 300px;
+  z-index: 1;
+  grid-row: 4/-1;
+  grid-column: 9/-1;
+  z-index: 0;
+}

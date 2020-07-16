@@ -2,9 +2,9 @@ import React from 'react';
 import abstractImg from '../images/abstract.jpg';
 const About = () => {
   return (
-    <div>
+    <div className='about-section'>
       <h1>About</h1>
-      <div>
+      <div className='about-paras'>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi,
           iure.
