@@ -3,7 +3,7 @@ import Header from './components/Header';
 import Main from './components/Main';
 import About from './components/About';
 import Skills from './components/Skills';
-// import Work from './components/Work';
+import Work from './components/Work';
 // import Contact from './components/Contact';
 import './styles.css';
 function App() {
@@ -13,8 +13,8 @@ function App() {
       <Main />
       <About />
       <Skills />
-      {/* <Work />
-      <Contact /> */}
+      <Work />
+      {/* <Contact /> */}
     </div>
   );
 }
