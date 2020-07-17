@@ -3,14 +3,15 @@
   margin: 0;
 }
 body {
-  margin: 0;
+  overflow: hidden;
 }
+
 /* header */
 .nav-header {
   background: #191919;
   height: 120px;
   width: 100%;
-  max-width: 1700px;
+  /* max-width: 1700px; */
 }
 .nav-header ul {
   display: flex;
@@ -41,8 +42,7 @@ body {
   position: relative;
   background: #262729;
   color: white;
-  height: 90vh;
-  max-width: 1700px;
+  height: 100vh;
 }
 .intro {
   display: grid;
@@ -75,9 +75,12 @@ body {
   margin: 100px 0px;
   font-family: Georgia;
   background-color: grey;
-  color: white;
   outline: 2px solid #ed5666;
   font-weight: 700;
+}
+button a {
+  color: white;
+  text-decoration: none;
 }
 
 .intro img {
@@ -91,6 +94,7 @@ body {
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(12, 100px);
   background: #262729;
+  height: 100vh;
 }
 .about-section h1 {
   grid-row: 2/5;
@@ -124,6 +128,7 @@ body {
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(12, 100px);
   background: #262729;
+  height: 100vh;
 }
 .skills-section h1 {
   grid-row: 1/2;
@@ -159,6 +164,7 @@ body {
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(12, 100px);
   background: #262729;
+  height: 100vh;
 }
 
 .work-section h1 {
@@ -204,4 +210,97 @@ body {
   background: white;
   display: grid;
   margin: auto;
+}
+
+.contact-section {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 100px);
+  background: #262729;
+  height: 100vh;
+}
+
+.contact-section h1 {
+  grid-row: 1/3;
+  grid-column: 8/-1;
+  font-size: 100px;
+  color: white;
+}
+
+form {
+  width: 500px;
+  margin: auto 0;
+  padding: 10px 30px;
+  height: 500px;
+  grid-row: 3/4;
+  grid-column: 4/10;
+  /* outline: 1px solid white; */
+}
+input {
+  width: 90%;
+  /* margin: 20px 10px; */
+}
+textarea {
+  resize: vertical;
+  max-height: 300px;
+  min-height: 300px;
+  /* margin: 0px 70px; */
+  padding: 20px;
+  width: 90%;
+}
+
+input,
+textarea {
+  outline: none;
+  border: 1px solid #ddd;
+  font-size: 20px;
+  background: #262729;
+  padding: 10px;
+  color: white;
+  margin: 20px;
+}
+input:focus,
+textarea:focus {
+  box-shadow: 0 0 4px rgba(255, 0, 0, 0.5);
+  border: 1px solid red;
+}
+button {
+  outline: none;
+}
+li {
+  list-style-type: none;
+}
+
+form button {
+  color: white;
+  padding: 20px;
+  width: 140px;
+  background: red;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+.contact-section p {
+  color: white;
+  font-size: 20px;
+  width: 400px;
+  grid-row: 11/-1;
+  grid-column: 5/-1;
+}
+.social-links {
+  grid-row: 9/10;
+  grid-column: 4/10;
+  display: flex;
+  color: white;
+  padding: 20px;
+  margin: 20px;
+}
+.social-links li {
+  display: inline-block;
+  padding: 30px;
+}
+li img {
+  height: auto;
+  width: 50px;
 }
