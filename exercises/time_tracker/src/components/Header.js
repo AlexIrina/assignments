@@ -12,9 +12,6 @@ const Header = () => {
       <button className='personal-time'>
         <span className='personal'></span>Personal
       </button>
-      <button className='break-time'>
-        <span className='break'></span> Break
-      </button>
     </div>
   );
 };

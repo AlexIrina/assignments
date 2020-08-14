@@ -64,45 +64,37 @@
 
 @media only screen and (min-width: 768px) {
   .top > .top1 {
+    background-color: #f5c6d6;
     width: 100%;
-    background-color: blue;
   }
 
   .midd4 > .mid {
     display: inline-block;
     width: 25%;
-    background-color: #ee2e84;
     border: 1px solid white;
   }
   .midd4 > .mid:first-child {
     border-left: none;
   }
-
   .midd4 > .mid:last-child {
     border-right: none;
   }
-
   .midd2 > .mid-bottom {
     display: inline-block;
     width: 50%;
-    background-color: #85cfd8;
     border: 1px solid white;
   }
   .bottom > .bottom1,
   .bottom2 {
     display: inline-block;
   }
-
-  .bottom1 {
+  .bottom > .bottom1 {
     width: 75%;
-    background-color: #8dc63f;
     border: 1px solid white;
   }
-
-  .bottom2 {
+  .bottom > .bottom2 {
+    display: inline-block;
     width: 25%;
-    background-color: #e76e34;
-    border: 1px solid white;
   }
 
   .top1,

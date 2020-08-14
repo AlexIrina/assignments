@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 const Footer = () => {
+  console.log('test');
+
   return (
     <footer>
       <div className='user-history'>

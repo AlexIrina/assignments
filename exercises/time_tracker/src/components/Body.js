@@ -1,21 +1,32 @@
 import React from 'react';
+import timeRecordsData from '../timeRecordsData';
 
-const Body = (props) => {
+const amPm = (hour) => (hour > 12 ? 'pm' : 'am');
+console.log(amPm());
+
+const Body = () => {
+  const mappedRecordsData = timeRecordsData.map((item) => {
+    const hour = item.time.getHours();
+    const minute = item.time.getMinutes();
+
+    return (
+      <div key={item.id}>
+        <h1>
+          {hour}:{minute} {amPm(hour)}
+        </h1>
+
+        <p>{item.activity}</p>
+      </div>
+    );
+  });
   return (
     <>
-      <div className='card-body'>
-        <h2>{props.date}</h2>
-        <h1>{props.dash}</h1>
-        <h3>{props.time}</h3>
-        <p>{props.description}</p>
-        <br />
-        <br />
-        <h2>{props.totalTime}</h2>
-        <h4>
-          WORKED: {props.totalWorkingHrsMins} PERSONAL TIME/BREAKS:{' '}
-          {props.totalPersonalTime}
-        </h4>
-      </div>
+      <input
+        type='text'
+        placeholder='what have you been doing?
+      '
+      />
+      <div>{mappedRecordsData}</div>
     </>
   );
 };
