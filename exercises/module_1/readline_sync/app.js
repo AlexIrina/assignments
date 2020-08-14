@@ -1,22 +1,21 @@
-// const readlineSync = require("readline-sync");
-// let name = readlineSync.question("What is your name? ");
+// const readlineSync = require('readline-sync');
+// let name = readlineSync.question('What is your name? ');
 // console.log(name);
-const readlineSync = require("readline-sync");
 
-const availableActions = [];
-if (!blockExists()) {
-  availableActions.push("jump");
-}
-if (isLarge(place)) {
-  availableActions.push("run");
-}
-if (isNew(shoes)) {
-  availableActions.push("kick");
-}
-if (isNearby(enemy)) {
-  availableActions.push("punch");
-}
-let action = readlineSync.prompt({ limit: availableActions });
+// const availableActions = [];
+// if (!blockExists()) {
+//   availableActions.push("jump");
+// }
+// if (isLarge(place)) {
+//   availableActions.push("run");
+// }
+// if (isNew(shoes)) {
+//   availableActions.push("kick");
+// }
+// if (isNearby(enemy)) {
+//   availableActions.push("punch");
+// }
+// let action = readlineSync.prompt({ limit: availableActions });
 
 // const readlineSync = require("readline-sync");
 // let animals = ["Lion", "Elephant", "Crocodile", "Giraffe", "Hippo"];

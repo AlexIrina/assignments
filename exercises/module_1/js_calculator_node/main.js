@@ -3,22 +3,22 @@ const readlineSync = require('readline-sync');
 
 // A function that adds two numbers and returns the result
 const add = (num1, num2) => {
-  console.log(`The answer is: ${num1 + num2}`);
+  return `${num1 + num2}`;
 };
 
 // A function that subtracts two numbers and returns the result
 const subtract = (num1, num2) => {
-  console.log(`The answer is: ${num1 - num2}`);
+  return `${num1 - num2}`;
 };
 
 // A function that multiplies two numbers and returns the result
 const multiply = (num1, num2) => {
-  console.log(`The answer is: ${num1 * num2}`);
+  return `${num1 * num2}`;
 };
 
 // A function that divides two numbers and returns the result
 const divide = (num1, num2) => {
-  console.log(`The answer is: ${num1 / num2}`);
+  return `${num1 / num2}`;
 };
 
 // while (!areValidNumb) {
@@ -43,9 +43,7 @@ const operationToPerform = () => {
   } else if (operation === `divide`) {
     return `The result is: ${divide(num1, num2)}`;
   } else {
-    console.log(
-      `Invalid operation! Please choose from the following. Add, subtract, multiply and divide.`
-    );
+    return `Invalid operation! Please choose from the following. add, subtract, multiply and divide.`;
   }
 };
-operationToPerform();
+console.log(operationToPerform());
