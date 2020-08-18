@@ -8,12 +8,6 @@ class App extends Component {
     };
   }
 
-  // https://rickandmortyapi.com/api/character/
-  // image /center
-  // results.name   /center below the image
-  // results.species   /bottom left 50%
-  // results.origin   /bottom right 50%
-
   componentDidMount() {
     fetch('https://rickandmortyapi.com/api/character/')
       .then((response) => response.json())
