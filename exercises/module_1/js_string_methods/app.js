@@ -38,22 +38,25 @@
 //                                                                String Methods Exercise
 
 // Make a function that will return any given string into all caps followed by the same string all lowercase.
+//capilizeAndLowercase("Hello") // => "HELLOhello"
+// function capitalizeAndLowercase(str) {
+//   return ` ${str.toUpperCase()}${str.toLowerCase()}`;
+// }
 
-// const capitalizeAndLowercase = str => `${str.toUpperCase()} ${str}`;
-// console.log(capitalizeAndLowercase(`kjsghdfkjhkjshdf`));
+// console.log(capitalizeAndLowercase('Hello'));
 
 // Make a function that returns a number half the length, and rounded down. You'll need to use Math.floor().
 
-// const findMiddleIndex = str => {
-//   return Math.floor(str.length / 2);
-// };
-// console.log(findMiddleIndex('Hello')); // => 2
-// console.log(findMiddleIndex('Hello World')); // => 5
+// const findMiddleIndex = (str) => console.log(Math.floor(str.length / 2));
 
-// // Make a function that uses slice() and the other functions you've written to return the first half of the string
-// // get help with this when you see eric
-// const returnFirstHalf = str => {
-//   console.log(findMiddleIndex(str));
+// (() => {
+//   findMiddleIndex('Hello'); // => 2
+//   findMiddleIndex('Hello World'); // => 5
+// })();
+
+// // // Make a function that uses slice() and the other functions you've written to return the first half of the string
+// const returnFirstHalf = (str) => {
+//   console.log(str.slice(0, Math.floor(str.length / 2)));
 // };
 
 // returnFirstHalf('Hello'); // => "He"
@@ -61,17 +64,13 @@
 
 // Make a function that takes a string and returns that string where the first half is capitalized, and the second half is lower cased.
 
-// hint: If the half way point is a decimal, or rather, your string length is odd. Use Math.floor to round down.
-
-// const capitalizeAndLowercase = str => {
+// function capilizeAndLowercase(str) {
 //   let middleIndex = Math.floor(str.length / 2);
-
 //   let firstHalf = str.slice(0, middleIndex);
-
 //   let secondHalf = str.slice(middleIndex, str.length);
-
-//   return `${firstHalf.toUpperCase()}${secondHalf.toLowerCase()}`;
-// };
-
+//   console.log(`${firstHalf.toUpperCase()}${secondHalf.toLowerCase()}`);
+// }
 // console.log(capitalizeAndLowercase('Hello')); // => "HEllo"
 // console.log(capitalizeAndLowercase('Hello World')); // => "HELLO world"
+
+// *******************************************
