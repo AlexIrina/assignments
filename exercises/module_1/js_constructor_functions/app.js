@@ -9,23 +9,23 @@
 //   let newObj = new User('Joe', 'Schmoe', 42, 'Ernest Goes to Camp', 'UFC');
 //   objectArray.push(newObj);
 // }
-function User(fName, lName, age, favMovie, favSport) {
-  this.firstName = fName;
-  this.lastName = lName;
-  this.age = age;
-  this.favoriteMovie = favMovie;
-  this.favoriteSport = favSport;
-  User.prototype.speak = function() {
-    return `Hi! My name is ${this.firstName} ${this.lastName}. I am ${this.age} years old. My favorite movie is ${this.favoriteMovie} and my favorite sport is ${this.favoriteSport}`;
-  };
-}
+// function User(fName, lName, age, favMovie, favSport) {
+//   this.firstName = fName;
+//   this.lastName = lName;
+//   this.age = age;
+//   this.favoriteMovie = favMovie;
+//   this.favoriteSport = favSport;
+//   User.prototype.speak = function () {
+//     return `Hi! My name is ${this.firstName} ${this.lastName}. I am ${this.age} years old. My favorite movie is ${this.favoriteMovie} and my favorite sport is ${this.favoriteSport}`;
+//   };
+// }
 
-// Creating a new user
-const joe = new User('Joe', 'Rogan', 52, 'The Mechanic', 'UFC');
-const alex = new User(`Alex`, `George`, 32, `Scarface`, `MMA`);
+// // Creating a new user
+// const joe = new User('Joe', 'Rogan', 52, 'The Mechanic', 'UFC');
+// const alex = new User(`Alex`, `George`, 32, `Scarface`, `MMA`);
 
-console.log(alex, alex.speak());
-console.log(joe, joe.speak());
+// console.log(alex, alex.speak());
+// console.log(joe, joe.speak());
 
 // console.log(jill.speak());
 // jill.speak(); // prints "Hi! My name is Jill Hill and my favorite movie is Jack and the Beanstalk".
