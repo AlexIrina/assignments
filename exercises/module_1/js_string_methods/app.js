@@ -78,15 +78,15 @@
 
 // Make a function that takes any string and capitalizes any character that follows a space.
 
-capitalize = (str) => {
-  let splitStr = str.toLowerCase().split(' ');
-  console.log(splitStr);
+// capitalize = (str) => {
+//   let splitStr = str.toLowerCase().split(' ');
+//   console.log(splitStr);
 
-  for (let i = 0; i < splitStr.length; i++) {
-    splitStr[i] =
-      splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);
-  }
-  return splitStr;
-};
+//   for (let i = 0; i < splitStr.length; i++) {
+//     splitStr[i] =
+//       splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);
+//   }
+//   return splitStr;
+// };
 
-console.log(capitalize('hey friends! practice practice practice!')); // -> "Hey Friends! Practice Practice Practice!"
+// console.log(capitalize('hey friends! practice practice practice!')); // -> "Hey Friends! Practice Practice Practice!"

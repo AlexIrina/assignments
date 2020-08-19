@@ -8,15 +8,16 @@ const people = ['Jon', 'Jacob', 'Jingle', 'Heimer', 'Schmidt'];
 const alphabet = `abcdefghijklmnopqrstuvwxyz`;
 
 function forception(people, alphabet) {
-  let newArr = [];
+  let result = [];
   for (let i = 0; i < people.length; i++) {
-    newArr.push(`${people[i]}:`);
+    result.push(people[i]);
     for (let j = 0; j < alphabet.length; j++) {
-      newArr.push(alphabet[j]);
+      result.push(alphabet[j]);
     }
   }
-  return newArr;
+  return result;
 }
+
 console.log(
   `OUTPUT: forception -> forception(people, alphabet)`,
   forception(people, alphabet)
