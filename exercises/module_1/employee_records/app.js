@@ -43,25 +43,25 @@
 // employeeArray.push(alex, joe, brad);
 // console.log(employeeArray.length);
 
-const employees = [];
+// const employees = [];
 
-function Employee(name, jobTitle, salary, status = 'Full Time') {
-  this.name = name;
-  this.jobTitle = jobTitle;
-  this.salary = salary;
-  this.status = status;
-}
+// function Employee(name, jobTitle, salary, status = 'Full Time') {
+//   this.name = name;
+//   this.jobTitle = jobTitle;
+//   this.salary = salary;
+//   this.status = status;
+// }
 
-Employee.prototype.printEmployeeForm = function () {
-  return `Name: ${this.name}, Job Title: ${this.jobTitle}, Salary: ${this.salary}hour, Status: ${this.status}`;
-};
+// Employee.prototype.printEmployeeForm = function () {
+//   return `Name: ${this.name}, Job Title: ${this.jobTitle}, Salary: ${this.salary}hour, Status: ${this.status}`;
+// };
 
-let alex = new Employee('Alex', 'Amazon Engineer', 1000000, 'Full-Time');
-let joe = new Employee(`Joe`, `Commentator`, 500000, 'Part-Time');
-let brad = new Employee(`Brad`, `Actor`, 100, `Contract`);
+// let alex = new Employee('Alex', 'Amazon Engineer', 1000000, 'Full-Time');
+// let joe = new Employee(`Joe`, `Commentator`, 500000, 'Part-Time');
+// let brad = new Employee(`Brad`, `Actor`, 100, `Contract`);
 
-console.log(alex.printEmployeeForm());
+// console.log(alex.printEmployeeForm());
 
-employees.push(alex, joe, brad);
+// employees.push(alex, joe, brad);
 
-console.log(employees);
+// console.log(employees);
