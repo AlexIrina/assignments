@@ -6,13 +6,68 @@ const hero = {
   health: 0,
 };
 
-const inventoryItems = [`KAMEHAMEHA`, `SPIRIT BOMB`, `DEATH BEAM `];
+const inventoryItems = [`KAMEHAMEHA`, `SPIRIT BOMB`, `DEATH BEAM`];
 
-// const enemies = [{}, {}, {}, {}]
-// const len = enemies.length
-// const currneemeny = Math.floor(Math.random() * len)
+// tests
+// let enemies = [
+//   {
+//     name: 'Cell',
+//     health: 10,
+//   },
+//   {
+//     name: 'Frieza',
+//     health: 100,
+//   },
+//   {
+//     name: 'Vagetta',
+//     health: 100,
+//   },
+// ];
+
+// const length = enemies.length;
+// //gives me a random enemy from the array
+// const currentEnemy = Math.floor(Math.random() * length);
+// console.log(currentEnemy);
+
+// if (currentEnemy === 0) {
+//   console.log(enemies[0]);
+// } else if (currentEnemy === 1) {
+//   console.log(enemies[1]);
+// } else {
+//   console.log(enemies[2]);
+// }
 
 // del enemies[2]
+
+// deletes an enemy from the array
+// console.log(enemies);
+// let deleted = delete enemies[1];
+// console.log(enemies);
+//test end here
+
+function Enemy(name, health) {
+  this.name = name;
+  this.health = health;
+}
+
+function enemyCreation() {
+  let randomNum = Math.floor(Math.random() * 3);
+  if (randomNum === 0) {
+    return new Enemy('Frieza', 100);
+  } else if (randomNum === 1) {
+    return new Enemy('Cell', 100);
+  } else {
+    return new Enemy('Vageta', 100);
+  }
+}
+
+let enemies2 = [
+  new Enemy('Frieza', 100),
+  new Enemy('Cell', 100),
+  new Enemy('Vageta', 100),
+];
+
+
 
 startGame();
 
@@ -50,9 +105,14 @@ function enemyCreation() {
     return new Enemy('Vageta', 100);
   }
 }
-//The enemy is attacking you. Your health level is
+
+let enemies = [
+  new Enemy('Frieza', 100),
+  new Enemy('Cell', 100),
+  new Enemy('Vageta', 100),
+];
+
 //************************************************************************
-//The enemy is attacking you
 //Games starting message
 function startGame() {
   console.log(
@@ -91,7 +151,7 @@ function walk() {
   } else if (userChoice === 1) {
     inventory();
     console.log(
-      `Here's some special moves you can use against your enemies: ${inventoryItems}.
+      `${hero.name} Here's some special moves you can use against your enemies: ${inventoryItems}.
       Your health is ${hero.health}/100.
       Press WALK to continue saving the planet.
       `
@@ -102,6 +162,7 @@ function walk() {
     );
   }
 }
+//Continue walking
 
 function run() {
   const chanceOfEscape = Math.floor(Math.random() * 2);
@@ -155,7 +216,6 @@ function encounterLoop(currentEnemy) {
   }
 }
 
-// delete current enemy
 function enemyAttack(hero) {
   function randomDeduction(min, max) {
     min = Math.ceil(min);
@@ -187,12 +247,9 @@ function attackEnemy(currentEnemy) {
     currentEnemy
   );
   if (currentEnemy.health <= 0) {
-    enemyDie();
-    //need to make it so that i cant fight the enemy again
+    enemyDie(currentEnemy);
   }
 }
-
-//The enemy is attacking you.
 
 function die() {
   hero.health = 0;
@@ -205,14 +262,16 @@ function die() {
   );
 
   if (playerOption === 0) {
+    inventoryItems = [`KAMEHAMEHA`, `SPIRIT BOMB`, `DEATH BEAM`];
     return startGame();
   } else {
     return endGame();
   }
 }
+//if currentEnemy.health === 0 they cant fight me
 
-function enemyDie() {
-  //need to make it so i can get a different item form each enemy
+function enemyDie(currentEnemy) {
+  currentEnemy.health = 0;
   const enemyItems = [
     `Super Sayan 1`,
     `Super Sayan 2`,
@@ -222,6 +281,8 @@ function enemyDie() {
 
   inventoryItems.push(enemyItems[Math.floor(Math.random() * 4)]);
   hero.health = hero.health + 10;
+  //need to make it so that i cant fight the enemy again
+
   console.log(`
     The enemy is dead and you are victorious. You've earned a new special ability. You can see it in your inventory. 
 
@@ -236,3 +297,6 @@ function endGame() {
   process.exit(0);
 }
 //startGame
+/////////////////////////////
+
+//also im getting attacked twice when running away from enemy

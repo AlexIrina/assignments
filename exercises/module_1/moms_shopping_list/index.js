@@ -22,7 +22,7 @@ function addItem(e) {
 
   //edit button
   const editBtn = document.createElement('button');
-  editBtn.appendChild(document.createTextNode('edit me'));
+  editBtn.appendChild(document.createTextNode('edit'));
   // delete button
   const deleteBtn = document.createElement('button');
   deleteBtn.appendChild(document.createTextNode('X'));
@@ -41,6 +41,11 @@ function addItem(e) {
 
 //delete item from the form
 function deleteItem(e) {
+  const li = e.target.parentElement;
+  itemList.removeChild(li);
+}
+//
+function editItem(e) {
   const li = e.target.parentElement;
   itemList.removeChild(li);
 }
