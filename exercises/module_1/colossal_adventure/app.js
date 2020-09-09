@@ -1,73 +1,22 @@
 const readlineSync = require('readline-sync');
+
 //hero section
 // ************************************************************************
+//enemies
 const hero = {
   name: '',
   health: 0,
 };
 
-const inventoryItems = [`KAMEHAMEHA`, `SPIRIT BOMB`, `DEATH BEAM`];
+let inventoryItems = [`KAMEHAMEHA`, `SPIRIT BOMB`, `DEATH BEAM`];
 
-// tests
-// let enemies = [
-//   {
-//     name: 'Cell',
-//     health: 10,
-//   },
-//   {
-//     name: 'Frieza',
-//     health: 100,
-//   },
-//   {
-//     name: 'Vagetta',
-//     health: 100,
-//   },
-// ];
-
-// const length = enemies.length;
-// //gives me a random enemy from the array
-// const currentEnemy = Math.floor(Math.random() * length);
-// console.log(currentEnemy);
-
-// if (currentEnemy === 0) {
-//   console.log(enemies[0]);
-// } else if (currentEnemy === 1) {
-//   console.log(enemies[1]);
-// } else {
-//   console.log(enemies[2]);
-// }
-
-// del enemies[2]
-
-// deletes an enemy from the array
-// console.log(enemies);
-// let deleted = delete enemies[1];
-// console.log(enemies);
-//test end here
-
-function Enemy(name, health) {
-  this.name = name;
-  this.health = health;
-}
-
-function enemyCreation() {
-  let randomNum = Math.floor(Math.random() * 3);
-  if (randomNum === 0) {
-    return new Enemy('Frieza', 100);
-  } else if (randomNum === 1) {
-    return new Enemy('Cell', 100);
-  } else {
-    return new Enemy('Vageta', 100);
-  }
-}
-
-let enemies2 = [
+let enemies = [
   new Enemy('Frieza', 100),
   new Enemy('Cell', 100),
   new Enemy('Vageta', 100),
 ];
 
-
+const remainingEnemies = enemies.map((enemy) => enemy.name);
 
 startGame();
 
@@ -95,23 +44,6 @@ function Enemy(name, health) {
   this.health = health;
 }
 
-function enemyCreation() {
-  let randomNum = Math.floor(Math.random() * 3);
-  if (randomNum === 0) {
-    return new Enemy('Frieza', 100);
-  } else if (randomNum === 1) {
-    return new Enemy('Cell', 100);
-  } else {
-    return new Enemy('Vageta', 100);
-  }
-}
-
-let enemies = [
-  new Enemy('Frieza', 100),
-  new Enemy('Cell', 100),
-  new Enemy('Vageta', 100),
-];
-
 //************************************************************************
 //Games starting message
 function startGame() {
@@ -135,6 +67,7 @@ function startGame() {
 // walk, inventory, fight,
 //*************************************************************************
 function walk() {
+  if (!enemies.length) winGame();
   const userChoice = readlineSync.keyInSelect(
     ['walk', 'inventory'],
     'what would you like to do?'
@@ -162,7 +95,6 @@ function walk() {
     );
   }
 }
-//Continue walking
 
 function run() {
   const chanceOfEscape = Math.floor(Math.random() * 2);
@@ -173,9 +105,13 @@ function run() {
     enemyAttack(hero);
   }
 }
+
 function fight() {
-  let currentEnemy = enemyCreation();
-  console.log(`${currentEnemy.name} is challenging you to a fight!!!!`);
+  let indexOfEnemy = Math.floor(Math.random() * enemies.length);
+  let currentEnemy = enemies[indexOfEnemy];
+  console.log(
+    `${enemies[indexOfEnemy].name} is challenging you to a fight!!!!`
+  );
   const defenseChoice = readlineSync.keyInSelect(
     ['fight the enemy', 'run from the fight'],
     `Do you want to keep fighting or do you choose to run away?`
@@ -183,17 +119,16 @@ function fight() {
   if (defenseChoice === 1) {
     run();
   } else {
-    encounterLoop(currentEnemy);
+    encounterLoop(currentEnemy, indexOfEnemy);
   }
 }
-// your health level
+
 function inventory() {
   return `${inventoryItems}`;
 }
 
-//encounterLoop
 //****************************************************************************
-function encounterLoop(currentEnemy) {
+function encounterLoop(currentEnemy, indexOfEnemy) {
   console.log(currentEnemy);
   while (currentEnemy.health > 0) {
     enemyAttack(hero);
@@ -208,7 +143,7 @@ function encounterLoop(currentEnemy) {
         People on Earth: ${hero.name}, ${hero.name}, ${hero.name}!!
         `
       );
-      attackEnemy(currentEnemy);
+      attackEnemy(currentEnemy, indexOfEnemy);
     } else {
       console.log(`You decided to run away`);
       run();
@@ -235,7 +170,7 @@ function enemyAttack(hero) {
   }
 }
 
-function attackEnemy(currentEnemy) {
+function attackEnemy(currentEnemy, indexOfEnemy) {
   function randomDeduction(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -247,7 +182,7 @@ function attackEnemy(currentEnemy) {
     currentEnemy
   );
   if (currentEnemy.health <= 0) {
-    enemyDie(currentEnemy);
+    enemyDie(currentEnemy, indexOfEnemy);
   }
 }
 
@@ -268,9 +203,8 @@ function die() {
     return endGame();
   }
 }
-//if currentEnemy.health === 0 they cant fight me
 
-function enemyDie(currentEnemy) {
+function enemyDie(currentEnemy, indexOfEnemy, remainingEnemies) {
   currentEnemy.health = 0;
   const enemyItems = [
     `Super Sayan 1`,
@@ -281,7 +215,9 @@ function enemyDie(currentEnemy) {
 
   inventoryItems.push(enemyItems[Math.floor(Math.random() * 4)]);
   hero.health = hero.health + 10;
-  //need to make it so that i cant fight the enemy again
+  enemies.splice(indexOfEnemy, 1);
+
+  console.log(`You only have ${enemies.length} enemies left to fight.`);
 
   console.log(`
     The enemy is dead and you are victorious. You've earned a new special ability. You can see it in your inventory. 
@@ -290,13 +226,13 @@ function enemyDie(currentEnemy) {
 
     You've also received a senzu bean from Gohan. Your health is restored 10 points.`);
 }
-//Would you like to try to save the planet again or you've had enough
+
+function winGame() {
+  console.log(`CONGRATS YOU SAVED THE PLANET!!!`);
+  process.exit(0);
+}
 //****************************************************************************
 function endGame() {
   console.log(`The game is OVER!!!! You lost!!`);
   process.exit(0);
 }
-//startGame
-/////////////////////////////
-
-//also im getting attacked twice when running away from enemy
