@@ -1,16 +1,13 @@
 const readlineSync = require('readline-sync');
-const { inventory } = require('./inventory');
 console.clear();
-
-//took over the planet
-// ************************************************************************
+//hero
 const hero = {
   name: '',
   health: 0,
   humanOrSayan: '',
 };
-let inventoryItems = [`KAMEHAMEHA`, `SPIRIT BOMB`, `DEATH BEAM`];
-//enemy section ************************************************************************
+let herosItems = [`KAMEHAMEHA`];
+//enemy section
 function Enemy(name, health, specialMove) {
   this.name = name;
   this.health = health;
@@ -57,15 +54,24 @@ function createCharacter() {
     hero.humanOrSayan = `Human`;
   }
 }
-//The enemy is
+
 // walk, inventory, fight,
-//*************************************************************************
+function inventory() {
+  console.log(
+    `${hero.name} Here's some special moves you can use against your enemies: ${herosItems}.
+        Your health is ${hero.health}/100.
+        Press WALK to continue saving the planet.
+        `
+  );
+}
+
 function walk() {
   if (!enemies.length) winGame();
   const userChoice = readlineSync.keyInSelect(
     ['walk', 'inventory'],
     'what would you like to do?'
   );
+
   switch (userChoice) {
     case 0:
       const randomNumber = Math.floor(Math.random() * 3);
@@ -78,12 +84,6 @@ function walk() {
       break;
     case 1:
       inventory();
-      console.log(
-        `${hero.name} Here's some special moves you can use against your enemies: ${inventoryItems}.
-            Your health is ${hero.health}/100.
-            Press WALK to continue saving the planet.
-            `
-      );
       return walk();
       break;
     default:
@@ -180,7 +180,7 @@ function die() {
     `Would you like to try to save the planet again or you've had enough ?`
   );
   if (playerOption === 0) {
-    inventoryItems = [`KAMEHAMEHA`, `SPIRIT BOMB`, `DEATH BEAM`];
+    herosItems = [`KAMEHAMEHA`];
     return startGame();
   } else {
     return endGame();
@@ -188,17 +188,12 @@ function die() {
 }
 function enemyDie(indexOfEnemy) {
   enemies[indexOfEnemy].health = 0;
-  const enemyItems = [
-    `FINAL FLASH`,
-    `HUMAN EXTINCTION ATTACK`,
-    `SPECIAL BEAM CANNON`,
-  ];
-  inventoryItems.push(enemyItems[Math.floor(Math.random() * 4)]);
+  herosItems.push(enemies[indexOfEnemy].specialMove);
   hero.health = hero.health + 10;
   enemies.splice(indexOfEnemy, 1);
   console.log(`
     The enemy is dead and you are victorious. You've earned a new special ability. You can see it in your inventory.
-    Here is your inventory list: ${inventoryItems}
+    Here is your inventory list: ${herosItems}
     You've also received a senzu bean from Gohan. Your health is restored 10 points.`);
 
   enemies.length > 1
@@ -213,7 +208,7 @@ function winGame() {
   console.log(`CONGRATS YOU SAVED THE PLANET!!!`);
   process.exit(0);
 }
-//****************************************************************************
+
 function endGame() {
   console.log(`The game is OVER!!!! You lost!!`);
   process.exit(0);
