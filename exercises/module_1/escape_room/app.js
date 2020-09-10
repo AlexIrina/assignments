@@ -1,3 +1,4 @@
+console.clear();
 let readline = require(`readline-sync`);
 
 // ask the name
@@ -15,7 +16,7 @@ let hasKey = false;
 let options = [
   `\n Put hand in hole \n---------------------|`,
   `\n Find the key \n------------------|`,
-  `\n Open door \n--------------|`
+  `\n Open door \n--------------|`,
 ];
 
 // Game loop continues until the game ends
@@ -24,6 +25,7 @@ while (!isDead) {
     options,
     ` \n                                Choose one of the following: \n \n \n`
   );
+
   if (userChoice === 0) {
     console.log(
       `  \n\n                  ${name}, your hand is stuck. You will be dead soon.  \n`
@@ -50,8 +52,7 @@ while (!isDead) {
     );
   }
 }
-if (isDead) {
+isDead &&
   console.log(
-    `\n                                      You're dead. GAME OVER!! Please Try again.  \n`
+    `\n                                    You're dead. GAME OVER!! Please Try again.  \n`
   );
-}

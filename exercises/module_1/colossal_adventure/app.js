@@ -78,7 +78,7 @@ function walk() {
       randomNumber === 0
         ? fight()
         : console.log(
-            `Continue walking ${hero.name}. The enemies are near by.`
+            `Continue walking ${hero.name}. ${enemyNames} are near by.`
           );
       return walk();
       break;
