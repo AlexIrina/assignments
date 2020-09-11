@@ -1,51 +1,63 @@
+//SELECTORS
+const todoInput = document.getElementById('todo-input');
+const todoButton = document.getElementById('todo-button');
+const todoList = document.getElementById('todo-list');
+//EVENT LISTENERS
+//add item
+todoButton.addEventListener('click', addTodoItem);
+//delete and complete todo item
+todoList.addEventListener('click', deleteAndCompleteTodoItem);
 
-const form = document.getElementById('add-todo');
-const itemList = document.getElementById('list');
-
-// Part 1
-// A user will be able to add list items to the pre-built ul using the pre-built form
-// New list items should have the same format as the li's that came with the git repo
-
-// adds a new item to the form
-form.addEventListener('submit', addItem);
-
-// Delete item from the list
-itemList.addEventListener('click', deleteItem);
-
-function addItem(e) {
+//FUNCTIONS
+// generate a new todo with delete and completed buttons
+function addTodoItem(e) {
   e.preventDefault();
-  let newItem = document.getElementById('title').value;
+  //create a div
+  const todoDiv = document.createElement('div');
+  todoDiv.classList.add('todo');
+  //create li
+  const newTodo = document.createElement('li');
+  newTodo.innerText = todoInput.value;
+  newTodo.classList.add('todo-item');
+  // put newTodo inside the created div
+  todoDiv.appendChild(newTodo);
 
-  let li = document.createElement('li');
-  let newDiv = document.createElement('div');
-  newDiv.textContent = newItem;
+  // COMPLETED BUTTON
+  const completedBtn = document.createElement('button');
+  completedBtn.innerHTML = '<i class="fas fa-check"></i>';
+  completedBtn.classList.add('completed-btn');
+  //append completed button to the div
+  todoDiv.appendChild(completedBtn);
 
-  //edit button
-  const editBtn = document.createElement('button');
-  editBtn.appendChild(document.createTextNode('edit'));
-  // delete button
+  // DELETE BUTTON
   const deleteBtn = document.createElement('button');
-  deleteBtn.appendChild(document.createTextNode('X'));
-  // save button
-  const saveBtn = document.createElement('button');
-  saveBtn.appendChild(document.createTextNode('save'));
-
-  li.appendChild(newDiv);
-  li.appendChild(editBtn);
-  li.appendChild(deleteBtn);
-  li.appendChild(saveBtn);
-
-  // append li's to the ul
-  itemList.appendChild(li);
+  deleteBtn.innerHTML = '<i class="fas fa-trash"></i>';
+  deleteBtn.classList.add('delete-btn');
+  //append delete button to the div
+  todoDiv.appendChild(deleteBtn);
+  // APPEND TODO TO LIST
+  todoList.appendChild(todoDiv);
+  // clear todo input value
+  todoInput.value = '';
 }
 
-//delete item from the form
-function deleteItem(e) {
-  const li = e.target.parentElement;
-  itemList.removeChild(li);
-}
-//
-function editItem(e) {
-  const li = e.target.parentElement;
-  itemList.removeChild(li);
+function deleteAndCompleteTodoItem(e) {
+  // console.log(e.target);
+  let item = e.target;
+  //DELETE TODO
+  if (item.classList[0] === 'delete-btn') {
+    const todo = item.parentElement;
+    //fall animation class
+    todo.classList.add('fall');
+    // when fall animation is finishes the function will run and the item will get deleted from the list
+    todo.addEventListener('transitionend', function () {
+      todo.remove();
+    });
+  }
+
+  // COMPLETE TODO
+  if (item.classList[0] === 'completed-btn') {
+    const todo = item.parentElement;
+    todo.classList.toggle('completed');
+  }
 }

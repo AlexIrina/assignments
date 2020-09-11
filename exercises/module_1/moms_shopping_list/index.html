@@ -4,44 +4,47 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+      integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="style.css" />
     <title>Mom's Shopping List</title>
   </head>
   <body>
-    <div class="title-bar">
+    <header class="title-bar">
       <h1 class="title">Mom's Shopping List</h1>
+    </header>
+    <!-- filter -->
+    <div class="select">
+      <select name="todos" id="filter-todo">
+        <option value="all">All</option>
+        <option value="all">Completed</option>
+        <option value="all">Uncompleted</option>
+      </select>
     </div>
-    <div class="main">
-      <div class="title-bar">
-        <h3 class="title">Add Item</h3>
-      </div>
-      <form name="addItem" id="add-todo">
-        <label class="label" for="title">Item name</label>
-        <input class="input" name="title" id="title" />
-        <button>submit</button>
-      </form>
-      <div class="todos">
-        <div class="title-bar">
-          <h3 class="title">list of items</h3>
-        </div>
-        <ul id="list">
-          <li>
-            <div>milk</div>
-            <button>edit</button>
-            <button>x</button>
-          </li>
-          <li>
-            <div>cherios</div>
-            <button>edit</button>
-            <button>X</button>
-          </li>
-          <li>
-            <div>2 goats</div>
-            <button>edit</button>
-            <button>X</button>
-          </li>
-        </ul>
-      </div>
+
+    <form>
+      <input type="text" id="todo-input" />
+      <button id="todo-button" type="submit">
+        <i class="fas fa-plus-square"></i>
+      </button>
+    </form>
+    <div class="todo-container">
+      <ul id="todo-list">
+        <!-- goal -->
+        <!-- <div class="todo">
+          <li></li>
+          <button>Completed</button>
+          <button>Delete</button>
+        </div> -->
+      </ul>
     </div>
     <script src="index.js"></script>
   </body>
