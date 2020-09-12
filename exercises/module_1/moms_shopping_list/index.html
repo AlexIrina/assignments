@@ -21,20 +21,20 @@
     <header class="title-bar">
       <h1 class="title">Mom's Shopping List</h1>
     </header>
-    <!-- filter -->
-    <div class="select">
-      <select name="todos" id="filter-todo">
-        <option value="all">All</option>
-        <option value="all">Completed</option>
-        <option value="all">Uncompleted</option>
-      </select>
-    </div>
 
     <form>
       <input type="text" id="todo-input" />
       <button id="todo-button" type="submit">
         <i class="fas fa-plus-square"></i>
       </button>
+      <!-- filter, all, completed, uncompleted-->
+      <div class="select">
+        <select name="todos" class="filter-todo">
+          <option value="all">All</option>
+          <option value="completed">Completed</option>
+          <option value="uncompleted">Uncompleted</option>
+        </select>
+      </div>
     </form>
     <div class="todo-container">
       <ul id="todo-list">
