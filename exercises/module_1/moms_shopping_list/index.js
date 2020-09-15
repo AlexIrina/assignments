@@ -2,16 +2,12 @@
 const todoInput = document.getElementById('todo-input');
 const todoButton = document.getElementById('todo-button');
 const todoList = document.getElementById('todo-list');
-// select element
-const filterOption = document.querySelector('.filter-todo');
 
 //EVENT LISTENERS
 //add item
 todoButton.addEventListener('click', addTodoItem);
 //delete and complete todo item
 todoList.addEventListener('click', deleteAndCompleteTodoItem);
-//filter todos by All, Completed, Uncompleted
-filterOption.addEventListener('click', filterTodo);
 
 //FUNCTIONS
 // generate a new todo with delete and completed buttons
@@ -26,6 +22,8 @@ function addTodoItem(e) {
   newTodo.classList.add('todo-item');
   // put newTodo inside the created div
   todoDiv.appendChild(newTodo);
+  //SAVE TODO TO LOCAL STORAGE
+  saveLocalTodos(todoInput.value);
 
   // COMPLETED BUTTON
   const completedBtn = document.createElement('button');
@@ -67,25 +65,19 @@ function deleteAndCompleteTodoItem(e) {
   }
 }
 
-function filterTodo(e) {
-  const todos = todoList.childNodes;
-  //loop over all todos
-  todos.forEach((todo) => {
-    // checking for ALL, COMPLETED,
-    switch (e.target.value) {
-      case 'all':
-        // show all the todos
-        //they all have flex style of display on them already
-        todo.style.display = 'flex';
-        break;
-      case 'completed':
-        // show all completed todos
-        if (todo.classList.contains('completed')) {
-          todo.style.display = 'flex';
-        } else {
-          //remove/don't show them
-          todo.style.display = 'none';
-        }
-    }
-  });
+//save todos to local storage
+function saveLocalTodos(todo) {
+  let todos = [];
+  //check if i already have todos in local storage
+  if (localStorage.getItem('todos') === null) {
+    todos = [];
+  } else {
+    todos = JSON.parse(localStorage.getItem('todos'));
+  }
+
+  todos.push(todo);
+  localStorage.setItem('todos', JSON.stringify(todos));
 }
+
+// pulls items out of local storage and display them in the UI
+
