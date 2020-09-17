@@ -3,10 +3,8 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   font-family: 'Poppins', sans-serif;
-  /* background-image: linear-gradient(120deg, #e6b924, #a13416); */
   background-color: black;
   color: white;
   min-height: 100vh;
@@ -17,8 +15,7 @@ header {
 }
 header,
 form {
-  /* min-height: 20vh; */
-  /* center everything */
+  min-height: 10vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,7 +43,6 @@ form button:hover {
 }
 
 .todo-container {
-  /* center everything */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -77,9 +73,11 @@ form button:hover {
   padding: 0rem 0.5rem;
 }
 
-/* delete, complete, save buttons*/
+/* delete, complete, edit, save buttons*/
 .delete-btn,
-.completed-btn {
+.completed-btn,
+.edit-btn,
+.save-btn {
   background: brown;
   color: white;
   border: none;
@@ -90,57 +88,28 @@ form button:hover {
 .completed-btn {
   background: green;
 }
+.edit-btn {
+  background: white;
+  color: black;
+}
+.save-btn {
+  background: white;
+  color: black;
+}
 
 /* now clicking on fa icons wont effect me*/
 .fa-trash,
-.fa-check {
+.fa-check,
+.fa-edit,
+.fa-save {
   pointer-events: none;
 }
 
 /* COMPLETED EFFECTS AND STYLING */
 .completed {
   text-decoration: line-through;
-  opacity: 0.5;
 }
 /* fall animation */
 .fall {
-  transform: translateY(8rem) rotateZ(20deg);
   opacity: 0;
-}
-
-/* styling select box. All,Completed, Uncompleted */
-select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  outline: none;
-  border: none;
-}
-/* select div */
-.select {
-  margin: 1rem;
-  position: relative;
-  overflow: hidden;
-}
-select {
-  color: blue;
-  width: 10rem;
-  cursor: pointer;
-  padding: 1rem;
-}
-/* creates an arrow */
-.select::after {
-  content: '\25BC';
-  position: absolute;
-  background: red;
-  top: 0;
-  right: 0;
-  padding: 1rem;
-  pointer-events: none;
-  transition: all 0.3s ease;
-}
-/* arrow animation */
-.select:hover:after {
-  background: white;
-  color: red;
 }
