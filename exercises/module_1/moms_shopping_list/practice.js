@@ -52,6 +52,7 @@ function addTodoItem(e) {
       });
       e.currentTarget.innerHTML = '<i class="fas fa-save"></i>';
     } else if (e.currentTarget.innerHTML === '<i class="fas fa-save"></i>') {
+      let todo = e.currentTarget.parentElement.querySelector('.todo-item');
       todo.innerText = todoInput.value;
       todoInput.value = '';
       e.currentTarget.innerHTML = '<i class="fas fa-edit"></i>';
