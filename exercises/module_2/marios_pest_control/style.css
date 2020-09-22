@@ -1,0 +1,96 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  text-align: center;
+  font-size: 60px;
+}
+
+.flex-container {
+  background: whitesmoke;
+  height: 47vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.flex-container > img {
+  height: 100px;
+}
+.flex-container > input {
+  padding: 20px;
+  width: 100px;
+  font-size: 30px;
+  border-radius: 20%;
+  outline: none;
+  text-align: center;
+  color: gold;
+  background: black;
+}
+
+.flex-container > button {
+  outline: 2px solid red;
+}
+.info-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 50px;
+  align-items: center;
+  background: whitesmoke;
+  margin-top: 20px;
+}
+
+.result-container {
+  background: red;
+  height: 32vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.result-container > h1 {
+  font-size: 30px;
+  color: black;
+}
+
+.result-container > input {
+  text-align: center;
+  font-size: 30px;
+  color: gold;
+  background: black;
+  padding: 20px;
+  width: 200px;
+  border-radius: 25px;
+}
+
+footer {
+  background: black;
+  color: white;
+  height: 8vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#submit-btn {
+  padding: 20px;
+  background: blue;
+  color: red;
+  font-size: larger;
+  font-weight: 700;
+}
+
+/* mobile */
+
+@media only screens and(min-width: 700px) {
+  .flex-container {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
