@@ -5,6 +5,8 @@
 }
 body {
   text-align: center;
+  background: black;
+  color: white;
 }
 
 header {
@@ -16,18 +18,6 @@ header {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
-}
-.bobombs-container {
-  grid-column: 2/3;
-  grid-row: 1/3;
-  outline: 2px solid red;
-  height: 150px;
-  width: 150px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  position: relative;
 }
 
 .row1,
@@ -45,37 +35,40 @@ header {
   width: 100%;
 }
 
-.inputandbomb {
+.inputandbomb,
+.inputandgomba,
+.inputandfish {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   height: 100%;
 }
-
-.inputandgomba {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  height: 100%;
-}
-
-.goombas-container {
+.bobombs-container {
   grid-column: 2/3;
-  grid-row: 3/5;
-  outline: 2px solid green;
+  grid-row: 1/3;
+  outline: 2px solid red;
   height: 150px;
   width: 150px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-evenly;
+  align-items: center;
   position: relative;
+}
+.goombas-container {
+  grid-column: 2/3;
+  grid-row: 3/5;
+  outline: 2px solid green;
 }
 
 .cheepcheeps-container {
   grid-column: 2/3;
   grid-row: 5/7;
-  outline: 2px solid blue;
+  outline: 2px solid yellow;
+}
+.bobombs-container,
+.goombas-container,
+.cheepcheeps-container {
   height: 150px;
   width: 150px;
   display: flex;
@@ -84,7 +77,6 @@ header {
   justify-content: space-evenly;
   position: relative;
 }
-
 img {
   height: 50px;
 }
@@ -114,4 +106,41 @@ h4 {
 footer {
   background: black;
   color: white;
+}
+a {
+  text-decoration: none;
+  color: red;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (min-width: 700px) {
+  body {
+    background: grey;
+    color: black;
+  }
+
+  .main-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 20px;
+    margin: 25vh 20vw;
+  }
+
+  .bobombs-container {
+    grid-column: 2/3;
+    grid-row: 5/7;
+  }
+  .cheepcheeps-container {
+    grid-column: 3/4;
+    grid-row: 5/7;
+  }
+  .goombas-container {
+    grid-column: 4/5;
+    grid-row: 5/7;
+  }
+  #submit-btn {
+    padding: 30px;
+  }
 }
