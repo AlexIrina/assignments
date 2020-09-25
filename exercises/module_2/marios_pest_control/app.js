@@ -28,10 +28,6 @@ function addItAllUp(event) {
     cheepcheepsInput.value = 0;
   }
 
-  // // Return the grand total:
-  // // Bob-ombs are worth 7 coins each
-  // // Goombas are worth 5 coins each
-  // // Cheep-cheeps are worth 11 coins each
   const result =
     Number(bobombsInput.value) * 7 +
     Number(goombasInput.value) * 5 +
@@ -60,10 +56,3 @@ function addOne(str) {
     cheepcheepsInput.value = Number(cheepcheepsInput.value) + 1;
   }
 }
-
-//  // 1 . <h1></h1>
-//  const h1 = document.createElement('h1')
-//  // 2. <h1>Harry Potter</h1>
-//  h1.textContent = firstName + " " + lastName
-//  // 3. Append
-//  document.getElementsByTagName("body")[0].append(h1)
