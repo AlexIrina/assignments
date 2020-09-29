@@ -6,10 +6,13 @@
 
 .container {
   background-color: burlywood;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  height: 50vh;
 }
 
 .box {
-  position: relative;
   display: inline-block;
   height: 100px;
   width: 100px;
@@ -35,17 +38,6 @@ pallet {
     transform linear 500ms;
 }
 
-/* change 2 or 3 different properties of the box that was hovered. */
-/* Background color
-Border (width, color, style)
-Border radius (can target each corner individually if you want)
-Box shadow
-Height/width
-Margin/padding (put some text inside to better see what's happening)
-Position
-Opacity
-ALSO, you must make each box smoothly transition from one style to another. (This is a CSS transitions practice, after all). */
-
 .box-1:hover {
   transform: translate(0, 100px);
   background-color: yellow;
@@ -60,7 +52,7 @@ ALSO, you must make each box smoothly transition from one style to another. (Thi
 .box-2:hover {
   border-left: 50px solid burlywood;
   border-right: 50px solid burlywood;
-  border-bottom: 100px solid red;
+  border-bottom: 5px solid red;
 }
 
 .box-3 {
@@ -70,7 +62,7 @@ ALSO, you must make each box smoothly transition from one style to another. (Thi
 }
 
 .box-3:hover {
-  transform: translate(0, 400px);
+  transform: translate(0, 50px);
   width: 90px;
   height: 90px;
   background-color: red;
@@ -109,7 +101,6 @@ ALSO, you must make each box smoothly transition from one style to another. (Thi
 }
 
 .box-6:hover {
-  position: relative;
   top: 100px;
   background-color: orange;
   box-shadow: 10px 10px 16px green;

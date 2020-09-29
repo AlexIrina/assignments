@@ -17,14 +17,14 @@
 // console.log(alphabetical(['dog', 'wolf', 'by', 'family', 'eaten'])); // ["by", "dog", "eaten", "family", "wolf"]
 
 // 5) Sort the objects in the array by age
-const byAge = arr => arr.sort((x, y) => x['age'] - y['age']);
+const byAge = (arr) => arr.sort((x, y) => x.age - y.age);
 
 console.log(
   byAge([
     { name: 'Quiet Samurai', age: 22 },
     { name: 'Arrogant Ambassador', age: 100 },
     { name: 'Misunderstood Observer', age: 2 },
-    { name: 'Unlucky Swami', age: 77 }
+    { name: 'Unlucky Swami', age: 77 },
   ])
 );
 // // => [ { name: 'Misunderstood Observer', age: 2 },

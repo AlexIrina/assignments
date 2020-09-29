@@ -13,7 +13,7 @@ const incrementTimer = () => {
   timer.textContent = count;
 };
 
-start.addEventListener('click', function() {
+start.addEventListener('click', function () {
   // need to pass 2 arguments in here
   // first arg: what functionality should it be calling on the interval ?
   // second arg: amount of time in milliseconds id like this to fire on.
@@ -21,14 +21,16 @@ start.addEventListener('click', function() {
   // if i used 'let intervalID' --- the intervalID variable will be stuck in the scope of the function and other functions cant use it
 });
 
-stop.addEventListener('click', function() {
+stop.addEventListener('click', function () {
   clearInterval(intervalId);
+  timer.textContent = 'click Start';
+  timer.style.color = 'red';
 });
 
 // setInterval() and setTimeout() when used return an ID
 
 // resets the time to 0
-reset.addEventListener('click', function() {
+reset.addEventListener('click', function () {
   count = 0;
   timer.textContent = count;
   clearInterval(incrementTimer);

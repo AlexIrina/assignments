@@ -10,52 +10,51 @@ const peopleArray = [
   {
     firstName: 'Sarah',
     lastName: 'Palin',
-    age: 47
+    age: 47,
   },
   {
     firstName: 'Frank',
     lastName: 'Zappa',
-    age: 12
+    age: 12,
   },
   {
     firstName: 'Rick',
     lastName: 'Sanchez',
-    age: 78
+    age: 78,
   },
   {
     firstName: 'Morty',
     lastName: 'Smith',
-    age: 29
+    age: 29,
   },
   {
     firstName: 'Kyle',
     lastName: 'Mooney',
-    age: 27
+    age: 27,
   },
   {
     firstName: 'Pasha',
     lastName: 'Datsyuk',
-    age: 13
+    age: 13,
   },
   {
     firstName: 'Lev',
     lastName: 'Tolstoy',
-    age: 82
-  }
+    age: 82,
+  },
 ];
-console.log(`test`, peopleArray);
 
 // list of everyone older than 18
-const peopleOlderThan18 = arr => {
+const peopleOlderThan18 = (arr) => {
   return arr
-    .filter(person => person.age >= 18)
+    .filter((person) => person.age >= 18)
     .sort((a, b) => {
       let first = a.lastName;
       let second = b.lastName;
       return first < second ? -1 : first > second ? 1 : 0;
     })
     .map(
-      person =>
+      (person) =>
         `<li>${person.firstName} ${person.lastName} is ${person.age} </li>`
     );
 };
