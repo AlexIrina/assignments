@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #141e30; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #243b55,
+    #141e30
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #243b55,
+    #141e30
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: #eee;
+}
+
+a {
+  color: red;
+}
+
+/* set width for the two containers */
+.container {
+  margin: 0 auto;
+  width: 1200px;
+  /* width: auto; */
+  max-width: 100%;
+  /* background-color: red; */
+}
+
+/* big image */
+header {
+  background-image: url(images/team.jpg);
+  background-size: cover;
+  background-position: center center;
+  height: 300px;
+  margin-bottom: 2rem;
+  border-radius: 5px;
+}
+
+nav {
+  display: flex;
+  margin: 3rem 1rem 2rem;
+  align-items: center;
+  font-weight: bold;
+}
+
+nav ul {
+  display: flex;
+  padding: 0;
+}
+/* space out the links */
+nav a {
+  margin-left: 2rem;
+}
+
+nav a.active {
+  color: #3889f2;
+}
+
+.logo {
+  font-size: 3rem;
+  color: #3889f2;
+  padding: 1rem;
+}
+
+.inner-nav {
+  flex: 1;
+}
+
+.col {
+  padding: 1rem;
+  flex: 1;
+}
+
+.col h2 {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.col img {
+  width: 100%;
+  max-height: 45%;
+  border-radius: 5px;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.big {
+  font-size: 2.5rem;
+}
+
+.blue {
+  color: #3889f2;
+}
+
+.text-center {
+  text-align: center;
+}
+.text-center button {
+  padding: 1.5rem 2rem;
+  font-size: 1.5rem;
+  background: #3889f2;
+  color: white;
+  border: none;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+}
+
+.show-mobile {
+  opacity: 0;
+}
+
+/* media */
+@media only screen and (max-width: 768px) {
+  .hidden-mobile {
+    display: none;
+  }
+
+  .logo {
+    margin-left: 1rem;
+
+    color: red;
+  }
+
+  .row {
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  nav a {
+    padding: 0.5rem;
+    margin-left: 0;
+  }
+
+  .show-mobile {
+    opacity: 1;
+    color: red;
+    margin-bottom: 1rem;
+  }
+}
