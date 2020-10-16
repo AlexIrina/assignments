@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+a {
+  color: black;
+}
+
+h2 {
+  color: white;
+}
+
+p {
+  color: orange;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: rebeccapurple;
+}
+
+.box {
+  background: #686de0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+  gap: 2rem;
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+  width: 600px;
+  max-width: 100%;
+  text-align: center;
+}
+
+.box button {
+  background: rebeccapurple;
+  color: #eee;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+}
+.box button:active {
+  /* click animation */
+  transform: scale(0.98);
+}
+
+.box img {
+  height: 150px;
+  width: 150px;
+}
+
+.box img:hover {
+  transform: translateY(100deg);
+}
+
+.heart {
+  font-size: 3rem;
+  position: fixed;
+  top: -1vh;
+  transform: translateY(0);
+  animation: fall 3s linear forwards;
+  color: red;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(105vh);
+  }
+}
