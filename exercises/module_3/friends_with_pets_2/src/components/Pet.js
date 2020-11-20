@@ -1,11 +1,13 @@
 import React from 'react';
 
-const Pets = (props) => ( 
+export default function Pets (props) {  
+  return (
     <div>
       <p>{props.name}</p>
     </div>
-)
-export default Pets;
+  )
+}
+
 
 
 
