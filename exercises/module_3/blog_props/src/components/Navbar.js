@@ -1,14 +1,11 @@
 import React from 'react';
 
-function Navbar() {
+export default function Navbar() {
   return (
     <div className='navbar-container'>
       <a className='navbar-brand' href='index.html'>
         Start Bootstrap
       </a>
-      {/* <button className='navbar-btn' type='button'>
-        Menu
-      </button> */}
       <a className='nav-link' href='index.html'>
         Home
       </a>
@@ -24,4 +21,4 @@ function Navbar() {
     </div>
   );
 }
-export default Navbar;
+

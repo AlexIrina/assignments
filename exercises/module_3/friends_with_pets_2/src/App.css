@@ -45,6 +45,8 @@ h3 {
   text-align: center;
   display: flex;
   justify-content: center;
+  font-size: 1.3rem;
+  font-weight: 100;
 }
 
 p {
@@ -57,7 +59,7 @@ p {
 }
 
 .info-header {
-  color: #1b0839;
+  color: #db2cac;
   text-decoration: underline #34162c;
 }
 

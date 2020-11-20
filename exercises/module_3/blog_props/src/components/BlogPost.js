@@ -1,6 +1,6 @@
 import React from 'react';
 
-const BlogPost = (props) => {
+export default function BlogPost(props) {
   return (
     <div>
       <div className='post-container'>
@@ -10,7 +10,7 @@ const BlogPost = (props) => {
         </a>
         <p className='post-author'>
           Posted by
-          <a href='.'>{props.author}</a>
+          <a href='.'> {props.author} </a>
           on {props.date}
         </p>
       </div>
@@ -19,4 +19,4 @@ const BlogPost = (props) => {
   );
 };
 
-export default BlogPost;
+

@@ -1,7 +1,7 @@
 import React from 'react';
 import BlogPost from './BlogPost.js';
 
-const BlogList = (props) => {
+export default function BlogList(props) {
   const mappedArticle = props.data.map((item, key) => (
     <BlogPost
       title={item.title}
@@ -23,4 +23,4 @@ const BlogList = (props) => {
   );
 };
 
-export default BlogList;
+

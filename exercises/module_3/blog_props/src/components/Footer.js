@@ -1,22 +1,22 @@
 import React from 'react';
 
-const Footer = () => {
+export default function Footer() {
   return (
     <div className='footer-container'>
       <ul className='list-items'>
         <li className='list-item'>
           <a href='.'>
-            <span>Facebook logo</span>
+            <i class="fab fa-facebook-f"></i>
           </a>
         </li>
         <li className='list-item'>
           <a href='.'>
-            <span>Twitter logo</span>
+            <i class="fab fa-twitter"></i>
           </a>
         </li>
         <li className='list-item'>
           <a href='.'>
-            <span>Github logo</span>
+            <i class="fab fa-github"></i>
           </a>
         </li>
       </ul>
@@ -25,4 +25,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+
