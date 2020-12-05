@@ -2,15 +2,17 @@ import React from 'react';
 import BlogPost from './BlogPost.js';
 
 export default function BlogList(props) {
-  const mappedArticle = props.data.map((item, key) => (
-    <BlogPost
-      title={item.title}
-      subtitle={item.subtitle}
-      author={item.author}
-      date={item.date}
-      key={key}
-    />
-  ));
+ const mappedArticle = props.data.map((item, key) => {
+   return (
+     <BlogPost 
+         title = {item.title}
+         subTitle = {item.subTitle}
+         author = {item.author}
+         date = {item.date}
+         key = {key}
+     />
+   )
+ })
 
   return (
     <div className='blog-list-container'>
