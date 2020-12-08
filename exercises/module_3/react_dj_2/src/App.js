@@ -1,29 +1,29 @@
-
-
 import React, {useState} from 'react'
 import Square from './components/Square'
 
-function App() {
-// Small time DJ
-// Professional DJ
-// Top Left Blue
-// Bottom Left Red
-// Big Time DJ
-// Party DJ
-// Top Right Purple
-// Bottom Right Green
-
+export default function App() {
 
 const [colors, setColors] = useState( ["white", "white", "white", "white"])
 
 const squareComponents = colors.map((color, key) => <Square colors={color} key={key}/>)
 
-
-
 // Small time DJ:
 // You will have one button that will change all four squares either black or white. White if the first one is not white. Black if the first square is white.
 
-const smallTimeDj = () => setColors(prevColors => prevColors.colors = ['black', 'white','white','white'])
+const smallTimeDj = () => setColors(prevColors => {
+  const newColors = prevColors.colors.map(color => {
+  if (color === 'white' || color === 'purple' || color === 'blue') {
+      return 'black';
+  } else if (color === 'black' || color === 'purple') {
+      return 'white';
+  } else {
+      return color;
+  }
+  })
+  return {
+    colors: newColors
+  }
+})
 
 // Party DJ:
 // Add a second button. The second will turn the top half (both squares) of the grid purple.
@@ -58,6 +58,5 @@ const bigTimeDj = () => setColors(prevColors => prevColors.colors = ['red', 'gre
   );
 }
 
-export default App;
 
 

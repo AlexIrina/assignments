@@ -28,7 +28,8 @@ body {
   justify-content: center;
   align-items: center;
   outline: 2px solid black;
-  padding: 1rem;
+  padding: 3rem;
+  background-color: red;
 }
 
 .square {
