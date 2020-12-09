@@ -4,39 +4,32 @@ import Square from './components/Square'
 export default function App() {
 
 const [colors, setColors] = useState( ["white", "white", "white", "white"])
-
 const squareComponents = colors.map((color, key) => <Square colors={color} key={key}/>)
 
 // Small time DJ:
-// You will have one button that will change all four squares either black or white. White if the first one is not white. Black if the first square is white.
-
+// You will have one button that will change all four squares either black or white. White if the first square is not white. Black if the first square is white.
 const smallTimeDj = () => setColors(prevColors => {
-  const newColors = prevColors.colors.map(color => {
-  if (color === 'white' || color === 'purple' || color === 'blue') {
-      return 'black';
-  } else if (color === 'black' || color === 'purple') {
-      return 'white';
-  } else {
-      return color;
-  }
-  })
-  return {
-    colors: newColors
-  }
-})
+ return prevColors[0] === 'white' ? prevColors = ['black','black','black','black'] : prevColors = ["white", "white", "white", "white"] 
+}
+)
 
 // Party DJ:
 // Add a second button. The second will turn the top half (both squares) of the grid purple.
-const partyDj = () => setColors(prevColors => prevColors.colors = ['purple', 'purple','white','white'])
+const partyDj = () => setColors(prevColors => {
+  return prevColors[0] === 'white' ?  prevColors = ["purple", "purple", "white", "white"] : prevColors = [ "white", "white", "purple", "purple"]
+})
 
 // Professional DJ:
 //These next two will change the colors of the bottom squares blue, but individually. One will be linked to the bottom left, and the other to the bottom right.
-const proDj = () =>  setColors(prevColors => prevColors.colors = ['white', 'white','blue','blue'])
-
+const proDj = () =>  setColors(prevColors => {
+  return prevColors[2] === 'blue' ? prevColors = ['white','white','white','blue'] : prevColors = ['white','white','blue','white'] 
+})
 
 // Big Time DJ:
 // Your next four buttons will each be linked to one of the squares. These buttons can have any affect on those squares that you wish.
-const bigTimeDj = () => setColors(prevColors => prevColors.colors = ['red', 'green','yellow','black'])
+const bigTimeDj = () => setColors(prevColors => {
+  return prevColors[0] === 'violet' ?  prevColors = ["red", "pink", "orange", "yellow"]  : prevColors = ["violet", "grey", "crimson", "green"] 
+})
 
 
   return (
