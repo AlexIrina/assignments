@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import './App.css';
 // import App from './App';
-import MyApp from './MyApp';
+// import MyApp from './MyApp';
+import FormPractice from './FormPractice'
 
-ReactDOM.render(<MyApp />, document.getElementById('root'));
+ReactDOM.render(<FormPractice  />, document.getElementById('root'));
