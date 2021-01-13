@@ -1,6 +1,6 @@
  import React, { Component } from 'react';
  import './App.css';
-
+ const randomColor = require('randomcolor'); 
  class App extends Component {
    constructor() {
      super();
@@ -12,7 +12,7 @@
        placeOfBirth: '',
        favoriteFood: '',
        aboutUserText: '',
-       badges: []
+       badges: [],
      };
      this.handleChange = this.handleChange.bind(this)
      this.handleSubmit = this.handleSubmit.bind(this)
@@ -23,11 +23,20 @@
     this.setState({[name]: value})
   }
 
-
-    handleSubmit(e){
+   handleSubmit(e){
     e.preventDefault()
-    const newBadge = { firstName: this.state.firstName, lastName: this.state.lastName, email: this.state.email, phoneNumber: this.state.phoneNumber, placeOfBirth: this.state.placeOfBirth, favoriteFood: this.state.favoriteFood, aboutUserText: this.state.aboutUserText} 
-    console.log(newBadge)
+    const newBadge = { 
+      firstName: this.state.firstName, 
+      lastName: this.state.lastName, 
+      email: this.state.email, 
+      phoneNumber: this.state.phoneNumber, 
+      placeOfBirth: this.state.placeOfBirth, 
+      favoriteFood: this.state.favoriteFood, 
+      aboutUserText: this.state.aboutUserText,
+      color: randomColor()
+    } 
+    // console.log(newBadge)
+    console.log(this.state.badges);
 
     this.setState(prevState => {
       return {
@@ -39,18 +48,20 @@
         placeOfBirth: '',
         favoriteFood: '',
         aboutUserText: '',
+        color: '',
         // stores/pushes values i typed in to enteredInformation array in state
         // ....prevState.enteredInformation lets the user see the previous names they entered
-        badges: [...prevState.badges, {newBadge}]
+        badges: [...prevState.badges, {...newBadge}]
       }
     })
   }
 
    render() {
+   
     const badge = this.state.badges.map((item, key) => {
       return (
-          <div className='card' key={key}>
-             <h1>Entered Information </h1>
+          <div  className='badge' key={key}>
+             <h1 style={{backgroundColor: item.color}}>Entered Information </h1>
              <h2>Your Full item : {item.firstName} {item.lastName}{' '}</h2>
              <h2>Your email: {item.email}</h2>
              <h2>Your place of birth: {item.placeOfBirth}</h2>
@@ -72,7 +83,6 @@
              value={this.state.firstName}
              onChange={this.handleChange}
            />
-           <br />
            <input
              // Last Name
              name='lastName'
@@ -81,44 +91,39 @@
              value={this.state.lastName}
              onChange={this.handleChange}
            />
-           <br />
            <input
              // Email
              name='email'
              type='text'
-             placeholder='email'
+             placeholder='Email'
              value={this.state.email}
              onChange={this.handleChange}
            />
-           <br />
            <input
              // Place of Birth
              name='placeOfBirth'
              type='text'
-             placeholder='place of birth'
+             placeholder='Place of Birth'
              value={this.state.placeOfBirth}
              onChange={this.handleChange}
            />
-           <br />
            <input
              // Phone number
              name='phoneNumber'
              type='number'
-             placeholder='Phone number'
+             placeholder='Phone Number'
              value={this.state.phoneNumber}
              onChange={this.handleChange}
            />
-           <br />
             <input
              // favoriteFood 
              name='favoriteFood'
              type='text'
              minLength='3'
-             placeholder='favorite Food '
+             placeholder='Favorite Food '
              value={this.state.favoriteFood}
              onChange={this.handleChange}
            />
-           <br />
            {/* text area */}
            <textarea 
               name='aboutUserText' 
@@ -128,19 +133,10 @@
               onChange={this.handleChange} 
             />
            {/* button */}
-           <button>Submit</button>
-           <hr />
-           {/* users info */}
-           <div className='info'>{badge}</div>
-           {/* <div className='usersInfo'>
-             <h1>Entered Information </h1>
-             <h2>Your Full Name : {this.state.firstName} {this.state.lastName}{' '}</h2>
-             <h2>Your email: {this.state.email}</h2>
-             <h2>Your place of birth: {this.state.placeOfBirth}</h2>
-             <h2>Your phone number: {this.state.phoneNumber}</h2>
-             <h2>Your favorite food is: {this.state.favoriteFood}</h2>
-           </div> */}
+           <button style={{backgroundColor: randomColor(), color: randomColor()}}>Submit</button>
          </form>
+          {/* users info */}
+          <div className='badge-container'>{badge}</div>
        </main>
      );
    }
