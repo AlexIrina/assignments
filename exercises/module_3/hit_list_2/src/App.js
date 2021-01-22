@@ -7,13 +7,11 @@ export default function App() {
 
 
   return (
-    <div>
-      <h1>Hit List</h1>
+    <>
       <HitList
         targets = {targets}
         setTargets = {setTargets}
       />
-
-    </div>
+    </>
   )
 }

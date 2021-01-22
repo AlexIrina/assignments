@@ -1,5 +1,5 @@
 import {useEffect} from 'react'
-
+import Target from './Target'
 export default function HitList({targets, setTargets}) {
 
   useEffect(() => {
@@ -10,26 +10,15 @@ export default function HitList({targets, setTargets}) {
       })
     })
   
-
-  const targetsInfo = targets.map((target, index) =>(
-    <div key={index} className='target-container' id='target-container'>
-     <div className="target" style={{backgroundColor: (222,253,224)}}>
-
-     <div className="img-container">
-        <img src={target.image} alt="targets img"/>
-     </div>
-
-     <div className="info">
-       <h3 className="name">{target.name}</h3> 
-     </div>
-
-     </div>
-    </div>
-  ))  
-
   return (
    <>
-     {targetsInfo}
+     {targets.map((target, index) => {
+       return (
+         <Target 
+            key={index} 
+            target={target}/>
+       )
+     })}
    </>
   )
 }
