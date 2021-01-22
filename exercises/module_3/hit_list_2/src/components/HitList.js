@@ -2,6 +2,9 @@ import {useEffect} from 'react'
 import Target from './Target'
 export default function HitList({targets, setTargets}) {
 
+
+
+
   useEffect(() => {
       fetch('https://raw.githubusercontent.com/VSchool/vschool-api/master/static/hitlist.json')
       .then(response => response.json())
@@ -16,7 +19,9 @@ export default function HitList({targets, setTargets}) {
        return (
          <Target 
             key={index} 
-            target={target}/>
+            target={target}
+            setTargets = {setTargets}
+            />
        )
      })}
    </>
