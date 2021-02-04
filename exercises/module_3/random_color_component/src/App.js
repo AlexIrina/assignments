@@ -7,7 +7,7 @@ class App extends Component {
     this.state = {
       color: '',
     };
-    this.refreshPage = this.refreshPage.bind(this);
+    // this.refreshPage = this.refreshPage.bind(this);
   }
 
   componentDidMount() {
@@ -16,8 +16,8 @@ class App extends Component {
       .then((data) => {
         console.log(data.colors[0]);
         this.setState({
-          color: `#${data.colors[0].hex}`,
-        });
+          color: `#${data.colors[0].hex}`
+        })
       });
   }
 
@@ -33,15 +33,17 @@ class App extends Component {
   }
 
   render() {
-    const newColor = this.state.color;
-    const matchColor = {
-      color: this.state.color,
+    const colorInState = this.state.color;
+    // console.log(colorInState);
+    const matchColorInState = {
+      color: colorInState,
     };
+
     return (
-      <div className='parent' style={{ backgroundColor: newColor }}>
+      <div className='parent' style={{ backgroundColor: colorInState }}>
         <div className='child'>
           <img src={HeaderImage} alt='pic' />
-          <p style={matchColor}>{this.state.color}</p>
+          <p style={matchColorInState}>{this.state.color}</p>
           <button onClick={this.refreshPage}>Change Color</button>
         </div>
       </div>

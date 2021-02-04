@@ -1,5 +1,8 @@
+
 import Target from './Target'
-export default function HitList({targets}) {
+clas Hitlist extends Component{
+  
+}
   return (
    <>
      {targets.map((target, index) => {
