@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+* {
+	box-sizing: border-box;
+	list-style-type: none;
+}
+
+body {
+	font-family: 'Poppins', sans-serif;
+	background-color: #333;
+	color: #222;
+	overflow-x: hidden;
+	margin: 0;
+}
+
+.container {
+	background-color: #fafafa;
+	/* rotate from the top left position */
+	transform-origin: top left;
+	/* timed effect so it doesn't happen right away */
+	transition: transform 0.5s linear;
+	width: 100vw;
+	min-height: 100vh;
+	padding: 50px;
+}
+
+/* the rotate effect */
+.container.show-nav {
+	transform: rotate(-20deg);
+}
+
+/* make the 3 navigation links viewable */
+.container.show-nav + nav li {
+	transform: translateX(0);
+	transition-delay: 0.3s;
+}
+
+.circle-container {
+	position: fixed;
+	/* adjust this if you want the circle a different size */
+	top: -100px;
+	left: -100px;
+}
+
+.circle {
+	background-color: #ff7979;
+	/*and adjust this if you want the circle a different size */
+	height: 200px;
+	width: 200px;
+	border-radius: 50%;
+	/* buttons inside the circle */
+	position: relative;
+	/* these will rotate as the frame rotates */
+	transition: transform 0.5s linear;
+}
+
+/* rotates the circle to show the X to .close */
+.container.show-nav .circle {
+	transform: rotate(-70deg);
+}
+
+.circle button {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	height: 100px;
+	background: transparent;
+	border: 0;
+	font-size: 26px;
+	color: #fff;
+}
+
+.circle button:focus {
+	outline: none;
+}
+
+.circle button#open {
+	left: 60%;
+}
+
+.circle button#close {
+	top: 60%;
+	/* rotating the close button*/
+	transform: rotate(90deg);
+	/* from where? */
+	transform-origin: top left;
+}
+
+/* navigation thats behind the card */
+nav {
+	position: fixed;
+	bottom: 40px;
+	left: 0;
+	z-index: 100px;
+}
+
+nav ul {
+	list-style-type: none;
+	padding-left: 30px;
+}
+/* the 3 links behind the container */
+nav ul li {
+	text-transform: uppercase;
+	color: #fff;
+	margin: 40px 0;
+	/* moves them to the left */
+	transform: translateX(-100%);
+	/* effect that moves them to the left */
+	transition: transform 0.4s ease-in;
+}
+/* more space to the icons */
+nav ul li i {
+	font-size: 20px;
+	/* bug here need space */
+	margin-right: 10px;
+}
+
+/* make the 2nd icon stick out more */
+nav ul li + li {
+	margin-left: 15px;
+	/* hides links */
+	transform: translateX(-150%);
+}
+/* make the 3rd icon stick out more */
+nav ul li + li + li {
+	margin-left: 30px;
+	/* hides links */
+	transform: translateX(-200%);
+}
+
+.content img {
+	/* centers the image on the page */
+	max-width: 100%;
+}
+
+.content {
+	max-width: 1000px;
+	/* keeps everything in the middle even when i change screen size */
+	margin: 50px auto;
+}
+
+.content h1 {
+	margin: 0;
+}
+
+.content small {
+	/* color: #555; */
+	font-size: italic;
+}
+.content p {
+	/* color: #333; */
+	line-height: 1.5;
+}
+
+.toggleBtn {
+	padding: 1rem;
+	font-size: 1rem;
+}
+
+.dark-theme {
+	background-color: #01020a;
+	color: #fffecb;
+}
+
+.light-theme {
+	background-color: #272343;
+	color: #fbfffe;
+}

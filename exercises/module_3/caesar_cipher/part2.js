@@ -1,8 +1,10 @@
+// Input	ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
+// Output	NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm
+
 const caesarCipher = str => {
 	// once the letter is moved 13 places it gets added here
 	let finalResult = ''
 	//shift 13 places to the right i need to get N.... if 'A' return 'N'
-	// let alphabet = 'abcdefghijklmnopqrstuvwxyz'
 	// loop through the string
 	for (let i = 0; i < str.length; i++) {
 		// charCodeAt() returns an ascii code of a letter
