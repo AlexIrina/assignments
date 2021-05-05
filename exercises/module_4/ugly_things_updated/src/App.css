@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	font-size: 16px;
+	background-color: #d1d1e9;
+	font-family: 'Poppins', sans-serif;
+}
+
+header {
+	display: grid;
+	place-content: center;
+	text-align: center;
+	line-height: 1.5;
+	font-size: clamp(0.9rem, 1vw + 1rem, 1.5rem);
+}
+
+.form-inputs {
+	background: #6246ea;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+	width: 80%;
+}
+
+input {
+	margin-right: 10px;
+	font-size: 1em;
+}
+
+input[type='text']:focus {
+	outline-style: none;
+	box-shadow: none;
+	border-color: rebeccapurple;
+}
+
+.container {
+	position: relative;
+	max-width: 1250px;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin: 0 auto;
+}
+
+.content {
+	display: grid;
+	grid-template-rows: 150px 100px 1fr 75px;
+	padding: 50px;
+	/*//! stretches out to the width of the .container */
+	min-width: 100%;
+	position: relative;
+	background-color: #fffffe;
+}
+
+.image-list {
+	display: grid;
+	gap: 20px;
+	grid-template-columns: repeat(3, minmax(150px, 1fr));
+	margin-top: 4em;
+}
+
+.main-image-card-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border-radius: 5%;
+	background-color: #6246ea;
+}
+.main-image-card-container h1 {
+	padding: 12px;
+	font-size: 2em;
+	color: #fffffe;
+}
+.main-image-card-container p {
+	color: #e45858;
+}
+
+.responsive-main-img img {
+	object-fit: cover;
+	/* same height and width due to some images are really big */
+	width: 320px;
+	height: 320px;
+	object-position: 50% 50%;
+}
+
+.btn {
+	padding: 10px;
+	border-radius: 5%;
+	margin: 10px;
+	cursor: pointer;
+	font-weight: bold;
+	outline: none;
+	color: rebeccapurple;
+	transition: 0.3s ease;
+}
+.btn-add {
+	margin: 0;
+}
+
+.btn:hover {
+	background: blanchedalmond;
+	box-shadow: 0 0 28px 10px blanchedalmond;
+}
+
+.btn-delete {
+	color: red;
+}
+
+.btn-delete:hover {
+	background: blanchedalmond;
+	box-shadow: 0 0 28px 10px red;
+}
+
+.btn-edit {
+	color: green;
+}
+
+.btn-edit:hover {
+	background: blanchedalmond;
+	box-shadow: 0 0 28px 10px green;
+}
+
+p {
+	text-align: center;
+	margin: 10px;
+	font-size: 1.5em;
+	font-weight: 100;
+}
+
+.far {
+	margin: 2px;
+	font-size: 1.5em;
+}
+
+footer {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding: 1rem;
+	text-align: center;
+}
+
+@media only screen and (max-width: 1200px) {
+	.image-list {
+		display: grid;
+		gap: 10px;
+		grid-template-columns: repeat(2, minmax(150px, 1fr));
+		justify-content: space-around;
+	}
+
+	@media only screen and (max-width: 768px) {
+		.image-list {
+			display: grid;
+			gap: 0px;
+			grid-template-columns: 1fr;
+			justify-content: space-around;
+		}
+	}
+}
+/*  https://c.files.bbci.co.uk/12A9B/production/_111434467_gettyimages-1143489763.jpg */

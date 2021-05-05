@@ -11,7 +11,6 @@ export default function Main() {
 					<main className={`${theme}-theme`}>
 						<img src={asya} alt='my cat' />
 						<h1>Switch to {theme === 'dark' ? 'Light' : 'Dark'} theme!</h1>
-						{/* <Button /> */}
 					</main>
 				</div>
 			)}
