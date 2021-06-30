@@ -1,8 +1,11 @@
+// unique id function
+const { v4: uuidv4 } = require('uuid')
+
 const movies = [
-	{ title: 'die hard', genre: 'action' },
-	{ title: 'star wars', genre: 'fantasy' },
-	{ title: 'lion king', genre: 'fantasy' },
-	{ title: 'friday the 13th', genre: 'horror' },
+	{ title: 'die hard', genre: 'action', _id: uuidv4() },
+	{ title: 'star wars', genre: 'fantasy', _id: uuidv4() },
+	{ title: 'lion king', genre: 'fantasy', _id: uuidv4() },
+	{ title: 'friday the 13th', genre: 'horror', _id: uuidv4() },
 ]
 
 // adding to the movies object
@@ -24,4 +27,5 @@ module.exports = movies
 //! 5. send the POST request in Postman
 //! 6. in the app.post request test the req.body to see if the request is coming in
 //! 7. in the app.post push the movie to the movies array -> the new movie should be added to the array
-// ! 8. add a message to show the movie was added -> res.send(`Successfully added ${newMovie.title} to the database`)
+//! 8. add a message to show the movie was added -> res.send(`Successfully added ${newMovie.title} to the database`)
+//? since im using fake data the new movie wont show after i end the server

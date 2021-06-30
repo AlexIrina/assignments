@@ -1,19 +1,19 @@
-//? Servers listen to requests from the Client and set up a response
 const express = require('express')
-// const usersArray = require('../vs_lessons/01_basics')
+const { v4: uuidv4 } = require('uuid')
+
 const moviesArray = require('../vs_lessons/02_request_body_basics')
-//?my server
+
 const app = express()
 app.use(express.json()) // looks for a request body, and turns it into 'req.body'
 
-// Routes
 app.get('/movies', (req, res) => {
 	res.send(moviesArray)
 })
-// adding to the movies object
+
 app.post('/movies', (req, res) => {
 	// this is the object the user sent in the POST request
 	const newMovie = req.body
+	newMovie.id = uuidv4()
 	moviesArray.push(newMovie)
 	res.send(`Successfully added ${newMovie.title} to  the database!`)
 })
