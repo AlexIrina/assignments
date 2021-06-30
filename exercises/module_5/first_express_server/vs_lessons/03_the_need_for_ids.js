@@ -5,3 +5,4 @@
 //! 1 add the _id to each movie in the movies array
 //! 2. make sure the new movies you are POSTing have a unique ID as well 	newMovie.id = uuidv4()
 // test it with GET request
+//! don't add the id manually in postman
