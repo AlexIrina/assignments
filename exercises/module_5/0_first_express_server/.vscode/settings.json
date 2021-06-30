@@ -24,5 +24,10 @@
     "titleBar.inactiveBackground": "#1f6fd099",
     "titleBar.inactiveForeground": "#e7e7e799"
   },
-  "peacock.color": "#1857a4"
+  "peacock.color": "#1857a4",
+  "cSpell.words": [
+    "Morty",
+    "Westworld",
+    "uuidv"
+  ]
 }
