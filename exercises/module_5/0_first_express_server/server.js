@@ -3,6 +3,7 @@ const app = express()
 app.use(express.json()) // looks for a request body, and turns it into 'req.body'
 
 // Routes
+// app.use() is ANY CRUD request to the first parameter
 app.use('/movies', require('./routes/movieRouter'))
 app.use('/tvShows', require('./routes/tvShowsRouter'))
 
