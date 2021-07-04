@@ -28,7 +28,8 @@ movieRouter.post('/', (req, res) => {
 	const newMovie = req.body
 	newMovie.id = uuidv4()
 	movies.push(newMovie)
-	res.send(`Successfully added ${newMovie.title} to  the database!`)
+	// res.send(`Successfully added ${newMovie.title} to  the database!`, )
+	res.send(newMovie)
 })
 //? UPDATE ONE - need the id of the movie and res.body
 movieRouter.put('/:movieId', (req, res) => {
