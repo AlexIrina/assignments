@@ -1,13 +1,7 @@
 const express = require('express')
 const movieRouter = express.Router()
 const { v4: uuidv4 } = require('uuid')
-
-const movies = [
-	{ title: 'die hard', genre: 'action', _id: uuidv4() },
-	{ title: 'star wars', genre: 'fantasy', _id: uuidv4() },
-	{ title: 'lion king', genre: 'fantasy', _id: uuidv4() },
-	{ title: 'friday the 13th', genre: 'horror', _id: uuidv4() },
-]
+const movies = require('../data/movieData')
 
 //? Get ALL the movies
 movieRouter.get('/', (req, res) => {
@@ -56,7 +50,6 @@ movieRouter.delete('/:movieId', (req, res) => {
 	res.send('Successfully deleted the movie')
 })
 
-
 module.exports = movieRouter
 // ! .route('/) allows me to chain all the CRUD request onto each other
-// ! above are all the routes needed to create servers
+// todo: above are all the routes needed to create servers
