@@ -1,19 +1,20 @@
 const express = require('express')
 const app = express()
+const { v4: uuidv4 } = require('uuid')
 const port = 9000
 app.use(express.json())
 
-app.use('/items', (req, res, next) => {
+app.use('/person', (req, res, next) => {
 	console.log('The Middleware was executed')
 	next()
 })
 
-app.use('/items', (req, res, next) => {
-	req.body = { person: { name: 'Alex', age: 23 } }
+app.use('/person', (req, res, next) => {
+	req.body = { person: { name: 'Alex', age: 23, _id: uuidv4() } }
 	next()
 })
 
-app.get('/items', (req, res, next) => {
+app.get('/person', (req, res, next) => {
 	console.log('GET request received')
 	res.send(req.body)
 })
