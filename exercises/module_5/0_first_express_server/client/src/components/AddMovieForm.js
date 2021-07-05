@@ -1,7 +1,12 @@
 import { useState } from 'react'
 
-export default function AddMovieForm({ addMovie }) {
-	const initInputs = { title: '', genre: '' }
+export default function AddMovieForm(props) {
+	const { submit, _id, btnText, title, genre } = props
+	// sets the title and genre input to the ones in props
+	const initInputs = {
+		title: title || '',
+		genre: genre || '',
+	}
 	const [inputs, setInputs] = useState(initInputs)
 
 	const handleChange = e => {
@@ -9,10 +14,14 @@ export default function AddMovieForm({ addMovie }) {
 		setInputs(prevInputs => ({ ...prevInputs, [name]: value }))
 	}
 
+	// for POST and PUT
+	// for POST it needs to send the inputs
+	// for PUT/edit it needs to send inputs and an id
 	const handleSubmit = e => {
 		e.preventDefault()
-		// ! post request =>inputs is whatever the user typed in
-		addMovie(inputs)
+		// ! post requests =>inputs is whatever the user typed in
+		// !for put request the inputs and _id is needed to update the movie
+		submit(inputs, _id)
 		// reset inputs
 		setInputs(initInputs)
 	}
@@ -34,7 +43,7 @@ export default function AddMovieForm({ addMovie }) {
 				placeholder='Genre...'
 			/>
 
-			<button>Add Movie</button>
+			<button className='btn '>{btnText}</button>
 		</form>
 	)
 }

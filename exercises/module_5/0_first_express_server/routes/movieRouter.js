@@ -31,15 +31,6 @@ movieRouter.post('/', (req, res) => {
 	// res.send(`Successfully added ${newMovie.title} to  the database!`, )
 	res.send(newMovie)
 })
-//? UPDATE ONE - need the id of the movie and res.body
-movieRouter.put('/:movieId', (req, res) => {
-	const movieId = req.params.movieId
-	const updateObj = req.body
-	const movieIndex = movies.findIndex(movie => movie._id === movieId)
-	// ! update that movie and send it back.
-	const updatedMovie = Object.assign(movies[movieIndex], updateObj)
-	res.send(updatedMovie)
-})
 
 // DELETE ONE MOVIE
 movieRouter.delete('/:movieId', (req, res) => {
@@ -49,6 +40,16 @@ movieRouter.delete('/:movieId', (req, res) => {
 	// ! splice the movie from the movies array
 	movies.splice(movieIndex, 1)
 	res.send('Successfully deleted the movie')
+})
+
+//? UPDATE ONE - need the id of the movie and res.body -> is the new object to update the existing object with
+movieRouter.put('/:movieId', (req, res) => {
+	const movieId = req.params.movieId
+	const updateObj = req.body
+	const movieIndex = movies.findIndex(movie => movie._id === movieId)
+	// ! update that movie and send it back.
+	const updatedMovie = Object.assign(movies[movieIndex], updateObj)
+	res.send(updatedMovie)
 })
 
 module.exports = movieRouter
