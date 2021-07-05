@@ -1,7 +1,6 @@
 import { useState } from 'react'
 
-export default function AddMovieForm(props) {
-	const { addMovie } = props
+export default function AddMovieForm({ addMovie }) {
 	const initInputs = { title: '', genre: '' }
 	const [inputs, setInputs] = useState(initInputs)
 
@@ -12,7 +11,6 @@ export default function AddMovieForm(props) {
 
 	const handleSubmit = e => {
 		e.preventDefault()
-
 		// ! post request =>inputs is whatever the user typed in
 		addMovie(inputs)
 		// reset inputs
@@ -20,7 +18,7 @@ export default function AddMovieForm(props) {
 	}
 
 	return (
-		<form className='movie-form' onSubmit={handleSubmit}>
+		<form className='form' onSubmit={handleSubmit}>
 			<input
 				type='text'
 				name='title'
