@@ -20,7 +20,8 @@ module.exports = movies
 //! 1. go to Postman
 //! 2. change the request to POST
 //! 3. Body -> raw -> JSON
-// Below is the send window -> what im sending in the request -> //!4. this is where i craft the new object
+// Below is the send window -> what im sending in the request -> 
+//!4. this is where i craft the new object
 // below the send window is the response window
 //! 4. create a middleware that fires on every request that comes in
 //-> app.use(express.json()) -> looks for a request body with the new request that i am sending from 3, and turns it into 'req.body' (if it finds it)

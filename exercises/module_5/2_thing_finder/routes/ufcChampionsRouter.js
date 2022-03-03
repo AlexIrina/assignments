@@ -25,13 +25,23 @@ ufcChampionsRouter.get('/search/nationality', (req, res) => {
 	)
 	res.send(nationalitySpecificFighters)
 })
+
+//? specific request to genre ---movies/search/genre?genre=action
+ufcChampionsRouter.get('/search/genre', (req, res) => {
+	const genre = req.query.genre
+	const genreSpecificMovies = movies.filter(movie => movie.genre === genre)
+	res.send(genreSpecificMovies)
+})
+
 //? Add a fighter to the db
 ufcChampionsRouter.post('/', (req, res) => {
 	// this is the object the user sent in the POST request
 	const newFighter = req.body
 	newFighter.id = uuidv4()
 	ufcChampionsData.push(newFighter)
-	res.send(`Successfully added ${newFighter.title} to  the database!`)
+
+	console.log('my new new fighter', newFighter)
+	res.send(`Successfully added ${newFighter.name} to  the database!`)
 })
 
 module.exports = ufcChampionsRouter

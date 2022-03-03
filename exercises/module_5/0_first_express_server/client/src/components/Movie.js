@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import AddMovieForm from './AddMovieForm'
 export default function Movie({ title, genre, _id, deleteMovie, editMovie }) {
+	console.log('re-rendered movie', title, genre, _id)
 	//! view movie data or the edit form depending on the value of the toggle boolean
 	const [editToggle, setEditToggle] = useState(false)
+
 	return (
 		<div className='movie'>
 			{!editToggle ? (
@@ -28,17 +30,18 @@ export default function Movie({ title, genre, _id, deleteMovie, editMovie }) {
 						title={title}
 						genre={genre}
 						_id={_id}
+						setToggle={setEditToggle}
 						// btn text changes depending on state
 						btnText={'Submit the edit'}
 						submit={editMovie}
 					/>
 					{/*  if the user decides to close form without editing it */}
-					<button
+					{/* <button
 						className='btn alert-danger'
 						onClick={() => setEditToggle(prevToggle => !prevToggle)}
 					>
 						Close
-					</button>
+					</button> */}
 				</>
 			)}
 		</div>

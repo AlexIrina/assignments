@@ -2,9 +2,8 @@ const express = require('express')
 const app = express()
 app.use(express.json())
 
-// Routes
-app.use('/champions', require('./routes/ufcChampionsRouter'))
+app.use('/countries', require('./routes/countriesRouter'))
 
 app.listen(9000, () => {
-	console.log(`Listening on port 9000`)
+	console.log('The server is running on local Port 9000')
 })

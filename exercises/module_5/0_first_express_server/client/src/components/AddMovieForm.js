@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 export default function AddMovieForm(props) {
-	const { submit, _id, btnText, title, genre } = props
+	const { submit, _id, btnText, title, genre, setToggle} = props
 	// sets the title and genre input to the ones in props
 	const initInputs = {
 		title: title || '',
@@ -22,6 +22,7 @@ export default function AddMovieForm(props) {
 		// ! post requests =>inputs is whatever the user typed in
 		// !for put request the inputs and _id is needed to update the movie
 		submit(inputs, _id)
+		setToggle()
 		// reset inputs
 		setInputs(initInputs)
 	}

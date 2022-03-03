@@ -1,11 +1,13 @@
 const express = require('express')
 const app = express()
 const morgan = require('morgan')
-// Middleware (for every request)
-app.use(express.json()) // looks for a request body, and turns it into 'req.body'
+// Middleware (for every request) fires on every request that comes in
+app.use(express.json()) // looks for a request body, and parses it from json to javascript into 'req.body'
+
 // server use morgan in its dev environment
 app.use(morgan('dev')) //! logs requests to the console
-// Routes
+
+//! Routes
 // app.use() is ANY CRUD request to the first parameter
 app.use('/movies', require('./routes/movieRouter'))
 app.use('/tvShows', require('./routes/tvShowsRouter'))

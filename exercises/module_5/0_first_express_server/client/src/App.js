@@ -14,10 +14,12 @@ export default function App() {
 	}
 	//? add movie.POST
 	const addMovie = newMovie => {
+
 		axios
 			.post('/movies', newMovie)
 			// res.data is the new movie user typed in
 			.then(res => {
+				console.log('movies', res.data)
 				setMovies(prevMovies => [...prevMovies, res.data])
 			})
 			.catch(err => console.log(err))
@@ -39,17 +41,22 @@ export default function App() {
 
 	// ? update/edit selected movie: PUT
 	const editMovie = (updates, movieId) => {
+		console.log('is this undefined?', movieId)
 		axios
 			// send with it the updatesObj as a request body
+			
 			.put(`/movies/${movieId}`, updates)
 			// updates the edited movie to the dom
 			.then(res => {
+		console.log('resdata', res.data)
+
 				setMovies(
 					prevMovies =>
 						//generates a new movies array with the same amount of movies but one of the movies has been updated
 						//? movie._id !== movieId ? movie -> if id wasn't updated just return the movie as it is
 						//? :res.data -> movie._id === movieId ? return the the updated movie thats being updated in its place
 						// now i should see the updated movie in the UI and database
+						
 						prevMovies.map(movie => (movie._id !== movieId ? movie : res.data))
 					// toggle automatically turned off and closed because the page re rendered with the new movie data and the editToggle got reset
 				)
@@ -64,15 +71,21 @@ export default function App() {
 	return (
 		<div>
 			<div className='movie-container'>
+
+
 				<AddMovieForm submit={addMovie} btnText='Add Movie' />
-				{movies.map((movie, idx) => (
+				{/* CHANGE THIS ABOVE TO A DIFFERENT COMPONENT*/}
+
+				{movies.map((movie, idx) => {
+					console.log('here are your rendered movies', movies)
+					return (
 					<Movie
 						{...movie}
 						key={idx}
 						deleteMovie={deleteMovie}
 						editMovie={editMovie}
 					/>
-				))}
+				)})}
 			</div>
 		</div>
 	)
