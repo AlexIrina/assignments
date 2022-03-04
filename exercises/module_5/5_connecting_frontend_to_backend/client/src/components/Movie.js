@@ -1,10 +1,13 @@
 import React from 'react'
 
-export default function Movie({ title, genre, _id }) {
+export default function Movie({ title, genre, _id, deleteMovie }) {
 	return (
-		<div>
-			<h2>{title}</h2>
-			<p>{genre}</p>
+		<div className='movie'>
+			<h2>Title: {title}</h2>
+			<p>Genre: {genre}</p>
+			<button onClick={deleteMovie} className='btn '>
+				Delete Movie
+			</button>
 		</div>
 	)
 }
