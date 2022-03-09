@@ -23,9 +23,23 @@ export default function App() {
 
 	const deleteMovie = movieId => {
 		axios
-			.delete('/movies', movieId)
+			.delete(`/movies/${movieId}`)
 			.then(res => {
-				setMovies(prevMovies => [...prevMovies, res.data])
+				setMovies(prevMovies =>
+					prevMovies.filter(movie => movie._id !== movieId)
+				)
+			})
+			.catch(err => console.error(err))
+	}
+
+	const updateMovie = (updates, movieId) => {
+		axios
+			.put(`/movies/${movieId}`, updates)
+			.then(res => {
+				setMovies(prevMovies =>
+					// return the movie as it is if it wasn't updated else return the updated movie
+					prevMovies.map(movie => (movie._id !== movieId ? movie : res.data))
+				)
 			})
 			.catch(err => console.error(err))
 	}
@@ -36,9 +50,14 @@ export default function App() {
 
 	return (
 		<div className='movie-container'>
-			<AddMovieForm addMovie={addMovie} />
+			<AddMovieForm submit={addMovie} btnText='Add Movie' />
 			{movies.map((movie, key) => (
-				<Movie {...movie} key={movie.title} deleteMovie={deleteMovie} />
+				<Movie
+					{...movie}
+					key={movie.title}
+					deleteMovie={deleteMovie}
+					updateMovie={updateMovie}
+				/>
 			))}
 		</div>
 	)
