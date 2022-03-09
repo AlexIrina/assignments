@@ -37,7 +37,7 @@ export default function App() {
 			.put(`/movies/${movieId}`, updates)
 			.then(res => {
 				setMovies(prevMovies =>
-					// return the movie as it is if it wasn't updated else return the updated movie
+					// return movie as it is if it wasn't updated else return the updated movie res.data
 					prevMovies.map(movie => (movie._id !== movieId ? movie : res.data))
 				)
 			})
@@ -51,7 +51,7 @@ export default function App() {
 	return (
 		<div className='movie-container'>
 			<AddMovieForm submit={addMovie} btnText='Add Movie' />
-			{movies.map((movie, key) => (
+			{movies.map(movie => (
 				<Movie
 					{...movie}
 					key={movie.title}

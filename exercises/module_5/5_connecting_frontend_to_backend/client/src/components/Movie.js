@@ -10,17 +10,17 @@ export default function Movie({ title, genre, _id, deleteMovie, updateMovie }) {
 					<h2>Title: {title}</h2>
 					<p>Genre: {genre}</p>
 					<button onClick={() => deleteMovie(_id)} className='btn delete-btn'>
-						Delete Movie
+						Delete
 					</button>
 					<button
 						className='edit-btn'
 						onClick={() => setEditToggle(prevToggle => !prevToggle)}
 					>
-						Edit Movie
+						Edit
 					</button>
 				</>
 			) : (
-				//show form if edit is clicked
+				//todo: show form if edit is clicked
 				<>
 					<AddMovieForm
 						title={title}
