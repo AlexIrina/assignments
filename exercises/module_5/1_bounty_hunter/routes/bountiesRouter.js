@@ -19,9 +19,7 @@ bountyRouter.post('/', (req, res) => {
 	const newBounty = req.body
 	newBounty.id = uuidv4()
 	bounties.push(newBounty)
-	res.send(
-		`Successfully added ${newBounty.firstName} ${newBounty.lastName} to  the database!`
-	)
+	res.send(newBounty)
 })
 
 // Update Bounty
