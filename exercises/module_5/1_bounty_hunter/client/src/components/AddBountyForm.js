@@ -1,8 +1,14 @@
 import React, { useState } from 'react'
 
-export default function AddBountyForm(props) {
-	const { submitBounty, btnText, firstName, lastName, bountyAmount, type } =
-		props
+export default function AddBountyForm({
+	submit,
+	btnText,
+	firstName,
+	lastName,
+	bountyAmount,
+	type,
+	_id,
+}) {
 	const initialInputs = {
 		firstName: firstName || '',
 		lastName: lastName || '',
@@ -19,7 +25,8 @@ export default function AddBountyForm(props) {
 	const handleSubmit = e => {
 		e.preventDefault()
 		// post request..inputs is the newBounty
-		submitBounty(inputs)
+		// put response .._id of the movie that needs to be updated and inputs
+		submit(inputs, _id)
 		setInputs(initialInputs)
 	}
 

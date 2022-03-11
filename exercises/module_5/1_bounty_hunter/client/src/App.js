@@ -15,7 +15,7 @@ function App() {
 	}
 
 	// post a new bounty
-	const submitBounty = newBounty => {
+	const addBounty = newBounty => {
 		axios
 			.post('/bounties', newBounty)
 			.then(res => {
@@ -36,8 +36,17 @@ function App() {
 			.catch(err => console.log(err))
 	}
 	// update bounty
-	const editBounty = (bountyId, bountyObj) => {
-
+	const editBounty = (updates, bountyId) => {
+		axios
+			.put(`/bounties/${bountyId}`, updates)
+			.then(res => {
+				setBounties(prevBounties =>
+					prevBounties.map(bounty =>
+						bounty._id !== bountyId ? bounty : res.data
+					)
+				)
+			})
+			.catch(err => console.log(err))
 	}
 
 	useEffect(() => {
@@ -46,11 +55,7 @@ function App() {
 
 	return (
 		<div className='bounty-container'>
-			<AddBountyForm
-				submitBounty={submitBounty}
-				{...bounties}
-				btnText={'Add Bounty'}
-			/>
+			<AddBountyForm {...bounties} btnText={'Add Bounty'} submit={addBounty} />
 			{bounties.map((bounty, key) => (
 				<Bounty
 					{...bounty}
