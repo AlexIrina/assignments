@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 
-export default function AddBountyForm({ addBounty, btnText }) {
+export default function AddBountyForm(props) {
+	const { submitBounty, btnText, firstName, lastName, bountyAmount, type } =
+		props
 	const initialInputs = {
-		firstName: '',
-		lastName: '',
-		bountyAmount: '',
-		type: '',
+		firstName: firstName || '',
+		lastName: lastName || '',
+		bountyAmount: bountyAmount || '',
+		type: type || '',
 	}
 	const [inputs, setInputs] = useState(initialInputs)
 
@@ -17,7 +19,7 @@ export default function AddBountyForm({ addBounty, btnText }) {
 	const handleSubmit = e => {
 		e.preventDefault()
 		// post request..inputs is the newBounty
-		addBounty(inputs)
+		submitBounty(inputs)
 		setInputs(initialInputs)
 	}
 

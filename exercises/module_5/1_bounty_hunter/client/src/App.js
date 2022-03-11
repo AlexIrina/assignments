@@ -15,7 +15,7 @@ function App() {
 	}
 
 	// post a new bounty
-	const addBounty = newBounty => {
+	const submitBounty = newBounty => {
 		axios
 			.post('/bounties', newBounty)
 			.then(res => {
@@ -24,15 +24,40 @@ function App() {
 			.catch(err => console.log(err))
 	}
 
+	// delete bounty
+	const deleteBounty = bountyId => {
+		axios
+			.delete(`/bounties/${bountyId}`)
+			.then(res => {
+				setBounties(prevBounties =>
+					prevBounties.filter(bounty => bounty._id !== bountyId)
+				)
+			})
+			.catch(err => console.log(err))
+	}
+	// update bounty
+	const editBounty = (bountyId, bountyObj) => {
+
+	}
+
 	useEffect(() => {
 		getAllBounties()
 	}, [])
 
 	return (
 		<div className='bounty-container'>
-			<AddBountyForm addBounty={addBounty} />
+			<AddBountyForm
+				submitBounty={submitBounty}
+				{...bounties}
+				btnText={'Add Bounty'}
+			/>
 			{bounties.map((bounty, key) => (
-				<Bounty {...bounty} key={key} />
+				<Bounty
+					{...bounty}
+					key={key}
+					deleteBounty={deleteBounty}
+					editBounty={editBounty}
+				/>
 			))}
 		</div>
 	)
