@@ -12,6 +12,7 @@ const movies = [
 
 //? Get ALL the movies
 movieRouter.get('/', (req, res) => {
+	res.status(200)
 	// res.send('Hello world')
 	res.send(movies)
 })
@@ -24,9 +25,10 @@ movieRouter.get('/:movieId', (req, res, next) => {
 	//! if movie id is not found
 	if (!foundMovie) {
 		const error = new Error(`Movie with the id ${movieId} was not found`)
+		res.status(500)
 		return next(error)
 	}
-	res.send(foundMovie)
+	res.status(200).send(foundMovie)
 })
 
 //? specific request to genre ---movies/search/genre?genre=action
@@ -35,10 +37,11 @@ movieRouter.get('/search/genre', (req, res, next) => {
 	//! if genre id is not found
 	if (!genre) {
 		const error = new Error(`You must provide a genre`)
+		res.status(500)
 		return next(error)
 	}
 	const genreSpecificMovies = movies.filter(movie => movie.genre === genre)
-	res.send(genreSpecificMovies)
+	res.status(200).send(genreSpecificMovies)
 })
 
 // POST 1 new movie
@@ -51,7 +54,7 @@ movieRouter.post('/', (req, res) => {
 	console.log('my new movie', newMovie)
 	console.log(movies, 'movies')
 	// res.send(`Successfully added ${newMovie.title} to  the database!`, )
-	res.send(newMovie)
+	res.status(201).send(newMovie)
 })
 
 // DELETE ONE MOVIE ---send a delete request to movies/87ad4320-fdc2-47fa-96a8-39a6090dda7c
@@ -74,7 +77,7 @@ movieRouter.put('/:movieId', (req, res) => {
 	// ! update that movie and send it back.
 	const updatedMovie = Object.assign(movies[movieIndex], updateObj)
 	console.log('movie updated', updatedMovie)
-	res.send(updatedMovie)
+	res.status(201).send(updatedMovie)
 })
 
 module.exports = movieRouter
