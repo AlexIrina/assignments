@@ -9,7 +9,8 @@ export default function App() {
 		axios
 			.get('/movies')
 			.then(res => setMovies(res.data))
-			.catch(err => console.error(err))
+			// error from the servers middleware
+			.catch(err => console.log(err.response.data.errorMessage))
 	}
 
 	const addMovie = newMovie => {

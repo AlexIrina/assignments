@@ -1,7 +1,14 @@
 const express = require('express')
 const movieRouter = express.Router()
 const { v4: uuidv4 } = require('uuid')
-const movies = require('../data/movieData')
+// const movies = require('../data/movieData')
+
+const movies = [
+	{ title: 'die hard', genre: 'action', _id: uuidv4() },
+	{ title: 'star wars', genre: 'fantasy', _id: uuidv4() },
+	{ title: 'lion king', genre: 'fantasy', _id: uuidv4() },
+	{ title: 'friday the 13th', genre: 'horror', _id: uuidv4() },
+]
 
 //? Get ALL the movies
 movieRouter.get('/', (req, res) => {
@@ -10,15 +17,26 @@ movieRouter.get('/', (req, res) => {
 })
 
 //? Get 1 movies => using request params
-movieRouter.get('/:movieId', (req, res) => {
+// next allows me to pass the error to the Middleware
+movieRouter.get('/:movieId', (req, res, next) => {
 	const movieId = req.params.movieId
 	const foundMovie = movies.find(movie => movie._id === movieId)
+	//! if movie id is not found
+	if (!foundMovie) {
+		const error = new Error(`Movie with the id ${movieId} was not found`)
+		return next(error)
+	}
 	res.send(foundMovie)
 })
 
 //? specific request to genre ---movies/search/genre?genre=action
-movieRouter.get('/search/genre', (req, res) => {
+movieRouter.get('/search/genre', (req, res, next) => {
 	const genre = req.query.genre
+	//! if genre id is not found
+	if (!genre) {
+		const error = new Error(`You must provide a genre`)
+		return next(error)
+	}
 	const genreSpecificMovies = movies.filter(movie => movie.genre === genre)
 	res.send(genreSpecificMovies)
 })

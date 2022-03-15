@@ -21,7 +21,7 @@ function App() {
 			.then(res => {
 				setBounties(prevBounties => [...prevBounties, res.data])
 			})
-			.catch(err => console.log(err))
+			.catch(err => console.log(err)) 
 	}
 
 	// delete bounty

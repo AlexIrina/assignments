@@ -12,10 +12,17 @@ app.use(morgan('dev')) //! logs requests to the console
 app.use('/movies', require('./routes/movieRouter'))
 app.use('/tvShows', require('./routes/tvShowsRouter'))
 
+// error handling Middleware - anything happens in my Routes Middleware will catch it and throw an error so that the server doesn't crash
+app.use((err, req, res, next) => {
+	console.log(err)
+	return res.send({ errorMessage: err.message })
+})
+
 // 1: PORT     2. Callback function
 app.listen(9000, () => {
 	console.log('The server is running on local Port 9000')
 })
+
 //? Route 101
 // 1. Endpoint (mount path)
 // 2. Callback function with the request and response
