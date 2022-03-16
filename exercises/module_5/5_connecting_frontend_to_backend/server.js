@@ -1,11 +1,18 @@
 const express = require('express')
 const app = express()
 const morgan = require('morgan')
+const mongoose = require('mongoose')
+
 // Middleware (for every request) fires on every request that comes in
 app.use(express.json()) // looks for a request body, and parses it from json to javascript into 'req.body'
 
 // server use morgan in its dev environment
 app.use(morgan('dev')) //! logs requests to the console
+
+// ? Connect to DB
+mongoose.connect('mongodb://localhost:27017/moviesdb', () => {
+	console.log(`Connected to the DB successfully`)
+})
 
 //! Routes
 // app.use() is ANY CRUD request to the first parameter
