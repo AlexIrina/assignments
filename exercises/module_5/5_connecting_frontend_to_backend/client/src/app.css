@@ -259,3 +259,6 @@ ul {
 	margin: 1px;
 	border: 1px solid #333;
 }
+.filter-form {
+	width: 200px;
+}

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-// movie blueprint of the data needed 
+// movie blueprint of the data needed
 const movieSchema = new Schema({
 	// key:{value}
 	title: {
@@ -10,6 +10,7 @@ const movieSchema = new Schema({
 	},
 	genre: {
 		type: String,
+		enum: ['action', 'fantasy', 'horror'],
 		required: true,
 	},
 	releaseYear: {

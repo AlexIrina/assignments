@@ -15,7 +15,7 @@ movieRouter.get('/', (req, res, next) => {
 	})
 })
 
-// //? Get 1 movies => using request params
+// //? Get a specific movies => using request params
 // // next allows me to pass the error to the Middleware
 // movieRouter.get('/:movieId', (req, res, next) => {
 // 	const movieId = req.params.movieId
@@ -29,18 +29,16 @@ movieRouter.get('/', (req, res, next) => {
 // 	res.status(200).send(foundMovie)
 // })
 
-// //? specific request to genre ---movies/search/genre?genre=action
-// movieRouter.get('/search/genre', (req, res, next) => {
-// 	const genre = req.query.genre
-// 	//! if genre id is not found
-// 	if (!genre) {
-// 		const error = new Error(`You must provide a genre`)
-// 		res.status(500)
-// 		return next(error)
-// 	}
-// 	const genreSpecificMovies = movies.filter(movie => movie.genre === genre)
-// 	res.status(200).send(genreSpecificMovies)
-// })
+//? specific request to genre ---movies/search/genre?genre=action
+movieRouter.get('/search/genre', (req, res, next) => {
+	Movie.find({ genre: req.query.genre }, (err, movies) => {
+		if (err) {
+			res.status(500)
+			return next(err)
+		}
+		return res.status(201).send(movies)
+	})
+})
 
 // POST 1 new movie
 movieRouter.post('/', (req, res, next) => {
@@ -54,7 +52,7 @@ movieRouter.post('/', (req, res, next) => {
 	})
 })
 
-// DELETE ONE MOVIE
+//? DELETE ONE MOVIE
 movieRouter.delete('/:movieId', (req, res, next) => {
 	Movie.findOneAndDelete({ _id: req.params.movieId }, (err, deletedItem) => {
 		if (err) {
@@ -67,17 +65,20 @@ movieRouter.delete('/:movieId', (req, res, next) => {
 	})
 })
 
-//? UPDATE ONE - need the id of the movie and res.body -> is the new object to update the existing object with
+//? UPDATE ONE
 movieRouter.put('/:movieId', (req, res, next) => {
-	const movieId = req.params.movieId
-	console.log('is the params logic set up correctly?', movieId)
-	const updateObj = req.body
-	const movieIndex = movies.findIndex(movie => movie._id === movieId)
-	console.log('is this the right index?', movieIndex)
-	// ! update that movie and send it back.
-	const updatedMovie = Object.assign(movies[movieIndex], updateObj)
-	console.log('movie updated', updatedMovie)
-	res.status(201).send(updatedMovie)
+	Movie.findOneAndUpdate(
+		{ _id: req.params.movieId }, //find this one to update
+		req.body, //update the object with this data
+		{ new: true }, //send back the updated version of the objet please
+		(err, updatedMovie) => {
+			if (err) {
+				res.status(500)
+				return next(err)
+			}
+			return res.status(201).send(updatedMovie)
+		}
+	)
 })
 
 module.exports = movieRouter
