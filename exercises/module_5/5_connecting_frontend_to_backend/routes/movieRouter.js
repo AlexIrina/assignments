@@ -1,5 +1,4 @@
 const express = require('express')
-const movie = require('../models/movie')
 const movieRouter = express.Router()
 //? import Movie from a mongoose database
 const Movie = require('../models/movie')
@@ -55,14 +54,17 @@ movieRouter.post('/', (req, res, next) => {
 	})
 })
 
-// DELETE ONE MOVIE ---send a delete request to movies/87ad4320-fdc2-47fa-96a8-39a6090dda7c
+// DELETE ONE MOVIE
 movieRouter.delete('/:movieId', (req, res, next) => {
-	const movieId = req.params.movieId
-	// ! Get the index number of the movie that has the movieId
-	const movieIndex = movies.findIndex(movie => movie._id === movieId)
-	// ! splice the movie from the movies array
-	movies.splice(movieIndex, 1)
-	res.send('Successfully deleted the movie')
+	Movie.findOneAndDelete({ _id: req.params.movieId }, (err, deletedItem) => {
+		if (err) {
+			res.status(500)
+			return next(err)
+		}
+		return res
+			.status(200)
+			.send(`Successfully deleted item ${deletedItem.title} from the database`)
+	})
 })
 
 //? UPDATE ONE - need the id of the movie and res.body -> is the new object to update the existing object with
