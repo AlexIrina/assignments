@@ -11,7 +11,7 @@ export default function AddMovieForm({ submit, title, genre, btnText, _id }) {
 
 	const handleSubmit = e => {
 		e.preventDefault()
-		//? add a new movie --POST
+		//? add a new movie --POST --PUT
 		submit(inputs, _id)
 		// clears inputs
 		setInputs(initInputs)
