@@ -24,4 +24,4 @@ const bountySchema = new Schema({
 })
 
 // Models are used to perform CRUD operations
-module.exports = mongoose.model('BountyModel', bountySchema)
+module.exports = mongoose.model('Bounty', bountySchema)
