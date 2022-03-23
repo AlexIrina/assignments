@@ -26,7 +26,7 @@ export default function App() {
 		axios
 			.delete(`/movies/${movieId}`)
 			.then(res => {
-				setMovies(prevMovies =>
+				setMovies(prevMovies => 
 					prevMovies.filter(movie => movie._id !== movieId)
 				)
 			})

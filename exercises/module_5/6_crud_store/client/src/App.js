@@ -1,6 +1,5 @@
-import React from 'react'
-
-export default function App() {
-	return <div>App</div>
+function App() {
+	return <div className='App'>Crud Store.Test it with Postman</div>
 }
-// TODO: create the ui for the inventory 
+
+export default App
