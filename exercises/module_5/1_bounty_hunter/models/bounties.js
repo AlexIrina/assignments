@@ -14,7 +14,7 @@ const bountySchema = new Schema({
 	},
 	amount: {
 		type: Number,
-		required: true,
+		default: 0,
 	},
 	jedi: {
 		type: String,
