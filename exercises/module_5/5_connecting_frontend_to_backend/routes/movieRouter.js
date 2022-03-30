@@ -15,19 +15,17 @@ movieRouter.get('/', (req, res, next) => {
 	})
 })
 
-// //? Get a specific movies => using request params
-// // next allows me to pass the error to the Middleware
-// movieRouter.get('/:movieId', (req, res, next) => {
-// 	const movieId = req.params.movieId
-// 	const foundMovie = movies.find(movie => movie._id === movieId)
-// 	//! if movie id is not found
-// 	if (!foundMovie) {
-// 		const error = new Error(`Movie with the id ${movieId} was not found`)
-// 		res.status(500)
-// 		return next(error)
-// 	}
-// 	res.status(200).send(foundMovie)
-// })
+//? Get a specific movies => using request params
+// next allows me to pass the error to the Middleware
+movieRouter.get('/:movieId', (req, res, next) => {
+	Movie.find({ _id: req.params.movieId }, (err, movie) => {
+		if (err) {
+			res.status(500)
+			return next(err)
+		}
+		return res.status(201).send(movie)
+	})
+})
 
 //? specific request to genre ---movies/search/genre?genre=action
 movieRouter.get('/search/genre', (req, res, next) => {
@@ -61,7 +59,7 @@ movieRouter.delete('/:movieId', (req, res, next) => {
 		}
 		return res
 			.status(200)
-			.send(`Successfully deleted item ${deletedItem.title} from the database`)
+			.send(`Successfully deleted ${deletedItem.title} from the database`)
 	})
 })
 

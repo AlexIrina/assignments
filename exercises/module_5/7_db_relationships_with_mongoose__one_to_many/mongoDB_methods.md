@@ -1,10 +1,10 @@
-<!--mondoDB methods -->
+<!--//!mondoDB methods -->
 
-<!--update  -->
+<!--//!update  -->
 
 $inc - used to increment or decrement a value -- in my case Likes inside the bookSchema
 
-1.  write a route inside bookRouter that increments likes
+write a route inside bookRouter that increments likes
 
         Book.findOneAndUpdate(
         	//1.what do i need to update? Find the book that has this ID..
@@ -16,23 +16,24 @@ $inc - used to increment or decrement a value -- in my case Likes inside the boo
         	//3. send the new version
         	{ new: true },
 
-    <!-- find -->
+<!--//! find -->
 
-    $regex - used to search strings - searching an Author by name -- types in A -shows Alex
+$regex - used to search strings - searching an Author by name -- types in A -shows Alex
 
 1.  write a route inside authorRouter that searches author by the any letter of the authors name
     const { author } = req.query
     const pattern = new RegExp(author)
     Author.find({ name: { $regex: pattern, $options: 'i' } }, (err, authors) => {}
 
-<!-- add something to an array in the database-->
+<!--//! add something to an array in the database-->
 
 $push
 
-% <!-- remove something from an array in the database-->
+% <!--//! remove something from an array in the database-->
 $pull
 
-<!--allows you to perform a vary specific type of search will multiple criteria on the database  -->
-<!-- return all books where likes is over 5 -->
+<!--//!allows you to perform a vary specific type of search will multiple criteria on the database  -->
+<!--//! return all books where likes is over 5 -->
+
 where
 exec

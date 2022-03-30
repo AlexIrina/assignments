@@ -6,7 +6,7 @@ import AddBountyForm from './components/AddBountyForm'
 function App() {
 	const [bounties, setBounties] = useState([])
 
-	// get all bounties
+	//! get all bounties
 	const getAllBounties = () => {
 		axios
 			.get('/bounties')
@@ -14,7 +14,7 @@ function App() {
 			.catch(err => console.log(err.response.data.errorMessage))
 	}
 
-	// post a new bounty
+	//! post a new bounty
 	const addBounty = newBounty => {
 		axios
 			.post('/bounties', newBounty)
@@ -24,7 +24,7 @@ function App() {
 			.catch(err => console.log(err))
 	}
 
-	// delete bounty
+	//! delete bounty
 	const deleteBounty = bountyId => {
 		axios
 			.delete(`/bounties/${bountyId}`)
@@ -35,7 +35,7 @@ function App() {
 			})
 			.catch(err => console.log(err))
 	}
-	// update bounty
+	//! update bounty
 	const editBounty = (updates, bountyId) => {
 		axios
 			.put(`/bounties/${bountyId}`, updates)

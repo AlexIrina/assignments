@@ -1,8 +1,23 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
-export default function AddMovieForm({ submit, title, genre, btnText, _id }) {
-	const initInputs = { title: title || '', genre: genre || '' }
-	const [inputs, setInputs] = useState(initInputs)
+export default function AddMovieForm({
+	submit,
+	title,
+	genre,
+	btnText,
+	_id,
+	releaseYear,
+}) {
+	const initInputs = {
+		title: title || '',
+		genre: genre || '',
+		releaseYear: releaseYear || '',
+	}
+	const [inputs, setInputs] = useState({})
+	// show the inputs on edit
+	useEffect(() => {
+		setInputs({ title, genre, releaseYear })
+	}, [title, genre, releaseYear])
 
 	const handleChange = e => {
 		const { name, value } = e.target
@@ -32,6 +47,14 @@ export default function AddMovieForm({ submit, title, genre, btnText, _id }) {
 				onChange={handleChange}
 				placeholder='enter genre...'
 			/>
+			<input
+				type='text'
+				name='releaseYear'
+				value={inputs.releaseYear}
+				onChange={handleChange}
+				placeholder='enter releaseYear...'
+			/>
+
 			<button className='btn '>{btnText}</button>
 		</form>
 	)
