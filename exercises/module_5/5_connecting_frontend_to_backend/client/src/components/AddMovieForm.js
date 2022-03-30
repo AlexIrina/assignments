@@ -7,17 +7,19 @@ export default function AddMovieForm({
 	btnText,
 	_id,
 	releaseYear,
+	image,
 }) {
 	const initInputs = {
 		title: title || '',
 		genre: genre || '',
 		releaseYear: releaseYear || '',
+		image: image || '',
 	}
 	const [inputs, setInputs] = useState({})
 	// show the inputs on edit
 	useEffect(() => {
-		setInputs({ title, genre, releaseYear })
-	}, [title, genre, releaseYear])
+		setInputs({ title, genre, releaseYear, image })
+	}, [title, genre, releaseYear, image])
 
 	const handleChange = e => {
 		const { name, value } = e.target
@@ -54,7 +56,13 @@ export default function AddMovieForm({
 				onChange={handleChange}
 				placeholder='enter releaseYear...'
 			/>
-
+			<input
+				type='text'
+				name='image'
+				value={inputs.image}
+				onChange={handleChange}
+				placeholder='enter image...'
+			/>
 			<button className='btn '>{btnText}</button>
 		</form>
 	)

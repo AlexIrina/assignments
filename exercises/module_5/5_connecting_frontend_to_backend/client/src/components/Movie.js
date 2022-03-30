@@ -8,6 +8,7 @@ export default function Movie({
 	deleteMovie,
 	updateMovie,
 	releaseYear,
+	image,
 }) {
 	const [editToggle, setEditToggle] = useState(false)
 
@@ -23,6 +24,11 @@ export default function Movie({
 					<h2>Title: {title}</h2>
 					<p>Genre: {genre}</p>
 					<p>ReleaseYear: {releaseYear}</p>
+					<img
+						src={image}
+						alt='something did work'
+						style={{ height: '200px' }}
+					/>
 					<button onClick={() => deleteMovie(_id)} className='btn delete-btn'>
 						Delete
 					</button>
@@ -40,6 +46,7 @@ export default function Movie({
 						title={title}
 						genre={genre}
 						releaseYear={releaseYear}
+						image={image}
 						_id={_id}
 						submit={handleSubmit}
 						btnText='Submit Changes'

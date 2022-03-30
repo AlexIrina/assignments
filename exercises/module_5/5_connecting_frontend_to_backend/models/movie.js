@@ -16,7 +16,9 @@ const movieSchema = new Schema({
 	releaseYear: {
 		type: Number,
 	},
-	
+	image: {
+		type: String,
+	},
 })
 
 // export movie schema named "Movie"
