@@ -29,15 +29,17 @@ export default function Movie({
 						alt='something did work'
 						style={{ height: '200px' }}
 					/>
-					<button onClick={() => deleteMovie(_id)} className='btn delete-btn'>
-						Delete
-					</button>
-					<button
-						className='edit-btn'
-						onClick={() => setEditToggle(prevToggle => !prevToggle)}
-					>
-						Edit
-					</button>
+					<div className='btn-container'>
+						<button onClick={() => deleteMovie(_id)} className='btn delete-btn'>
+							Delete
+						</button>
+						<button
+							className='edit-btn'
+							onClick={() => setEditToggle(prevToggle => !prevToggle)}
+						>
+							Edit
+						</button>
+					</div>
 				</>
 			) : (
 				//todo: show form if edit is clicked

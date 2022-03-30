@@ -34,35 +34,37 @@ export default function AddMovieForm({
 		setInputs(initInputs)
 	}
 	return (
-		<form onSubmit={handleSubmit} className='form'>
-			<input
-				type='text'
-				name='title'
-				value={inputs.title}
-				onChange={handleChange}
-				placeholder='enter title...'
-			/>
-			<input
-				type='text'
-				name='genre'
-				value={inputs.genre}
-				onChange={handleChange}
-				placeholder='enter genre...'
-			/>
-			<input
-				type='text'
-				name='releaseYear'
-				value={inputs.releaseYear}
-				onChange={handleChange}
-				placeholder='enter releaseYear...'
-			/>
-			<input
-				type='text'
-				name='image'
-				value={inputs.image}
-				onChange={handleChange}
-				placeholder='enter image...'
-			/>
+		<form onSubmit={handleSubmit} className='form' style={{ display: 'flex' }}>
+			<div className='inputs-container'>
+				<input
+					type='text'
+					name='title'
+					value={inputs.title}
+					onChange={handleChange}
+					placeholder='enter title...'
+				/>
+				<input
+					type='text'
+					name='genre'
+					value={inputs.genre}
+					onChange={handleChange}
+					placeholder='enter genre...'
+				/>
+				<input
+					type='text'
+					name='releaseYear'
+					value={inputs.releaseYear}
+					onChange={handleChange}
+					placeholder='enter releaseYear...'
+				/>
+				<input
+					type='text'
+					name='image'
+					value={inputs.image}
+					onChange={handleChange}
+					placeholder='enter image...'
+				/>
+			</div>
 			<button className='btn '>{btnText}</button>
 		</form>
 	)
