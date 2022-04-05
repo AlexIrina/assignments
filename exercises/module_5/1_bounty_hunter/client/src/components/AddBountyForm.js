@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 
 export default function AddBountyForm({
 	submit,
@@ -19,15 +19,15 @@ export default function AddBountyForm({
 		image: image || '',
 		living: living || '',
 	}
-	//! might need to have initialInputs as default
-	const [inputs, setInputs] = useState({})
+
+	const [inputs, setInputs] = useState(initialInputs)
 
 	console.log(inputs)
 
-	// show the inputs on edit
-	useEffect(() => {
-		setInputs({ firstName, lastName, amount, image, jedi, living })
-	}, [firstName, lastName, amount, image, jedi, living])
+	// // show the inputs on edit
+	// useEffect(() => {
+	// 	setInputs({ firstName, lastName, amount, image, jedi, living })
+	// }, [firstName, lastName, amount, image, jedi, living])
 
 	const handleChange = e => {
 		const { name, value } = e.target
@@ -43,7 +43,7 @@ export default function AddBountyForm({
 	}
 
 	return (
-		<form onSubmit={handleSubmit} style={{ display: 'flex', gap: '2px' }}>
+		<form onSubmit={handleSubmit}>
 			<input
 				type='text'
 				name='firstName'
