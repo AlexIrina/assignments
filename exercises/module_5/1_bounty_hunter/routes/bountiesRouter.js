@@ -1,10 +1,10 @@
 const express = require('express')
 const bountyRouter = express.Router()
-const Bounties = require('../models/bounties')
+const Bounty = require('../models/bounty')
 
 //? GETS ALL BOUNTIES
 bountyRouter.get('/', (req, res, next) => {
-	Bounties.find((err, bounties) => {
+	Bounty.find((err, bounties) => {
 		if (err) {
 			res.status(500)
 			return next(err)
@@ -15,18 +15,18 @@ bountyRouter.get('/', (req, res, next) => {
 
 //? find a specific bounty by its id
 bountyRouter.get('/:bountyId', (req, res, next) => {
-	Bounties.findById({ _id: req.params.bountyId }, (err, foundBounty) => {
+	Bounty.find({ _id: req.params.bountyId }, (err, foundBounty) => {
 		if (err) {
 			res.status(500)
 			return next(err)
 		}
-		return res.status(200).send(foundBounty)
+		return res.status(201).send(foundBounty)
 	})
 })
 
 //? POST new bounty
 bountyRouter.post('/', (req, res, next) => {
-	const newBounty = new Bounties(req.body)
+	const newBounty = new Bounty(req.body)
 	newBounty.save((err, savedBounty) => {
 		if (err) {
 			res.status(500)
@@ -38,7 +38,7 @@ bountyRouter.post('/', (req, res, next) => {
 
 //? UPDATE ONE
 bountyRouter.put('/:bountyId', (req, res, next) => {
-	Bounties.findOneAndUpdate(
+	Bounty.findOneAndUpdate(
 		{ _id: req.params.bountyId }, //find this one to update
 		req.body, //update the object with this data
 		{ new: true }, //send back the updated version of the objet please
@@ -54,7 +54,7 @@ bountyRouter.put('/:bountyId', (req, res, next) => {
 
 //? DELETE ONE item
 bountyRouter.delete('/:bountyId', (req, res, next) => {
-	Bounties.findOneAndDelete(
+	Bounty.findOneAndDelete(
 		{ _id: req.params.bountyId },
 		(err, deletedBounty) => {
 			if (err) {

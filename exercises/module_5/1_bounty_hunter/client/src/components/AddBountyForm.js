@@ -1,21 +1,33 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 export default function AddBountyForm({
 	submit,
 	btnText,
 	firstName,
 	lastName,
-	bountyAmount,
-	type,
+	amount,
+	jedi,
 	_id,
+	image,
+	living,
 }) {
 	const initialInputs = {
 		firstName: firstName || '',
 		lastName: lastName || '',
-		bountyAmount: bountyAmount || '',
-		type: type || '',
+		amount: amount || '',
+		jedi: jedi || '',
+		image: image || '',
+		living: living || '',
 	}
-	const [inputs, setInputs] = useState(initialInputs)
+	//! might need to have initialInputs as default
+	const [inputs, setInputs] = useState({})
+
+	console.log(inputs)
+
+	// show the inputs on edit
+	useEffect(() => {
+		setInputs({ firstName, lastName, amount, image, jedi, living })
+	}, [firstName, lastName, amount, image, jedi, living])
 
 	const handleChange = e => {
 		const { name, value } = e.target
@@ -31,7 +43,7 @@ export default function AddBountyForm({
 	}
 
 	return (
-		<form onSubmit={handleSubmit}>
+		<form onSubmit={handleSubmit} style={{ display: 'flex', gap: '2px' }}>
 			<input
 				type='text'
 				name='firstName'
@@ -48,17 +60,31 @@ export default function AddBountyForm({
 			/>
 			<input
 				type='number'
-				name='bountyAmount'
-				value={inputs.bountyAmount}
+				name='amount'
+				value={inputs.amount}
 				onChange={handleChange}
-				placeholder='enter bountyAmount...'
+				placeholder='enter amount...'
 			/>
 			<input
 				type='text'
-				name='type'
-				value={inputs.type}
+				name='jedi'
+				value={inputs.jedi}
 				onChange={handleChange}
-				placeholder='Jedi or Sith...'
+				placeholder='jedi or sith?'
+			/>
+			<input
+				type='text'
+				name='image'
+				value={inputs.image}
+				onChange={handleChange}
+				placeholder='enter mugshot'
+			/>
+			<input
+				type='text'
+				name='living'
+				value={inputs.living}
+				onChange={handleChange}
+				placeholder='living?'
 			/>
 
 			<button className='submit-btn'>{btnText}</button>

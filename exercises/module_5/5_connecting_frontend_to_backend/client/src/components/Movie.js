@@ -21,16 +21,21 @@ export default function Movie({
 		<div className='movie'>
 			{!editToggle ? (
 				<>
-					<h2>Title: {title}</h2>
-					<p>Genre: {genre}</p>
-					<p>ReleaseYear: {releaseYear}</p>
+					<h2> {title}</h2>
+
 					<img
 						src={image}
 						alt='something did work'
 						style={{ height: '200px' }}
 					/>
+					<p>Genre: {genre}</p>
+					<p>ReleaseYear: {releaseYear}</p>
 					<div className='btn-container'>
-						<button onClick={() => deleteMovie(_id)} className='btn delete-btn'>
+						<button
+							onClick={() => deleteMovie(_id)}
+							className='btn delete-btn'
+							style={{ margin: '0 1rem' }}
+						>
 							Delete
 						</button>
 						<button

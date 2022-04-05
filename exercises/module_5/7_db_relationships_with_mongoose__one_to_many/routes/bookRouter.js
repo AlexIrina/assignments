@@ -54,7 +54,6 @@ bookRouter.put('/likes/:bookID', (req, res, next) => {
 		//3. send the new version
 		{ new: true },
 		(err, updatedBook) => {
-			// handle the error
 			if (err) {
 				res.status(500)
 				return next(err)

@@ -34,7 +34,11 @@ export default function AddMovieForm({
 		setInputs(initInputs)
 	}
 	return (
-		<form onSubmit={handleSubmit} className='form' style={{ display: 'flex' }}>
+		<form
+			onSubmit={handleSubmit}
+			className='form'
+			style={{ display: 'flex', gap: '2px' }}
+		>
 			<div className='inputs-container'>
 				<input
 					type='text'

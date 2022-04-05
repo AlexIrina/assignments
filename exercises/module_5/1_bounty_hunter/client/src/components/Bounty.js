@@ -1,43 +1,59 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import AddBountyForm from './AddBountyForm'
+
 export default function Bounty({
 	firstName,
 	lastName,
 	living,
-	bountyAmount,
-	type,
+	amount,
+	jedi,
 	_id,
 	deleteBounty,
 	editBounty,
+	image,
 }) {
 	const [toggleEditForm, setToggleEditForm] = useState(false)
+
+	const handleSubmit = (inputs, _id) => {
+		setToggleEditForm(false)
+		editBounty(inputs, _id)
+	}
+
 	return (
 		<div className='bounty'>
 			{!toggleEditForm ? (
 				<>
 					<h1>REWARD</h1>
-					<h2>${bountyAmount} IN GOLD COIN</h2>
-					<p>Will be paid for the capture of a {type} known as </p>
+					<h2>${amount} IN GOLD COIN</h2>
+					<p>Will be paid for the capture of a {jedi} known as </p>
 
 					<h1>
 						{firstName} {lastName}
 					</h1>
+					<img
+						src={image}
+						alt='something did work'
+						style={{ height: '200px' }}
+					/>
+
 					{living ? (
-						<p>Alive and on the run from the law</p>
+						<p>{firstName} is ALIVE and on the run from the law</p>
 					) : (
-						<p>Probably Dead</p>
+						<p>{firstName} is Already Dead</p>
 					)}
-					<p>
-						Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet
-					</p>
 
 					<h1>DEAD OR ALIVE</h1>
-					<button className='delete-btn' onClick={() => deleteBounty(_id)}>
+
+					<button
+						className='btn delete-btn'
+						onClick={() => deleteBounty(_id)}
+						style={{ margin: '0 1rem' }}
+					>
 						Delete
 					</button>
 
 					<button
-						className='edit-btn'
+						className='btn edit-btn'
 						onClick={() => setToggleEditForm(prev => !prev)}
 					>
 						Edit
@@ -49,11 +65,12 @@ export default function Bounty({
 						firstName={firstName}
 						lastName={lastName}
 						living={living}
-						bountyAmount={bountyAmount}
-						type={type}
-						submit={editBounty}
+						amount={amount}
+						jedi={jedi}
+						submit={handleSubmit}
 						_id={_id}
 						btnText='Submit the Edit'
+						image={image}
 					/>
 					<button
 						className='edit-btn'

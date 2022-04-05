@@ -3,16 +3,18 @@ const mongoose = require('mongoose')
 const express = require('express')
 const app = express()
 
+// middleware
 app.use(express.json())
+
 app.use(morgan('dev'))
 
-mongoose.connect('mongodb://localhost:27017/db-methods', () => { 
+mongoose.connect('mongodb://localhost:27017/db-methods', () => {
 	console.log(`Connected to the database`)
 })
 
 //call books router
-app.use('/books', require('./routes/bookRouter')) //TODO <-- connecting the MODEL with all the CRUD operations
-app.use('/authors', require('./routes/authorRouter'))//TODO <-- connecting the MODEL with all the CRUD operations
+app.use('/books', require('./routes/bookRouter'))
+app.use('/authors', require('./routes/authorRouter'))
 
 app.use((err, req, res, next) => {
 	console.log(err)

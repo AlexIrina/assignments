@@ -21,6 +21,12 @@ const bountySchema = new Schema({
 		enum: ['jedi', 'sith'],
 		required: true,
 	},
+	image: {
+		type: String,
+	},
+	living: {
+		type: String,
+	},
 })
 
 // Models are used to perform CRUD operations

@@ -18,9 +18,7 @@ function App() {
 	const addBounty = newBounty => {
 		axios
 			.post('/bounties', newBounty)
-			.then(res => {
-				setBounties(prevBounties => [...prevBounties, res.data])
-			})
+			.then(res => setBounties(prevBounties => [...prevBounties, res.data]))
 			.catch(err => console.log(err))
 	}
 
@@ -55,11 +53,11 @@ function App() {
 
 	return (
 		<div className='bounty-container'>
-			<AddBountyForm {...bounties} btnText={'Add Bounty'} submit={addBounty} />
-			{bounties.map((bounty, key) => (
+			<AddBountyForm btnText='Add Bounty' submit={addBounty} />
+			{bounties.map(bounty => (
 				<Bounty
 					{...bounty}
-					key={key}
+					key={bounty._id}
 					deleteBounty={deleteBounty}
 					editBounty={editBounty}
 				/>

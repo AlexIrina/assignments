@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import Movie from './components/Movie'
 import AddMovieForm from './components/AddMovieForm'
+
 export default function App() {
 	const [movies, setMovies] = useState([])
 
@@ -26,7 +27,7 @@ export default function App() {
 		axios
 			.delete(`/movies/${movieId}`)
 			.then(res => {
-				setMovies(prevMovies => 
+				setMovies(prevMovies =>
 					prevMovies.filter(movie => movie._id !== movieId)
 				)
 			})
@@ -62,14 +63,16 @@ export default function App() {
 	return (
 		<div className='movie-container'>
 			<AddMovieForm submit={addMovie} btnText='Add Movie' />
-			<h4>Filter by Genre</h4>
+			<div style={{ textAlign: 'center' }}>
+				<h4>Filter by Genre</h4>
 
-			<select onChange={handleFilter} className='filter-form'>
-				<option value='reset'>All Movies</option>
-				<option value='action'>Action</option>
-				<option value='fantasy'>Fantasy</option>
-				<option value='horror'>Horror</option>
-			</select>
+				<select onChange={handleFilter} className='filter-form'>
+					<option value='reset'>All Movies</option>
+					<option value='action'>Action</option>
+					<option value='fantasy'>Fantasy</option>
+					<option value='horror'>Horror</option>
+				</select>
+			</div>
 
 			{movies.map(movie => (
 				<Movie
