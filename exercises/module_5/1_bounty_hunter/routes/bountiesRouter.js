@@ -41,7 +41,7 @@ bountyRouter.put('/:bountyId', (req, res, next) => {
 	Bounty.findOneAndUpdate(
 		{ _id: req.params.bountyId }, //find this one to update
 		req.body, //update the object with this data
-		{ new: true }, //send back the updated version of the objet please
+		{ new: true }, //send back the updated version of the object
 		(err, updatedBounty) => {
 			if (err) {
 				res.status(500)
