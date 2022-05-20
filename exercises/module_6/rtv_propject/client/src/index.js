@@ -12,6 +12,7 @@ const root = ReactDOM.createRoot(container)
 root.render(
 	<BrowserRouter>
 		<UserProvider>
+			{/* <IssueProvider></IssueProvider> */}
 			<App />
 		</UserProvider>
 	</BrowserRouter>
