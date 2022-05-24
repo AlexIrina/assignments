@@ -13,18 +13,6 @@ export const UserProvider = props => {
 
 	const [userState, setUserState] = useState(initialState)
 
-	const logOut = () => {
-		localStorage.removeItem('token')
-		localStorage.removeItem('user')
-		setUserState({ user: '', token: '', posts: [] })
-	}
-
-	const signUp = credentials => {}
-	const logIn = credentials => {}
-
-	const getAllUsersPosts = () => {}
-	const addPost = () => {}
-
 	const handleAuthErr = errMsg => {
 		setUserState(prevState => ({
 			...prevState,
@@ -37,6 +25,18 @@ export const UserProvider = props => {
 			errMsg: '',
 		}))
 	}
+
+	const signUp = credentials => {}
+	const logIn = credentials => {}
+
+	const logOut = () => {
+		localStorage.removeItem('token')
+		localStorage.removeItem('user')
+		setUserState({ user: '', token: '', posts: [] })
+	}
+
+	const getAllUsersPosts = () => {}
+	const addPost = () => {}
 
 	const userAxios = () => axios.create()
 	//? builds token into the post
