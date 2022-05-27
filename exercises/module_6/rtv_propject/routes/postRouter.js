@@ -1,75 +1,75 @@
 const express = require('express')
-const todoRouter = express.Router()
-const Todo = require('../models/todo.js')
+const postRouter = express.Router()
+const Post = require('../models/post')
 
-// Get All Todos
-todoRouter.get('/', (req, res, next) => {
-	Todo.find((err, todos) => {
+// Get All posts
+postRouter.get('/', (req, res, next) => {
+	Post.find((err, posts) => {
 		if (err) {
 			res.status(500)
 			return next(err)
 		}
-		return res.status(200).send(todos)
+		return res.status(200).send(posts)
 	})
 })
 
-// Get todos by user id
-todoRouter.get('/user', (req, res, next) => {
+// Get posts by user id
+postRouter.get('/user', (req, res, next) => {
 	console.log(req)
-	Todo.find({ user: req.auth._id }, (err, todos) => {
+	Post.find({ user: req.auth._id }, (err, posts) => {
 		if (err) {
 			res.status(500)
 			return next(err)
 		}
-		return res.status(200).send(todos)
+		return res.status(200).send(posts)
 	})
 })
 
-// Add new Todo
-todoRouter.post('/', (req, res, next) => {
+// Add new post
+postRouter.post('/', (req, res, next) => {
 	console.log('req', req)
 	req.body.user = req.auth._id
-	const newTodo = new Todo(req.body)
-	newTodo.save((err, savedTodo) => {
+	const newPost = new Post(req.body)
+	newPost.save((err, savedPost) => {
 		if (err) {
 			res.status(500)
 			return next(err)
 		}
-		console.log(savedTodo)
-		return res.status(201).send(savedTodo)
+		console.log(savedPost)
+		return res.status(201).send(savedPost)
 	})
 })
 
-// Delete Todo
-todoRouter.delete('/:todoId', (req, res, next) => {
-	Todo.findOneAndDelete(
-		{ _id: req.params.todoId, user: req.user._id },
-		(err, deletedTodo) => {
+// Delete post
+postRouter.delete('/:postId', (req, res, next) => {
+	Post.findOneAndDelete(
+		{ _id: req.params.postId, user: req.user._id },
+		(err, deletedPost) => {
 			if (err) {
 				res.status(500)
 				return next(err)
 			}
 			return res
 				.status(200)
-				.send(`Successfully deleted todo: ${deletedTodo.title}`)
+				.send(`Successfully deleted post: ${deletedPost.title}`)
 		}
 	)
 })
 
-// Update Todo
-todoRouter.put('/:todoId', (req, res, next) => {
-	Todo.findOneAndUpdate(
-		{ _id: req.params.todoId, user: req.user._id },
+// Update post
+postRouter.put('/:postId', (req, res, next) => {
+	Post.findOneAndUpdate(
+		{ _id: req.params.postId, user: req.user._id },
 		req.body,
 		{ new: true },
-		(err, updatedTodo) => {
+		(err, updatedPost) => {
 			if (err) {
 				res.status(500)
 				return next(err)
 			}
-			return res.status(201).send(updatedTodo)
+			return res.status(201).send(updatedPost)
 		}
 	)
 })
 
-module.exports = todoRouter
+module.exports = postRouter
