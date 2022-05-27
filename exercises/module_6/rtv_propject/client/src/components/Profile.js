@@ -16,10 +16,10 @@ export default function Profile() {
 			{token && <h1>Welcome {username}!</h1>}
 			<h3>Add A Post</h3>
 
-			<PostForm addTodo={addPost} />
+			<PostForm addPost={addPost} />
 			<h3>Your Posts</h3>
 
-			<PostList todos={posts} />
+			<PostList posts={posts} />
 		</div>
 	)
 }

@@ -6,16 +6,35 @@ import Auth from './components/Auth'
 import Profile from './components/Profile'
 import Public from './components/Public'
 import { UserContext } from './context/UserProvider'
+
 export const App = () => {
 	const { token, logout } = useContext(UserContext)
+
 	return (
 		<>
-			{}
+			{token && <Navbar logout={logout} />}
 			<Routes>
-				{/* /Profile */}
-				<Route></Route>
-				{/* /Public */}
-				<Route></Route>
+				<Route
+					path='/'
+					element={token ? <Navigate to='/profile' /> : <Auth />}
+				/>
+				<Route
+					path='/profile'
+					element={
+						<ProtectedRoute token={token}>
+							<Profile />
+						</ProtectedRoute>
+					}
+				></Route>
+
+				<Route
+					path='/public'
+					element={
+						<ProtectedRoute token={token}>
+							<Public />
+						</ProtectedRoute>
+					}
+				></Route>
 			</Routes>
 		</>
 	)
