@@ -20,15 +20,37 @@ export const PostForm = ({ addPost }) => {
 		}))
 	}
 
-	const handleSubmit = e => {
+	function handleSubmit(e) {
 		e.preventDefault()
-		addPost()
+		addPost(inputs)
+		setInputs(initInputs)
 	}
+	const { title, description, imgUrl } = inputs
 
 	return (
-		<form onChange={handleChange}>
-			PostForm Component
-			<button onClick={handleSubmit}>Add Post</button>
+		<form onSubmit={handleSubmit}>
+			<input
+				type='text'
+				name='title'
+				value={title}
+				onChange={handleChange}
+				placeholder='Title'
+			/>
+			<input
+				type='text'
+				name='description'
+				value={description}
+				onChange={handleChange}
+				placeholder='Description'
+			/>
+			<input
+				type='text'
+				name='imgUrl'
+				value={imgUrl}
+				onChange={handleChange}
+				placeholder='Image Url'
+			/>
+			<button type='submit'>Add Todo</button>
 		</form>
 	)
 }
