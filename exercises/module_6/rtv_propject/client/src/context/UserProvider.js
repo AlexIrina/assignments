@@ -26,8 +26,50 @@ export const UserProvider = props => {
 		}))
 	}
 
-	const signUp = credentials => {}
-	const logIn = credentials => {}
+	const getAllUsersPosts = () => {
+		userAxios
+			.get('/api/post/user')
+			.then(res =>
+				setUserState(prevState => ({
+					...prevState,
+					posts: res.data,
+				}))
+			)
+			.catch(err => console.log(err.response.data.errMsg))
+	}
+
+	const signUp = credentials => {
+		axios
+			.post('/auth/signup', credentials)
+			.then(res => {
+				const { user, token } = res.data
+				localStorage.setItem('token', token)
+				localStorage.setItem('user', JSON.stringify(user))
+
+				setUserState(prevState => ({
+					...prevState,
+					user,
+					token,
+				}))
+			})
+			.catch(err => handleAuthErr(err.response.data.errMsg))
+	}
+	const logIn = credentials => {
+		axios
+			.post('/auth/login', credentials)
+			.then(res => {
+				const { user, token } = res.data
+				localStorage.setItem('token', token)
+				localStorage.setItem('user', JSON.stringify(user))
+				getAllUsersPosts()
+				setUserState(prevState => ({
+					...prevState,
+					user,
+					token,
+				}))
+			})
+			.catch(err => handleAuthErr(err.response.data.errMsg))
+	}
 
 	const logOut = () => {
 		localStorage.removeItem('token')
@@ -35,8 +77,17 @@ export const UserProvider = props => {
 		setUserState({ user: '', token: '', posts: [] })
 	}
 
-	const getAllUsersPosts = () => {}
-	const addPost = () => {}
+	const addPost = newPost => {
+		userAxios
+			.post('/api/post', newPost)
+			.then(res => {
+				setUserState(prevState => ({
+					...prevState,
+					posts: [...prevState.posts, res.data],
+				}))
+			})
+			.catch(err => handleAuthErr(err.response.data.errMsg))
+	}
 
 	const userAxios = () => axios.create()
 	//? builds token into the post
