@@ -26,17 +26,13 @@ export default function UserProvider(props) {
 		}))
 	}
 
-	const getAllUsersPosts = () => {
-		userAxios
-			.get('/api/post/user')
-			.then(res =>
-				setUserState(prevState => ({
-					...prevState,
-					posts: res.data,
-				}))
-			)
-			.catch(err => console.log(err.response.data.errMsg))
-	}
+	const userAxios = axios.create()
+	//? builds token into the todo
+	userAxios.interceptors.request.use(config => {
+		const token = localStorage.getItem('token')
+		config.headers.Authorization = `Bearer ${token}`
+		return config
+	})
 
 	const signUp = credentials => {
 		axios
@@ -77,6 +73,18 @@ export default function UserProvider(props) {
 		setUserState({ user: '', token: '', posts: [] })
 	}
 
+	const getAllUsersPosts = () => {
+		userAxios
+			.get('/api/post/user')
+			.then(res =>
+				setUserState(prevState => ({
+					...prevState,
+					posts: res.data,
+				}))
+			)
+			.catch(err => console.log(err.response.data.errMsg))
+	}
+
 	const addPost = newPost => {
 		userAxios
 			.post('/api/post', newPost)
@@ -88,14 +96,6 @@ export default function UserProvider(props) {
 			})
 			.catch(err => handleAuthErr(err.response.data.errMsg))
 	}
-
-	const userAxios = () => axios.create()
-	//? builds token into the post
-	userAxios.interceptors.request.use(config => {
-		const token = localStorage.getItem('token')
-		config.headers.Authorization = `Bearer ${token}`
-		return config
-	})
 
 	return (
 		<UserContext.Provider
