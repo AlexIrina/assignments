@@ -1,5 +1,5 @@
 import React from 'react'
 
-export const PostList = () => {
-	return <div>PostList Component</div>
+export default function PostList() {
+	return <div>PostList</div>
 }

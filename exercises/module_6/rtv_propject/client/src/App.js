@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Routes, Route, Navigate } from 'browser-router'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import { ProtectedRoute } from './components/ProtectedRoute'
 import Navbar from './components/Navbar'
 import Auth from './components/Auth'
@@ -7,7 +7,7 @@ import Profile from './components/Profile'
 import Public from './components/Public'
 import { UserContext } from './context/UserProvider'
 
-export const App = () => {
+export default function App() {
 	const { token, logout } = useContext(UserContext)
 
 	return (

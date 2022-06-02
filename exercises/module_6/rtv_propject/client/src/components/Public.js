@@ -1,5 +1,5 @@
 import React from 'react'
 
-export const Public = () => {
-	return <div>Public Component</div>
+export default function Public() {
+	return <div>Public</div>
 }

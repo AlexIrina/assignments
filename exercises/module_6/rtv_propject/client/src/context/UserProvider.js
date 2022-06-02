@@ -3,7 +3,7 @@ import axios from 'axios'
 
 export const UserContext = React.createContext()
 
-export const UserProvider = props => {
+export default function UserProvider(props) {
 	const initialState = {
 		token: localStorage.getItem('token') || '',
 		user: JSON.parse(localStorage.getItem('user')) || '',

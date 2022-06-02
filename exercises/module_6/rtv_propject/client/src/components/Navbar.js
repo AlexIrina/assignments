@@ -1,6 +1,7 @@
-import { Link } from 'react-router'
+import React from 'react'
+import { Link } from 'react-router-dom'
 
-export const Navbar = ({ logout }) => {
+export default function Navbar({ logout }) {
 	return (
 		<nav>
 			<Link to='/profile'>Profile</Link>

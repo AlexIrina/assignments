@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export const PostForm = ({ addPost }) => {
+export default function PostForm({ addPost }) {
 	const initInputs = {
 		title: '',
 		description: '',

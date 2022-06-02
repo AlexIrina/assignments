@@ -3,27 +3,28 @@ const app = express()
 require('dotenv').config()
 const morgan = require('morgan')
 const mongoose = require('mongoose')
-const PORT = 9000
+
 const { expressjwt: jwt } = require('express-jwt')
 
 app.use(express.json())
 app.use(morgan('dev'))
 
-mongoose.connect('mongodb://localhost:27017/RedditCloneDB', () =>
+mongoose.connect('mongodb://localhost:27017/rtvDB', () =>
 	console.log('Connected to the DB')
 )
 
-// paths
-app.use('/auth', require('./routes/authRouter'))
-app.use('/api', jwt({ secret: process.env.SECRET, algorithms: ['HS256'] }))
-app.use('/api/post', require('./routes/postRouter'))
+app.use('/auth', require('./routes/authRouter.js'))
 
-// middleware error handler
+app.use('/api', jwt({ secret: process.env.SECRET, algorithms: ['HS256'] }))
+
+app.use('/api/post', require('./routes/postRouter.js'))
+
 app.use((err, req, res, next) => {
+	console.log(err)
 	if (err.name === 'UnauthorizedError') {
 		res.status(err.status)
 	}
 	return res.send({ errMsg: err.message })
 })
 
-app.listen(PORT, () => console.log(`listening on ${PORT}`))
+app.listen(9000, () => console.log(`Server is running on local port 9000`))
