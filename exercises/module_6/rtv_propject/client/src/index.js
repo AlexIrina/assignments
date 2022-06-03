@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import App from './App.js'
-import UserProvider from './context/UserProvider.js'
+import UserProvider from './context/UserProvider'
 import './App.css'
 
 const container = document.getElementById('root')

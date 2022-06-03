@@ -17,12 +17,12 @@ export default function Auth() {
 			[name]: value,
 		}))
 	}
-
+	// error
 	const handleSignup = e => {
 		e.preventDefault()
 		signup(inputs)
 	}
-
+	// error
 	const handleLogin = e => {
 		e.preventDefault()
 		login(inputs)

@@ -1,5 +1,6 @@
 import React from 'react'
+import { Navigate } from 'react-router-dom'
 
-export const ProtectedRoute = () => {
-	return <div>ProtectedRoute Component</div>
+export default function ProtectedRoute({ token, children }) {
+	return token ? children : <Navigate to='/' />
 }
