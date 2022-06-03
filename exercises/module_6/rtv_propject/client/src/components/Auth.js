@@ -5,7 +5,7 @@ import { UserContext } from '../context/UserProvider.js'
 const initInputs = { username: '', password: '' }
 
 export default function Auth() {
-	const { signup, login, errMsg, resetAuthErr } = useContext(UserContext)
+	const { signUp, logIn, errMsg, resetAuthErr } = useContext(UserContext)
 
 	const [inputs, setInputs] = useState(initInputs)
 	const [toggle, setToggle] = useState(false)
@@ -17,15 +17,15 @@ export default function Auth() {
 			[name]: value,
 		}))
 	}
-	// error
+
 	const handleSignup = e => {
 		e.preventDefault()
-		signup(inputs)
+		signUp(inputs)
 	}
-	// error
+
 	const handleLogin = e => {
 		e.preventDefault()
-		login(inputs)
+		logIn(inputs)
 	}
 	const toggleForm = () => {
 		setToggle(prev => !prev)

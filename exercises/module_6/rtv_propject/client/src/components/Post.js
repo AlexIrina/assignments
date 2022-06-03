@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Post = props => {
+export default function Post(props) {
 	console.log(props)
-	return <div>Post Component</div>
+	return <div className='post'>Post</div>
 }

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
-import { ProtectedRoute } from './components/ProtectedRoute'
+import ProtectedRoute from './components/ProtectedRoute'
 import Navbar from './components/Navbar'
 import Auth from './components/Auth'
 import Profile from './components/Profile'
